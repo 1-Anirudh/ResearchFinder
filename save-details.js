@@ -1,13 +1,13 @@
 const { db } = require('./firebaseConfig');
-const { collection, arrayUnion } = require('firebase/firestore');
+const { collection, doc, updateDoc, arrayUnion } = require('firebase/firestore');
 
 // Function to save user details
 async function saveUserDetails(uid, name, interests, skills) {
     try {
-        const userDocRef = db.doc(collection('users'));
+        const userDocRef = doc(collection(db, 'users'));
 
         // Update the user's document with interests and skills
-        await userDocRef.updateDoc({
+        await updateDoc(userDocRef, {
             name: name,
             interests: arrayUnion(...interests),
             skills: arrayUnion(...skills)

@@ -23,7 +23,6 @@ async function registerUser(email, password) {
       email: email,
       uid: user.uid
     });
-    console.log("Document written with ID: ", userDocRef.id);
 
     // Create subcollections within the user document
     const interestsCollection = collection(userDocRef, 'interests');
