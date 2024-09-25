@@ -5,7 +5,6 @@ const { registerUser, signInUser } = require('./firebaseConfig');
 const { saveUserDetails } = require('./save-details');
 const { submitFeedback } = require('./feedback');
 const path = require('path');
-const { userInfo } = require('os');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -28,22 +27,36 @@ app.use(session({
     cookie: { secure: false } // Set to true if using HTTPS
 }));
 
+// --- Extracted Utility Functions --- //
+
+const handleLoginSuccess = (req, userCredential) => {
+    req.session.isLoggedIn = true;
+    req.session.userId = userCredential.user.uid; // Store the user's UID in the session
+};
+
+const handleRedirectWithMessage = (res, message, redirectUrl = '/') => {
+    res.send(`
+        <p>${message}</p>
+        <script>
+            setTimeout(function() {
+                window.location.href = '${redirectUrl}';
+            }, 1000);
+        </script>
+    `);
+};
+
+// --- Route Handlers --- //
+
 // Handle registration form submission
 app.post('/register', async (req, res) => {
     const { email, password } = req.body;
     try {
         const userCredential = await registerUser(email, password);
-        req.session.loginSuccess = true;
-        req.session.uid = userCredential.user.uid; // Store the user's UID in the session
+        handleLoginSuccess(req, userCredential);
         res.redirect('/add-details');
     } catch (error) {
         res.send(`Registration failed: ${error.message}`);
     }
-});
-
-// Serve the login form
-app.get('/login', (req, res) => {
-    res.redirect('/');
 });
 
 // Handle login form submission
@@ -53,89 +66,69 @@ app.post('/login', async (req, res) => {
     console.log("password", password);
     try {
         const userCredential = await signInUser(email, password);
-        req.session.loginSuccess = true;
-        req.session.uid = userCredential.user.uid; // Store the user's UID in the session
+        handleLoginSuccess(req, userCredential);
         res.redirect('/');
     } catch (error) {
-        res.send(`<p>Login failed: ${error.message}</p>
-            <script>
-            setTimeout(function() {
-                window.location.href = '/';
-            }, 1000);`);
+        handleRedirectWithMessage(res, `Login failed: ${error.message}`);
     }
 });
 
-app.get('/home', (req, res) => {
-    if(!req.session.loginSuccess) {
-        res.send(`<p>Access denied. Please login first.</p>
-            <script>
-            setTimeout(function() {
-                window.location.href = '/';
-                }, 1000);
-                </script>`);
+// Access control utility
+const ensureLoggedIn = (req, res, next) => {
+    if (!req.session.isLoggedIn) {
+        handleRedirectWithMessage(res, 'Access denied. Please login first.');
     } else {
-        res.render('landing', { 
-            logoName: 'EurekaTribe', 
-            profileName: req.session.name || 'User', 
-            jobTitle: 'Student'
-        });
+        next();
     }
-});
+};
 
 app.get('/index', (req, res) => {
-    if(req.session.loginSuccess) {
+    if (req.session.isLoggedIn) {
         res.redirect('/home');
     }
     res.render('index');
 });
 
+// Home page route
+app.get('/home', ensureLoggedIn, (req, res) => {
+    res.render('landing', { 
+        logoName: 'EurekaTribe', 
+        profileName: req.session.name || 'User', 
+        jobTitle: 'Student'
+    });
+});
+
+// Serve index and login redirects
 app.get('/', (req, res) => {
-    if (req.session.loginSuccess) {
+    if (req.session.isLoggedIn) {
         res.redirect('/home');
     } else {
         res.redirect('/index');
     }
 });
 
-
-// Serve the add-details form
-app.get('/add-details', (req, res) => {
-    if (req.session.loginSuccess) {
-        res.render('add-details');
-    } else {
-        res.redirect('/');
-    }
+// Serve add-details form
+app.get('/add-details', ensureLoggedIn, (req, res) => {
+    res.render('add-details');
 });
 
 // Handle saving details
 app.post('/save-details', async (req, res) => {
     const { name, interests, skills } = req.body;
     req.session.name = name;
-    console.log(req.body);
-    const uid = req.session.uid; // Get the user's UID from the session
+    const uid = req.session.userId;
     if (!uid) {
         return res.send('Error: User not logged in.');
     }
     try {
         await saveUserDetails(uid, name, interests, skills);
-        res.send(`
-            <p>Details saved successfully!</p>
-            <script>
-                setTimeout(function() {
-                    window.location.href = '/';
-                }, 1000);
-            </script>
-        `);
+        handleRedirectWithMessage(res, 'Details saved successfully!');
     } catch (error) {
-        res.send(`<p>Error saving details: ${error.message}</p>
-            <script>
-            setTimeout(function() {
-                window.location.href = '/';
-            }, 1000);`);
+        handleRedirectWithMessage(res, `Error saving details: ${error.message}`);
     }
 });
 
-// Serve the feedback form
+// Serve feedback form
 app.get('/feedback', (req, res) => {
     res.render('feedback');
 });
@@ -147,23 +140,13 @@ app.post('/feedback', async (req, res) => {
     console.log("feedback", feedback);
     try {
         await submitFeedback(score, feedback);
-        res.send(`
-            <p>Thankyou for the feedback !!</p>
-            <script>
-                setTimeout(function() {
-                    window.location.href = '/';
-                }, 1000);
-            </script>
-        `);
+        handleRedirectWithMessage(res, 'Thank you for the feedback!');
     } catch (error) {
-        res.send(`<p>Error submitting feedback: ${error.message} try later </p>
-            <script>
-            setTimeout(function() {
-                window.location.href = '/';
-            }, 1000);`);
+        handleRedirectWithMessage(res, `Error submitting feedback: ${error.message}`);
     }
 });
 
+// Serve profile page
 app.get('/profile', (req, res) => {
     res.render('profile', {
         profileImage: 'https://via.placeholder.com/150',
@@ -186,6 +169,17 @@ app.get('/profile', (req, res) => {
     });
 });
 
+app.get('/logout', (req, res) => {
+    req.session.destroy((err) => {
+        if (err) {
+            console.error('Error destroying session:', err);
+            return res.redirect('/');
+        }
+        res.redirect('/'); // Redirect to login or home page after logout
+    });
+});
+
+// Start the server
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT} see http://localhost:${PORT}`);
 });
