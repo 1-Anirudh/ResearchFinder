@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const { registerUser, signInUser } = require('./firebaseConfig');
 const { saveUserDetails } = require('./save-details');
+const { submitFeedback } = require('./feedback');
 const path = require('path');
 
 const app = express();
@@ -121,13 +122,11 @@ app.get('/feedback', (req, res) => {
 
 // Handle feedback form submission
 app.post('/feedback', async (req, res) => {
-    const { feedback } = req.body;
-
+    const { score, feedback } = req.body;
+    console.log("score", score);
     console.log("feedback", feedback);
-    console.log("score", feedback.score);
-    console.log("feedback", feedback.comment);
     try {
-        await submitFeedback(feedback.score, feedback.comment);
+        await submitFeedback(score, feedback);
         res.send(`
             <p>Thankyou for the feedback !!</p>
             <script>
