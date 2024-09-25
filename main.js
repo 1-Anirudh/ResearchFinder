@@ -114,8 +114,35 @@ app.post('/save-details', async (req, res) => {
     }
 });
 
-app.get('/search', (req, res) => {
-    res.render('search');
+// Serve the feedback form
+app.get('/feedback', (req, res) => {
+    res.render('feedback');
+});
+
+// Handle feedback form submission
+app.post('/feedback', async (req, res) => {
+    const { feedback } = req.body;
+
+    console.log("feedback", feedback);
+    console.log("score", feedback.score);
+    console.log("feedback", feedback.comment);
+    try {
+        await submitFeedback(feedback.score, feedback.comment);
+        res.send(`
+            <p>Thankyou for the feedback !!</p>
+            <script>
+                setTimeout(function() {
+                    window.location.href = '/';
+                }, 1000);
+            </script>
+        `);
+    } catch (error) {
+        res.send(`<p>Error submitting feedback: ${error.message} try later </p>
+            <script>
+            setTimeout(function() {
+                window.location.href = '/';
+            }, 1000);`);
+    }
 });
 
 app.listen(PORT, () => {
