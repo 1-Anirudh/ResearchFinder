@@ -65,14 +65,26 @@ app.post('/login', async (req, res) => {
 });
 
 app.get('/home', (req, res) => {
-    res.render('landing', { 
-        logoName: 'EurekaTribe', 
-        profileName: req.session.name || 'User', 
-        jobTitle: 'Student'
-    });
+    if(!req.session.loginSuccess) {
+        res.send(`<p>Access denied. Please login first.</p>
+            <script>
+            setTimeout(function() {
+                window.location.href = '/';
+                }, 1000);
+                </script>`);
+    } else {
+        res.render('landing', { 
+            logoName: 'EurekaTribe', 
+            profileName: req.session.name || 'User', 
+            jobTitle: 'Student'
+        });
+    }
 });
 
 app.get('/index', (req, res) => {
+    if(req.session.loginSuccess) {
+        res.redirect('/home');
+    }
     res.render('index');
 });
 
