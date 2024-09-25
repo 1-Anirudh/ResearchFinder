@@ -5,6 +5,7 @@ const { registerUser, signInUser } = require('./firebaseConfig');
 const { saveUserDetails } = require('./save-details');
 const { submitFeedback } = require('./feedback');
 const path = require('path');
+const { userInfo } = require('os');
 
 const app = express();
 const PORT = process.env.PORT || 4000;
@@ -161,6 +162,28 @@ app.post('/feedback', async (req, res) => {
                 window.location.href = '/';
             }, 1000);`);
     }
+});
+
+app.get('/profile', (req, res) => {
+    res.render('profile', {
+        profileImage: 'https://via.placeholder.com/150',
+        userName: req.session.name || 'User',
+        userEmail: req.session.email || 'user@example.com',
+        firstName: 'John',
+        surname: 'Doe',
+        mobileNumber: '1234567890',
+        addressLine1: '123, Main Street',
+        addressLine2: 'Area',
+        postcode: '12345',
+        state: 'State',
+        area: 'Area',
+        email: 'user@example.com',
+        education: 'Degree',
+        country: 'Country',
+        stateRegion: 'State',
+        experienceDesigning: '5 years',
+        additionalDetails: 'Additional details'
+    });
 });
 
 app.listen(PORT, () => {
