@@ -18,11 +18,16 @@ async function registerUser(email, password) {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
-    const userDocRef = doc(db, 'users');
+    // Trim the user ID to 20 characters
+    const trimmedUid = user.uid.substring(0, 20);
+
+    // Create a new document in the users collection with the trimmed UID as the document ID
+    const userDocRef = doc(db, 'users', trimmedUid);
     await setDoc(userDocRef, {
       email: email,
       uid: user.uid
     });
+    console.log("Document written with ID: ", trimmedUid);
 
     // Create subcollections within the user document
     const interestsCollection = collection(userDocRef, 'interests');
