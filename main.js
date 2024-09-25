@@ -64,16 +64,23 @@ app.post('/login', async (req, res) => {
     }
 });
 
-// Serve the home page
+app.get('/home', (req, res) => {
+    res.render('landing', { 
+        logoName: 'EurekaTribe', 
+        profileName: req.session.name || 'User', 
+        jobTitle: 'Student'
+    });
+});
+
+app.get('/index', (req, res) => {
+    res.render('index');
+});
+
 app.get('/', (req, res) => {
     if (req.session.loginSuccess) {
-        res.render('landing', { 
-            logoName: 'EurekaTribe', 
-            profileName: req.session.name || 'User', 
-            jobTitle: 'Student'
-        });
+        res.redirect('/home');
     } else {
-        res.render('index');
+        res.redirect('/index');
     }
 });
 
