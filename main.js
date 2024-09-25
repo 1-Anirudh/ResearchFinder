@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
 const { registerUser, signInUser } = require('./firebaseConfig');
+const { saveUserDetails } = require('./save-details');
 const path = require('path');
 
 const app = express();
@@ -72,6 +73,44 @@ app.get('/', (req, res) => {
         });
     } else {
         res.render('index');
+    }
+});
+
+
+// Serve the add-details form
+app.get('/add-details', (req, res) => {
+    if (req.session.loginSuccess) {
+        res.render('add-details');
+    } else {
+        res.redirect('/');
+    }
+});
+
+// Handle saving details
+app.post('/save-details', async (req, res) => {
+    const { name, interests, skills } = req.body;
+    req.session.name = name;
+    console.log(req.body);
+    const uid = req.session.uid; // Get the user's UID from the session
+    if (!uid) {
+        return res.send('Error: User not logged in.');
+    }
+    try {
+        await saveUserDetails(uid, name, interests, skills);
+        res.send(`
+            <p>Details saved successfully!</p>
+            <script>
+                setTimeout(function() {
+                    window.location.href = '/';
+                }, 1000);
+            </script>
+        `);
+    } catch (error) {
+        res.send(`<p>Error saving details: ${error.message}</p>
+            <script>
+            setTimeout(function() {
+                window.location.href = '/';
+            }, 1000);`);
     }
 });
 
