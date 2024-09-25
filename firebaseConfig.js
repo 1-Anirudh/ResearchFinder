@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 const { initializeApp } = require("firebase/app");
 const { getFirestore, collection, doc, setDoc } = require('firebase/firestore'); // Import the getFirestore function
-const { getAuth } = require("firebase/auth");
+const { getAuth, createUserWithEmailAndPassword } = require("firebase/auth");
 
 const firebaseConfig = require('./firebase-config.json'); // Your service account credentials
 
@@ -15,7 +15,7 @@ const db = getFirestore(app); // Get the Firestore instance using getFirestore()
 // Function to handle user registration
 async function registerUser(email, password) {
   try {
-    const userCredential = await auth.createUserWithEmailAndPassword(email, password);
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
 
     // Trim the user ID to 20 characters
