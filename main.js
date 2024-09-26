@@ -53,7 +53,7 @@ app.post('/register', async (req, res) => {
     try {
         const userCredential = await registerUser(email, password);
         handleLoginSuccess(req, userCredential);
-        res.redirect('/add-details');
+        res.redirect('/add-pdetails');
     } catch (error) {
         res.send(`Registration failed: ${error.message}`);
     }
@@ -104,6 +104,27 @@ app.get('/', (req, res) => {
         res.redirect('/home');
     } else {
         res.redirect('/index');
+    }
+});
+
+app.get('/add-pdetails', ensureLoggedIn, (req, res) => {
+    res.render('add-pdetails');
+});
+
+app.post('/save-pdetails', async (req, res) => {
+    const { firstName, surName } = req.body;
+    console.log("firstName", firstName);
+    console.log("surName", surName);
+    const uid = req.session.userId;
+    if (!uid) {
+        return res.send('Error: User not logged in.');
+    }
+    try {
+        await saveUserDetails(firstName, surName);
+        handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
+    }
+    catch (error) {
+        handleRedirectWithMessage(res, `Error saving details: ${error.message}`, '/add-details');
     }
 });
 
