@@ -28,6 +28,10 @@ app.use(session({
     cookie: { secure: false } // Set to true if using HTTPS
 }));
 
+function getUserId(session) {
+    return session.userId;
+}
+
 // --- Extracted Utility Functions --- //
 
 const handleLoginSuccess = (req, userCredential) => {
@@ -114,17 +118,26 @@ app.get('/add-pdetails', ensureLoggedIn, (req, res) => {
 
 app.post('/save-pdetails', async (req, res) => {
     const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region} = req.body;
-    const uid = req.session.userId;
-    if (!uid) {
+    const userDetails = {
+        firstName: firstName,
+        surName: surName,
+        phone: phone,
+        address1: address1,
+        address2: address2,
+        postcode: postcode,
+        state: state,
+        area: area,
+        education: education,
+        country: country,
+        region: region
+    }
+    if (!getUserId(req.session)) {
         return res.send('Error: User not logged in.');
     }
-    try {
-        await saveUserPersonalDetails(uid, firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region);
-        handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
+    if (!await saveUserPersonalDetails(getUserId(req.session), userDetails)) {
+        return res.send('Error saving details');
     }
-    catch (error) {
-        handleRedirectWithMessage(res, `Error saving details: ${error.message}`, '/add-details');
-    }
+    handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
 });
 
 // Serve add-details form
