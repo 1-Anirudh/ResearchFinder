@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 const session = require('express-session');
 const { registerUser, signInUser } = require('./firebaseConfig');
 const { saveUserDetails } = require('./save-details');
+const { saveUserPersonalDetails } = require('./save-pdetails');
 const { submitFeedback } = require('./feedback');
 const path = require('path');
 
@@ -112,15 +113,13 @@ app.get('/add-pdetails', ensureLoggedIn, (req, res) => {
 });
 
 app.post('/save-pdetails', async (req, res) => {
-    const { firstName, surName } = req.body;
-    console.log("firstName", firstName);
-    console.log("surName", surName);
+    const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region} = req.body;
     const uid = req.session.userId;
     if (!uid) {
         return res.send('Error: User not logged in.');
     }
     try {
-        await saveUserDetails(firstName, surName);
+        await saveUserPersonalDetails(uid, firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region);
         handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
     }
     catch (error) {
@@ -135,14 +134,14 @@ app.get('/add-details', ensureLoggedIn, (req, res) => {
 
 // Handle saving details
 app.post('/save-details', async (req, res) => {
-    const { name, interests, skills } = req.body;
-    req.session.name = name;
+    const { interests, skills } = req.body;
+    req.session.name = "name";
     const uid = req.session.userId;
     if (!uid) {
         return res.send('Error: User not logged in.');
     }
     try {
-        await saveUserDetails(uid, name, interests, skills);
+        await saveUserDetails(uid, interests, skills);
         handleRedirectWithMessage(res, 'Details saved successfully!');
     } catch (error) {
         handleRedirectWithMessage(res, `Error saving details: ${error.message}`);
