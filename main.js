@@ -145,11 +145,15 @@ app.post('/save-pdetails', async (req, res) => {
     }
     if (!getUserId(req.session)) {
         return res.send('Error: User not logged in.');
+    }try {
+        const saveResult = await saveUserPersonalDetails(userId, userDetails);
+        if (!saveResult) {
+            return res.send('Error saving details');
+        }
+        SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
+    } catch (error) {
+        return res.send(`Error saving details: ${error.message}`);
     }
-    if (!await saveUserPersonalDetails(getUserId(req.session), userDetails)) {
-        return res.send('Error saving details');
-    }
-    SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
 });
 
 // Serve add-details form
