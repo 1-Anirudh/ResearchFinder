@@ -10,6 +10,8 @@ const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+require('dotenv').config();
+
 // Middleware to parse form data
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -22,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Initialize session middleware
 app.use(session({
-    secret: 'your_secret_key',
+    secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: true,
     cookie: { secure: false } // Set to true if using HTTPS
@@ -40,6 +42,10 @@ const handleLoginSuccess = (req, userCredential) => {
 };
 
 const handleRedirectWithMessage = (res, message, redirectUrl = '/') => {
+    const validUrls = ['/add-details', '/another-valid-url']; // List of valid URLs
+    if (!validUrls.includes(redirectUrl)) {
+        redirectUrl = '/'; // Default to home if URL is not valid
+    }
     res.send(`
         <p>${message}</p>
         <script>
