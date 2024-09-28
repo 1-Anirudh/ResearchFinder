@@ -6,10 +6,10 @@ const { saveUserDetails } = require('./save-details');
 const { saveUserPersonalDetails } = require('./save-pdetails');
 const { submitFeedback } = require('./feedback');
 const { join } = require('path');
+const { config } = require('dotenv');
 
 
-require('dotenv').config();
-
+config();
 const app = express();
 const PORT = process.env.PORT || process.env.DEFAULT_PORT;
 
