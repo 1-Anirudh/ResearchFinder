@@ -14,32 +14,30 @@ const db = getFirestore(app); // Get the Firestore instance using getFirestore()
 
 // Function to handle user registration
 async function registerUser(email, password) {
+  if(!email || !password) {
+    throw new Error("Email and password are required");
+  }
+
   try {
-    if(email) {
-      if(password) {
-        console.log("Email and password are valid");
-        const userCredential = await createUserWithEmailAndPassword(auth, email, password);
-        const user = userCredential.user;
+    const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+    const user = userCredential.user;
 
-        // Trim the user ID to 20 characters
-        const trimmedUid = user.uid.substring(0, 20);
+    // Trim the user ID to 20 characters
+    const trimmedUid = user.uid.substring(0, 20);
 
-        // Create a new document in the users collection with the trimmed UID as the document ID
-        const userDocRef = doc(db, 'users', trimmedUid);
-        await setDoc(userDocRef, {
-          email: email,
-          uid: user.uid
-        });
-        console.log("Document written with ID: ", trimmedUid);
+    // Create a new document in the users collection with the trimmed UID as the document ID
+    const userDocRef = doc(db, 'users', trimmedUid);
+    await setDoc(userDocRef, {
+      email: email,
+      uid: user.uid
+    });
+    console.log("Document written with ID: ", trimmedUid);
 
-        // Create subcollections within the user document
-        const interestsCollection = collection(userDocRef, 'interests');
-        const skillsCollection = collection(userDocRef, 'skills');
+    // Create subcollections within the user document
+    const interestsCollection = collection(userDocRef, 'interests');
+    const skillsCollection = collection(userDocRef, 'skills');
 
-        return userCredential;
-      }
-    }
-    
+    return userCredential;
   } catch (error) {
     console.error("Error registering user:", error);
     throw error;
@@ -49,14 +47,12 @@ async function registerUser(email, password) {
 // Function to sign in a user with email and password
 async function signInUser(email, password) {
   // Sign in with email and password
+  if(!email || !password) {
+    throw new Error("Email and password are required");
+  }
   try {
-    if(email) {
-      if(password) {
-        console.log("Email and password are valid");
-        const userCredential = await signInWithEmailAndPassword(auth, email, password);
-        return userCredential;
-      }
-    }
+    const userCredential = await signInWithEmailAndPassword(auth, email, password);
+    return userCredential;
   } catch (error) {
     console.error("Error signing in user:", error);
     throw error;
