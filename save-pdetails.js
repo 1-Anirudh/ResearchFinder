@@ -4,8 +4,11 @@ const { collection, doc, updateDoc } = require('firebase/firestore');
 // Function to save user details
 async function saveUserPersonalDetails(uid, userDetails) {
     try {
+        console.log('Updating user details:', userDetails);
+        console.log('User ID:', uid);
         const trimmedUid = uid.substring(0, 20);
         const userDocRef = doc(collection(db, 'users'), trimmedUid);
+        console.log('User doc ref:', userDocRef);
 
         await updateDoc(userDocRef, {
             firstName: userDetails.firstName,
@@ -22,7 +25,6 @@ async function saveUserPersonalDetails(uid, userDetails) {
         });
 
         console.log('User details updated successfully');
-        return true;
     } catch (error) {
         console.error('Error updating user details:', error);
         throw error;

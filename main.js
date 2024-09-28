@@ -1,26 +1,27 @@
 const express = require('express');
-const bodyParser = require('body-parser');
+const { urlencoded } = require('body-parser');
 const session = require('express-session');
 const { registerUser, signInUser } = require('./firebaseConfig');
 const { saveUserDetails } = require('./save-details');
 const { saveUserPersonalDetails } = require('./save-pdetails');
 const { submitFeedback } = require('./feedback');
-const path = require('path');
+const { join } = require('path');
 
-const app = express();
-const PORT = process.env.PORT || 4000;
 
 require('dotenv').config();
 
+const app = express();
+const PORT = process.env.PORT || process.env.DEFAULT_PORT;
+
 // Middleware to parse form data
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(urlencoded({ extended: true }));
 
 // Set the view engine to EJS
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, 'views'));
+app.set('views', join(__dirname, 'views'));
 
 // Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(join(__dirname, 'public')));
 
 // Initialize session middleware
 app.use(session({
@@ -145,14 +146,12 @@ app.post('/save-pdetails', async (req, res) => {
     }
     if (!getUserId(req.session)) {
         return res.send('Error: User not logged in.');
-    }try {
-        const saveResult = await saveUserPersonalDetails(userId, userDetails);
-        if (!saveResult) {
-            return res.send('Error saving details');
-        }
+    }
+    try {
+        await saveUserPersonalDetails(getUserId(req.session), userDetails);
         SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
     } catch (error) {
-        return res.send(`Error saving details: ${error.message}`);
+        SessionUtils.handleRedirectWithMessage(res, `Error saving personal details: ${error.message}`);
     }
 });
 
@@ -165,12 +164,11 @@ app.get('/add-details', ensureLoggedIn, (req, res) => {
 app.post('/save-details', async (req, res) => {
     const { interests, skills } = req.body;
     req.session.name = "name";
-    const uid = req.session.userId;
-    if (!uid) {
+    if (!getUserId(req.session)) {
         return res.send('Error: User not logged in.');
     }
     try {
-        await saveUserDetails(uid, interests, skills);
+        await saveUserDetails(getUserId(req.session), interests, skills);
         SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Error saving details: ${error.message}`);
