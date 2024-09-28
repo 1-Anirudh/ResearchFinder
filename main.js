@@ -36,25 +36,31 @@ function getUserId(session) {
 
 // --- Extracted Utility Functions --- //
 
-const handleLoginSuccess = (req, userCredential) => {
-    req.session.isLoggedIn = true;
-    req.session.userId = userCredential.user.uid; // Store the user's UID in the session
-};
-
-const handleRedirectWithMessage = (res, message, redirectUrl = '/') => {
-    const validUrls = ['/add-details', '/another-valid-url']; // List of valid URLs
-    if (!validUrls.includes(redirectUrl)) {
-        redirectUrl = '/'; // Default to home if URL is not valid
+class SessionUtils {
+    static getUserId(session) {
+        return session.userId;
     }
-    res.send(`
-        <p>${message}</p>
-        <script>
-            setTimeout(function() {
-                window.location.href = '${redirectUrl}';
-            }, 1000);
-        </script>
-    `);
-};
+
+    static handleLoginSuccess(req, userCredential) {
+        req.session.isLoggedIn = true;
+        req.session.userId = userCredential.user.uid; // Store the user's UID in the session
+    }
+
+    static handleRedirectWithMessage(res, message, redirectUrl = '/') {
+        const validUrls = ['/add-details', '/another-valid-url']; // List of valid URLs
+        if (!validUrls.includes(redirectUrl)) {
+            redirectUrl = '/'; // Default to home if URL is not valid
+        }
+        res.send(`
+            <p>${message}</p>
+            <script>
+                setTimeout(function() {
+                    window.location.href = '${redirectUrl}';
+                }, 3000);
+            </script>
+        `);
+    }
+}
 
 // --- Route Handlers --- //
 
@@ -63,7 +69,7 @@ app.post('/register', async (req, res) => {
     const { email, password } = req.body;
     try {
         const userCredential = await registerUser(email, password);
-        handleLoginSuccess(req, userCredential);
+        SessionUtils.handleLoginSuccess(req, userCredential);
         res.redirect('/add-pdetails');
     } catch (error) {
         res.send(`Registration failed: ${error.message}`);
@@ -77,17 +83,17 @@ app.post('/login', async (req, res) => {
     console.log("password", password);
     try {
         const userCredential = await signInUser(email, password);
-        handleLoginSuccess(req, userCredential);
+        SessionUtils.handleLoginSuccess(req, userCredential);
         res.redirect('/');
     } catch (error) {
-        handleRedirectWithMessage(res, `Login failed: ${error.message}`);
+        SessionUtils.handleRedirectWithMessage(res, `Login failed: ${error.message}`);
     }
 });
 
 // Access control utility
 const ensureLoggedIn = (req, res, next) => {
     if (!req.session.isLoggedIn) {
-        handleRedirectWithMessage(res, 'Access denied. Please login first.');
+        SessionUtils.handleRedirectWithMessage(res, 'Access denied. Please login first.');
     } else {
         next();
     }
@@ -143,7 +149,7 @@ app.post('/save-pdetails', async (req, res) => {
     if (!await saveUserPersonalDetails(getUserId(req.session), userDetails)) {
         return res.send('Error saving details');
     }
-    handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
+    SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
 });
 
 // Serve add-details form
@@ -161,9 +167,9 @@ app.post('/save-details', async (req, res) => {
     }
     try {
         await saveUserDetails(uid, interests, skills);
-        handleRedirectWithMessage(res, 'Details saved successfully!');
+        SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!');
     } catch (error) {
-        handleRedirectWithMessage(res, `Error saving details: ${error.message}`);
+        SessionUtils.handleRedirectWithMessage(res, `Error saving details: ${error.message}`);
     }
 });
 
@@ -179,9 +185,9 @@ app.post('/feedback', async (req, res) => {
     console.log("feedback", feedback);
     try {
         await submitFeedback(score, feedback);
-        handleRedirectWithMessage(res, 'Thank you for the feedback!');
+        SessionUtils.handleRedirectWithMessage(res, 'Thank you for the feedback!');
     } catch (error) {
-        handleRedirectWithMessage(res, `Error submitting feedback: ${error.message}`);
+        SessionUtils.handleRedirectWithMessage(res, `Error submitting feedback: ${error.message}`);
     }
 });
 
