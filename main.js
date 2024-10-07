@@ -3,10 +3,11 @@ const { urlencoded } = require('body-parser');
 const session = require('express-session');
 const { registerUser, signInUser } = require('./firebaseConfig');
 const { saveUserDetails } = require('./save-details');
-const { saveUserPersonalDetails } = require('./save-pdetails');
+const { saveUserPersonalDetails, editUserPersonalDetails } = require('./save-pdetails');
 const { submitFeedback } = require('./feedback');
 const { join } = require('path');
 const { config } = require('dotenv');
+const { getUserDetails } = require('./get-details');
 
 
 config();
@@ -63,6 +64,30 @@ class SessionUtils {
             </script>
         `);
     }
+
+    static async userDetails(req) {
+        try {
+            if (!req.session.userDetails) {
+                req.session.userDetails = await getUserDetails(SessionUtils.getUserId(req.session));
+            }
+
+            return req.session.userDetails;
+        }
+        catch (error) {
+            console.error('Error getting user details:', error);
+            throw error;
+        }
+    }
+
+    static async editUserDetails(req, uDetails) {
+        try {
+            req.session.userDetails = uDetails;
+        }
+        catch (error) {
+            console.error('Error getting user details:', error);
+            throw error;
+        }
+    }
 }
 
 // --- Route Handlers --- //
@@ -73,9 +98,11 @@ app.post('/register', async (req, res) => {
     try {
         const userCredential = await registerUser(email, password);
         SessionUtils.handleLoginSuccess(req, userCredential);
+        SessionUtils.userDetails(req);
+        console.log("userCredential", userCredential.user.uid);
         res.redirect('/add-pdetails');
     } catch (error) {
-        res.send(`Registration failed: ${error.message}`);
+        SessionUtils.handleRedirectWithMessage(res, `Registration failed: ${error.message}`);
     }
 });
 
@@ -87,6 +114,8 @@ app.post('/login', async (req, res) => {
     try {
         const userCredential = await signInUser(email, password);
         SessionUtils.handleLoginSuccess(req, userCredential);
+        SessionUtils.userDetails(req);
+        console.log("userID", userCredential.user.uid);
         res.redirect('/');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Login failed: ${error.message}`);
@@ -112,7 +141,7 @@ app.get('/index', (req, res) => {
 // Home page route
 app.get('/home', ensureLoggedIn, (req, res) => {
     res.render('landing', { 
-        logoName: 'EurekaTribe', 
+        logoName: 'ResearchFinder', 
         profileName: req.session.name || 'User', 
         jobTitle: 'Student'
     });
@@ -157,6 +186,36 @@ app.post('/save-pdetails', async (req, res) => {
     }
 });
 
+app.post('/edit-pdetails', async (req, res) => {
+    console.log("current here");
+    const pUserDetails = await SessionUtils.userDetails(req);
+    const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region} = req.body;
+    console.log("ceducation", education);
+    const userDetails = {
+        firstName: firstName || pUserDetails.firstName,
+        surName: surName || pUserDetails.surName,
+        phone: phone || pUserDetails.phone,
+        address1: address1 || pUserDetails.address1,
+        address2: address2 || pUserDetails.address2,
+        postcode: postcode || pUserDetails.postcode,
+        state: state || pUserDetails.state,
+        area: area || pUserDetails.area,
+        education: education || pUserDetails.education,
+        country: country || pUserDetails.country,
+        region: region || pUserDetails.region
+    }
+    if (!SessionUtils.getUserId(req.session)) {
+        return res.send('Error: User not logged in.');
+    }
+    try {
+        await editUserPersonalDetails(SessionUtils.getUserId(req.session), userDetails);
+        SessionUtils.editUserDetails(req, userDetails);
+        SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/home');
+    } catch (error) {
+        SessionUtils.handleRedirectWithMessage(res, `Error saving personal details: ${error.message}`);
+    }
+});
+
 // Serve add-details form
 app.get('/add-details', ensureLoggedIn, (req, res) => {
     res.render('add-details');
@@ -177,6 +236,22 @@ app.post('/save-details', async (req, res) => {
     }
 });
 
+app.get('/temp', (req, res) => {
+    res.render('search');
+});
+
+// Advanced Search Route
+app.get('/search', async (req, res) => {
+    const { topic, location, experience, stipend } = req.query;
+    try {
+        const results = await searchData(topic, location, experience, stipend);
+        res.json(results);
+    } catch (error) {
+        res.status(500).send(`Error retrieving data: ${error.message}`);
+    }
+});
+
+
 // Serve feedback form
 app.get('/feedback', (req, res) => {
     res.render('feedback');
@@ -196,26 +271,31 @@ app.post('/feedback', async (req, res) => {
 });
 
 // Serve profile page
-app.get('/profile', (req, res) => {
-    res.render('profile', {
-        profileImage: 'https://via.placeholder.com/150',
-        userName: req.session.name || 'User',
-        userEmail: req.session.email || 'user@example.com',
-        firstName: 'John',
-        surname: 'Doe',
-        mobileNumber: '1234567890',
-        addressLine1: '123, Main Street',
-        addressLine2: 'Area',
-        postcode: '12345',
-        state: 'State',
-        area: 'Area',
-        email: 'user@example.com',
-        education: 'Degree',
-        country: 'Country',
-        stateRegion: 'State',
-        experienceDesigning: '5 years',
-        additionalDetails: 'Additional details'
-    });
+app.get('/profile', async (req, res) => {
+    try {
+        const uDetails = await SessionUtils.userDetails(req);
+        res.render('profile', {
+            profileImage: 'https://via.placeholder.com/150',
+            userName: uDetails.firstName + ' ' + uDetails.surName,
+            userEmail: uDetails.email,
+            firstName: uDetails.firstName,
+            surname: uDetails.surName,
+            mobileNumber: uDetails.phone,
+            addressLine1: uDetails.address1,
+            addressLine2: uDetails.address2,
+            postcode: uDetails.postcode,
+            state: uDetails.state,
+            area: uDetails.area,
+            email: uDetails.email,
+            education: uDetails.education,
+            country: uDetails.country,
+            stateRegion: uDetails.region,
+            experienceDesigning: 'Experience designing',
+            additionalDetails: 'Additional details'
+        });
+    } catch (error) {
+        SessionUtils.handleRedirectWithMessage(res, `Error getting user details: ${error.message}`);
+    }
 });
 
 app.get('/logout', (req, res) => {
