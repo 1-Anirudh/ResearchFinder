@@ -8,6 +8,33 @@
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <style>
         /* Google Fonts Import Link */
+
+  .light-theme {
+    --sidebar-background: #b4afef;
+    --homesection-background: url('https://assets.codepen.io/1462889/back-page.svg') ;
+    --logo-detailscolor: #fff;
+    --hover-background: #908db0;
+    --navlinks-i: #000000; 
+    --linkname-color: #000000;
+    --submenu-back: #908db0;
+    --submenu-a: #000000;
+    --profile-details: #847fb6;
+  }
+
+  /* Add dark-theme styles */
+  .dark-theme {
+    --sidebar-background: #11101d;
+    --homesection-background: url('https://assets.codepen.io/1462889/web-app-back.svg');
+    --logo-detailscolor: #919191;
+    --hover-background: #1d1b31;
+    --navlinks-i: #fff; 
+    --linkname-color: #fff;
+    --submenu-back: #1d1b31;
+    --submenu-a: #fff;
+    --profile-details: #1d1b31;
+  }
+
+  
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 *{
   margin: 0;
@@ -15,23 +42,13 @@
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
 }
-.sidebar.dark-mode{
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 260px;
-  background: #11101d;
-  z-index: 100;
-  transition: all 0.5s ease;
-}
 .sidebar{
   position: fixed;
   top: 0;
   left: 0;
   height: 100%;
   width: 260px;
-  background: #b4afef;
+  background: var(--sidebar-background);
   z-index: 100;
   transition: all 0.5s ease;
 }
@@ -46,7 +63,7 @@
 }
 .sidebar .logo-details i{
   font-size: 30px;
-  color: #fff;
+  color: var(--logo-detailscolor);
   height: 50px;
   min-width: 78px;
   text-align: center;
@@ -54,7 +71,7 @@
 }
 .sidebar .logo-details .logo_name{
   font-size: 22px;
-  color: #fff;
+  color: var(--logo-detailscolor);
   font-weight: 600;
   transition: 0.3s ease;
   transition-delay: 0.1s;
@@ -81,10 +98,10 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: #1d1b31;
+  background: var(--hover-background);
 }
 .sidebar.light-mode .nav-links li:hover{
-  background: #908db0;
+  background: var(--hover-background);
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -99,7 +116,7 @@
   min-width: 78px;
   text-align: center;
   line-height: 50px;
-  color: #fff;
+  color: var(--navlinks-i);
   font-size: 20px;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -118,7 +135,7 @@
 .sidebar .nav-links li a .link_name{
   font-size: 18px;
   font-weight: 400;
-  color: #fff;
+  color: var(--linkname-color);
   transition: all 0.4s ease;
 }
 .sidebar.close .nav-links li a .link_name{
@@ -128,14 +145,14 @@
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #1d1b31;
+  background: var(--submenu-back);
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
   display: block;
 }
 .sidebar .nav-links li .sub-menu a{
-  color: #fff;
+  color: var(--submenu-a);
   font-size: 15px;
   padding: 5px 0;
   white-space: nowrap;
@@ -190,7 +207,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #1d1b31;
+  background: var(--profile-details);
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -231,9 +248,79 @@
 .sidebar .profile-details .job{
   font-size: 12px;
 }
+
+.dark-light {
+  display: none; /* Hide the checkbox */
+}
+
+.dark-light:checked + label,
+.dark-light:not(:checked) + label{
+  position: fixed;
+  top: 25px;
+  right: 25px;
+  z-index: 20000;
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  transition: all 200ms linear;
+  box-shadow: 0 0 25px rgba(255,235,167,.45);
+}
+.dark-light:checked + label{
+  transform: rotate(360deg);
+}
+.dark-light:checked + label:after,
+.dark-light:not(:checked) + label:after{
+  position: absolute;
+  content: '';
+  top: 1px;
+  left: 1px;
+  overflow: hidden;
+  z-index: 2;
+  display: block;
+  border-radius: 50%;
+  width: 38px;
+  height: 38px;
+  background-color: #102770;
+  background-image: url('https://assets.codepen.io/1462889/moon.svg');
+  background-size: 16px 16px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 200ms linear;
+  opacity: 0;
+}
+.dark-light:checked + label:after {
+  opacity: 1;
+}
+.dark-light:checked + label:before,
+.dark-light:not(:checked) + label:before{
+  position: absolute;
+  content: '';
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  display: block;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  background-color: #def9fe;
+  background-image: url('https://assets.codepen.io/1462889/sun.svg');
+  background-size: 22px 22px;
+  background-repeat: no-repeat;
+  background-position: center;
+  transition: all 200ms linear;
+}
+.dark-light:checked + label:before{
+  background-color: #000;
+}
+
 .home-section{
   position: relative;
-  background: #E4E9F7;
+	background-image: var(--homesection-background);
+  background-size: cover;
+  background-position: center;
   height: 100vh;
   left: 260px;
   width: calc(100% - 260px);
@@ -243,12 +330,7 @@
   left: 78px;
   width: calc(100% - 78px);
 }
-.home-section .home-content{
-  height: 60px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
+
 
 .home-section .home-content .bx-menu,
 .home-section .home-content .text .search-bar input{
@@ -353,6 +435,16 @@
           <li><a class="link_name" href="#">FeedBack</a></li>
         </ul>
       </li>
+      
+      <li>
+        <a href="/tempcheck">
+          <i class='bx bx-coffee' ></i>
+          <span class="link_name">tempcheck</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">tempcheck</a></li>
+        </ul>
+      </li>
 
       <li>
         <a href="/profile">
@@ -391,6 +483,12 @@
       <input type="text" class="search-bar" placeholder="Search...">
       <button type="submit" class="search-button"><i class='bx bx-search'></i></button>
     </div>
+
+  <input class="dark-light" type="checkbox" id="dark-light" name="dark-light"/>
+  <label for="dark-light"></label>
+
+    
+
   </section>
   
   <div class="one"></div>
@@ -407,6 +505,28 @@
     console.log(sidebarBtn);
     sidebarBtn.addEventListener("click", ()=>{
       sidebar.classList.toggle("close");
+    });
+
+
+    const themeToggle = document.getElementById("dark-light");
+    const body = document.body;
+
+    // Load the preferred theme from localStorage (if available)
+    const savedTheme = localStorage.getItem('theme') || 'dark-theme';
+    body.classList.add(savedTheme);
+    themeToggle.checked = savedTheme === 'light-theme';
+
+    // Listen for the toggle change event
+    themeToggle.addEventListener("change", () => {
+      if (themeToggle.checked) {
+        body.classList.remove('dark-theme');
+        body.classList.add('light-theme');
+        localStorage.setItem('theme', 'light-theme');
+      } else {
+        body.classList.remove('light-theme');
+        body.classList.add('dark-theme');
+        localStorage.setItem('theme', 'dark-theme');
+      }
     });
   </script>
 </body>
