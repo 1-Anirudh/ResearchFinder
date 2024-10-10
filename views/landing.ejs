@@ -39,10 +39,12 @@
 }
 
 .notification_wrap .dropdown{
-  top: 80px;
+  top: 70px;
   right:10px;
 	width: 300px;
 	height: auto;
+  max-height: 200px; /* Limit height */
+  overflow-y: auto;  /* Enable scrolling */
 	background: #fff;
 	border-radius: 5px;
 	/* box-shadow: 2px 2px 3px rgba(0,0,0,0.125); */
@@ -543,6 +545,16 @@
       </li>
 
       <li>
+        <a href="/chat">
+          <i class='bx bx-conversation'></i>
+          <span class="link_name">Chat</span>
+        </a>
+        <ul class="sub-menu blank">
+          <li><a class="link_name" href="#">Chat</a></li>
+        </ul>
+      </li>
+
+      <li>
         <a href="/profile">
           <i class='bx bx-user-circle' ></i>
           <span class="link_name">Profile</span>
@@ -590,42 +602,21 @@
 			<i class="fas fa-bell"></i>
 		</div>
 		<div class="dropdown">
-			<div class="notify_item">
-				<div class="notify_img">
-					<img src="images/not_1.png" alt="profile_pic" style="width: 50px">
-				</div>
+			<!-- <div class="notify_item">
 				<div class="notify_info">
 					<p font-size: 10px>Alex commented on<span>Timeline Share</span></p>
 					<span class="notify_time">10 minutes ago</span>
 				</div>
-			</div>
-			<div class="notify_item">
-				<div class="notify_img">
-					<img src="images/not_2.png" alt="profile_pic" style="width: 50px">
-				</div>
-				<div class="notify_info">
-					<p>Ben hur commented on your<span>Timeline Share</span></p>
-					<span class="notify_time">55 minutes ago</span>
-				</div>
-			</div>
-			<div class="notify_item">
-				<div class="notify_img">
-					<img src="images/not_3.png" alt="profile_pic" style="width: 50px">
-				</div>
-				<div class="notify_info">
-					<p>Meryn trant liked your<span>Cover Picture</span></p>
-					<span class="notify_time">2 hours ago</span>
-				</div>
-			</div>
-			<div class="notify_item">
-				<div class="notify_img">
-					<img src="images/not_4.png" alt="profile_pic" style="width: 50px">
-				</div>
-				<div class="notify_info">
-					<p>John wick commented on your<span>Profile Picture</span></p>
-					<span class="notify_time">6 hours ago</span>
-				</div>
-			</div>
+			</div> -->
+
+      <% notifications.forEach(notification => { %>
+        <div class="notify_item">
+            <div class="notify_info">
+                <p font-size: 10px><%= notification.message %></p>
+                <span class="notify_time"><%= new Date(notification.timestamp.seconds * 1000).toLocaleTimeString() %></span>
+            </div>
+        </div>
+    <% }); %>
 		</div>
 	</div>
 </div>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebSocket Client</title>
+</head>
+<body>
+    <h1>WebSocket Client</h1>
+    <div id="notifications"></div>
+    <script>
+        const socket = new WebSocket(`ws://localhost:8080`);
+
+
+        socket.addEventListener('open', function(event) {
+            console.log('Connected to WebSocket server');
+        });
+
+        socket.addEventListener('message', function(event) {
+            console.log('Received:', event.data);
+            displayNotification(event.data);
+        });
+
+        socket.onclose = () => {
+            console.log('Disconnected from WebSocket server');
+        };
+
+        function displayNotification(message) {
+            const notificationsDiv = document.getElementById('notifications');
+            const notificationElement = document.createElement('div');
+            notificationElement.textContent = message;
+            notificationsDiv.appendChild(notificationElement);
+        }
+    </script>
+</body>
+</html>

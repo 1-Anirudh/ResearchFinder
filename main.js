@@ -8,11 +8,20 @@ const { submitFeedback } = require('./feedback');
 const { join } = require('path');
 const { config } = require('dotenv');
 const { getUserDetails } = require('./get-details');
+const http = require('http');
+const WebSocket = require('ws');
+const { getUserNotifications } = require('./notification');
 
 
 config();
 const app = express();
-const PORT = process.env.PORT || process.env.DEFAULT_PORT;
+const server = http.createServer(app);
+const PORT = process.env.DEFAULT_PORT || 3000;
+
+// Define the route to render index.ejs
+app.get('/neww', (req, res) => {
+    res.render('not');
+});
 
 // Middleware to parse form data
 app.use(urlencoded({ extended: true }));
@@ -99,7 +108,6 @@ app.post('/register', async (req, res) => {
         const userCredential = await registerUser(email, password);
         SessionUtils.handleLoginSuccess(req, userCredential);
         SessionUtils.userDetails(req);
-        console.log("userCredential", userCredential.user.uid);
         res.redirect('/add-pdetails');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Registration failed: ${error.message}`);
@@ -115,7 +123,6 @@ app.post('/login', async (req, res) => {
         const userCredential = await signInUser(email, password);
         SessionUtils.handleLoginSuccess(req, userCredential);
         SessionUtils.userDetails(req);
-        console.log("userID", userCredential.user.uid);
         res.redirect('/');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Login failed: ${error.message}`);
@@ -139,11 +146,13 @@ app.get('/index', (req, res) => {
 });
 
 // Home page route
-app.get('/home', ensureLoggedIn, (req, res) => {
+app.get('/home', ensureLoggedIn, async (req, res) => {
+    const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
     res.render('landing', { 
         logoName: 'ResearchFinder', 
         profileName: req.session.name || 'User', 
-        jobTitle: 'Student'
+        jobTitle: 'Student',
+        notifications: notifications
     });
 });
 
@@ -187,10 +196,8 @@ app.post('/save-pdetails', async (req, res) => {
 });
 
 app.post('/edit-pdetails', async (req, res) => {
-    console.log("current here");
     const pUserDetails = await SessionUtils.userDetails(req);
     const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region} = req.body;
-    console.log("ceducation", education);
     const userDetails = {
         firstName: firstName || pUserDetails.firstName,
         surName: surName || pUserDetails.surName,
@@ -298,9 +305,10 @@ app.get('/profile', async (req, res) => {
     }
 });
 
-app.get('/tempcheck', (req, res) => {
-    res.render('dr');
+app.get('/chat', (req, res) => {
+    res.render('chat');
 });
+
 
 app.get('/logout', (req, res) => {
     req.session.destroy((err) => {
@@ -311,6 +319,8 @@ app.get('/logout', (req, res) => {
         res.redirect('/'); // Redirect to login or home page after logout
     });
 });
+
+
 
 // Start the server
 app.listen(PORT, () => {
