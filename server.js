@@ -63,25 +63,6 @@ wss.on('connection', (ws, req) => {
                         type: 'chat-message'
                     }));
                 }
-            } else if (parsedMessage.type === 'video-call-request') {
-                // Send a video call request to the target user
-                if (targetWs && targetWs.readyState === WebSocket.OPEN) {
-                    targetWs.send(JSON.stringify({
-                        type: 'incoming-call',
-                        from: userId,
-                        message: parsedMessage.message
-                    }));
-                }
-            } else if (parsedMessage.type === 'webrtc-offer' || parsedMessage.type === 'webrtc-answer' || parsedMessage.type === 'webrtc-ice') {
-                // Forward WebRTC signaling (offer, answer, ICE candidates) to the target user
-                if (targetWs && targetWs.readyState === WebSocket.OPEN) {
-                    targetWs.send(JSON.stringify({
-                        type: parsedMessage.type,
-                        from: userId,
-                        sdp: parsedMessage.sdp || null,
-                        candidate: parsedMessage.candidate || null
-                    }));
-                }
             }
         });
 

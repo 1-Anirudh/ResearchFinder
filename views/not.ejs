@@ -1,125 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Video Call</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Calling</title>
+    <style>
+        video {
+            width: 45%;
+            height: auto;
+        }
+        #videos {
+            display: flex;
+            justify-content: space-around;
+        }
+    </style>
 </head>
 <body>
-  <video id="localVideo" autoplay playsinline muted></video>
-  <video id="remoteVideo" autoplay playsinline></video>
+    <h1>Video Calling</h1>
+    <div id="videos">
+        <video id="localVideo" autoplay playsinline></video>
+        <video id="remoteVideo" autoplay playsinline></video>
+    </div>
+    <button onclick="startCall()">Start Call</button>
+    <script>
+        const localVideo = document.getElementById('localVideo');
+const remoteVideo = document.getElementById('remoteVideo');
+let localStream;
+let remoteStream;
+let peerConnection;
+let userId = prompt("Enter your user ID:");
+let targetUserId; // ID of the user you want to call
 
-  <input type="text" id="targetUserId" placeholder="Enter Target User ID">
-  <button onclick="startCall()">Start Video Call</button>
+const serverIPAddress = '<%= serverIPaddress %>';
+// WebSocket setup
+const ws = new WebSocket(`ws://${serverIPAddress}?userId=${userId}`);
 
-  <script>
-    const localVideo = document.getElementById('localVideo');
-    const remoteVideo = document.getElementById('remoteVideo');
-    const targetUserIdInput = document.getElementById('targetUserId');
-    const yourUserId= '<%= userId %>';
+ws.onmessage = async (message) => {
+    const parsedMessage = JSON.parse(message.data);
 
-    const webSocket = new WebSocket('ws://localhost:3000?userId=yourUserId');
-    let localStream;
-    let peerConnection;
-    const config = {
-      iceServers: [{ urls: 'stun:stun.l.google.com:19302' }]
+    if (parsedMessage.type === 'offer') {
+        await handleOffer(parsedMessage);
+    } else if (parsedMessage.type === 'answer') {
+        await handleAnswer(parsedMessage);
+    } else if (parsedMessage.type === 'ice-candidate') {
+        await handleIceCandidate(parsedMessage.candidate);
+    }
+};
+
+// Setup local video stream
+async function setupLocalVideo() {
+    try {
+        localStream = await navigator.mediaDevices.getUserMedia({ video: true, audio: true });
+        localVideo.srcObject = localStream;
+    } catch (error) {
+        console.error('Error accessing media devices.', error);
+    }
+}
+
+// Initialize peer connection and setup ICE candidate handling
+function createPeerConnection() {
+    peerConnection = new RTCPeerConnection();
+
+    // Add local stream to the peer connection
+    localStream.getTracks().forEach(track => {
+        peerConnection.addTrack(track, localStream);
+    });
+
+    // When remote stream is added
+    peerConnection.ontrack = (event) => {
+        remoteStream = event.streams[0];
+        remoteVideo.srcObject = remoteStream;
     };
 
-    navigator.mediaDevices.getUserMedia({ video: true, audio: true })
-      .then(stream => {
-        localStream = stream;
-        localVideo.srcObject = stream;
-      })
-      .catch(error => console.error('Error accessing media devices.', error));
-
-    webSocket.onmessage = (message) => {
-      const data = JSON.parse(message.data);
-
-      if (data.type === 'incoming-call') {
-        // Handle incoming call request and automatically accept for demo
-        console.log(`Incoming call from ${data.from}`);
-        createAnswer();
-      } else if (data.type === 'webrtc-offer') {
-        handleOffer(data.sdp);
-      } else if (data.type === 'webrtc-answer') {
-        handleAnswer(data.sdp);
-      } else if (data.type === 'webrtc-ice') {
-        handleIceCandidate(data.candidate);
-      }
+    // When ICE candidates are generated
+    peerConnection.onicecandidate = (event) => {
+        if (event.candidate) {
+            ws.send(JSON.stringify({
+                type: 'ice-candidate',
+                targetUserId: targetUserId,
+                candidate: event.candidate
+            }));
+        }
     };
+}
 
-    function startCall() {
-      const targetUserId = targetUserIdInput.value;
-      if (!targetUserId) {
-        alert('Please enter a Target User ID');
-        return;
-      }
+// Start video call
+async function startCall() {
+    targetUserId = prompt("Enter the user ID of the person you want to call:");
+    createPeerConnection();
 
-      peerConnection = new RTCPeerConnection(config);
-      localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+    // Create offer
+    const offer = await peerConnection.createOffer();
+    await peerConnection.setLocalDescription(offer);
 
-      peerConnection.onicecandidate = (event) => {
-        if (event.candidate) {
-          webSocket.send(JSON.stringify({
-            type: 'webrtc-ice',
-            targetUserId: targetUserId,
-            candidate: event.candidate
-          }));
-        }
-      };
+    ws.send(JSON.stringify({
+        type: 'offer',
+        targetUserId: targetUserId,
+        offer: offer
+    }));
+}
 
-      peerConnection.ontrack = (event) => {
-        remoteVideo.srcObject = event.streams[0];
-      };
+// Handle incoming offer
+async function handleOffer(message) {
+    targetUserId = message.from;
+    createPeerConnection();
 
-      peerConnection.createOffer()
-        .then(offer => peerConnection.setLocalDescription(offer))
-        .then(() => {
-          webSocket.send(JSON.stringify({
-            type: 'webrtc-offer',
-            targetUserId: targetUserId,
-            sdp: peerConnection.localDescription
-          }));
-        });
-    }
+    await peerConnection.setRemoteDescription(new RTCSessionDescription(message.offer));
 
-    function handleOffer(offer) {
-      peerConnection = new RTCPeerConnection(config);
-      localStream.getTracks().forEach(track => peerConnection.addTrack(track, localStream));
+    // Create and send an answer
+    const answer = await peerConnection.createAnswer();
+    await peerConnection.setLocalDescription(answer);
 
-      peerConnection.onicecandidate = (event) => {
-        if (event.candidate) {
-          webSocket.send(JSON.stringify({
-            type: 'webrtc-ice',
-            targetUserId: targetUserIdInput.value,
-            candidate: event.candidate
-          }));
-        }
-      };
+    ws.send(JSON.stringify({
+        type: 'answer',
+        targetUserId: message.from,
+        answer: answer
+    }));
+}
 
-      peerConnection.ontrack = (event) => {
-        remoteVideo.srcObject = event.streams[0];
-      };
+// Handle incoming answer
+async function handleAnswer(message) {
+    await peerConnection.setRemoteDescription(new RTCSessionDescription(message.answer));
+}
 
-      peerConnection.setRemoteDescription(new RTCSessionDescription(offer))
-        .then(() => peerConnection.createAnswer())
-        .then(answer => peerConnection.setLocalDescription(answer))
-        .then(() => {
-          webSocket.send(JSON.stringify({
-            type: 'webrtc-answer',
-            targetUserId: targetUserIdInput.value,
-            sdp: peerConnection.localDescription
-          }));
-        });
-    }
+// Handle incoming ICE candidate
+async function handleIceCandidate(candidate) {
+    await peerConnection.addIceCandidate(candidate);
+}
 
-    function handleAnswer(answer) {
-      peerConnection.setRemoteDescription(new RTCSessionDescription(answer));
-    }
+// Trigger local video setup on page load
+setupLocalVideo();
 
-    function handleIceCandidate(candidate) {
-      peerConnection.addIceCandidate(new RTCIceCandidate(candidate));
-    }
-  </script>
+    </script>
 </body>
 </html>

@@ -21,11 +21,6 @@ const app = express();
 const server = http.createServer(app);
 const PORT = process.argv[2] || process.env.DEFAULT_PORT;
 
-// Define the route to render index.ejs
-app.get('/neww', (req, res) => {
-    res.render('not');
-});
-
 // Middleware to parse form data
 app.use(urlencoded({ extended: true }));
 
@@ -349,7 +344,8 @@ app.post('/send-messages', async (req, res) => {
 app.get('/temp', ensureLoggedIn, (req, res) => {
     const userId = SessionUtils.getUserId(req.session);
     console.log("userID", userId);
-    res.render('not', { userId: userId });
+    const serverIPaddress = getLocalIpAddress();
+    res.render('not', { userId: userId, serverIPaddress: serverIPaddress });
 });
 
 app.get('/chat', ensureLoggedIn, async (req, res) => {

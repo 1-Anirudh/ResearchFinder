@@ -35,3 +35,15 @@ wss.on('connection', (ws, req) => {
         console.log('Connection closed due to missing user ID');
     }
 });
+
+try {
+      fetch('/open-zoom')
+                .then(response => response.json())
+                .then(data => {
+                    const zoomUrl = data.url;
+                    window.open(zoomUrl, '_blank');
+                })
+                .catch(error => console.error('Error:', error));
+    } catch (error) {
+        console.error('Error sending Message:', error);
+    }
