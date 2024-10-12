@@ -32,9 +32,6 @@ async function getUserNotifications(uid) {
         const trimmedUid = uid.substring(0, 20);
         const userDocRef = doc(collection(db, 'users'), trimmedUid);
         const userDoc = await getDoc(userDocRef);
-        console.log("User ID: ", userDoc.id);
-        console.log("User data: ", userDoc.data());
-        console.log("User notifications: ", userDoc.data().notifications);
         return userDoc.data().notifications || [];
     } catch (error) {
         console.error("Error getting notifications: ", error);
@@ -42,4 +39,44 @@ async function getUserNotifications(uid) {
     }
 }
 
-module.exports = { sendReleNotification, getUserNotifications };
+
+async function chatToDB(userID, targetId, message) {
+    console.log('Sending message:', message);
+    try {
+        const userId = userID.substring(0, 20);
+        const targetID = targetId.substring(0, 20);
+        const userDocRef = doc(collection(db, 'users'), userId);
+        const targetDocRef = doc(collection(db, 'users'), targetID);
+        const userDoc = await getDoc(userDocRef);
+        const targetDoc = await getDoc(targetDocRef);
+        const userChat = userDoc.data().chat || [];
+        const targetChat = targetDoc.data().chat || [];
+        const chat = {
+            message: message,
+            timestamp: Timestamp.now()
+        };
+        userChat.push({
+            senderId: userId,
+            targetID: targetID,
+            chat: chat
+        });
+        targetChat.push({
+            senderId: userId,
+            targetID: targetID,
+            chat: chat
+        });
+        await updateDoc(userDocRef, {
+            chat: userChat
+        });
+        await updateDoc(targetDocRef, {
+            chat: targetChat
+        });
+
+        console.log('Message sent successfully');
+    } catch (error) {
+        console.error("Error sending message: ", error);
+        throw error;
+    }
+}
+
+module.exports = { sendReleNotification, getUserNotifications, chatToDB };

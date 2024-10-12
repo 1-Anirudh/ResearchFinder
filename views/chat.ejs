@@ -140,6 +140,7 @@
 
 img {
   max-width: 100%;
+  border-radius: 50%;
 }
 
 body {
@@ -189,10 +190,19 @@ html {
   border-left: 1px solid var(--border-color);
   margin-left: auto;
   padding: 30px 30px 0 30px;
-  display: flex;
   flex-direction: column;
   overflow: auto;
+  display:none;
+  transform: translateX(20px); /* Slightly offset to the right */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
 }
+
+.detail-area.show {
+  display: flex; /* Change to flex display */
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Move back to original position */
+}
+
 
 .chat-area {
   flex-grow: 1;
@@ -457,7 +467,7 @@ html {
 }
 
 .chat-area-footer {
-  display: flex;
+  display: none;
   border-top: 1px solid var(--border-color);
   width: 100%;
   padding: 10px 20px;
@@ -466,6 +476,12 @@ html {
   position: sticky;
   bottom: 0;
   left: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
+}
+
+.chat-area-footer.show {
+  display: flex;
+  opacity: 1; /* Fade in */
 }
 
 .chat-area-footer svg {
@@ -507,6 +523,8 @@ html {
   margin-bottom: 15px;
 }
 
+
+
 .detail-title {
   font-size: 18px;
   font-weight: 600;
@@ -531,6 +549,7 @@ html {
   font-size: 14px;
   flex-grow: 1;
   font-weight: 500;
+  cursor: pointer;
 }
 .detail-button svg {
   width: 18px;
@@ -772,132 +791,16 @@ html {
   </div>
  </div>
  <div class="wrapper">
-  <div class="conversation-area">
-   <div class="msg online">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Madison Jones</div>
-     <div class="msg-content">
-      <span class="msg-message">What time was our meet</span>
-      <span class="msg-date">20m</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Miguel Cohen</div>
-     <div class="msg-content">
-      <span class="msg-message">Adaptogen taiyaki austin jean shorts brunch</span>
-      <span class="msg-date">20m</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg active">
-    <div class="msg-profile group">
-     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
-      <path d="M12 2l10 6.5v7L12 22 2 15.5v-7L12 2zM12 22v-6.5" />
-      <path d="M22 8.5l-10 7-10-7" />
-      <path d="M2 15.5l10-7 10 7M12 2v6.5" /></svg>
-    </div>
-    <div class="msg-detail">
-     <div class="msg-username">CodePen Group</div>
-     <div class="msg-content">
-      <span class="msg-message">Aysenur: I love CSS</span>
-      <span class="msg-date">28m</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg online">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Lea Debere</div>
-     <div class="msg-content">
-      <span class="msg-message">Shoreditch iPhone jianbing</span>
-      <span class="msg-date">45m</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg online">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29+%281%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Jordan Smith</div>
-     <div class="msg-content">
-      <span class="msg-message">Snackwave craft beer raclette, beard kombucha </span>
-      <span class="msg-date">2h</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%284%29+%281%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Jared Jackson</div>
-     <div class="msg-content">
-      <span class="msg-message">Tattooed brooklyn typewriter gastropub</span>
-      <span class="msg-date">18m</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg online">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="">
-    <div class="msg-detail">
-     <div class="msg-username">Henry Clark</div>
-     <div class="msg-content">
-      <span class="msg-message">Ethical typewriter williamsburg lo-fi street art</span>
-      <span class="msg-date">2h</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/qs6F3dgm.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Jason Mraz</div>
-     <div class="msg-content">
-      <span class="msg-message">I'm lucky I'm in love with my best friend</span>
-      <span class="msg-date">4h</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%288%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Chiwa Lauren</div>
-     <div class="msg-content">
-      <span class="msg-message">Pabst af 3 wolf moon</span>
-      <span class="msg-date">28m</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%289%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Caroline Orange</div>
-     <div class="msg-content">
-      <span class="msg-message">Bespoke aesthetic lyft woke cornhole</span>
-      <span class="msg-date">35m</span>
-     </div>
-    </div>
-   </div>
-   <div class="msg">
-    <img class="msg-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%286%29.png" alt="" />
-    <div class="msg-detail">
-     <div class="msg-username">Lina Ashma</div>
-     <div class="msg-content">
-      <span class="msg-message">Migas food truck crucifix vexi</span>
-      <span class="msg-date">42m</span>
-     </div>
-    </div>
-   </div>
-   <div class="overlay"></div>
-  </div>
+  <div id="conversation-area" class="conversation-area"></div>
+
   <div class="chat-area">
    <div class="chat-area-header">
-    <div class="chat-area-title">CodePen Group</div>
+    <div class="chat-area-title"></div>
     <div class="chat-area-group">
-     <img class="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
+     <!-- <img class="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
      <img class="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="">
      <img class="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" />
-     <span>+4</span>
+     <span>+4</span> -->
     </div>
    </div>
    <div class="chat-area-main">
@@ -905,28 +808,36 @@ html {
 
     <div class="chat-msg owner">
      <div class="chat-msg-profile">
-      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
-      <div class="chat-msg-date">Message 1.22pm</div>
+      <!-- <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
+      <div class="chat-msg-date">Message 1.22pm</div> -->
      </div>
      <div class="chat-msg-content">
-      <div class="chat-msg-text">Sit amet risus nullam eget felis eget. Dolor sed viverra ipsum😂😂😂</div>
-      <div class="chat-msg-text">Cras mollis nec arcu malesuada tincidunt.</div>
+      <!-- <div class="chat-msg-text">Sit amet risus nullam eget felis eget. Dolor sed viverra ipsum😂😂😂</div>
+      <div class="chat-msg-text">Cras mollis nec arcu malesuada tincidunt.</div> -->
      </div>
     </div>
 
     <div class="chat-msg">
      <div class="chat-msg-profile">
-      <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" />
-      <div class="chat-msg-date">Message 3.16pm</div>
+      <!-- <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" /> -->
+      <!-- <div class="chat-msg-date">Message 3.16pm</div> -->
      </div>
      <div class="chat-msg-content">
-      <div class="chat-msg-text">Egestas tellus rutrum tellus pellentesque</div>
+      <!-- <div class="chat-msg-text">Egestas tellus rutrum tellus pellentesque</div> -->
      </div>
     </div>
 
 
    </div>
    <div class="chat-area-footer">
+    <!-- Your SVG icons -->
+    <input type="text" id="chatInput" placeholder="Type something here..." />
+    <svg viewBox="0 0 513 513" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="button" style="cursor: pointer;" onclick="submitForm()">
+        <path d="M256.025.05C117.67-2.678 3.184 107.038.025 245.383a240.703 240.703 0 0085.333 182.613v73.387c0 5.891 4.776 10.667 10.667 10.667a10.67 10.67 0 005.653-1.621l59.456-37.141a264.142 264.142 0 0094.891 17.429c138.355 2.728 252.841-106.988 256-245.333C508.866 107.038 394.38-2.678 256.025.05z"/>
+        <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff"/>
+    </svg>
+</div>
+   <!-- <div class="chat-area-footer">
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video">
      <path d="M23 7l-7 5 7 5V7z" />
      <rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
@@ -943,33 +854,38 @@ html {
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile">
      <circle cx="12" cy="12" r="10" />
      <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" /></svg>
+     <svg viewBox="0 0 513 513" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="button" style="cursor: pointer;" onclick="submitForm()">
+      <path d="M256.025.05C117.67-2.678 3.184 107.038.025 245.383a240.703 240.703 0 0085.333 182.613v73.387c0 5.891 4.776 10.667 10.667 10.667a10.67 10.67 0 005.653-1.621l59.456-37.141a264.142 264.142 0 0094.891 17.429c138.355 2.728 252.841-106.988 256-245.333C508.866 107.038 394.38-2.678 256.025.05z" />
+      <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff" /></svg>
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up">
      <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3" /></svg>
-   </div>
+   </div> -->
   </div>
   <div class="detail-area">
    <div class="detail-area-header">
     <div class="msg-profile group">
-     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+     <!-- <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
       <path d="M12 2l10 6.5v7L12 22 2 15.5v-7L12 2zM12 22v-6.5" />
       <path d="M22 8.5l-10 7-10-7" />
-      <path d="M2 15.5l10-7 10 7M12 2v6.5" /></svg>
+      <path d="M2 15.5l10-7 10 7M12 2v6.5" /></svg> -->
     </div>
-    <div class="detail-title">CodePen Group</div>
-    <div class="detail-subtitle">Created by Aysenur, 1 May 2020</div>
+    <div class="detail-title"></div>
+    <div class="detail-subtitle"></div>
     <div class="detail-buttons">
      <button class="detail-button">
       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
       </svg>
-      Call Group
+      Call Now
      </button>
-     <button class="detail-button">
+
+     <button class="detail-button" onclick="videocall()">
       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video">
        <path d="M23 7l-7 5 7 5V7z" />
        <rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
       Video Chat
      </button>
+
     </div>
    </div>
    <div class="detail-changes">
@@ -987,22 +903,292 @@ html {
  </div>
 </div>
   
-      <script id="rendered-js" >
-const toggleButton = document.querySelector('.dark-light');
-const colors = document.querySelectorAll('.color');
+<script id="rendered-js" >
 
-colors.forEach(color => {
-  color.addEventListener('click', e => {
-    colors.forEach(c => c.classList.remove('selected'));
-    const theme = color.getAttribute('data-color');
-    document.body.setAttribute('data-theme', theme);
-    color.classList.add('selected');
-  });
+const userId = '<%= userId %>';
+const serverIpAddress = '<%= serverIPaddress %>';
+const socket = new WebSocket(`ws://${serverIpAddress}:8080?userId=${userId}`);
+var targetId = '';
+var Message = {time: '', text: '', senderID: userId, targetID: ''};
+var userDATA = '';
+var targetUID = '';
+
+    // Sample chat data for each user, including details for the detail-area-header
+// Sample chat data for each user, including details for the detail-area-header
+
+
+const messages = <%- JSON.stringify(conversations) %>;
+
+const chatData = <%- JSON.stringify(chatData) %>;
+
+console.log(chatData);
+
+socket.addEventListener('message', function(event) {
+  const chatArea = document.querySelector('.chat-area-main');
+  const data = JSON.parse(event.data);
+  console.log("data", data);
+  const chatMessage = document.createElement('div');
+  chatMessage.classList.add('chat-msg');
+  const profilePic = '';
+  chatMessage.innerHTML = `
+      <div class="chat-msg-profile">
+          <img class="chat-msg-img" src="${profilePic}" alt="" />
+          <div class="chat-msg-date">Message ${data.timestamp}</div>
+      </div>
+      <div class="chat-msg-content">
+          <div class="chat-msg-text">${data.message}</div>
+      </div>
+  `;
+  chatArea.appendChild(chatMessage);
+
+  const newMessage = {time : data.timestamp, text: data.message, sent: false};
+
+  chatData[data.from].messages.push(newMessage);
 });
 
-toggleButton.addEventListener('click', () => {
-  document.body.classList.toggle('dark-mode');
+// Function to create and append messages to the conversation area
+function loadMessages() {
+    const conversationArea = document.getElementById("conversation-area");
+    messages.forEach(msg => {
+        // Create message div
+        const msgDiv = document.createElement("div");
+        msgDiv.classList.add("msg");
+        msgDiv.setAttribute("data-user", msg.user);
+        msgDiv.setAttribute("data-user-UID", msg.userID);
+
+        // Create profile image
+        const profileImg = document.createElement("img");
+        profileImg.classList.add("msg-profile");
+        profileImg.src = msg.profileImage;
+        profileImg.alt = "";
+
+        // Create message details
+        const msgDetailDiv = document.createElement("div");
+        msgDetailDiv.classList.add("msg-detail");
+
+        // Create username
+        const usernameDiv = document.createElement("div");
+        usernameDiv.classList.add("msg-username");
+        usernameDiv.textContent = msg.username;
+
+        // Create message content
+        const contentDiv = document.createElement("div");
+        contentDiv.classList.add("msg-content");
+
+        const messageSpan = document.createElement("span");
+        messageSpan.classList.add("msg-message");
+        messageSpan.textContent = msg.message;
+
+        const dateSpan = document.createElement("span");
+        dateSpan.classList.add("msg-date");
+        dateSpan.textContent = msg.date;
+
+        // Append elements
+        contentDiv.appendChild(messageSpan);
+        contentDiv.appendChild(dateSpan);
+        msgDetailDiv.appendChild(usernameDiv);
+        msgDetailDiv.appendChild(contentDiv);
+        msgDiv.appendChild(profileImg);
+        msgDiv.appendChild(msgDetailDiv);
+        conversationArea.appendChild(msgDiv);
+    });
+}
+
+// Call the function to load messages
+loadMessages();
+
+function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+    const year = date.getFullYear();
+    let hours = date.getHours();
+    const minutes = String(date.getMinutes()).padStart(2, '0');
+    const ampm = hours >= 12 ? 'pm' : 'am';
+    hours = hours % 12;
+    hours = hours ? hours : 12; // the hour '0' should be '12'
+    const strTime = `${hours}:${minutes} ${ampm}`;
+    return `${day}-${month}-${year} ${strTime}`;
+}
+
+async function videocall() {
+    try {
+      fetch('/open-zoom')
+                .then(response => response.json())
+                .then(data => {
+                    const zoomUrl = data.url;
+                    window.open(zoomUrl, '_blank');
+                })
+                .catch(error => console.error('Error:', error));
+    } catch (error) {
+        console.error('Error sending Message:', error);
+    }
+}
+
+async function submitForm() {
+    // Get the value of the input field
+
+    const receiveUID = targetUID;
+
+    const chatArea = document.querySelector('.chat-area-main');
+    Message.text = document.getElementById("chatInput").value;
+    document.getElementById("chatInput").value = '';
+    Message.time = formatDate(new Date());
+    Message.targetID = targetId;
+    Message.sent = true;
+    
+    // Log the input value
+    console.log("User Input: " + Message.text, "time: " + Message.time, "target Id:" + targetId );
+
+    const newMessage = {time : Message.time, text: Message.text, sent: true};
+
+    chatData[targetId].messages.push(newMessage);
+
+    const chatMessage = document.createElement('div');
+      chatMessage.classList.add('chat-msg', 'owner'); 
+      const profilePic = '';
+      chatMessage.innerHTML = `
+          <div class="chat-msg-profile">
+              <img class="chat-msg-img" src="${profilePic}" alt="" />
+              <div class="chat-msg-date">Message ${Message.time}</div>
+          </div>
+          <div class="chat-msg-content">
+              <div class="chat-msg-text">${Message.text}</div>
+          </div>
+      `;
+      chatArea.appendChild(chatMessage);
+
+      socket.send(JSON.stringify({
+        type: 'chat-message',
+        targetUserId: targetUID,
+        message: Message.text,
+        timestamp: formatDate(new Date())
+      }));
+
+      try {
+        const response = await fetch('/send-messages', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ target: targetUID, message: Message.text }),
+            });
+      } catch (error) {
+          console.error('Error sending Message:', error);
+      }
+
+    // Clear the input field
+  }
+
+function changeChat(userId) {
+    const chatArea = document.querySelector('.chat-area-main');
+    const chatTitle = document.querySelector('.chat-area-title');
+    const chatGroup = document.querySelector('.chat-area-group');
+    const detailTitle = document.querySelector('.detail-title');
+    const detailSubtitle = document.querySelector('.detail-subtitle');
+    const msgProfileGroup = document.querySelector('.msg-profile.group');
+    const detailArea = document.querySelector('.detail-area');
+    const chatAreaFooter = document.querySelector('.chat-area-footer');
+
+    const userData = chatData[userId];
+    userDATA = userData;
+
+    // Clear the previous chat content
+    chatArea.innerHTML = '';
+
+    // Set the chat title and detail area
+    chatTitle.innerText = userData.title;
+    detailTitle.innerText = userData.title;
+    detailSubtitle.innerText = userData.subtitle;
+
+    // Clear and set profile images in chat header group
+    chatGroup.innerHTML = '';
+
+    console.log("userData.profilePics" + userData.profilePics);
+    if( userData.profilePics.length > 0) {
+      userData.profilePics.forEach(pic => {
+          const img = document.createElement('img');
+          img.classList.add('chat-area-profile');
+          img.src = pic;
+          img.alt = '';
+          chatGroup.appendChild(img);
+      });
+    }
+    
+    console.log("userData.messages" + userData.messages);
+
+    // Add the messages to the chat area
+    userData.messages.forEach(msg => {
+        const chatMessage = document.createElement('div');
+        var profilePic = '';
+        if(msg.sent) {
+          chatMessage.classList.add('chat-msg', 'owner'); 
+        } else {
+          chatMessage.classList.add('chat-msg');
+          profilePic = '';
+        }
+        chatMessage.innerHTML = `
+            <div class="chat-msg-profile">
+                <img class="chat-msg-img" src="${profilePic}" alt="" />
+                <div class="chat-msg-date">Message ${msg.time}</div>
+            </div>
+            <div class="chat-msg-content">
+                <div class="chat-msg-text">${msg.text}</div>
+            </div>
+        `;
+        chatArea.appendChild(chatMessage);
+    });
+
+    // Change the group icon to the user's profile picture for non-group chats
+    msgProfileGroup.innerHTML = ''; 
+    if (userData.profilePics.length > 0) {
+        const userImg = document.createElement('img');
+        userImg.src = userData.profilePics[0]; 
+        userImg.alt = userData.title;
+        userImg.classList.add('msg-profile-img'); 
+        msgProfileGroup.appendChild(userImg);
+    }
+
+    // Show the detail area when a message is clicked
+    detailArea.style.display = 'block'; // Show the detail area
+    chatAreaFooter.style.display = 'flex'; // Show the chat area footer
+}
+
+// Event listener for clicking a user in the conversation-area
+document.querySelectorAll('.msg').forEach((msg) => {
+    msg.addEventListener('click', function() {
+        // Remove the active class from any currently active message
+        document.querySelectorAll('.msg').forEach((el) => el.classList.remove('active'));
+
+        // Add the active class to the clicked message
+        this.classList.add('active');
+
+        // Get the user ID from the clicked message
+        const currTargetId = this.getAttribute('data-user-UID');
+        targetId = currTargetId;
+        targetUID = this.getAttribute('data-user-UID');
+
+        // Call the function to change the chat area and header based on the clicked user
+        changeChat(currTargetId);
+    });
 });
+
+
+    
+    const toggleButton = document.querySelector('.dark-light');
+    const colors = document.querySelectorAll('.color');
+
+    colors.forEach(color => {
+      color.addEventListener('click', e => {
+        colors.forEach(c => c.classList.remove('selected'));
+        const theme = color.getAttribute('data-color');
+        document.body.setAttribute('data-theme', theme);
+        color.classList.add('selected');
+      });
+    });
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
 //# sourceURL=pen.js
     </script>
 </body>

@@ -11,12 +11,15 @@ const { getUserDetails } = require('./get-details');
 const http = require('http');
 const WebSocket = require('ws');
 const { getUserNotifications } = require('./notification');
+const { chatToDB } = require('./notification');
+const { getConversations } = require('./get-conversations');
+const os = require('os');
 
 
 config();
 const app = express();
 const server = http.createServer(app);
-const PORT = process.env.DEFAULT_PORT || 3000;
+const PORT = process.argv[2] || process.env.DEFAULT_PORT;
 
 // Define the route to render index.ejs
 app.get('/neww', (req, res) => {
@@ -34,6 +37,7 @@ function configureMiddleware(app) {
 
     // Serve static files
     app.use(express.static(join(__dirname, 'public')));
+    app.use(express.json());
 
     // Initialize session middleware
     app.use(session({
@@ -57,6 +61,7 @@ class SessionUtils {
     static handleLoginSuccess(req, userCredential) {
         req.session.isLoggedIn = true;
         req.session.userId = userCredential.user.uid; // Store the user's UID in the session
+        console.log("userCredential.user.uid", userCredential.user.uid);
     }
 
     static handleRedirectWithMessage(res, message, redirectUrl = '/') {
@@ -98,6 +103,20 @@ class SessionUtils {
         }
     }
 }
+
+function getLocalIpAddress() {
+    const networkInterfaces = os.networkInterfaces();
+    for (const interfaceName in networkInterfaces) {
+        for (const iface of networkInterfaces[interfaceName]) {
+            // Check for IPv4 and not internal loopback address
+            if (iface.family === 'IPv4' && !iface.internal) {
+                return iface.address;
+            }
+        }
+    }
+    return null; // If no IP address is found
+}
+
 
 // --- Route Handlers --- //
 
@@ -147,6 +166,7 @@ app.get('/index', (req, res) => {
 
 // Home page route
 app.get('/home', ensureLoggedIn, async (req, res) => {
+    console.log("userID" , SessionUtils.getUserId(req.session));
     const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
     res.render('landing', { 
         logoName: 'ResearchFinder', 
@@ -243,10 +263,6 @@ app.post('/save-details', async (req, res) => {
     }
 });
 
-app.get('/temp', (req, res) => {
-    res.render('search');
-});
-
 // Advanced Search Route
 app.get('/search', async (req, res) => {
     const { topic, location, experience, stipend } = req.query;
@@ -305,8 +321,50 @@ app.get('/profile', async (req, res) => {
     }
 });
 
-app.get('/chat', (req, res) => {
-    res.render('chat');
+app.post('/send-messages', async (req, res) => {
+    const { target, message } = req.body;
+
+    console.log('Received target:', target);
+    console.log('Received message:', message);
+
+    if (!target || !message) {
+        return res.status(400).send({ success: false, error: 'Target and message are required' });
+    }
+
+    try {
+        // Assuming SessionUtils.getUserId is working correctly to get the session user ID
+        console.log(SessionUtils.getUserId(req.session));
+        await chatToDB(SessionUtils.getUserId(req.session), target, message);
+        
+        console.log('Message sent successfully to the database');
+        return res.status(200).send({ success: true }); // Send success response
+    } catch (error) {
+        console.error('Error sending message to the database:', error);
+        return res.status(500).send({ success: false, error: 'Error sending message' });
+    }
+});
+
+
+
+app.get('/temp', ensureLoggedIn, (req, res) => {
+    const userId = SessionUtils.getUserId(req.session);
+    console.log("userID", userId);
+    res.render('not', { userId: userId });
+});
+
+app.get('/chat', ensureLoggedIn, async (req, res) => {
+    const userId = SessionUtils.getUserId(req.session);
+    const ret = await getConversations();
+    const conversations = ret[0];
+    const chatData = ret[1];
+    const localIPaddress = getLocalIpAddress();
+    console.log(chatData);
+    res.render('chat', {
+        serverIPaddress: localIPaddress,
+        conversations: conversations,
+        chatData: chatData,
+        userId: userId
+    });
 });
 
 
@@ -320,7 +378,10 @@ app.get('/logout', (req, res) => {
     });
 });
 
-
+app.get('/open-zoom', (req, res) => {
+    const zoomUrl = 'https://us05web.zoom.us/j/4337863175?pwd=xrx23dsj3wvzZK66217ZgcKydAKBbB.1';
+    res.json({ url: zoomUrl });
+});
 
 // Start the server
 app.listen(PORT, () => {

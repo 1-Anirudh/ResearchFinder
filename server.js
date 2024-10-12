@@ -5,8 +5,11 @@ const { join } = require('path');
 const { config } = require('dotenv');
 const { addOpportunity } = require('./opportunity');
 const { sendReleNotification } = require('./notification');
+const { deleteData } = require('./tempDelete');
 const http = require('http');
 const WebSocket = require('ws');
+const { time } = require('console');
+const os = require('os');
 
 
 config();
@@ -14,19 +17,82 @@ const app = express();
 const server = http.createServer(app);
 const PORT = process.env.SERVER_PORT;
 
-const wss = new WebSocket.Server({ port: process.env.WEB_SERVER_PORT });
 
-// WebSocket connection handling
-wss.on('connection', (ws) => {
-    console.log('Client connected');
+function getLocalIpAddress() {
+    const networkInterfaces = os.networkInterfaces();
+    for (const interfaceName in networkInterfaces) {
+        for (const iface of networkInterfaces[interfaceName]) {
+            // Check for IPv4 and not internal loopback address
+            if (iface.family === 'IPv4' && !iface.internal) {
+                return iface.address;
+            }
+        }
+    }
+    return null; // If no IP address is found
+}
 
-    ws.on('message', (message) => {
-        console.log(`Received message: ${message}`);
-    });
+const localIPaddress = getLocalIpAddress();
+const wss = new WebSocket.Server({ host: localIPaddress, port: process.env.WEB_SERVER_PORT  });
 
-    ws.on('close', () => {
-        console.log('Client disconnected');
-    });
+
+console.log('Local IP address:', localIPaddress);
+const userConnections = new Map();
+
+wss.on('connection', (ws, req) => {
+    // Extract user ID from query parameters or headers
+    const userId = req.url.split('?userId=')[1];
+    console.log('userID', userId);
+
+    if (userId) {
+        userConnections.set(userId, ws);
+        console.log(`User ${userId} connected`);
+
+        ws.on('message', (message) => {
+            console.log(`Received message from ${userId} => ${message}`);
+            const parsedMessage = JSON.parse(message);
+            const targetUserId = parsedMessage.targetUserId;
+            const targetWs = userConnections.get(targetUserId);
+
+            if (parsedMessage.type === 'chat-message') {
+                // Regular chat messaging
+                if (targetWs && targetWs.readyState === WebSocket.OPEN) {
+                    targetWs.send(JSON.stringify({
+                        from: userId,
+                        message: parsedMessage.message,
+                        timestamp: parsedMessage.timestamp,
+                        type: 'chat-message'
+                    }));
+                }
+            } else if (parsedMessage.type === 'video-call-request') {
+                // Send a video call request to the target user
+                if (targetWs && targetWs.readyState === WebSocket.OPEN) {
+                    targetWs.send(JSON.stringify({
+                        type: 'incoming-call',
+                        from: userId,
+                        message: parsedMessage.message
+                    }));
+                }
+            } else if (parsedMessage.type === 'webrtc-offer' || parsedMessage.type === 'webrtc-answer' || parsedMessage.type === 'webrtc-ice') {
+                // Forward WebRTC signaling (offer, answer, ICE candidates) to the target user
+                if (targetWs && targetWs.readyState === WebSocket.OPEN) {
+                    targetWs.send(JSON.stringify({
+                        type: parsedMessage.type,
+                        from: userId,
+                        sdp: parsedMessage.sdp || null,
+                        candidate: parsedMessage.candidate || null
+                    }));
+                }
+            }
+        });
+
+        ws.on('close', () => {
+            userConnections.delete(userId);
+            console.log(`User ${userId} disconnected`);
+        });
+    } else {
+        ws.close();
+        console.log('Connection closed due to missing user ID');
+    }
 });
 
 // Function to send notifications to all clients
@@ -40,17 +106,6 @@ function sendNotification(message) {
     });
 }
 
-// Example usage: Send a notification every 10 seconds
-// setInterval(() => {
-//     console.log('Sending notification...');
-//     sendNotification('This is a notification message');
-// }, 10000);
-
-
-// Define the route to render index.ejs
-app.get('/neww', (req, res) => {
-    res.render('not');
-});
 
 // Middleware to parse form data
 app.use(urlencoded({ extended: true }));
@@ -92,6 +147,11 @@ app.post('/add-Opportunity', async (req, res) => {
     } catch (error) {
         res.status(500).send('Error adding opportunity');
     }
+});
+
+app.get('/deleteuserData', (req, res) => {
+    deleteData('opportunities');
+    res.send('Data deleted successfully');
 });
 
 app.listen(PORT, () => {
