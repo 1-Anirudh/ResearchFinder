@@ -36,7 +36,7 @@ function getLocalIpAddress() {
 
 const localIPaddress = getLocalIpAddress();
 writeServerIP(localIPaddress);
-const wss = new WebSocket.Server({ host: localIPaddress, port: process.env.WEB_SERVER_PORT  });
+const wss = new WebSocket.Server({ host: '0.0.0.0', port: process.env.WEB_SERVER_PORT  });
 
 
 console.log('Local IP address:', localIPaddress);

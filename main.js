@@ -354,7 +354,8 @@ app.get('/chat', ensureLoggedIn, async (req, res) => {
     const ret = await getConversations();
     const conversations = ret[0];
     const chatData = ret[1];
-    const localIPaddress = await readServerIP();
+    // const localIPaddress = await readServerIP();
+    const localIPaddress = '0.0.0.0';
     console.log(localIPaddress);
     console.log(chatData);
     res.render('chat', {
