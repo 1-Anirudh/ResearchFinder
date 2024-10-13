@@ -10,7 +10,7 @@ const http = require('http');
 const WebSocket = require('ws');
 const { time } = require('console');
 const os = require('os');
-const https = require('https');
+const { writeServerIP } = require('./serverIP');
 
 
 config();
@@ -19,88 +19,77 @@ const server = http.createServer(app);
 const PORT = process.env.SERVER_PORT;
 
 
-async function getLocalIpAddress() {
-    https.get('https://api.ipify.org?format=json', (resp) => {
-        let data = '';
-
-        // A chunk of data has been received
-        resp.on('data', (chunk) => {
-            data += chunk;
-        });
-
-        // The whole response has been received. Print out the result
-        resp.on('end', () => {
-            const ip = JSON.parse(data).ip;
-            console.log(`Your public IP address is: ${ip}`);
-
-            return ip;
-        });
-
-    });
+function getLocalIpAddress() {
+    const networkInterfaces = os.networkInterfaces();
+    for (const interfaceName in networkInterfaces) {
+        for (const iface of networkInterfaces[interfaceName]) {
+            // Check for IPv4 and not internal loopback address
+            if (iface.family === 'IPv4' && !iface.internal) {
+                return iface.address;
+            }
+        }
+    }
     return null; // If no IP address is found
 }
-async function startServer() {
-    try {
-        const localIPaddress = await getLocalIpAddress();
 
-        // Start WebSocket server after IP is retrieved
-        const wss = new WebSocket.Server({ host: localIPaddress, port: process.env.WEB_SERVER_PORT || 4000 });
 
-        console.log(`Server is running on ${localIPaddress}:${process.env.WEB_SERVER_PORT || 4000}`);
 
-        // Handle WebSocket connections
-        const userConnections = new Map();
+const localIPaddress = getLocalIpAddress();
+writeServerIP(localIPaddress);
+const wss = new WebSocket.Server({ host: localIPaddress, port: process.env.WEB_SERVER_PORT  });
 
-        wss.on('connection', (ws, req) => {
-            const userId = req.url.split('?userId=')[1];
-            console.log('userID', userId);
 
-            if (userId) {
-                userConnections.set(userId, ws);
-                console.log(`User ${userId} connected`);
+console.log('Local IP address:', localIPaddress);
+const userConnections = new Map();
 
-                ws.on('message', (message) => {
-                    console.log(`Received message from ${userId} => ${message}`);
-                    const parsedMessage = JSON.parse(message);
-                    const targetUserId = parsedMessage.targetUserId;
-                    const targetWs = userConnections.get(targetUserId);
+wss.on('connection', (ws, req) => {
+    // Extract user ID from query parameters or headers
+    const userId = req.url.split('?userId=')[1];
+    console.log('userID', userId);
 
-                    if (parsedMessage.type === 'chat-message' && targetWs && targetWs.readyState === WebSocket.OPEN) {
-                        targetWs.send(JSON.stringify({
-                            from: userId,
-                            message: parsedMessage.message,
-                            timestamp: parsedMessage.timestamp,
-                            type: 'chat-message'
-                        }));
-                    }
-                });
+    if (userId) {
+        userConnections.set(userId, ws);
+        console.log(`User ${userId} connected`);
 
-                ws.on('close', () => {
-                    userConnections.delete(userId);
-                    console.log(`User ${userId} disconnected`);
-                });
-            } else {
-                ws.close();
-                console.log('Connection closed due to missing user ID');
+        ws.on('message', (message) => {
+            console.log(`Received message from ${userId} => ${message}`);
+            const parsedMessage = JSON.parse(message);
+            const targetUserId = parsedMessage.targetUserId;
+            const targetWs = userConnections.get(targetUserId);
+
+            if (parsedMessage.type === 'chat-message') {
+                // Regular chat messaging
+                if (targetWs && targetWs.readyState === WebSocket.OPEN) {
+                    targetWs.send(JSON.stringify({
+                        from: userId,
+                        message: parsedMessage.message,
+                        timestamp: parsedMessage.timestamp,
+                        type: 'chat-message'
+                    }));
+                }
             }
         });
 
-        // Function to send notifications to all clients
-        function sendNotification(message) {
-            console.log('Sending notification:', message);
-            wss.clients.forEach((client) => {
-                if (client.readyState === WebSocket.OPEN) {
-                    client.send(message);
-                }
-            });
-        }
-    } catch (error) {
-        console.error('Error retrieving IP address:', error);
+        ws.on('close', () => {
+            userConnections.delete(userId);
+            console.log(`User ${userId} disconnected`);
+        });
+    } else {
+        ws.close();
+        console.log('Connection closed due to missing user ID');
     }
-}
+});
 
-// Call the function to start the server
-startServer();
+// Function to send notifications to all clients
+function sendNotification(message) {
+    console.log('Sending notification:', message); // Add logging here
+    wss.clients.forEach((client) => {
+        console.log('client', client);
+        if (client.readyState === WebSocket.OPEN) {
+            client.send(message);
+        }
+    });
+}
 
 
 // Middleware to parse form data

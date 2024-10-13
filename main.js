@@ -14,8 +14,7 @@ const { getUserNotifications } = require('./notification');
 const { chatToDB } = require('./notification');
 const { getConversations } = require('./get-conversations');
 const os = require('os');
-const https = require('https');
-
+const { readServerIP } = require('./serverIP');
 
 
 config();
@@ -101,31 +100,18 @@ class SessionUtils {
     }
 }
 
-
-async function getLocalIpAddress() {
-    return new Promise((resolve, reject) => {
-        https.get('https://api.ipify.org?format=json', (resp) => {
-            let data = '';
-
-            // A chunk of data has been received.
-            resp.on('data', (chunk) => {
-                data += chunk;
-            });
-
-            // The whole response has been received. Resolve the IP address.
-            resp.on('end', () => {
-                try {
-                    const ip = JSON.parse(data).ip;
-                    resolve(ip);
-                } catch (error) {
-                    reject(new Error('Error parsing response data.'));
-                }
-            });
-        }).on('error', (err) => {
-            reject(err);
-        });
-    });
-}
+// function getLocalIpAddress() {
+//     const networkInterfaces = os.networkInterfaces();
+//     for (const interfaceName in networkInterfaces) {
+//         for (const iface of networkInterfaces[interfaceName]) {
+//             // Check for IPv4 and not internal loopback address
+//             if (iface.family === 'IPv4' && !iface.internal) {
+//                 return iface.address;
+//             }
+//         }
+//     }
+//     return null; // If no IP address is found
+// }
 
 
 // --- Route Handlers --- //
@@ -359,34 +345,25 @@ app.post('/send-messages', async (req, res) => {
 app.get('/temp', ensureLoggedIn, (req, res) => {
     const userId = SessionUtils.getUserId(req.session);
     console.log("userID", userId);
-    const serverIPaddress = getLocalIpAddress();
+    const serverIPaddress = readServerIP();
     res.render('not', { userId: userId, serverIPaddress: serverIPaddress });
 });
 
 app.get('/chat', ensureLoggedIn, async (req, res) => {
-    try {
-        const userId = SessionUtils.getUserId(req.session);
-        const ret = await getConversations();
-        const conversations = ret[0];
-        const chatData = ret[1];
-
-        // Fetch the local IP address asynchronously
-        const localIPaddress = await getLocalIpAddress();
-        console.log(`Using IP address: ${localIPaddress}`);
-
-        // Now render the page with the fetched data
-        res.render('chat', {
-            serverIPaddress: localIPaddress,
-            conversations: conversations,
-            chatData: chatData,
-            userId: userId
-        });
-    } catch (error) {
-        console.error(`Error fetching data: ${error.message}`);
-        res.status(500).send('An error occurred while processing your request.');
-    }
+    const userId = SessionUtils.getUserId(req.session);
+    const ret = await getConversations();
+    const conversations = ret[0];
+    const chatData = ret[1];
+    const localIPaddress = await readServerIP();
+    console.log(localIPaddress);
+    console.log(chatData);
+    res.render('chat', {
+        serverIPaddress: localIPaddress,
+        conversations: conversations,
+        chatData: chatData,
+        userId: userId
+    });
 });
-
 
 
 app.get('/logout', (req, res) => {
