@@ -19,7 +19,7 @@ const server = http.createServer(app);
 const PORT = process.env.SERVER_PORT;
 
 
-function getLocalIpAddress() {
+async function getLocalIpAddress() {
     https.get('https://api.ipify.org?format=json', (resp) => {
         let data = '';
 
@@ -39,62 +39,68 @@ function getLocalIpAddress() {
     });
     return null; // If no IP address is found
 }
+async function startServer() {
+    try {
+        const localIPaddress = await getLocalIpAddress();
 
-const localIPaddress = getLocalIpAddress();
-const wss = new WebSocket.Server({ host: localIPaddress, port: process.env.WEB_SERVER_PORT  });
+        // Start WebSocket server after IP is retrieved
+        const wss = new WebSocket.Server({ host: localIPaddress, port: process.env.WEB_SERVER_PORT || 4000 });
 
+        console.log(`Server is running on ${localIPaddress}:${process.env.WEB_SERVER_PORT || 4000}`);
 
-console.log('Local IP address:', localIPaddress);
-const userConnections = new Map();
+        // Handle WebSocket connections
+        const userConnections = new Map();
 
-wss.on('connection', (ws, req) => {
-    // Extract user ID from query parameters or headers
-    const userId = req.url.split('?userId=')[1];
-    console.log('userID', userId);
+        wss.on('connection', (ws, req) => {
+            const userId = req.url.split('?userId=')[1];
+            console.log('userID', userId);
 
-    if (userId) {
-        userConnections.set(userId, ws);
-        console.log(`User ${userId} connected`);
+            if (userId) {
+                userConnections.set(userId, ws);
+                console.log(`User ${userId} connected`);
 
-        ws.on('message', (message) => {
-            console.log(`Received message from ${userId} => ${message}`);
-            const parsedMessage = JSON.parse(message);
-            const targetUserId = parsedMessage.targetUserId;
-            const targetWs = userConnections.get(targetUserId);
+                ws.on('message', (message) => {
+                    console.log(`Received message from ${userId} => ${message}`);
+                    const parsedMessage = JSON.parse(message);
+                    const targetUserId = parsedMessage.targetUserId;
+                    const targetWs = userConnections.get(targetUserId);
 
-            if (parsedMessage.type === 'chat-message') {
-                // Regular chat messaging
-                if (targetWs && targetWs.readyState === WebSocket.OPEN) {
-                    targetWs.send(JSON.stringify({
-                        from: userId,
-                        message: parsedMessage.message,
-                        timestamp: parsedMessage.timestamp,
-                        type: 'chat-message'
-                    }));
-                }
+                    if (parsedMessage.type === 'chat-message' && targetWs && targetWs.readyState === WebSocket.OPEN) {
+                        targetWs.send(JSON.stringify({
+                            from: userId,
+                            message: parsedMessage.message,
+                            timestamp: parsedMessage.timestamp,
+                            type: 'chat-message'
+                        }));
+                    }
+                });
+
+                ws.on('close', () => {
+                    userConnections.delete(userId);
+                    console.log(`User ${userId} disconnected`);
+                });
+            } else {
+                ws.close();
+                console.log('Connection closed due to missing user ID');
             }
         });
 
-        ws.on('close', () => {
-            userConnections.delete(userId);
-            console.log(`User ${userId} disconnected`);
-        });
-    } else {
-        ws.close();
-        console.log('Connection closed due to missing user ID');
-    }
-});
-
-// Function to send notifications to all clients
-function sendNotification(message) {
-    console.log('Sending notification:', message); // Add logging here
-    wss.clients.forEach((client) => {
-        console.log('client', client);
-        if (client.readyState === WebSocket.OPEN) {
-            client.send(message);
+        // Function to send notifications to all clients
+        function sendNotification(message) {
+            console.log('Sending notification:', message);
+            wss.clients.forEach((client) => {
+                if (client.readyState === WebSocket.OPEN) {
+                    client.send(message);
+                }
+            });
         }
-    });
+    } catch (error) {
+        console.error('Error retrieving IP address:', error);
+    }
 }
+
+// Call the function to start the server
+startServer();
 
 
 // Middleware to parse form data
