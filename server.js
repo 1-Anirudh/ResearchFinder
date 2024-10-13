@@ -10,6 +10,7 @@ const http = require('http');
 const WebSocket = require('ws');
 const { time } = require('console');
 const os = require('os');
+const https = require('https');
 
 
 config();
@@ -19,15 +20,23 @@ const PORT = process.env.SERVER_PORT;
 
 
 function getLocalIpAddress() {
-    const networkInterfaces = os.networkInterfaces();
-    for (const interfaceName in networkInterfaces) {
-        for (const iface of networkInterfaces[interfaceName]) {
-            // Check for IPv4 and not internal loopback address
-            if (iface.family === 'IPv4' && !iface.internal) {
-                return iface.address;
-            }
-        }
-    }
+    https.get('https://api.ipify.org?format=json', (resp) => {
+        let data = '';
+
+        // A chunk of data has been received
+        resp.on('data', (chunk) => {
+            data += chunk;
+        });
+
+        // The whole response has been received. Print out the result
+        resp.on('end', () => {
+            const ip = JSON.parse(data).ip;
+            console.log(`Your public IP address is: ${ip}`);
+
+            return ip;
+        });
+
+    });
     return null; // If no IP address is found
 }
 
