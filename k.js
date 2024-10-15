@@ -1,26 +1,23 @@
 const https = require('https');
+const fs = require('fs');
+const express = require('express');
+const app = express();
 
-// Function to get the public IP address
-function getPublicIp() {
-    https.get('https://api.ipify.org?format=json', (resp) => {
-        let data = '';
+const HOST = 'localhost';
+const PORT = 443; // Default port for HTTPS
 
-        // A chunk of data has been received
-        resp.on('data', (chunk) => {
-            data += chunk;
-        });
+// Read SSL certificate and key
+const options = {
+  key: fs.readFileSync('keys/private.key'),
+  cert: fs.readFileSync('keys/certificate.crt')
+};
 
-        // The whole response has been received. Print out the result
-        resp.on('end', () => {
-            const ip = JSON.parse(data).ip;
-            console.log(`Your public IP address is: ${ip}`);
-        });
+// Create HTTPS server
+https.createServer(options, app).listen(PORT, HOST, () => {
+  console.log(`Server running on https://${HOST}:${PORT}`);
+});
 
-    }).on("error", (err) => {
-        console.log("Error: " + err.message);
-    });
-}
-
-// Call the function to get the public IP
-getPublicIp();
-
+// Your existing Express app code here
+app.get('/', (req, res) => {
+  res.send('Hello, HTTPS world!');
+});

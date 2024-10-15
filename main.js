@@ -113,7 +113,6 @@ class SessionUtils {
 //     return null; // If no IP address is found
 // }
 
-
 // --- Route Handlers --- //
 
 // Handle registration form submission
@@ -343,10 +342,7 @@ app.post('/send-messages', async (req, res) => {
 
 
 app.get('/temp', ensureLoggedIn, (req, res) => {
-    const userId = SessionUtils.getUserId(req.session);
-    console.log("userID", userId);
-    const serverIPaddress = readServerIP();
-    res.render('not', { userId: userId, serverIPaddress: serverIPaddress });
+    res.render('not');
 });
 
 app.get('/chat', ensureLoggedIn, async (req, res) => {

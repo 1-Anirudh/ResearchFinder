@@ -1010,9 +1010,11 @@ function formatDate(date) {
     return `${day}-${month}-${year} ${strTime}`;
 }
 
+
 async function videocall() {   
   const roomId = userId < targetUID ? userId + targetUID : targetUID + userId;
-  window.open(`http://localhost:5000/video-call?roomId=${roomId}`, '_blank');
+  window.open(`https://meet.ffmuc.net/${roomId}`, '_blank');
+  // window.open(`https://${serverIpAddress}:5000/video-call?roomId=${roomId}`, '_blank');
 }
 
 async function submitForm() {

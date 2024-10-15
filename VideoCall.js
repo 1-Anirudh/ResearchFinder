@@ -5,6 +5,7 @@ const socketIo = require('socket.io');
 const { join } = require('path');
 const session = require('express-session');
 const { config } = require('dotenv');
+const os = require('os');
 
 const app = express();
 const server = http.createServer(app);
@@ -12,8 +13,22 @@ const io = socketIo(server);
 
 config();
 
+function getLocalIpAddress() {
+  const networkInterfaces = os.networkInterfaces();
+  for (const interfaceName in networkInterfaces) {
+      for (const iface of networkInterfaces[interfaceName]) {
+          // Check for IPv4 and not internal loopback address
+          if (iface.family === 'IPv4' && !iface.internal) {
+              return iface.address;
+          }
+      }
+  }
+  return null; // If no IP address is found
+}
+
 app.use(urlencoded({ extended: true }));
 const PORT = process.env.VIDEO_CALL_SERVER_PORT;
+const HOST = getLocalIpAddress(); // Replace with your desired IP address
 
 // Extracted Middleware Configuration
 function configureMiddleware(app) {
@@ -63,6 +78,6 @@ app.get('/video-call', (req, res) => {
     res.render('d1', { roomId: roomId });
   });
 
-server.listen(PORT, () => {
-  console.log('Server running on port', PORT);
+server.listen(PORT, HOST, () => {
+  console.log(`Server running on http://${HOST}:${PORT}`);
 });
