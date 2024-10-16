@@ -102,10 +102,10 @@ app.use(urlencoded({ extended: true }));
 function configureMiddleware(app) {
     // Set the view engine to EJS
     app.set('view engine', 'ejs');
-    app.set('views', join(__dirname, 'views'));
+    app.set('views', join(__dirname, '../views'));
 
     // Serve static files
-    app.use(express.static(join(__dirname, 'public')));
+    app.use(express.static(join(__dirname, '../frontend/public')));
 
     // Initialize session middleware
     app.use(session({

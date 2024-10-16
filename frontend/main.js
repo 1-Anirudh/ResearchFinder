@@ -1,20 +1,20 @@
 const express = require('express');
 const { urlencoded } = require('body-parser');
 const session = require('express-session');
-const { registerUser, signInUser } = require('./firebaseConfig');
-const { saveUserDetails } = require('./save-details');
-const { saveUserPersonalDetails, editUserPersonalDetails } = require('./save-pdetails');
-const { submitFeedback } = require('./feedback');
+const { registerUser, signInUser } = require('../backend/firebaseConfig');
+const { saveUserDetails } = require('../backend/save-details');
+const { saveUserPersonalDetails, editUserPersonalDetails } = require('../backend/save-pdetails');
+const { submitFeedback } = require('../backend/feedback');
 const { join } = require('path');
 const { config } = require('dotenv');
-const { getUserDetails } = require('./get-details');
+const { getUserDetails } = require('../backend/get-details');
 const http = require('http');
 const WebSocket = require('ws');
-const { getUserNotifications } = require('./notification');
-const { chatToDB } = require('./notification');
-const { getConversations } = require('./get-conversations');
+const { getUserNotifications } = require('../backend/notification');
+const { chatToDB } = require('../backend/notification');
+const { getConversations } = require('../backend/get-conversations');
 const os = require('os');
-const { readServerIP } = require('./serverIP');
+const { readServerIP } = require('../backend/serverIP');
 
 
 config();
@@ -29,10 +29,10 @@ app.use(urlencoded({ extended: true }));
 function configureMiddleware(app) {
     // Set the view engine to EJS
     app.set('view engine', 'ejs');
-    app.set('views', join(__dirname, 'views'));
+    app.set('views', join(__dirname, '../views'));
 
     // Serve static files
-    app.use(express.static(join(__dirname, 'public')));
+    app.use(express.static(join(__dirname, './public')));
     app.use(express.json());
 
     // Initialize session middleware
@@ -322,7 +322,7 @@ app.get('/profile', async (req, res) => {
     try {
         const uDetails = await SessionUtils.userDetails(req);
         res.render('profile', {
-            profileImage: 'https://via.placeholder.com/150',
+            profileImage: '/images/default.jpg',
             userName: uDetails.firstName + ' ' + uDetails.surName,
             userEmail: uDetails.email,
             firstName: uDetails.firstName,

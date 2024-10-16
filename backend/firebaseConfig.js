@@ -3,7 +3,7 @@ const { initializeApp } = require("firebase/app");
 const { getFirestore, collection, doc, setDoc } = require('firebase/firestore'); // Import the getFirestore function
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } = require("firebase/auth");
 
-const firebaseConfig = require('./firebase-config.json'); // Your service account credentials
+const firebaseConfig = require('../firebase-config.json'); // Your service account credentials
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
