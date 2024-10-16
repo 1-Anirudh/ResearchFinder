@@ -2,11 +2,10 @@
   "name": "eurekatribe",
   "version": "1.0.0",
   "description": "inclusive website for disabled to provide interface for available research opportunities",
-  "main": "backend/server.js",
+  "main": "frontend/main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node backend/server.js",
-    "client": "nodemon frontend/main.js"
+    "start": "node frontend/main.js"
   },
   "author": "Anirudh",
   "license": "ISC",

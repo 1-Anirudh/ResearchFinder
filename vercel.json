@@ -2,7 +2,7 @@
     "version": 2,
     "builds": [
         {
-            "src": "frontend/server.js",
+            "src": "/frontend/main.js",
             "use": "@vercel/node"
         }
     ],
@@ -13,7 +13,7 @@
         },
         {
             "src": "/views/(.*)",
-            "dest": "backend/main.js"
+            "dest": "/frontend/main.js"
         }
     ]
 }
