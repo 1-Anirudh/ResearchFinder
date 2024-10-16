@@ -55,6 +55,9 @@ wss.on('connection', (ws, req) => {
             console.log(`Received message from ${userId} => ${message}`);
             const parsedMessage = JSON.parse(message);
             const targetUserId = parsedMessage.targetUserId;
+            if (userId === targetUserId) {
+                return;
+            }
             const targetWs = userConnections.get(targetUserId);
 
             if (parsedMessage.type === 'chat-message') {

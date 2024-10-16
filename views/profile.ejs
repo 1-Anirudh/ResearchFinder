@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile Settings</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+
     <style>
         body {
             margin: 0;
@@ -68,7 +70,7 @@
         <div class="row">
             <div class="col-md-3 border-right">
                 <div class="d-flex flex-column align-items-center text-center p-3 py-5">
-                    <img class="rounded-circle mt-5" width="150px" src="<%= profileImage %>" alt="Profile Picture">
+                    <img class="rounded-circle mt-5" width="150px" src='/images/default.jpg' alt="Profile Picture">
                     <span class="font-weight-bold"><%= userName %></span>
                     <span class="text-black-50"><%= userEmail %></span>
                     <span> </span>
@@ -141,20 +143,22 @@
 
             <div class="col-md-4">
                 <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center experience">
-                        <span>Edit Experience</span>
-                        <span class="border px-3 p-1 add-experience">
-                            <i class="fa fa-plus"></i>&nbsp;Experience
-                        </span>
-                    </div><br>
-                    <div class="col-md-12">
-                        <label class="labels">Experience in Designing</label>
-                        <input type="text" class="form-control" placeholder="experience" value="<%= experienceDesigning %>">
-                    </div><br>
-                    <div class="col-md-12">
-                        <label class="labels">Additional Details</label>
-                        <input type="text" class="form-control" placeholder="additional details" value="<%= additionalDetails %>">
-                    </div>
+                    <form action="/edit-pdetails" method="post">
+                        <div class="d-flex justify-content-between align-items-center experience">
+                            <span>Edit Interests and Skills</span>
+                            <button type="submit" class="border px-3 p-1 add-experience">
+                                <i class="fa fa-plus"></i>&nbsp;Update
+                            </button>
+                        </div><br>
+                        <div class="col-md-12">
+                            <label class="labels">Interests</label>
+                            <textarea class="form-control" name="interests" placeholder="List your interests" rows="3"><%= interests %></textarea>
+                        </div><br>
+                        <div class="col-md-12">
+                            <label class="labels">Skills</label>
+                            <textarea class="form-control" name="skills" placeholder="List your skills" rows="3"><%= skills %></textarea>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

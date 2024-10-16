@@ -50,7 +50,9 @@ async function editUserPersonalDetails(uid, userDetails) {
             area: userDetails.area,
             education: userDetails.education,
             country: userDetails.country,
-            region: userDetails.region
+            region: userDetails.region,
+            interests: userDetails.interests,
+            skills: userDetails.skills
         });
 
         console.log('User details updated successfully');

@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Slide Navbar</title>
     <link rel="stylesheet" type="text/css" href="slide_navbar_style.css">
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/images/logo.png">
+    <title> Reasearch Finder </title>
+
     <style>
         body {
             margin: 0;
@@ -105,8 +107,12 @@
             <form action="/register" method="post">
                 <label for="chk" aria-hidden="true">Sign up</label>
                 <input type="email" name="email" placeholder="Email" required="">
-                <input type="password" name="password" placeholder="Password" required="">
-                <button>Sign up</button>
+                
+                <!-- Add id to password field -->
+                <input type="password" name="password" id="password" placeholder="Password" required minlength="6">
+                
+                <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required minlength="6" oninput="checkPasswords()">
+                <button type="submit">Sign up</button>
             </form>
         </div>
 
@@ -119,5 +125,20 @@
             </form>
         </div>
     </div>
+
+    <script>
+        function checkPasswords() {
+            const password = document.getElementById("password");
+            const confirmPassword = document.getElementById("confirmPassword");
+
+            // Check if passwords match
+            if (password.value !== confirmPassword.value) {
+                confirmPassword.setCustomValidity("Passwords do not match");  // Set custom validation message
+            } else {
+                confirmPassword.setCustomValidity("");  // Clear validation message if passwords match
+            }
+        }
+    </script>
+    
 </body>
 </html>

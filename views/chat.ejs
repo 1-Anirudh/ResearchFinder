@@ -3,25 +3,9 @@
 
 <head>
   <meta charset="UTF-8">
-  
 
-    <link rel="apple-touch-icon" type="image/png" href="https://cpwebassets.codepen.io/assets/favicon/apple-touch-icon-5ae1a0698dcc2402e9712f7d01ed509a57814f994c660df9f7a952f3060705ee.png" />
-
-    <meta name="apple-mobile-web-app-title" content="CodePen">
-
-    <link rel="shortcut icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/favicon-aec34940fbc1a6e787974dcd360f2c6b63348d4b1f4e06c77743096d55480f33.ico" />
-
-    <link rel="mask-icon" type="image/x-icon" href="https://cpwebassets.codepen.io/assets/favicon/logo-pin-b4b4269c16397ad2f0f7a01bcdf513a1994f4c94b8af2f191c09eb0d601762b1.svg" color="#111" />
-
-
-
-  
-    <script src="https://cpwebassets.codepen.io/assets/common/stopExecutionOnTimeout-2c7831bb44f98c1391d6a4ffda0e1fd302503391ca806e7fcc7b9b87197aec26.js"></script>
-
-
-    <link rel="canonical" href="https://codepen.io/TurkAysenur/pen/ZEbXoRZ">
-  
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <title>Chat Page</title>
 
   
   
@@ -779,15 +763,15 @@ html {
 <body translate="no">
   <div class="app">
  <div class="header">
-  <div class="logo">
+  <!-- <div class="logo">
     <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff" /></svg>
-  </div>
+  </div> -->
   <div class="user-settings">
    <div class="dark-light">
     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
    </div>
-   <img class="user-profile" src="" alt="" class="account-profile" alt="">
+   <img class="user-profile" src="/images/default.jpg" alt="" class="account-profile" alt="">
   </div>
  </div>
  <div class="wrapper">
@@ -831,7 +815,7 @@ html {
    </div>
    <div class="chat-area-footer">
     <!-- Your SVG icons -->
-    <input type="text" id="chatInput" placeholder="Type something here..." />
+    <input type="text" id="chatInput" placeholder="Type something here..." onkeydown="handleKeyPress(event)"/>
     <svg viewBox="0 0 513 513" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="button" style="cursor: pointer;" onclick="submitForm()">
         <path d="M256.025.05C117.67-2.678 3.184 107.038.025 245.383a240.703 240.703 0 0085.333 182.613v73.387c0 5.891 4.776 10.667 10.667 10.667a10.67 10.67 0 005.653-1.621l59.456-37.141a264.142 264.142 0 0094.891 17.429c138.355 2.728 252.841-106.988 256-245.333C508.866 107.038 394.38-2.678 256.025.05z"/>
         <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff"/>
@@ -872,7 +856,7 @@ html {
     <div class="detail-title"></div>
     <div class="detail-subtitle"></div>
     <div class="detail-buttons">
-     <button class="detail-button">
+     <button class="detail-button" onclick="videocall()">
       <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
        <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
       </svg>
@@ -929,7 +913,7 @@ socket.addEventListener('message', function(event) {
   console.log("data", data);
   const chatMessage = document.createElement('div');
   chatMessage.classList.add('chat-msg');
-  const profilePic = '';
+  const profilePic = 'images/default.jpg';
   chatMessage.innerHTML = `
       <div class="chat-msg-profile">
           <img class="chat-msg-img" src="${profilePic}" alt="" />
@@ -959,7 +943,8 @@ function loadMessages() {
         // Create profile image
         const profileImg = document.createElement("img");
         profileImg.classList.add("msg-profile");
-        profileImg.src = msg.profileImage;
+        // profileImg.src = msg.profileImage;
+        profileImg.src = "/images/default.jpg";
         profileImg.alt = "";
 
         // Create message details
@@ -1017,6 +1002,12 @@ async function videocall() {
   // window.open(`https://${serverIpAddress}:5000/video-call?roomId=${roomId}`, '_blank');
 }
 
+async function handleKeyPress(event) {
+    if (event.key === 'Enter') {
+        submitForm();
+    }
+}
+
 async function submitForm() {
     // Get the value of the input field
 
@@ -1038,7 +1029,7 @@ async function submitForm() {
 
     const chatMessage = document.createElement('div');
       chatMessage.classList.add('chat-msg', 'owner'); 
-      const profilePic = '';
+      const profilePic = 'images/default.jpg';
       chatMessage.innerHTML = `
           <div class="chat-msg-profile">
               <img class="chat-msg-img" src="${profilePic}" alt="" />
@@ -1097,6 +1088,13 @@ function changeChat(userId) {
     chatGroup.innerHTML = '';
 
     console.log("userData.profilePics" + userData.profilePics);
+
+    const img = document.createElement('img');
+    img.classList.add('chat-area-profile');
+    img.src = '/images/default.jpg';
+    img.alt = '';
+    chatGroup.appendChild(img);
+
     if( userData.profilePics.length > 0) {
       userData.profilePics.forEach(pic => {
           const img = document.createElement('img');
@@ -1112,12 +1110,12 @@ function changeChat(userId) {
     // Add the messages to the chat area
     userData.messages.forEach(msg => {
         const chatMessage = document.createElement('div');
-        var profilePic = '';
+        var profilePic = 'images/default.jpg';
         if(msg.sent) {
           chatMessage.classList.add('chat-msg', 'owner'); 
         } else {
           chatMessage.classList.add('chat-msg');
-          profilePic = '';
+          profilePic = 'images/default.jpg';
         }
         chatMessage.innerHTML = `
             <div class="chat-msg-profile">
@@ -1133,13 +1131,19 @@ function changeChat(userId) {
 
     // Change the group icon to the user's profile picture for non-group chats
     msgProfileGroup.innerHTML = ''; 
-    if (userData.profilePics.length > 0) {
-        const userImg = document.createElement('img');
-        userImg.src = userData.profilePics[0]; 
-        userImg.alt = userData.title;
-        userImg.classList.add('msg-profile-img'); 
-        msgProfileGroup.appendChild(userImg);
-    }
+
+    const userImg = document.createElement('img');
+    userImg.src = 'images/default.jpg'; 
+    userImg.alt = userData.title;
+    userImg.classList.add('msg-profile-img'); 
+    msgProfileGroup.appendChild(userImg);
+    // if (userData.profilePics.length > 0) {
+    //     const userImg = document.createElement('img');
+    //     userImg.src = userData.profilePics[0]; 
+    //     userImg.alt = userData.title;
+    //     userImg.classList.add('msg-profile-img'); 
+    //     msgProfileGroup.appendChild(userImg);
+    // }
 
     // Show the detail area when a message is clicked
     detailArea.style.display = 'block'; // Show the detail area

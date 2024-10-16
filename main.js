@@ -163,9 +163,10 @@ app.get('/index', (req, res) => {
 app.get('/home', ensureLoggedIn, async (req, res) => {
     console.log("userID" , SessionUtils.getUserId(req.session));
     const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
+    const userDetails = await SessionUtils.userDetails(req);
     res.render('landing', { 
         logoName: 'ResearchFinder', 
-        profileName: req.session.name || 'User', 
+        profileName: userDetails.firstName || 'User', 
         jobTitle: 'Student',
         notifications: notifications
     });
@@ -212,7 +213,9 @@ app.post('/save-pdetails', async (req, res) => {
 
 app.post('/edit-pdetails', async (req, res) => {
     const pUserDetails = await SessionUtils.userDetails(req);
-    const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region} = req.body;
+    const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region, interests, skills} = req.body;
+    interestsList = interests.split(',');
+    skillsList = skills.split(',');
     const userDetails = {
         firstName: firstName || pUserDetails.firstName,
         surName: surName || pUserDetails.surName,
@@ -224,7 +227,9 @@ app.post('/edit-pdetails', async (req, res) => {
         area: area || pUserDetails.area,
         education: education || pUserDetails.education,
         country: country || pUserDetails.country,
-        region: region || pUserDetails.region
+        region: region || pUserDetails.region,
+        interests: interestsList || pUserDetails.interests,
+        skills: skillsList || pUserDetails.skills
     }
     if (!SessionUtils.getUserId(req.session)) {
         return res.send('Error: User not logged in.');
@@ -237,6 +242,30 @@ app.post('/edit-pdetails', async (req, res) => {
         SessionUtils.handleRedirectWithMessage(res, `Error saving personal details: ${error.message}`);
     }
 });
+
+app.post('/edit-interests', async (req, res) => {
+    const pUserDetails = await SessionUtils.userDetails(req);
+    const { interests, skills} = req.body;
+    console.log("interests", interests);
+    console.log("skills", skills);
+    interestsList = interests.split(',');
+    skillsList = skills.split(',');
+    const userDetails = {
+        interests: interestsList || pUserDetails.interests,
+        skills: skillsList || pUserDetails.skills
+    }
+    if (!SessionUtils.getUserId(req.session)) {
+        return res.send('Error: User not logged in.');
+    }
+    try {
+        await editUserPersonalDetails(SessionUtils.getUserId(req.session), userDetails);
+        SessionUtils.editUserDetails(req, userDetails);
+        SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/home');
+    } catch (error) {
+        SessionUtils.handleRedirectWithMessage(res, `Error saving personal details: ${error.message}`);
+    }
+});
+
 
 // Serve add-details form
 app.get('/add-details', ensureLoggedIn, (req, res) => {
@@ -259,15 +288,15 @@ app.post('/save-details', async (req, res) => {
 });
 
 // Advanced Search Route
-app.get('/search', async (req, res) => {
-    const { topic, location, experience, stipend } = req.query;
-    try {
-        const results = await searchData(topic, location, experience, stipend);
-        res.json(results);
-    } catch (error) {
-        res.status(500).send(`Error retrieving data: ${error.message}`);
-    }
-});
+// app.get('/search', async (req, res) => {
+//     const { topic, location, experience, stipend } = req.query;
+//     try {
+//         const results = await searchData(topic, location, experience, stipend);
+//         res.json(results);
+//     } catch (error) {
+//         res.status(500).send(`Error retrieving data: ${error.message}`);
+//     }
+// });
 
 
 // Serve feedback form
@@ -308,8 +337,8 @@ app.get('/profile', async (req, res) => {
             education: uDetails.education,
             country: uDetails.country,
             stateRegion: uDetails.region,
-            experienceDesigning: 'Experience designing',
-            additionalDetails: 'Additional details'
+            interests: uDetails.interests,
+            skills: uDetails.skills
         });
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Error getting user details: ${error.message}`);
@@ -341,9 +370,9 @@ app.post('/send-messages', async (req, res) => {
 
 
 
-app.get('/temp', ensureLoggedIn, (req, res) => {
-    res.render('not');
-});
+// app.get('/tempcheck', (req, res) => {
+//     res.render('not');
+// });
 
 app.get('/chat', ensureLoggedIn, async (req, res) => {
     const userId = SessionUtils.getUserId(req.session);
@@ -373,10 +402,10 @@ app.get('/logout', (req, res) => {
     });
 });
 
-app.get('/open-zoom', (req, res) => {
-    const zoomUrl = 'https://us05web.zoom.us/j/4337863175?pwd=xrx23dsj3wvzZK66217ZgcKydAKBbB.1';
-    res.json({ url: zoomUrl });
-});
+// app.get('/open-zoom', (req, res) => {
+//     const zoomUrl = 'https://us05web.zoom.us/j/4337863175?pwd=xrx23dsj3wvzZK66217ZgcKydAKBbB.1';
+//     res.json({ url: zoomUrl });
+// });
 
 // Start the server
 app.listen(PORT, () => {
