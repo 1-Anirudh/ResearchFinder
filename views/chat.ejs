@@ -892,6 +892,7 @@ html {
 const userId = '<%= userId %>';
 const serverIpAddress = '<%= serverIPaddress %>';
 const socket = new WebSocket(`ws://${serverIpAddress}:8080?userId=${userId}`);
+// const socket = new WebSocket(`wss://${window.location.host}?userId=${userId}`);
 var targetId = '';
 var Message = {time: '', text: '', senderID: userId, targetID: ''};
 var userDATA = '';
