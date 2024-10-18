@@ -1,0 +1,1146 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+
+  <link rel="icon" type="image/png" href="/images/logo.png">
+  <title>Chat Page</title>
+
+  
+  
+<style>
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Manrope:300,400,500,600,700&amp;display=swap&amp;subset=latin-ext");
+:root {
+  --body-bg-color: #e5ecef;
+  --theme-bg-color: #fff;
+  --developer-color: #f9fafb;
+  --input-bg: #f8f8fa;
+  --input-chat-color: #a2a2a2;
+  --border-color: #eef2f4;
+  --body-font: "Manrope", sans-serif;
+  --body-color: #273346;
+  --msg-message: #969eaa;
+  --chat-text-bg: #f1f2f6;
+  --theme-color: #0086ff;
+  --msg-date: #c0c7d2;
+  --button-bg-color: #f0f7ff;
+  --button-color: var(--theme-color);
+  --detail-font-color: #919ca2;
+  --msg-hover-bg: rgba(238, 242, 244, 0.4);
+  --active-conversation-bg: linear-gradient(
+   to right,
+   rgba(238, 242, 244, 0.4) 0%,
+   rgba(238, 242, 244, 0) 100%
+  );
+  --overlay-bg: linear-gradient(
+   to bottom,
+   rgba(255, 255, 255, 0) 0%,
+   rgba(255, 255, 255, 1) 65%,
+   rgba(255, 255, 255, 1) 100%
+  );
+  --chat-header-bg: linear-gradient(
+   to bottom,
+   rgba(255, 255, 255, 1) 0%,
+   rgba(255, 255, 255, 1) 78%,
+   rgba(255, 255, 255, 0) 100%
+  );
+}
+
+[data-theme=purple] {
+  --theme-color: #9f7aea;
+  --button-color: #9f7aea;
+  --button-bg-color: rgba(159, 122, 234, 0.12);
+}
+
+[data-theme=green] {
+  --theme-color: #38b2ac;
+  --button-color: #38b2ac;
+  --button-bg-color: rgba(56, 178, 171, 0.15);
+}
+
+[data-theme=orange] {
+  --theme-color: #ed8936;
+  --button-color: #ed8936;
+  --button-bg-color: rgba(237, 137, 54, 0.12);
+}
+
+.dark-mode {
+  --body-bg-color: #1d1d1d;
+  --theme-bg-color: #27292d;
+  --border-color: #323336;
+  --body-color: #d1d1d2;
+  --active-conversation-bg: linear-gradient(
+   to right,
+   rgba(47, 50, 56, 0.54),
+   rgba(238, 242, 244, 0) 100%
+  );
+  --msg-hover-bg: rgba(47, 50, 56, 0.54);
+  --chat-text-bg: #383b40;
+  --chat-text-color: #b5b7ba;
+  --msg-date: #626466;
+  --msg-message: var(--msg-date);
+  --overlay-bg: linear-gradient(
+   to bottom,
+   rgba(0, 0, 0, 0) 0%,
+   #27292d 65%,
+   #27292d 100%
+  );
+  --input-bg: #2f3236;
+  --chat-header-bg: linear-gradient(
+   to bottom,
+   #27292d 0%,
+   #27292d 78%,
+   rgba(255, 255, 255, 0) 100%
+  );
+  --developer-color: var(--border-color);
+  --button-bg-color: #393b40;
+  --button-color: var(--body-color);
+  --input-chat-color: #6f7073;
+  --detail-font-color: var(--input-chat-color);
+}
+
+.blue {
+  background-color: #0086ff;
+}
+
+.purple {
+  background-color: #9f7aea;
+}
+
+.green {
+  background-color: #38b2ac;
+}
+
+.orange {
+  background-color: #ed8936;
+}
+
+* {
+  outline: none;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+  border-radius: 50%;
+}
+
+body {
+  background-color: var(--body-bg-color);
+  font-family: var(--body-font);
+  color: var(--body-color);
+}
+
+html {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--theme-bg-color);
+  max-width: 1600px;
+  height: 100vh;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.header {
+  height: 80px;
+  width: 100%;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.wrapper {
+  width: 100%;
+  display: flex;
+  flex-grow: 1;
+  overflow: hidden;
+}
+
+.conversation-area,
+.detail-area {
+  width: 340px;
+  flex-shrink: 0;
+}
+
+.detail-area {
+  border-left: 1px solid var(--border-color);
+  margin-left: auto;
+  padding: 30px 30px 0 30px;
+  flex-direction: column;
+  overflow: auto;
+  display:none;
+  transform: translateX(20px); /* Slightly offset to the right */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
+}
+
+.detail-area.show {
+  display: flex; /* Change to flex display */
+  opacity: 1; /* Fade in */
+  transform: translateX(0); /* Move back to original position */
+}
+
+
+.chat-area {
+  flex-grow: 1;
+}
+
+
+.logo {
+  color: var(--theme-color);
+  width: 38px;
+  flex-shrink: 0;
+}
+.logo svg {
+  width: 100%;
+}
+
+.user-settings {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-left: auto;
+  flex-shrink: 0;
+}
+.user-settings > * + * {
+  margin-left: 14px;
+}
+
+.dark-light {
+  width: 22px;
+  height: 22px;
+  color: var(--settings-icon-color);
+  flex-shrink: 0;
+}
+.dark-light svg {
+  width: 100%;
+  fill: transparent;
+  transition: 0.5s;
+}
+
+.user-profile {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+
+.conversation-area {
+  border-right: 1px solid var(--border-color);
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.msg-profile {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 15px;
+}
+.msg-profile.group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--border-color);
+}
+.msg-profile.group svg {
+  width: 60%;
+}
+
+.msg {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.2s;
+  position: relative;
+}
+.msg:hover {
+  background-color: var(--msg-hover-bg);
+}
+.msg.active {
+  background: var(--active-conversation-bg);
+  border-left: 4px solid var(--theme-color);
+}
+.msg.online:before {
+  content: "•";
+  position: absolute;
+  background-color: #23be7e;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  border: 2px solid var(--theme-bg-color);
+  left: 50px;
+  bottom: 19px;
+}
+
+.msg-username {
+  margin-bottom: 4px;
+  font-weight: 600;
+  font-size: 15px;
+}
+
+.msg-detail {
+  overflow: hidden;
+}
+
+.msg-content {
+  font-weight: 500;
+  font-size: 13px;
+  display: flex;
+}
+
+.msg-message {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: var(--msg-message);
+}
+
+.msg-date {
+  font-size: 14px;
+  color: var(--msg-date);
+  margin-left: 3px;
+}
+.msg-date:before {
+  content: "•";
+  margin-right: 2px;
+}
+
+.add {
+  position: sticky;
+  bottom: 25px;
+  background-color: var(--theme-color);
+  width: 60px;
+  height: 60px;
+  border: 0;
+  border-radius: 50%;
+  background-repeat: no-repeat;
+  background-position: 50%;
+  background-size: 28px;
+  box-shadow: 0 0 16px var(--theme-color);
+  margin: auto auto -55px;
+  flex-shrink: 0;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.overlay {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  width: 340px;
+  flex-shrink: 0;
+  background: var(--overlay-bg);
+  height: 80px;
+}
+
+.chat-area {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+}
+.chat-area-header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background: var(--chat-header-bg);
+}
+.chat-area-profile {
+  width: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.chat-area-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+.chat-area-main {
+  flex-grow: 1;
+}
+
+.chat-msg-img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.chat-msg-profile {
+  flex-shrink: 0;
+  margin-top: auto;
+  margin-bottom: -20px;
+  position: relative;
+}
+
+.chat-msg-date {
+  position: absolute;
+  left: calc(100% + 12px);
+  bottom: 0;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--msg-date);
+  white-space: nowrap;
+}
+
+.chat-msg {
+  display: flex;
+  padding: 0 20px 45px;
+}
+.chat-msg-content {
+  margin-left: 12px;
+  max-width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.chat-msg-text {
+  background-color: var(--chat-text-bg);
+  padding: 15px;
+  border-radius: 20px 20px 20px 0;
+  line-height: 1.5;
+  font-size: 14px;
+  font-weight: 500;
+}
+.chat-msg-text + .chat-msg-text {
+  margin-top: 10px;
+}
+
+.chat-msg-text {
+  color: var(--chat-text-color);
+}
+
+.owner {
+  flex-direction: row-reverse;
+}
+.owner .chat-msg-content {
+  margin-left: 0;
+  margin-right: 12px;
+  align-items: flex-end;
+}
+.owner .chat-msg-text {
+  background-color: var(--theme-color);
+  color: #fff;
+  border-radius: 20px 20px 0 20px;
+}
+.owner .chat-msg-date {
+  left: auto;
+  right: calc(100% + 12px);
+}
+
+.chat-msg-text img {
+  max-width: 300px;
+  width: 100%;
+}
+
+.chat-area-footer {
+  display: none;
+  border-top: 1px solid var(--border-color);
+  width: 100%;
+  padding: 10px 20px;
+  align-items: center;
+  background-color: var(--theme-bg-color);
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease; /* Smooth transition for opacity and transform */
+}
+
+.chat-area-footer.show {
+  display: flex;
+  opacity: 1; /* Fade in */
+}
+
+.chat-area-footer svg {
+  color: var(--settings-icon-color);
+  width: 20px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.chat-area-footer svg:hover {
+  color: var(--settings-icon-hover);
+}
+.chat-area-footer svg + svg {
+  margin-left: 12px;
+}
+
+.chat-area-footer input {
+  border: none;
+  color: var(--body-color);
+  background-color: var(--input-bg);
+  padding: 12px;
+  border-radius: 6px;
+  font-size: 15px;
+  margin: 0 12px;
+  width: 100%;
+}
+.chat-area-footer input::placeholder {
+  color: var(--input-chat-color);
+}
+
+.detail-area-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.detail-area-header .msg-profile {
+  margin-right: 0;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 15px;
+}
+
+
+
+.detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.detail-subtitle {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--msg-date);
+}
+
+.detail-button {
+  border: 0;
+  background-color: var(--button-bg-color);
+  padding: 10px 14px;
+  border-radius: 5px;
+  color: var(--button-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  flex-grow: 1;
+  font-weight: 500;
+  cursor: pointer;
+}
+.detail-button svg {
+  width: 18px;
+  margin-right: 10px;
+}
+.detail-button:last-child {
+  margin-left: 8px;
+}
+
+.detail-buttons {
+  margin-top: 20px;
+  display: flex;
+  width: 100%;
+}
+
+.detail-area input {
+  background-color: transparent;
+  border: none;
+  width: 100%;
+  color: var(--body-color);
+  background-repeat: no-repeat;
+  background-size: 16px;
+  background-position: 100%;
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 14px 0;
+}
+.detail-area input::placeholder {
+  color: var(--detail-font-color);
+}
+
+.detail-changes {
+  margin-top: 40px;
+}
+
+.detail-change {
+  color: var(--detail-font-color);
+  font-family: var(--body-font);
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid var(--border-color);
+  padding: 14px 0;
+  display: flex;
+}
+.detail-change svg {
+  width: 16px;
+  margin-left: auto;
+}
+
+.colors {
+  display: flex;
+  margin-left: auto;
+}
+
+.color {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.color.selected {
+  background-size: 10px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.color:not(:last-child) {
+  margin-right: 4px;
+}
+
+.detail-photo-title {
+  display: flex;
+  align-items: center;
+}
+.detail-photo-title svg {
+  width: 16px;
+}
+
+.detail-photos {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.detail-photo-title {
+  color: var(--detail-font-color);
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+.detail-photo-title svg {
+  margin-right: 8px;
+}
+
+.detail-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-column-gap: 6px;
+  grid-row-gap: 6px;
+  grid-template-rows: repeat(3, 60px);
+}
+.detail-photo-grid img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+  object-position: center;
+}
+
+.view-more {
+  color: var(--theme-color);
+  font-weight: 600;
+  font-size: 15px;
+  margin: 25px 0;
+}
+
+.follow-me {
+  text-decoration: none;
+  font-size: 14px;
+  width: calc(100% + 60px);
+  margin-left: -30px;
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  overflow: hidden;
+  color: #9c9cab;
+  padding: 0 20px;
+  height: 52px;
+  flex-shrink: 0;
+  position: relative;
+  justify-content: center;
+}
+.follow-me svg {
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+}
+
+.follow-text {
+  display: flex;
+  align-items: center;
+  transition: 0.3s;
+}
+
+.follow-me:hover .follow-text {
+  transform: translateY(100%);
+}
+.follow-me:hover .developer {
+  top: 0;
+}
+
+.developer {
+  position: absolute;
+  color: var(--detail-font-color);
+  font-weight: 600;
+  left: 0;
+  top: -100%;
+  display: flex;
+  transition: 0.3s;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--developer-color);
+  width: 100%;
+  height: 100%;
+}
+
+.developer img {
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  object-fit: cover;
+  margin-right: 10px;
+}
+
+.dark-mode .dark-light svg {
+  fill: #ffce45;
+  stroke: #ffce45;
+}
+.dark-mode .chat-area-group span {
+  color: #d1d1d2;
+}
+
+.chat-area-group {
+  flex-shrink: 0;
+  display: flex;
+}
+.chat-area-group * {
+  border: 2px solid var(--theme-bg-color);
+}
+.chat-area-group * + * {
+  margin-left: -5px;
+}
+.chat-area-group span {
+  width: 32px;
+  height: 32px;
+  background-color: var(--button-bg-color);
+  color: var(--theme-color);
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+@media (max-width: 1120px) {
+  .detail-area {
+    display: none;
+  }
+}
+@media (max-width: 780px) {
+  .conversation-area {
+    display: none;
+  }
+}
+</style>
+
+  <script>
+  window.console = window.console || function(t) {};
+</script>
+
+  
+  
+</head>
+
+<body translate="no">
+  <div class="app">
+ <div class="header">
+  <!-- <div class="logo">
+    <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff" /></svg>
+  </div> -->
+  <div class="user-settings">
+   <div class="dark-light">
+    <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+     <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
+   </div>
+   <img class="user-profile" src="/images/default.avif" alt="" class="account-profile" alt="">
+  </div>
+ </div>
+ <div class="wrapper">
+  <div id="conversation-area" class="conversation-area"></div>
+
+  <div class="chat-area">
+   <div class="chat-area-header">
+    <div class="chat-area-title"></div>
+    <div class="chat-area-group">
+     <!-- <img class="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%283%29+%281%29.png" alt="" />
+     <img class="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%282%29.png" alt="">
+     <img class="chat-area-profile" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" />
+     <span>+4</span> -->
+    </div>
+   </div>
+   <div class="chat-area-main">
+
+
+    <div class="chat-msg owner">
+     <div class="chat-msg-profile">
+      <!-- <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%281%29.png" alt="" />
+      <div class="chat-msg-date">Message 1.22pm</div> -->
+     </div>
+     <div class="chat-msg-content">
+      <!-- <div class="chat-msg-text">Sit amet risus nullam eget felis eget. Dolor sed viverra ipsum😂😂😂</div>
+      <div class="chat-msg-text">Cras mollis nec arcu malesuada tincidunt.</div> -->
+     </div>
+    </div>
+
+    <div class="chat-msg">
+     <div class="chat-msg-profile">
+      <!-- <img class="chat-msg-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3364143/download+%2812%29.png" alt="" /> -->
+      <!-- <div class="chat-msg-date">Message 3.16pm</div> -->
+     </div>
+     <div class="chat-msg-content">
+      <!-- <div class="chat-msg-text">Egestas tellus rutrum tellus pellentesque</div> -->
+     </div>
+    </div>
+
+
+   </div>
+   <div class="chat-area-footer">
+    <!-- Your SVG icons -->
+    <input type="text" id="chatInput" placeholder="Type something here..." onkeydown="handleKeyPress(event)"/>
+    <svg viewBox="0 0 513 513" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="button" style="cursor: pointer;" onclick="submitForm()">
+        <path d="M256.025.05C117.67-2.678 3.184 107.038.025 245.383a240.703 240.703 0 0085.333 182.613v73.387c0 5.891 4.776 10.667 10.667 10.667a10.67 10.67 0 005.653-1.621l59.456-37.141a264.142 264.142 0 0094.891 17.429c138.355 2.728 252.841-106.988 256-245.333C508.866 107.038 394.38-2.678 256.025.05z"/>
+        <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff"/>
+    </svg>
+</div>
+   <!-- <div class="chat-area-footer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video">
+     <path d="M23 7l-7 5 7 5V7z" />
+     <rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-image">
+     <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+     <circle cx="8.5" cy="8.5" r="1.5" />
+     <path d="M21 15l-5-5L5 21" /></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-plus-circle">
+     <circle cx="12" cy="12" r="10" />
+     <path d="M12 8v8M8 12h8" /></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-paperclip">
+     <path d="M21.44 11.05l-9.19 9.19a6 6 0 01-8.49-8.49l9.19-9.19a4 4 0 015.66 5.66l-9.2 9.19a2 2 0 01-2.83-2.83l8.49-8.48" /></svg>
+    <input type="text" placeholder="Type something here..." />
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-smile">
+     <circle cx="12" cy="12" r="10" />
+     <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01" /></svg>
+     <svg viewBox="0 0 513 513" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="button" style="cursor: pointer;" onclick="submitForm()">
+      <path d="M256.025.05C117.67-2.678 3.184 107.038.025 245.383a240.703 240.703 0 0085.333 182.613v73.387c0 5.891 4.776 10.667 10.667 10.667a10.67 10.67 0 005.653-1.621l59.456-37.141a264.142 264.142 0 0094.891 17.429c138.355 2.728 252.841-106.988 256-245.333C508.866 107.038 394.38-2.678 256.025.05z" />
+      <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff" /></svg>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="feather feather-thumbs-up">
+     <path d="M14 9V5a3 3 0 00-3-3l-4 9v11h11.28a2 2 0 002-1.7l1.38-9a2 2 0 00-2-2.3zM7 22H4a2 2 0 01-2-2v-7a2 2 0 012-2h3" /></svg>
+   </div> -->
+  </div>
+  <div class="detail-area">
+   <div class="detail-area-header">
+    <div class="msg-profile group">
+     <!-- <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round" class="css-i6dzq1">
+      <path d="M12 2l10 6.5v7L12 22 2 15.5v-7L12 2zM12 22v-6.5" />
+      <path d="M22 8.5l-10 7-10-7" />
+      <path d="M2 15.5l10-7 10 7M12 2v6.5" /></svg> -->
+    </div>
+    <div class="detail-title"></div>
+    <div class="detail-subtitle"></div>
+    <div class="detail-buttons">
+     <button class="detail-button" onclick="videocall()">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-phone">
+       <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z" />
+      </svg>
+      Call Now
+     </button>
+
+     <button class="detail-button" onclick="videocall()">
+      <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="currentColor" stroke="currentColor" stroke-width="0" stroke-linecap="round" stroke-linejoin="round" class="feather feather-video">
+       <path d="M23 7l-7 5 7 5V7z" />
+       <rect x="1" y="5" width="15" height="14" rx="2" ry="2" /></svg>
+      Video Chat
+     </button>
+
+    </div>
+   </div>
+   <div class="detail-changes">
+    <div class="detail-change">
+     Change Color
+     <div class="colors">
+      <div class="color blue selected" data-color="blue"></div>
+      <div class="color purple" data-color="purple"></div>
+      <div class="color green" data-color="green"></div>
+      <div class="color orange" data-color="orange"></div>
+     </div>
+    </div>
+   </div>
+  </div>
+ </div>
+</div>
+
+<script id="rendered-js">
+
+    window.userId = '<%= userId %>';
+    window.targetId = '';
+    window.userDATA = '';
+    window.Message = { time: '', text: '', senderID: userId, targetID: '' };
+    window.chatData = JSON.parse('<%- chatData %>');
+    window.database = JSON.parse('<%- database %>');
+    window.messages = JSON.parse('<%- conversations %>');
+    window.firebaseConfig = JSON.parse('<%- firebaseConfig %>');
+
+    console.log('window.chatData', window.chatData);
+
+
+    function loadMessages() {
+        const conversationArea = document.getElementById('conversation-area');
+        window.messages.forEach(msg => {
+            const msgDiv = document.createElement('div');
+            msgDiv.classList.add('msg');
+            msgDiv.setAttribute("data-user", msg.user);
+            msgDiv.setAttribute("data-user-UID", msg.userID);
+
+            const profileImg = document.createElement("img");
+            profileImg.classList.add("msg-profile");
+            
+            profileImg.src = "/images/default.avif";
+            profileImg.alt = "";
+
+            // Create message details
+            const msgDetailDiv = document.createElement("div");
+            msgDetailDiv.classList.add("msg-detail");
+
+            // Create username
+            const usernameDiv = document.createElement("div");
+            usernameDiv.classList.add("msg-username");
+            usernameDiv.textContent = msg.username;
+
+            // Create message content
+            const contentDiv = document.createElement("div");
+            contentDiv.classList.add("msg-content");
+
+            const messageSpan = document.createElement("span");
+            messageSpan.classList.add("msg-message");
+            messageSpan.textContent = msg.message;
+
+            const dateSpan = document.createElement("span");
+            dateSpan.classList.add("msg-date");
+            dateSpan.textContent = msg.date;
+
+            // Append elements
+            contentDiv.appendChild(messageSpan);
+            contentDiv.appendChild(dateSpan);
+            msgDetailDiv.appendChild(usernameDiv);
+            msgDetailDiv.appendChild(contentDiv);
+            msgDiv.appendChild(profileImg);
+            msgDiv.appendChild(msgDetailDiv);
+            conversationArea.appendChild(msgDiv);
+        });
+    }
+
+    loadMessages();
+
+    function formatDate(date) {
+        const day = String(date.getDate()).padStart(2, '0');
+        const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are zero-based
+        const year = date.getFullYear();
+        let hours = date.getHours();
+        const minutes = String(date.getMinutes()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        const strTime = `${hours}:${minutes} ${ampm}`;
+        return `${day}-${month}-${year} ${strTime}`;
+    }
+
+    
+    async function videocall() {   
+        const roomId = window.userId < window.targetId ? window.userId + window.targetId : targetId + userId;
+        window.open(`https://meet.ffmuc.net/${roomId}`, '_blank');
+    }
+
+    async function handleKeyPress(event) {
+        if (event.key === 'Enter') {
+            submitForm();
+        }
+    }
+
+    async function submitForm() {
+        const receiverID = window.targetId;
+
+        const chatArea = document.querySelector('.chat-area-main');
+        window.Message.text = document.getElementById("chatInput").value;
+        document.getElementById("chatInput").value = '';
+        window.Message.time = new Date().getTime();
+        window.Message.targetID = receiverID;
+        window.Message.sent = true;
+        window.timestamp = new Date().getTime();
+
+        const newMessage = {
+            time : window.Message.time,
+            text : window.Message.text,
+            sent : window.Message.sent
+        }
+
+        window.chatData[receiverID].messages.push(newMessage);
+
+        const chatMessage = document.createElement('div');
+        chatMessage.classList.add('chat-msg', 'owner'); 
+        const profilePic = 'images/default.avif';
+        chatMessage.innerHTML = `
+            <div class="chat-msg-profile">
+                <img class="chat-msg-img" src="${profilePic}" alt="" />
+                <div class="chat-msg-date">Message ${newMessage.time}</div>
+            </div>
+            <div class="chat-msg-content">
+                <div class="chat-msg-text">${newMessage.text}</div>
+            </div>
+        `;
+        chatArea.appendChild(chatMessage);
+
+        try {
+        const response = await fetch('/realtime-chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 
+                    senderID: window.userId,
+                    receiverID: receiverID,
+                    message: newMessage.text,
+                    timestamp: newMessage.time
+                }),
+            });
+        } catch (error) {
+            console.error('Error sending Message:', error);
+        }
+    }
+
+    function changeChat(userId) {
+        const chatArea = document.querySelector('.chat-area-main');
+        const chatTitle = document.querySelector('.chat-area-title');
+        const chatGroup = document.querySelector('.chat-area-group');
+        const detailTitle = document.querySelector('.detail-title');
+        const detailSubtitle = document.querySelector('.detail-subtitle');
+        const msgProfileGroup = document.querySelector('.msg-profile.group');
+        const detailArea = document.querySelector('.detail-area');
+        const chatAreaFooter = document.querySelector('.chat-area-footer');
+
+        const userData = window.chatData[userId];
+        window.userDATA = userData;
+
+        console.log('usermessages', userData.messages);
+
+        chatArea.innerHTML = '';
+
+        // Set the chat title and detail area
+        chatTitle.innerText = userData.title;
+        detailTitle.innerText = userData.title;
+        detailSubtitle.innerText = userData.subtitle;
+
+        // Clear and set profile images in chat header group
+        chatGroup.innerHTML = '';
+
+        const img = document.createElement('img');
+        img.classList.add('chat-area-profile');
+        img.src = '/images/default.avif';
+        img.alt = '';
+        chatGroup.appendChild(img);
+
+        if (userData.profilePics.length > 0) {
+            userData.profilePics.forEach(pic => {
+                const img = document.createElement('img');
+                img.classList.add('chat-area-profile');
+                img.src = pic;
+                img.alt = '';
+                chatGroup.appendChild(img);
+            });
+        }
+        
+        console.log("userData.messages" + userData.messages);
+
+        // Add the messages to the chat area
+        userData.messages.forEach(msg => {
+            const chatMessage = document.createElement('div');
+            var profilePic = 'images/default.avif';
+            if(msg.sent) {
+                chatMessage.classList.add('chat-msg', 'owner'); 
+            } else {
+                chatMessage.classList.add('chat-msg');
+                profilePic = 'images/default.avif';
+            }
+            chatMessage.innerHTML = `
+                <div class="chat-msg-profile">
+                    <img class="chat-msg-img" src="${profilePic}" alt="" />
+                    <div class="chat-msg-date">Message ${msg.time}</div>
+                </div>
+                <div class="chat-msg-content">
+                    <div class="chat-msg-text">${msg.text}</div>
+                </div>
+            `;
+            chatArea.appendChild(chatMessage);
+        });
+
+        msgProfileGroup.innerHTML = ''; 
+
+        const userImg = document.createElement('img');
+        userImg.src = 'images/default.avif'; 
+        userImg.alt = userData.title;
+        userImg.classList.add('msg-profile-img'); 
+        msgProfileGroup.appendChild(userImg);
+
+        detailArea.style.display = 'block'; // Show the detail area
+        chatAreaFooter.style.display = 'flex'; // Show the chat area footer
+    }
+
+    document.querySelectorAll('.msg').forEach((msg) => {
+        msg.addEventListener('click', function() {
+            // Remove the active class from any currently active message
+            document.querySelectorAll('.msg').forEach((el) => el.classList.remove('active'));
+
+            // Add the active class to the clicked message
+            this.classList.add('active');
+
+            // Get the user ID from the clicked message
+            const currTargetId = this.getAttribute('data-user-UID');
+            window.targetId = currTargetId;
+
+            // Call the function to change the chat area and header based on the clicked user
+            changeChat(currTargetId);
+        });
+    });
+
+
+    const toggleButton = document.querySelector('.dark-light');
+    const colors = document.querySelectorAll('.color');
+
+    colors.forEach(color => {
+      color.addEventListener('click', e => {
+        colors.forEach(c => c.classList.remove('selected'));
+        const theme = color.getAttribute('data-color');
+        document.body.setAttribute('data-theme', theme);
+        color.classList.add('selected');
+      });
+    });
+
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+    });
+//# sourceURL=pen.js
+
+</script>
+
+<script type="module" src="new.js" ></script>
+
+</body>
+
+</html>

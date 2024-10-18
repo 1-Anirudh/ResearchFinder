@@ -771,7 +771,7 @@ html {
     <svg viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" fill="none" stroke-linecap="round" stroke-linejoin="round">
      <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" /></svg>
    </div>
-   <img class="user-profile" src="/images/default.jpg" alt="" class="account-profile" alt="">
+   <img class="user-profile" src="/images/default.avif" alt="" class="account-profile" alt="">
   </div>
  </div>
  <div class="wrapper">
@@ -887,49 +887,63 @@ html {
  </div>
 </div>
   
-<script id="rendered-js" >
+<script id="rendered-js">
+
+
+window.userId = '<%= userId %>';
+window.targetId = '';
+window.Message = { time: '', text: '', senderID: userId, targetID: '' };
+window.userDATA = '';
+window.targetUID = '';
+window.chatData = JSON.parse('<%- chatData %>');
+window.database = JSON.parse('<%- database %>');
+window.messages = JSON.parse('<%- conversations %>');
+
 
 const userId = '<%= userId %>';
 const serverIpAddress = '<%= serverIPaddress %>';
-const socket = new WebSocket(`ws://${serverIpAddress}:8080?userId=${userId}`);
-// const socket = new WebSocket(`wss://${window.location.host}?userId=${userId}`);
 var targetId = '';
 var Message = {time: '', text: '', senderID: userId, targetID: ''};
 var userDATA = '';
 var targetUID = '';
+const messages = JSON.parse('<%- conversations %>');
+const chatData = JSON.parse('<%- chatData %>');
+const database = JSON.parse('<%- database %>');
 
-    // Sample chat data for each user, including details for the detail-area-header
-// Sample chat data for each user, including details for the detail-area-header
+// console.log(database);
+
+// socket implementation
+
+// socket.addEventListener('message', function(event) {
+//   const chatArea = document.querySelector('.chat-area-main');
+//   const data = JSON.parse(event.data);
+//   console.log("data", data);
+//   const chatMessage = document.createElement('div');
+//   chatMessage.classList.add('chat-msg');
+//   const profilePic = 'images/default.avif';
+//   chatMessage.innerHTML = `
+//       <div class="chat-msg-profile">
+//           <img class="chat-msg-img" src="${profilePic}" alt="" />
+//           <div class="chat-msg-date">Message ${data.timestamp}</div>
+//       </div>
+//       <div class="chat-msg-content">
+//           <div class="chat-msg-text">${data.message}</div>
+//       </div>
+//   `;
+//   chatArea.appendChild(chatMessage);
+
+//   const newMessage = {time : data.timestamp, text: data.message, sent: false};
+
+//   chatData[data.from].messages.push(newMessage);
+// });
 
 
-const messages = <%- JSON.stringify(conversations) %>;
+// real timeDB implementation
+// Initialize Firebase
+// const app = initializeApp(firebaseConfig, 'realtime-db-read');
 
-const chatData = <%- JSON.stringify(chatData) %>;
-
-console.log(chatData);
-
-socket.addEventListener('message', function(event) {
-  const chatArea = document.querySelector('.chat-area-main');
-  const data = JSON.parse(event.data);
-  console.log("data", data);
-  const chatMessage = document.createElement('div');
-  chatMessage.classList.add('chat-msg');
-  const profilePic = 'images/default.jpg';
-  chatMessage.innerHTML = `
-      <div class="chat-msg-profile">
-          <img class="chat-msg-img" src="${profilePic}" alt="" />
-          <div class="chat-msg-date">Message ${data.timestamp}</div>
-      </div>
-      <div class="chat-msg-content">
-          <div class="chat-msg-text">${data.message}</div>
-      </div>
-  `;
-  chatArea.appendChild(chatMessage);
-
-  const newMessage = {time : data.timestamp, text: data.message, sent: false};
-
-  chatData[data.from].messages.push(newMessage);
-});
+// Get a reference to the database
+// const database = getDatabase(app);
 
 // Function to create and append messages to the conversation area
 function loadMessages() {
@@ -945,7 +959,7 @@ function loadMessages() {
         const profileImg = document.createElement("img");
         profileImg.classList.add("msg-profile");
         // profileImg.src = msg.profileImage;
-        profileImg.src = "/images/default.jpg";
+        profileImg.src = "/images/default.avif";
         profileImg.alt = "";
 
         // Create message details
@@ -1009,6 +1023,10 @@ async function handleKeyPress(event) {
     }
 }
 
+function isValidMessage(message) {
+    return message && message.trim().length > 0;
+}
+
 async function submitForm() {
     // Get the value of the input field
 
@@ -1016,6 +1034,7 @@ async function submitForm() {
 
     const chatArea = document.querySelector('.chat-area-main');
     Message.text = document.getElementById("chatInput").value;
+    if (!isValidMessage(Message.text)) return;
     document.getElementById("chatInput").value = '';
     Message.time = formatDate(new Date());
     Message.targetID = targetId;
@@ -1030,7 +1049,7 @@ async function submitForm() {
 
     const chatMessage = document.createElement('div');
       chatMessage.classList.add('chat-msg', 'owner'); 
-      const profilePic = 'images/default.jpg';
+      const profilePic = 'images/default.avif';
       chatMessage.innerHTML = `
           <div class="chat-msg-profile">
               <img class="chat-msg-img" src="${profilePic}" alt="" />
@@ -1042,20 +1061,47 @@ async function submitForm() {
       `;
       chatArea.appendChild(chatMessage);
 
-      socket.send(JSON.stringify({
-        type: 'chat-message',
-        targetUserId: targetUID,
-        message: Message.text,
-        timestamp: formatDate(new Date())
-      }));
+      // socket implementation
+              // socket.send(JSON.stringify({
+              //   type: 'chat-message',
+              //   targetUserId: targetUID,
+              //   message: Message.text,
+              //   timestamp: formatDate(new Date())
+              // }));
 
+      // real time message sending
+
+      try {
+        const response = await fetch('/realtime-chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ 
+                  senderID: userId,
+                  receiverID: receiveUID,
+                  message: Message.text,
+                  timestamp: Message.time
+                }),
+            });
+      } catch (error) {
+          console.error('Error sending Message:', error);
+      }
+
+
+      // chattoDB persistent DB
       try {
         const response = await fetch('/send-messages', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify({ target: targetUID, message: Message.text }),
+                body: JSON.stringify({ 
+                  senderID: userId,
+                  receiverID: receiveUID,
+                  message: Message.text,
+                  time: Message.time
+                }),
             });
       } catch (error) {
           console.error('Error sending Message:', error);
@@ -1092,7 +1138,7 @@ function changeChat(userId) {
 
     const img = document.createElement('img');
     img.classList.add('chat-area-profile');
-    img.src = '/images/default.jpg';
+    img.src = '/images/default.avif';
     img.alt = '';
     chatGroup.appendChild(img);
 
@@ -1111,12 +1157,12 @@ function changeChat(userId) {
     // Add the messages to the chat area
     userData.messages.forEach(msg => {
         const chatMessage = document.createElement('div');
-        var profilePic = 'images/default.jpg';
+        var profilePic = 'images/default.avif';
         if(msg.sent) {
           chatMessage.classList.add('chat-msg', 'owner'); 
         } else {
           chatMessage.classList.add('chat-msg');
-          profilePic = 'images/default.jpg';
+          profilePic = 'images/default.avif';
         }
         chatMessage.innerHTML = `
             <div class="chat-msg-profile">
@@ -1134,7 +1180,7 @@ function changeChat(userId) {
     msgProfileGroup.innerHTML = ''; 
 
     const userImg = document.createElement('img');
-    userImg.src = 'images/default.jpg'; 
+    userImg.src = 'images/default.avif'; 
     userImg.alt = userData.title;
     userImg.classList.add('msg-profile-img'); 
     msgProfileGroup.appendChild(userImg);
@@ -1189,6 +1235,9 @@ document.querySelectorAll('.msg').forEach((msg) => {
     });
 //# sourceURL=pen.js
     </script>
+
+<script type="module" src="new.js" ></script>
+
 </body>
 
 </html>

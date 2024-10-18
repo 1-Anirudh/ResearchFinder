@@ -295,7 +295,7 @@ app.get('/profile', async (req, res) => {
     try {
         const uDetails = await SessionUtils.userDetails(req);
         res.render('profile', {
-            profileImage: '/images/default.jpg',
+            profileImage: '/images/default.avif',
             userName: uDetails.firstName + ' ' + uDetails.surName,
             userEmail: uDetails.email,
             firstName: uDetails.firstName,

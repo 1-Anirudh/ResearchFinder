@@ -14,6 +14,13 @@ const { saveUserPersonalDetails, editUserPersonalDetails } = require('./backend/
 const { chatToDB } = require('./backend/notification');
 const { getConversations } = require('./backend/get-conversations');
 const { readServerIP } = require('./backend/serverIP');
+const { realTimeMessaging, readDatabase } = require('./realtimedb');
+const { database } = require('firebase-admin');
+const { on } = require('events');
+const { getDatabase, ref, onValue, set, push, get, child, remove } = require('firebase/database');
+const { default: firebase } = require('firebase/compat/app');
+
+const firebaseConfig = require('./frontend/public/firebase-config.json');
 
 
 const app = express();
@@ -198,8 +205,8 @@ app.post('/save-pdetails', async (req, res) => {
 app.post('/edit-pdetails', async (req, res) => {
     const pUserDetails = await SessionUtils.userDetails(req);
     const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region, interests, skills} = req.body;
-    interestsList = interests.split(',');
-    skillsList = skills.split(',');
+    interestsList = interests ? interests.split(',') : pUserDetails.interests;
+    skillsList = skills ? skills.split(',') : pUserDetails.skills;
     const userDetails = {
         firstName: firstName || pUserDetails.firstName,
         surName: surName || pUserDetails.surName,
@@ -275,7 +282,7 @@ app.get('/profile', async (req, res) => {
     try {
         const uDetails = await SessionUtils.userDetails(req);
         res.render('profile', {
-            profileImage: '/images/default.jpg',
+            profileImage: '/images/default.avif',
             userName: uDetails.firstName + ' ' + uDetails.surName,
             userEmail: uDetails.email,
             firstName: uDetails.firstName,
@@ -297,6 +304,22 @@ app.get('/profile', async (req, res) => {
         SessionUtils.handleRedirectWithMessage(res, `Error getting user details: ${error.message}`);
     }
 });
+
+
+app.post('/realtime-chat', async (req, res) => {
+    const { senderID, receiverID, message, timestamp } = req.body;
+    console.log("senderID", senderID);
+    console.log("receiverID", receiverID);
+    console.log("message", message);
+    console.log("timestamp", timestamp);
+    if (!senderID || !receiverID || !message || !timestamp) {
+        return res.status(400).send({ success: false, error: 'Sender ID, receiver ID, message, and timestamp are required' });
+    }
+
+    realTimeMessaging(senderID, receiverID, message, timestamp);
+    return res.status(200).send({ success: true }); // Send success response
+});
+
 
 
 app.post('/send-messages', async (req, res) => {
@@ -322,22 +345,43 @@ app.post('/send-messages', async (req, res) => {
     }
 });
 
+app.get('/oldchat', ensureLoggedIn, async (req, res) => {
+    const userId = SessionUtils.getUserId(req.session);
+    const ret = await getConversations();
+    const conversations = ret[0];
+    const chatData = ret[1];
+    const localIPaddress = await readServerIP();
+    // console.log(localIPaddress);
+    // console.log(chatData);
+    // console.log(readDatabase);
+    res.render('chat', {
+        serverIPaddress: localIPaddress,
+        conversations: JSON.stringify(conversations),
+        chatData: JSON.stringify(chatData),
+        userId: userId,
+        database: JSON.stringify(readDatabase)
+    });
+});
+
+
 app.get('/chat', ensureLoggedIn, async (req, res) => {
     const userId = SessionUtils.getUserId(req.session);
     const ret = await getConversations();
     const conversations = ret[0];
     const chatData = ret[1];
     const localIPaddress = await readServerIP();
-    console.log(localIPaddress);
-    console.log(chatData);
-    res.render('chat', {
+    // console.log(localIPaddress);
+    // console.log(chatData);
+    // console.log(readDatabase);
+    res.render('newchat', {
         serverIPaddress: localIPaddress,
-        conversations: conversations,
-        chatData: chatData,
-        userId: userId
+        conversations: JSON.stringify(conversations),
+        chatData: JSON.stringify(chatData),
+        userId: userId,
+        database: JSON.stringify(readDatabase),
+        firebaseConfig: JSON.stringify(firebaseConfig)
     });
 });
-
 
 app.get('/logout', (req, res) => {
     req.session.destroy((err) => {

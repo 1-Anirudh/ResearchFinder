@@ -2,8 +2,8 @@ const admin = require('firebase-admin');
 const { initializeApp } = require("firebase/app");
 const { getFirestore, collection, doc, setDoc } = require('firebase/firestore'); // Import the getFirestore function
 const { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword } = require("firebase/auth");
-
-const firebaseConfig = require('../firebase-config.json'); // Your service account credentials
+const { getDatabase } = require('firebase/database');
+const firebaseConfig = require('../frontend/public/firebase-config.json');
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
@@ -11,6 +11,7 @@ const app = initializeApp(firebaseConfig);
 // Initialize Firebase Authentication and get a reference to the service
 const auth = getAuth(app);
 const db = getFirestore(app); // Get the Firestore instance using getFirestore()
+const database = getDatabase(app);
 
 // Function to handle user registration
 async function registerUser(email, password) {
@@ -59,4 +60,4 @@ async function signInUser(email, password) {
   }
 }
 
-module.exports = { registerUser, signInUser, db };
+module.exports = { registerUser, signInUser, db, database };

@@ -1,22 +1,17 @@
 const express = require('express');
 const { urlencoded } = require('body-parser');
 const session = require('express-session');
-const { join } = require('path');
-const { config } = require('dotenv');
-const { addOpportunity } = require('./opportunity');
-const { sendReleNotification } = require('./notification');
-const { deleteData } = require('./tempDelete');
-const http = require('http');
+const path = require('path');
+const { addOpportunity } = require('./backend/opportunity');
+const { sendReleNotification } = require('./backend/notification');
+const { deleteData } = require('./backend/tempDelete');
 const WebSocket = require('ws');
-const { time } = require('console');
 const os = require('os');
-const { writeServerIP } = require('./serverIP');
+const { writeServerIP } = require('./backend/serverIP');
 
 
-config();
 const app = express();
-const server = http.createServer(app);
-const PORT = process.env.SERVER_PORT;
+const PORT = 4000;
 
 
 function getLocalIpAddress() {
@@ -96,27 +91,20 @@ function sendNotification(message) {
 
 
 // Middleware to parse form data
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+
+app.use(express.json());
+app.use(express.static(path.join(__dirname, '/frontend/public')));
+
 app.use(urlencoded({ extended: true }));
 
-// Extracted Middleware Configuration
-function configureMiddleware(app) {
-    // Set the view engine to EJS
-    app.set('view engine', 'ejs');
-    app.set('views', join(__dirname, '../views'));
-
-    // Serve static files
-    app.use(express.static(join(__dirname, '../frontend/public')));
-
-    // Initialize session middleware
-    app.use(session({
-        secret: process.env.SESSION_SECRET,
-        resave: false,
-        saveUninitialized: true,
-        cookie: { secure: false } // Set to true if using HTTPS
-    }));
-}
-
-configureMiddleware(app);
+app.use(session({
+  secret: 'your_secret_key',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { secure: false } // Set to true if using HTTPS
+}));
 
 app.get('/', (req, res) => {
     res.render('opportunitiy');
