@@ -50,6 +50,23 @@
       border-radius: 10px;
     }
 
+
+    .selected {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 500px;
+      height: 350px;
+      background: var(--white);
+      box-shadow: 5px 5px 15px rgba(var(--rose-rgb), var(--rose-alpha));
+      border-radius: 10px;
+      z-index: 1000; /* Ensure it is on top */
+    }
+
     .product-p {
       font-size: 0.6em;
       color: var(--rose);
@@ -142,7 +159,7 @@
 
 <div class="containers">
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="product">
       <p class="product-p">Women's Running Shoe</p>
       <h1 class="product-h1">Nike Epic React Flyknit</h1>
@@ -153,15 +170,31 @@
         <button class="product-button-like" type="button"><span>♥</span></button>
       </div>
     </div>
-  </div>
+  </div> -->
 
 
-  <div class="container">
+  <!-- <div class="container">
     <div class="product">
       <p class="product-p" name="topic">Robotics</p>
       <h2 class="product-h1" name="title">Robot-Assisted Surgery</h2>
       <p class="product-pl" name="location-institution">Ann Arbor, MI, MIT</p>
       <p class="product-desc" name="shortDescription">Developing robotic systems to assist in precision surgeries and reduce human error.</p>
+      <p class="product-p2" name="stipend"> $1,000/month </p>
+      <p class="product-p2" name="duration"> 6 Months </p>
+      <div class="buttons">
+        <button class="product-button-add" type="button">Apply Now</button>
+        <button class="product-button-like" type="button"><span>♥</span></button>
+      </div>
+    </div>
+  </div> -->
+
+
+  <div class="popped_container">
+    <div class="popped_product">
+      <p class="product-p" name="topic">Robotics</p>
+      <h2 class="product-h1" name="title">Robot-Assisted Surgery</h2>
+      <p class="product-pl" name="location-institution">Ann Arbor, MI, MIT</p>
+      <p class="product-desc" name="longDescription">This opportunity involves designing and testing innovative renewable energy systems like solar, wind, and hydroelectric power for urban settings. Participants will analyze current energy consumption trends, explore sustainable alternatives, and contribute to research papers on renewable energy solutions. This project aims to reduce dependency on fossil fuels and enhance energy sustainability in large cities</p>
       <p class="product-p2" name="stipend"> $1,000/month </p>
       <p class="product-p2" name="duration"> 6 Months </p>
       <div class="buttons">

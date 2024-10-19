@@ -452,7 +452,7 @@
     top: 0;
     z-index: 100;
     width: 100%;
-    background: rgb(133, 166, 195);
+    background: #CDA9AC;
     padding-bottom: 22px;
     height: 110px;
 }
@@ -522,6 +522,12 @@
       border-radius: 10px;
     }
 
+    .container:hover {
+      transform: translateY(-5px);
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
+    }
+
     .product-p {
       font-size: 0.6em;
       color: var(--rose);
@@ -558,10 +564,11 @@
 
     .product {
       position: absolute;
-      width: 96%;
-      height: 100%;
-      top: 10%;
+      width: 92%;
+      height: 90%;
+      top: 7%;
       left: 4%;
+      right: 4%;
       margin: auto;
     }
 
@@ -580,10 +587,29 @@
     .product-buttons {
       margin-top: 3px;
       position: absolute;
-      bottom: 13%;
-      left: 3%;
-      width: 100%;
+      bottom: 3%;
+      left: 5%;
+      width: 97%;
     }
+
+      .popup-container {
+        position: fixed;
+        top: 26%;
+        left: 34%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .product-selected {
+          background: var(--white);
+          box-shadow: 0px 0px 20px 13px #847fb6;
+          border-radius: 10px;
+          padding: 20px;
+          width: 500px;
+          height: auto;
+      }
 
     
 
@@ -767,7 +793,8 @@
     </div>
 
     <div class="containers"></div>
-    
+
+    <div class="popup-container" style="display: none;"></div>
 
   </section>
   
@@ -788,11 +815,12 @@
         const opportunity = window.opportunityData[key];
         let container = document.createElement('div');
         container.classList.add('container');
+        container.setAttribute("Opportunity-ID", key);
         container.innerHTML = `
           <div class="product">
             <p class="product-p" name="topic">${opportunity.topic}</p>
             <h2 class="product-h1" name="title">${opportunity.title}</h2>
-            <p class="product-pl" name="location-institution">${opportunity.location}</p>
+            <p class="product-pl" name="location">${opportunity.location}</p>
             <p class="product-desc" name="shortDescription">${opportunity.shortDescription}</p>
             <p class="product-p2" name="stipend">stipend: ${opportunity.stipend} </p>
             <p class="product-p2" name="duration">duration: ${opportunity.duration} </p>
@@ -844,6 +872,58 @@
         localStorage.setItem('theme', 'dark-theme');
       }
     });
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+      const containers = document.querySelectorAll('.container');
+            const popupContainer = document.querySelector('.popup-container');
+
+            containers.forEach(container => {
+                container.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent the click from propagating to the window
+                    const opportunityId = this.getAttribute('Opportunity-ID');
+                    const opportunity = window.opportunityData[opportunityId];
+                    console.log('opportunityId', opportunityId);
+
+                    let popup = document.createElement('div');
+                    popup.classList.add('product-selected');
+                    popup.innerHTML = `
+                        <p class="product-p" name="topic">${opportunity.topic}</p>
+                        <h2 class="product-h1" name="title">${opportunity.title}</h2>
+                        <p class="product-pl" name="location">${opportunity.location}</p>
+                        <p class="product-pl" name="institution">${opportunity.institution}</p>
+                        <p class="product-desc" name="longDescription">${opportunity.longDescription}</p>
+                        <p class="product-p2" name="stipend">reference: ${opportunity.postBy} </p>
+                        <p class="product-p2" name="stipend">stipend: ${opportunity.stipend} </p>
+                        <p class="product-p2" name="duration">duration: ${opportunity.duration} </p>
+                        <div class="product-buttons">
+                            <button class="product-button-add" type="button">Apply Now</button>
+                            <button class="product-button-like" type="button"><span>♥</span></button>
+                        </div>
+                    `;
+                    popupContainer.innerHTML = ''; // Clear any existing content
+                    popupContainer.appendChild(popup);
+                    popupContainer.style.display = 'flex'; // Show the popup container
+
+                    
+                    const popupHeight = popup.offsetHeight + 100; // Add 100px to the natural height
+                    popup.style.height = `${popupHeight}px`;
+                });
+            });
+
+            window.addEventListener('click', function() {
+                popupContainer.style.display = 'none'; // Hide the popup container
+                popupContainer.innerHTML = ''; // Clear the popup content
+            });
+
+            popupContainer.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the click from propagating to the window
+            });
+
+        });
+
+    
+
   </script>
 </body>
 </html>
