@@ -358,6 +358,10 @@ app.get('/chat', ensureLoggedIn, async (req, res) => {
     });
 });
 
+app.get('/tempcheck', (req, res) => {
+    res.render('oppcard');
+});
+
 
 app.get('/logout', (req, res) => {
     req.session.destroy((err) => {

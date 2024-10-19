@@ -1,15 +1,23 @@
 const { db } = require('./firebaseConfig');
 const admin = require('firebase-admin');
-const { collection, addDoc, serverTimestamp } = require("firebase/firestore"); // Import necessary functions
+const { collection, addDoc, serverTimestamp, getDocs } = require("firebase/firestore"); // Import necessary functions
 
-async function addOpportunity(topic, description, location, experience) {
+async function addOpportunity(opportunityItem) {
     try {
         const feedbackCollectionRef = collection(db, 'opportunities'); 
+
         const docRef = await addDoc(feedbackCollectionRef, {
-            topic: topic,
-            description: description,
-            location: location,
-            experience: experience,
+            topic: opportunityItem.topic,
+            shortDescription: opportunityItem.shortDecription,
+            longDescription: opportunityItem.longDescription,
+            title: opportunityItem.title,
+            postBy: opportunityItem.provider,
+            institution: opportunityItem.institution,
+            stipend: opportunityItem.stipend,
+            duration: opportunityItem.duration,
+            link: opportunityItem.link,
+            tags: opportunityItem.tags,
+            location: opportunityItem.location,
             timestamp: serverTimestamp() // Use serverTimestamp() to get the current server time
         });
         console.log("Opportunity written with ID: ", docRef.id);
@@ -19,4 +27,20 @@ async function addOpportunity(topic, description, location, experience) {
     }
 }
 
-module.exports = { addOpportunity };
+async function readOpportunities() {
+    const opportunitiesRef = collection(db, "opportunities");
+    const snapshot = await getDocs(opportunitiesRef);
+
+    
+    let opportunityDataTemp = {};
+
+    snapshot.forEach((doc) => {
+        const opportunityData = doc.data();
+        opportunityDataTemp[doc.id] = opportunityData;
+    });
+
+    return opportunityDataTemp;
+
+}
+
+module.exports = { readOpportunities, addOpportunity };

@@ -22,6 +22,8 @@ const { default: firebase } = require('firebase/compat/app');
 
 const firebaseConfig = require('./frontend/public/firebase-config.json');
 
+const { addOpportunity, readOpportunities} = require('./backend/opportunity');
+
 
 const app = express();
 const port = process.argv[2] || 3000;
@@ -143,15 +145,44 @@ app.post('/login', async (req, res) => {
     }
 });
 
+app.get('/tempcheck', async (req, res) => {
+    const opportunityData = await readOpportunities();
+    res.render('not', { 
+        logoName: 'ResearchFinder', 
+        profileName: 'User', 
+        jobTitle: 'Student',
+        notifications: [ 
+            {
+                message: "helo",
+                timestamp: {
+                    seconds: 1633497600
+                }
+            },
+            {
+                message: "helo1",
+                timestamp: {
+                    seconds: 1633497600
+                }
+            }
+        ],
+        firebaseConfig: JSON.stringify(firebaseConfig),
+        opportunityData: JSON.stringify(opportunityData)
+    });
+});
+
+
 app.get('/home', ensureLoggedIn, async (req, res) => {
     console.log("userID" , SessionUtils.getUserId(req.session));
+    const opportunityData = await readOpportunities();
     const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
     const userDetails = await SessionUtils.userDetails(req);
     res.render('landing', { 
         logoName: 'ResearchFinder', 
         profileName: userDetails.firstName || 'User', 
         jobTitle: 'Student',
-        notifications: notifications
+        notifications: notifications,
+        firebaseConfig: JSON.stringify(firebaseConfig),
+        opportunityData: JSON.stringify(opportunityData)
     });
 });
 
@@ -306,6 +337,11 @@ app.get('/profile', async (req, res) => {
 });
 
 
+app.get('/temp', async (req, res) => {
+    res.render('oppcard');
+});
+
+
 app.post('/realtime-chat', async (req, res) => {
     const { senderID, receiverID, message, timestamp } = req.body;
     console.log("senderID", senderID);
@@ -345,24 +381,6 @@ app.post('/send-messages', async (req, res) => {
     }
 });
 
-app.get('/oldchat', ensureLoggedIn, async (req, res) => {
-    const userId = SessionUtils.getUserId(req.session);
-    const ret = await getConversations();
-    const conversations = ret[0];
-    const chatData = ret[1];
-    const localIPaddress = await readServerIP();
-    // console.log(localIPaddress);
-    // console.log(chatData);
-    // console.log(readDatabase);
-    res.render('chat', {
-        serverIPaddress: localIPaddress,
-        conversations: JSON.stringify(conversations),
-        chatData: JSON.stringify(chatData),
-        userId: userId,
-        database: JSON.stringify(readDatabase)
-    });
-});
-
 
 app.get('/chat', ensureLoggedIn, async (req, res) => {
     const userId = SessionUtils.getUserId(req.session);
@@ -373,7 +391,7 @@ app.get('/chat', ensureLoggedIn, async (req, res) => {
     // console.log(localIPaddress);
     // console.log(chatData);
     // console.log(readDatabase);
-    res.render('newchat', {
+    res.render('chat', {
         serverIPaddress: localIPaddress,
         conversations: JSON.stringify(conversations),
         chatData: JSON.stringify(chatData),

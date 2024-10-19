@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nike Epic React Flyknit</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
+  <style>
+    /* Variables */
+    :root {
+      --font: 'Lato', sans-serif;
+      --white: #F5F5F5;
+      --light: #E0C9CB;
+      --tan: #C3A1A0;
+      --pink: #D9AAB7;
+      --rose: #BA7E7E;
+      --dark: #4E4E4E;
+    }
+
+    /* center container in the middle */
+    /* html {
+      display: grid;
+      min-height: 100%;
+    }
+
+    body {
+      display: grid;
+      background: var(--light);
+      font-family: var(--font), sans-serif;
+      text-transform: uppercase;
+    } */
+
+
+    .containers {
+      display: flex;  /* Set to flex for side by side layout */
+      justify-content: space-between;  /* Add space between the containers */
+      flex-wrap: wrap; /* Optional: wrap containers to new lines if space is limited */
+      gap: 20px; /* Optional: Add gap between containers */
+      margin: 20px; /* Add some margin around the container group */
+    }
+
+    .container {
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      width: 290px;
+      height: 350px;
+      background: var(--white);
+      box-shadow: 5px 5px 15px rgba(var(--rose), .5);
+      border-radius: 10px;
+    }
+
+    .product-p {
+      font-size: 0.6em;
+      color: var(--rose);
+      letter-spacing: 1px;
+    }
+
+    .product-pl {
+      font-size: 1em;
+      color: var(--tan);
+      letter-spacing: 1px;
+    }
+
+    .product-p2 {
+      font-size: 0.7em;
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+
+    .product-h1 {
+      font-size: 1.2em;
+      color: var(--dark);
+      margin-top: -5px;
+    }
+
+    .product-h2 {
+      color: var(--tan);
+      margin-top: -5px;
+    }
+
+    .product {
+      position: absolute;
+      width: 96%;
+      height: 100%;
+      top: 10%;
+      left: 4%;
+    }
+
+    .product-desc {
+      text-transform: none;
+      letter-spacing: 0;
+      margin-bottom: 17px;
+      color: var(--dark);
+      font-size: .7em;
+      line-height: 1.6em;
+      margin-right: 25px;
+      text-align: justify;
+    }
+
+    .product-button-add, .product-button-like {
+      /* background: darken(var(--light), 10%); */
+      background-color: #CDA9AC;
+      padding: 10px;
+      display: inline-block;
+      outline: 0;
+      border: 0;
+      margin: -1px;
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .product-button-add:hover, .product-button-like:hover {
+      background: var(--rose);
+      transition: all .4s ease-in-out;
+    }
+
+    .product-button-add {
+      width: 67%;
+    }
+
+    .product-button-like {
+      width: 22%;
+    }
+
+    .buttons {
+      position: absolute;
+      bottom: 10px; /* Moves buttons to the bottom */
+      left: 10px; /* Aligns them a bit inside from the left */
+      width: 100%; /* Ensures buttons span the full container width */
+      display: flex; /* Align buttons in a row */
+      justify-content: space-between; /* Adds space between the buttons */
+    }
+
+
+  </style>
+</head>
+<body>
+
+<div class="containers">
+
+  <div class="container">
+    <div class="product">
+      <p class="product-p">Women's Running Shoe</p>
+      <h1 class="product-h1">Nike Epic React Flyknit</h1>
+      <h2 class="product-h2">$150</h2>
+      <p class="product-desc">The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
+      <div class="buttons">
+        <button class="product-button-add" type="button">Add to Cart</button>
+        <button class="product-button-like" type="button"><span>♥</span></button>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="container">
+    <div class="product">
+      <p class="product-p" name="topic">Robotics</p>
+      <h2 class="product-h1" name="title">Robot-Assisted Surgery</h2>
+      <p class="product-pl" name="location-institution">Ann Arbor, MI, MIT</p>
+      <p class="product-desc" name="shortDescription">Developing robotic systems to assist in precision surgeries and reduce human error.</p>
+      <p class="product-p2" name="stipend"> $1,000/month </p>
+      <p class="product-p2" name="duration"> 6 Months </p>
+      <div class="buttons">
+        <button class="product-button-add" type="button">Apply Now</button>
+        <button class="product-button-like" type="button"><span>♥</span></button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+</body>
+</html>

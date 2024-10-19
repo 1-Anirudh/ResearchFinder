@@ -2,10 +2,8 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="UTF-8">
-    <!-- <title> Drop Down Sidebar Menu | CodingLab </title> -->
-    <!-- <link rel="stylesheet" href="css/style.css"> -->
-    <!-- Boxicons CDN Link -->
     <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
     <link rel="icon" type="image/png" href="/images/logo.png">
 
     <title>Research Finder</title>
@@ -14,24 +12,36 @@
 
 
         
+    :root {
+      --font: 'Lato', sans-serif;
+      --white: #F5F5F5;
+      --light: #E0C9CB;
+      --tan: #C3A1A0;
+      --pink: #D9AAB7;
+      --rose: #BA7E7E;
+      --dark: #4E4E4E;
+    }
+
+    
+
 .notification_wrap{
 	width: 500px;
-	margin: 120px auto 0;
+	margin: 10px auto 0;
 }
 
 .notification_wrap .notification_icon{
 	position: fixed;
-	font-size: 32px;
+	font-size: 22px;
 	margin: 0 auto;
 	text-align: center;
 	color: #605dff;
-  top: 25px;
+  top: 13px;
   right: 138px;
   z-index: 20000;
   display: block;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   transition: all 200ms linear;
   box-shadow: 0 0 25px rgba(255,235,167,.45);
@@ -42,25 +52,24 @@
 }
 
 .notification_wrap .dropdown{
-  top: 70px;
-  right:10px;
-	width: 300px;
-	height: auto;
+  top: 40px;
+  right: 30px;
+  width: 220px;
+  height: auto;
   max-height: 200px; /* Limit height */
   overflow-y: auto;  /* Enable scrolling */
-	background: #fff;
-	border-radius: 5px;
-	/* box-shadow: 2px 2px 3px rgba(0,0,0,0.125); */
-	margin: 15px auto 0;
-	padding: 15px;
-	position: fixed;
-	display: none;
+  background: #fff;
+  border-radius: 5px;
+  /* box-shadow: 2px 2px 3px rgba(0,0,0,0.125); */
+  margin: 15px auto 0;
+  padding: 15px;
+  position: fixed;
+  display: none;
 }
-
 .notification_wrap .dropdown .notify_item{
 	display: flex;
 	align-items: center;
-	padding: 10px 0;
+	padding: 7px 0;
 	border-bottom: 1px solid #dbdaff;
 }
 
@@ -102,7 +111,7 @@
 
   .light-theme {
     --sidebar-background: #b4afef;
-    --homesection-background: url('https://assets.codepen.io/1462889/back-page.svg') ;
+    --homesection-background: #d2abf9; ;
     --logo-detailscolor: #fff;
     --hover-background: #908db0;
     --navlinks-i: #000000; 
@@ -115,7 +124,7 @@
   /* Add dark-theme styles */
   .dark-theme {
     --sidebar-background: #11101d;
-    --homesection-background: url('https://assets.codepen.io/1462889/web-app-back.svg');
+    --homesection-background: #302885;
     --logo-detailscolor: #919191;
     --hover-background: #1d1b31;
     --navlinks-i: #fff; 
@@ -347,13 +356,13 @@
 .dark-light:checked + label,
 .dark-light:not(:checked) + label{
   position: fixed;
-  top: 25px;
+  top: 13px;
   right: 70px;
   z-index: 20000;
   display: block;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
   transition: all 200ms linear;
   box-shadow: 0 0 25px rgba(255,235,167,.45);
@@ -371,8 +380,8 @@
   z-index: 2;
   display: block;
   border-radius: 50%;
-  width: 38px;
-  height: 38px;
+  width: 30px;
+  height: 30px;
   background-color: #102770;
   background-image: url('https://assets.codepen.io/1462889/moon.svg');
   background-size: 16px 16px;
@@ -394,8 +403,8 @@
   z-index: 1;
   display: block;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   background-color: #def9fe;
   background-image: url('https://assets.codepen.io/1462889/sun.svg');
   background-size: 22px 22px;
@@ -409,7 +418,7 @@
 
 .home-section{
   position: relative;
-	background-image: var(--homesection-background);
+	background-color: var(--light);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -436,6 +445,18 @@
   font-size: 26px;
   font-weight: 600;
 }
+
+.home-section .home-content {
+    margin-bottom: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    background: rgb(133, 166, 195);
+    padding-bottom: 22px;
+    height: 110px;
+}
+
 
 .search-bar-container {
   display: flex;
@@ -471,6 +492,132 @@
   font-size: 1rem;
 }
 
+.notification-message {
+  font-size: 13px;
+  font-weight: 500;
+  color: #11101d;
+}
+
+
+
+    .containers {
+        display: flex;  /* Set to flex for side by side layout */
+        justify-content: space-between;  /* Add space between the containers */
+        flex-wrap: wrap; /* Optional: wrap containers to new lines if space is limited */
+        gap: 20px; /* Optional: Add gap between containers */
+        position: relative;
+        margin-top: 110px;
+        padding: 10px;
+        background: var(--light);
+    }
+
+    .container {
+      position: relative;
+      margin: auto;
+      overflow: hidden;
+      width: 290px;
+      height: 350px;
+      background: var(--white);
+      box-shadow: 7px 9px 16px 0px #847fb6;
+      border-radius: 10px;
+    }
+
+    .product-p {
+      font-size: 0.6em;
+      color: var(--rose);
+      letter-spacing: 1px;
+      margin-top: 9.6px;
+      margin-bottom: 9.6px;
+    }
+
+    .product-pl {
+      font-size: 1em;
+      color: var(--tan);
+      letter-spacing: 1px;
+    }
+
+    .product-p2 {
+      font-size: 0.7em;
+      color: var(--dark);
+      letter-spacing: 1px;
+    }
+
+
+    .product-h1 {
+      font-size: 1.2em;
+      color: var(--dark);
+      margin-top: -5px;
+      margin-bottom: 12.86px;
+    }
+
+    .product-h2 {
+      color: var(--tan);
+      margin-top: -5px;
+        margin-bottom: 19.92px;
+    }
+
+    .product {
+      position: absolute;
+      width: 96%;
+      height: 100%;
+      top: 10%;
+      left: 4%;
+      margin: auto;
+    }
+
+    .product-desc {
+      text-transform: none;
+      letter-spacing: 0;
+      margin-top: 11.2px;
+      margin-bottom: 17px;
+      color: var(--dark);
+      font-size: .7em;
+      line-height: 1.6em;
+      margin-right: 10px;
+      text-align: justify;
+    }
+
+    .product-buttons {
+      margin-top: 3px;
+      position: absolute;
+      bottom: 13%;
+      left: 3%;
+      width: 100%;
+    }
+
+    
+
+    .product-button-add, .product-button-like {
+      /* background: darken(var(--light), 10%); */
+      background-color: #CDA9AC;
+      padding: 10px;
+      display: inline-block;
+      outline: 0;
+      border: 0;
+      /* margin: -1px; */
+      border-radius: 2px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--white);
+      cursor: pointer;
+    }
+
+    .product-button-add:hover, .product-button-like:hover {
+      background: var(--rose);
+      transition: all .4s ease-in-out;
+    }
+
+    .product-button-add {
+      width: 67%;
+    }
+
+    .product-button-like {
+      width: 22%;
+    }
+
+
+
+
 @media (max-width: 420px) {
   .sidebar.close .nav-links li .sub-menu{
     display: none;
@@ -490,7 +637,6 @@
 	</script>
   </head>
 <body>
-
 
   <div class="sidebar close">
     <div class="logo-details">
@@ -587,49 +733,82 @@
   </div>
 
   <section class="home-section">
+
     <div class="home-content">
-      <i class='bx bx-menu' ></i>
-    </div>
-    <div class="search-bar-container">
-      <input type="text" class="search-bar" placeholder="Search...">
-      <button type="submit" class="search-button"><i class='bx bx-search'></i></button>
-    </div>
+        <i class='bx bx-menu' ></i>
+            
+        <div class="wrapper">
+            <div class="notification_wrap">
+                <div class="notification_icon">
+                    <i class="fas fa-bell"></i>
+                </div>
+                <div class="dropdown">
 
-  <input class="dark-light" type="checkbox" id="dark-light" name="dark-light"/>
-  <label for="dark-light"></label>
-
-  	
-<div class="wrapper">
-	<div class="notification_wrap">
-		<div class="notification_icon">
-			<i class="fas fa-bell"></i>
-		</div>
-		<div class="dropdown">
-			<!-- <div class="notify_item">
-				<div class="notify_info">
-					<p font-size: 10px>Alex commented on<span>Timeline Share</span></p>
-					<span class="notify_time">10 minutes ago</span>
-				</div>
-			</div> -->
-
-      <% notifications.forEach(notification => { %>
-        <div class="notify_item">
-            <div class="notify_info">
-                <p font-size: 10px><%= notification.message %></p>
-                <span class="notify_time"><%= new Date(notification.timestamp.seconds * 1000).toLocaleTimeString() %></span>
+                    <% notifications.forEach(notification => { %>
+                        <div class="notify_item">
+                            <div class="notify_info">
+                                <p class="notification-message"><%= notification.message %></p>
+                                <span class="notify_time"><%= new Date(notification.timestamp.seconds * 1000).toLocaleTimeString() %></span>
+                            </div>
+                        </div>
+                    <% }); %>
+                </div>
             </div>
-        </div>
-    <% }); %>
-		</div>
-	</div>
-</div>
+    
 
+            <input class="dark-light" type="checkbox" id="dark-light" name="dark-light"/>
+            <label for="dark-light"></label>  
+        </div>
+
+        <div class="search-bar-container">
+        <input type="text" class="search-bar" placeholder="Search...">
+        <button type="submit" class="search-button"><i class='bx bx-search'></i></button>
+        </div>
+    </div>
+
+    <div class="containers"></div>
     
 
   </section>
   
   <div class="one"></div>
+
+  <!-- <script src="opportunites.mjs" type="module"></script> -->
+
   <script>
+    window.firebaseConfig = JSON.parse('<%- firebaseConfig %>');
+    window.opportunityData = JSON.parse('<%- opportunityData %>');
+
+
+    function loadOpportunities(){
+      let containers = document.querySelector('.containers');
+      containers.innerHTML = '';
+      const keys = Object.keys(window.opportunityData);
+      keys.forEach(key => {
+        const opportunity = window.opportunityData[key];
+        let container = document.createElement('div');
+        container.classList.add('container');
+        container.innerHTML = `
+          <div class="product">
+            <p class="product-p" name="topic">${opportunity.topic}</p>
+            <h2 class="product-h1" name="title">${opportunity.title}</h2>
+            <p class="product-pl" name="location-institution">${opportunity.location}</p>
+            <p class="product-desc" name="shortDescription">${opportunity.shortDescription}</p>
+            <p class="product-p2" name="stipend">stipend: ${opportunity.stipend} </p>
+            <p class="product-p2" name="duration">duration: ${opportunity.duration} </p>
+            <div class="product-buttons">
+              <button class="product-button-add" type="button">Apply Now</button>
+              <button class="product-button-like" type="button"><span>♥</span></button>
+            </div>
+          </div>
+        `;
+        containers.appendChild(container);
+      });
+    }
+
+    loadOpportunities();
+
+
     let arrow = document.querySelectorAll(".arrow");
     for (var i = 0; i < arrow.length; i++) {
       arrow[i].addEventListener("click", (e)=>{
