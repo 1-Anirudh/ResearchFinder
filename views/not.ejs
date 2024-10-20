@@ -853,7 +853,7 @@
       }
     }
 
-    async function searchOpportunities() {
+    async function searchOpportunities(bysearch = true) {
       const searchInput = document.getElementById('searchInput');
       const searchValue = searchInput.value.toLowerCase();
       console.log('searchValue ', searchValue);
@@ -866,8 +866,10 @@
       // if (currSearchValue === searchValue) {
       //   return;
       // }
-      const newUrl = `${window.location.origin}${window.location.pathname}?s=${encodeURIComponent(searchValue)}`;
-      history.pushState({ path: newUrl }, '', newUrl);
+      if (bysearch) {
+        const newUrl = `${window.location.origin}${window.location.pathname}?s=${encodeURIComponent(searchValue)}`;
+        history.pushState({ path: newUrl }, '', newUrl);
+      }
 
       console.log(history);
       console.log("******************************************");
@@ -888,6 +890,10 @@
 
       // const containersDiv = document.querySelector('.containers');
       // containersDiv.classList.add('hidden');
+
+      console.log('loading filtered opportunities');
+
+      loadOpportunities(filteredOpportunities);
     }
 
 
@@ -931,7 +937,7 @@
         const searchValue = searchParams.get('s');
         if (searchValue) {
             document.getElementById('searchInput').value = searchValue;
-            searchOpportunities();
+            searchOpportunities(false);
         } else {
             document.getElementById('searchInput').value = '';
             loadAllOpportunities();
