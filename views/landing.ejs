@@ -501,14 +501,16 @@
 
 
     .containers {
-        display: flex;  /* Set to flex for side by side layout */
-        justify-content: space-between;  /* Add space between the containers */
-        flex-wrap: wrap; /* Optional: wrap containers to new lines if space is limited */
-        gap: 20px; /* Optional: Add gap between containers */
-        position: relative;
-        margin-top: 110px;
-        padding: 10px;
-        background: var(--light);
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 20px;
+      position: relative;
+      margin-top: 110px;
+      padding: 10px;
+      background: var(--light);
+      padding-top: 27px;
+      padding-bottom: 33px;
     }
 
     .container {
@@ -644,6 +646,65 @@
     .hidden {
       display: none;
     }
+
+    .pagination {    
+      display: flex;
+    justify-content: center;
+    background-color: var(--light);
+    padding: 10px;
+    }
+
+    .pagination ul{
+      width: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fff;
+    padding: 8px;
+    border-radius: 50px;
+    box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+    position: relative;
+}
+.pagination ul li{
+  color: #20B2AA;
+  list-style: none;
+  line-height: 45px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+.pagination ul li.numb{
+  list-style: none;
+  height: 45px;
+  width: 45px;
+  margin: 0 3px;
+  line-height: 45px;
+  border-radius: 50%;
+}
+.pagination ul li.numb.first{
+  margin: 0px 3px 0 -5px;
+}
+.pagination ul li.numb.last{
+  margin: 0px -5px 0 3px;
+}
+.pagination ul li.dots{
+  font-size: 22px;
+  cursor: default;
+}
+.pagination ul li.btn{
+  padding: 0 20px;
+  border-radius: 50px;
+}
+.pagination li.active,
+.pagination ul li.numb:hover,
+.pagination ul li:first-child:hover,
+.pagination ul li:last-child:hover{
+  color: #fff;
+  background: #20B2AA;
+}
 
 
 
@@ -796,7 +857,12 @@
         </div>
     </div>
 
-    <div class="containers"></div>
+    <div class="containers" id="opportunitiesContainer"></div>
+    
+    <div class="pagination" id="paginationControls">
+      <!-- Pagination buttons will be here -->
+      <ul> <!--pages or li are comes from javascript --> </ul>
+  </div>
 
     <!-- <div class="searchResults"></div> -->
 
@@ -813,11 +879,113 @@
     window.firebaseConfig = JSON.parse('<%- firebaseConfig %>');
     window.opportunityData = JSON.parse('<%- opportunityData %>');
 
+    const itemsPerPage = 12;
+    let currentPage = 1;
 
-    function loadOpportunities(opportunities){
+    function createPagination(page, opportunites) {
+            const paginationControls = document.querySelector(".pagination ul");
+            paginationControls.innerHTML = ''; // Clear existing pagination controls
+
+            let totalPages = Math.ceil(Object.keys(opportunites).length / itemsPerPage);
+            let beforePage = page - 1;
+            let afterPage = page + 1;
+        
+            if (page > 1) {
+                const prevButton = document.createElement('li');
+                prevButton.classList.add('btn', 'prev');
+                prevButton.innerHTML = '<span><i class="fas fa-angle-left"></i> Prev</span>';
+                prevButton.addEventListener('click', function() {
+                    createPagination(page - 1, opportunites);
+                    loadOpportunities(opportunites, page - 1);
+                });
+                paginationControls.appendChild(prevButton);
+            }
+        
+            if (page > 2) {
+                const firstPageButton = document.createElement('li');
+                firstPageButton.classList.add('numb');
+                firstPageButton.innerHTML = '<span>1</span>';
+                firstPageButton.addEventListener('click', function() {
+                    createPagination(1, opportunites);
+                    loadOpportunities(opportunites, 1);
+                });
+                paginationControls.appendChild(firstPageButton);
+        
+                if (page > 3) {
+                    const dots = document.createElement('li');
+                    dots.classList.add('dots');
+                    dots.innerHTML = '<span>...</span>';
+                    paginationControls.appendChild(dots);
+                }
+            }
+        
+            if (page === totalPages) {
+                beforePage = page - 1;
+            }
+        
+            if (page === 1) {
+                afterPage = page + 1;
+            }
+        
+            for (let plength = beforePage; plength <= afterPage; plength++) {
+                if (plength > totalPages) {
+                    continue;
+                }
+                if (plength === 0) {
+                    plength = plength + 1;
+                }
+                const pageButton = document.createElement('li');
+                pageButton.classList.add('numb');
+                if (page === plength) {
+                    pageButton.classList.add('active');
+                }
+                pageButton.innerHTML = `<span>${plength}</span>`;
+                pageButton.addEventListener('click', function() {
+                    createPagination(plength, opportunites);
+                    loadOpportunities(opportunites, plength);
+                });
+                paginationControls.appendChild(pageButton);
+            }
+        
+            if (page < totalPages - 1) {
+                if (page < totalPages - 2) {
+                    const dots = document.createElement('li');
+                    dots.classList.add('dots');
+                    dots.innerHTML = '<span>...</span>';
+                    paginationControls.appendChild(dots);
+                }
+                const lastPageButton = document.createElement('li');
+                lastPageButton.classList.add('numb');
+                lastPageButton.innerHTML = `<span>${totalPages}</span>`;
+                lastPageButton.addEventListener('click', function() {
+                    createPagination(totalPages, opportunites);
+                    loadOpportunities(opportunites, totalPages);
+                });
+                paginationControls.appendChild(lastPageButton);
+            }
+        
+            if (page < totalPages) {
+                const nextButton = document.createElement('li');
+                nextButton.classList.add('btn', 'next');
+                nextButton.innerHTML = '<span>Next <i class="fas fa-angle-right"></i></span>';
+                nextButton.addEventListener('click', function() {
+                    createPagination(page + 1, opportunites);
+                    loadOpportunities(opportunites, page + 1);
+                });
+                paginationControls.appendChild(nextButton);
+            }
+        }
+
+
+
+    function loadOpportunities(opportunities, page) {
       let containers = document.querySelector('.containers');
       containers.innerHTML = '';
-      const keys = Object.keys(opportunities);
+
+      const start = (page - 1) * itemsPerPage;
+      const end = start + itemsPerPage;
+      const keys = Object.keys(opportunities).slice(start, end);
+      // const keys = Object.keys(opportunities);
       keys.forEach(key => {
         const opportunity = opportunities[key];
         let container = document.createElement('div');
@@ -843,10 +1011,6 @@
       attachEventListeners();
     }
 
-    function loadAllOpportunities() {
-      loadOpportunities(window.opportunityData);
-    }
-
     async function handleSearchEnter() {
       if (event.key === 'Enter') {
         searchOpportunities();
@@ -861,11 +1025,6 @@
         return;
       }
       
-      // const currSearchparams = new URLSearchParams(window.location.search);
-      // const currSearchValue = currSearchparams.get('s');
-      // if (currSearchValue === searchValue) {
-      //   return;
-      // }
       if (bysearch) {
         const newUrl = `${window.location.origin}${window.location.pathname}?s=${encodeURIComponent(searchValue)}`;
         history.pushState({ path: newUrl }, '', newUrl);
@@ -888,12 +1047,10 @@
       }, {});
       window.filteredOpportunities = filteredOpportunities;
 
-      // const containersDiv = document.querySelector('.containers');
-      // containersDiv.classList.add('hidden');
-
       console.log('loading filtered opportunities');
 
-      loadOpportunities(filteredOpportunities);
+      createPagination(currentPage, filteredOpportunities);
+      loadOpportunities(filteredOpportunities, currentPage);
     }
 
 
@@ -940,7 +1097,8 @@
             searchOpportunities(false);
         } else {
             document.getElementById('searchInput').value = '';
-            loadAllOpportunities();
+            createPagination(currentPage, window.opportunityData);
+            loadOpportunities(window.opportunityData, currentPage);
         }
     });
 
@@ -961,7 +1119,8 @@
             document.getElementById('searchInput').value = searchValue;
             searchOpportunities();
         } else {
-            loadAllOpportunities();
+          createPagination(currentPage, window.opportunityData);
+          loadOpportunities(window.opportunityData, currentPage);
         }
     });
 
