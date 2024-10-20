@@ -641,6 +641,9 @@
       width: 22%;
     }
     
+    .hidden {
+      display: none;
+    }
 
 
 
@@ -788,12 +791,14 @@
         </div>
 
         <div class="search-bar-container">
-        <input type="text" class="search-bar" placeholder="Search...">
-        <button type="submit" class="search-button"><i class='bx bx-search'></i></button>
+        <input type="text" class="search-bar" placeholder="Search..." id="searchInput" onkeydown="handleSearchEnter(event)">
+        <button type="submit" class="search-button" onclick="searchOpportunities()"><i class='bx bx-search'></i></button>
         </div>
     </div>
 
     <div class="containers"></div>
+
+    <!-- <div class="searchResults"></div> -->
 
     <div class="popup-container" style="display: none;"></div>
 
@@ -809,12 +814,12 @@
     window.opportunityData = JSON.parse('<%- opportunityData %>');
 
 
-    function loadOpportunities(){
+    function loadOpportunities(opportunities){
       let containers = document.querySelector('.containers');
       containers.innerHTML = '';
-      const keys = Object.keys(window.opportunityData);
+      const keys = Object.keys(opportunities);
       keys.forEach(key => {
-        const opportunity = window.opportunityData[key];
+        const opportunity = opportunities[key];
         let container = document.createElement('div');
         container.classList.add('container');
         container.setAttribute("Opportunity-ID", key);
@@ -834,9 +839,56 @@
         `;
         containers.appendChild(container);
       });
+
+      attachEventListeners();
     }
 
-    loadOpportunities();
+    function loadAllOpportunities() {
+      loadOpportunities(window.opportunityData);
+    }
+
+    async function handleSearchEnter() {
+      if (event.key === 'Enter') {
+        searchOpportunities();
+      }
+    }
+
+    async function searchOpportunities() {
+      const searchInput = document.getElementById('searchInput');
+      const searchValue = searchInput.value.toLowerCase();
+      console.log('searchValue ', searchValue);
+      if (!searchValue) {
+        return;
+      }
+      
+      // const currSearchparams = new URLSearchParams(window.location.search);
+      // const currSearchValue = currSearchparams.get('s');
+      // if (currSearchValue === searchValue) {
+      //   return;
+      // }
+      const newUrl = `${window.location.origin}${window.location.pathname}?s=${encodeURIComponent(searchValue)}`;
+      history.pushState({ path: newUrl }, '', newUrl);
+
+      console.log(history);
+      console.log("******************************************");
+      const filteredOpportunities = Object.keys(window.opportunityData).reduce((acc, key) => {
+        const opportunity = window.opportunityData[key];
+        if (opportunity.title.toLowerCase().includes(searchValue) || 
+            opportunity.topic.toLowerCase().includes(searchValue) || 
+            opportunity.location.toLowerCase().includes(searchValue) || 
+            opportunity.institution.toLowerCase().includes(searchValue) ||
+            opportunity.shortDescription.toLowerCase().includes(searchValue) ||
+            opportunity.tags.includes(searchValue)) {
+
+              acc[key] = opportunity;
+        }
+        return acc;
+      }, {});
+      window.filteredOpportunities = filteredOpportunities;
+
+      // const containersDiv = document.querySelector('.containers');
+      // containersDiv.classList.add('hidden');
+    }
 
 
     let arrow = document.querySelectorAll(".arrow");
@@ -848,7 +900,6 @@
     }
     let sidebar = document.querySelector(".sidebar");
     let sidebarBtn = document.querySelector(".bx-menu");
-    console.log(sidebarBtn);
     sidebarBtn.addEventListener("click", ()=>{
       sidebar.classList.toggle("close");
     });
@@ -875,8 +926,41 @@
       }
     });
 
-    
+    window.addEventListener('popstate', function(event) {
+        const searchParams = new URLSearchParams(window.location.search);
+        const searchValue = searchParams.get('s');
+        if (searchValue) {
+            document.getElementById('searchInput').value = searchValue;
+            searchOpportunities();
+        } else {
+            document.getElementById('searchInput').value = '';
+            loadAllOpportunities();
+        }
+    });
+
     document.addEventListener('DOMContentLoaded', function() {
+        if (!history.state) {
+            const initialUrl = `${window.location.origin}${window.location.pathname}`;
+            history.replaceState({ path: initialUrl }, '', initialUrl);
+        }
+        
+        console.log(history);
+        console.log("******************************************");
+
+        attachEventListeners();
+
+        const searchParams = new URLSearchParams(window.location.search);
+        const searchValue = searchParams.get('s');
+        if (searchValue) {
+            document.getElementById('searchInput').value = searchValue;
+            searchOpportunities();
+        } else {
+            loadAllOpportunities();
+        }
+    });
+
+    
+    function attachEventListeners() {
       const containers = document.querySelectorAll('.container');
             const popupContainer = document.querySelector('.popup-container');
 
@@ -885,7 +969,6 @@
                     e.stopPropagation(); // Prevent the click from propagating to the window
                     const opportunityId = this.getAttribute('Opportunity-ID');
                     const opportunity = window.opportunityData[opportunityId];
-                    console.log('opportunityId', opportunityId);
 
                     let popup = document.createElement('div');
                     popup.classList.add('product-selected');
@@ -922,9 +1005,11 @@
                 e.stopPropagation(); // Prevent the click from propagating to the window
             });
 
-        });
+        }
 
-    
+        document.addEventListener('DOMContentLoaded', function() {
+            attachEventListeners();
+        });
 
   </script>
 </body>
