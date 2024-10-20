@@ -1,42 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nike Epic React Flyknit</title>
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700" rel="stylesheet">
-  <style>
-    /* Variables */
-    :root {
-      --font: 'Lato', sans-serif;
-      --white: #F5F5F5;
-      --light: #E0C9CB;
-      --tan: #C3A1A0;
-      --pink: #D9AAB7;
-      --rose: #BA7E7E;
-      --dark: #4E4E4E;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Opportunities</title>
+    <style>
+        .hidden {
+            display: none;
+        }
 
-    /* center container in the middle */
-    /* html {
-      display: grid;
-      min-height: 100%;
-    }
-
-    body {
-      display: grid;
-      background: var(--light);
-      font-family: var(--font), sans-serif;
-      text-transform: uppercase;
-    } */
-
-
-    .containers {
-      display: flex;  /* Set to flex for side by side layout */
-      justify-content: space-between;  /* Add space between the containers */
-      flex-wrap: wrap; /* Optional: wrap containers to new lines if space is limited */
-      gap: 20px; /* Optional: Add gap between containers */
-      margin: 20px; /* Add some margin around the container group */
+        .containers {
+        display: flex;  /* Set to flex for side by side layout */
+        justify-content: space-between;  /* Add space between the containers */
+        flex-wrap: wrap; /* Optional: wrap containers to new lines if space is limited */
+        gap: 20px; /* Optional: Add gap between containers */
+        position: relative;
+        margin-top: 110px;
+        padding: 10px;
+        background: var(--light);
     }
 
     .container {
@@ -46,31 +27,22 @@
       width: 290px;
       height: 350px;
       background: var(--white);
-      box-shadow: 5px 5px 15px rgba(var(--rose), .5);
+      box-shadow: 7px 9px 16px 0px #847fb6;
       border-radius: 10px;
     }
 
-
-    .selected {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 500px;
-      height: 350px;
-      background: var(--white);
-      box-shadow: 5px 5px 15px rgba(var(--rose-rgb), var(--rose-alpha));
-      border-radius: 10px;
-      z-index: 1000; /* Ensure it is on top */
+    .container:hover {
+      transform: translateY(-5px);
+      transition: all 0.4s ease-in-out;
+      cursor: pointer;
     }
 
     .product-p {
       font-size: 0.6em;
       color: var(--rose);
       letter-spacing: 1px;
+      margin-top: 9.6px;
+      margin-bottom: 9.6px;
     }
 
     .product-pl {
@@ -85,35 +57,70 @@
       letter-spacing: 1px;
     }
 
+
     .product-h1 {
       font-size: 1.2em;
       color: var(--dark);
       margin-top: -5px;
+      margin-bottom: 12.86px;
     }
 
     .product-h2 {
       color: var(--tan);
       margin-top: -5px;
+        margin-bottom: 19.92px;
     }
 
     .product {
       position: absolute;
-      width: 96%;
-      height: 100%;
-      top: 10%;
+      width: 92%;
+      height: 90%;
+      top: 7%;
       left: 4%;
+      right: 4%;
+      margin: auto;
     }
 
     .product-desc {
       text-transform: none;
       letter-spacing: 0;
+      margin-top: 11.2px;
       margin-bottom: 17px;
       color: var(--dark);
       font-size: .7em;
       line-height: 1.6em;
-      margin-right: 25px;
+      margin-right: 10px;
       text-align: justify;
     }
+
+    .product-buttons {
+      margin-top: 3px;
+      position: absolute;
+      bottom: 3%;
+      left: 5%;
+      width: 97%;
+    }
+
+      .popup-container {
+        position: fixed;
+        top: 26%;
+        left: 34%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+      }
+
+      .product-selected {
+          background: var(--white);
+          box-shadow: 0px 0px 20px 13px #847fb6;
+          border-radius: 10px;
+          padding: 20px;
+          width: 500px;
+          height: auto;
+      }
+
+    
 
     .product-button-add, .product-button-like {
       /* background: darken(var(--light), 10%); */
@@ -122,7 +129,7 @@
       display: inline-block;
       outline: 0;
       border: 0;
-      margin: -1px;
+      /* margin: -1px; */
       border-radius: 2px;
       text-transform: uppercase;
       letter-spacing: 1px;
@@ -142,70 +149,201 @@
     .product-button-like {
       width: 22%;
     }
+  
 
-    .buttons {
-      position: absolute;
-      bottom: 10px; /* Moves buttons to the bottom */
-      left: 10px; /* Aligns them a bit inside from the left */
-      width: 100%; /* Ensures buttons span the full container width */
-      display: flex; /* Align buttons in a row */
-      justify-content: space-between; /* Adds space between the buttons */
-    }
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
 
-
-  </style>
+        .pagination button {
+            margin: 0 5px;
+            padding: 5px 10px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-
-<div class="containers">
-
-  <!-- <div class="container">
-    <div class="product">
-      <p class="product-p">Women's Running Shoe</p>
-      <h1 class="product-h1">Nike Epic React Flyknit</h1>
-      <h2 class="product-h2">$150</h2>
-      <p class="product-desc">The Nike Epic React Flyknit foam cushioning is responsive yet light-weight, durable yet soft. This creates a sensation that not only enhances the feeling of moving forward, but makes running feel fun, too.</p>
-      <div class="buttons">
-        <button class="product-button-add" type="button">Add to Cart</button>
-        <button class="product-button-like" type="button"><span>♥</span></button>
-      </div>
+    <input type="text" id="searchInput" onkeydown="handleSearchEnter(event)" placeholder="Search opportunities...">
+    <div class="containers" id="opportunitiesContainer">
+        <!-- Your opportunity divs will be here -->
     </div>
-  </div> -->
-
-
-  <!-- <div class="container">
-    <div class="product">
-      <p class="product-p" name="topic">Robotics</p>
-      <h2 class="product-h1" name="title">Robot-Assisted Surgery</h2>
-      <p class="product-pl" name="location-institution">Ann Arbor, MI, MIT</p>
-      <p class="product-desc" name="shortDescription">Developing robotic systems to assist in precision surgeries and reduce human error.</p>
-      <p class="product-p2" name="stipend"> $1,000/month </p>
-      <p class="product-p2" name="duration"> 6 Months </p>
-      <div class="buttons">
-        <button class="product-button-add" type="button">Apply Now</button>
-        <button class="product-button-like" type="button"><span>♥</span></button>
-      </div>
+    <div class="pagination" id="paginationControls">
+        <!-- Pagination buttons will be here -->
     </div>
-  </div> -->
 
+    <!-- Popup container -->
+    <div class="popup-container" style="display: none;"></div>
 
-  <div class="popped_container">
-    <div class="popped_product">
-      <p class="product-p" name="topic">Robotics</p>
-      <h2 class="product-h1" name="title">Robot-Assisted Surgery</h2>
-      <p class="product-pl" name="location-institution">Ann Arbor, MI, MIT</p>
-      <p class="product-desc" name="longDescription">This opportunity involves designing and testing innovative renewable energy systems like solar, wind, and hydroelectric power for urban settings. Participants will analyze current energy consumption trends, explore sustainable alternatives, and contribute to research papers on renewable energy solutions. This project aims to reduce dependency on fossil fuels and enhance energy sustainability in large cities</p>
-      <p class="product-p2" name="stipend"> $1,000/month </p>
-      <p class="product-p2" name="duration"> 6 Months </p>
-      <div class="buttons">
-        <button class="product-button-add" type="button">Apply Now</button>
-        <button class="product-button-like" type="button"><span>♥</span></button>
-      </div>
-    </div>
-  </div>
+    <script>
+        const itemsPerPage = 10; // Number of items to display per page
+        let currentPage = 1;
 
-</div>
+        window.opportunityData = JSON.parse('<%- opportunityData %>');
 
+        async function handleSearchEnter(event) {
+            if (event.key === 'Enter') {
+                searchOpportunities();
+            }
+        }
 
+        async function searchOpportunities() {
+            const searchInput = document.getElementById('searchInput');
+            const searchValue = searchInput.value.toLowerCase();
+            if (!searchValue) {
+                return;
+            }
+
+            // Update the URL with the search query
+            const newUrl = `${window.location.origin}${window.location.pathname}?s=${encodeURIComponent(searchValue)}`;
+            history.pushState({ path: newUrl }, '', newUrl);
+
+            const filteredOpportunities = Object.keys(window.opportunityData).reduce((acc, key) => {
+                const opportunity = window.opportunityData[key];
+                if (opportunity.title.toLowerCase().includes(searchValue) || 
+                    opportunity.topic.toLowerCase().includes(searchValue) || 
+                    opportunity.location.toLowerCase().includes(searchValue) || 
+                    opportunity.institution.toLowerCase().includes(searchValue)) {
+                    acc[key] = opportunity;
+                }
+                return acc;
+            }, {});
+            window.filteredOpportunities = filteredOpportunities;
+
+            loadOpportunities(filteredOpportunities, currentPage);
+            setupPagination(filteredOpportunities);
+        }
+
+        function loadOpportunities(opportunities, page) {
+            const container = document.getElementById('opportunitiesContainer');
+            container.innerHTML = ''; // Clear existing opportunities
+
+            const start = (page - 1) * itemsPerPage;
+            const end = start + itemsPerPage;
+            const paginatedOpportunities = Object.keys(opportunities).slice(start, end);
+
+            paginatedOpportunities.forEach(key => {
+                const opportunity = opportunities[key];
+                let div = document.createElement('div');
+                div.classList.add('container');
+                div.setAttribute('Opportunity-ID', key);
+                div.innerHTML = `
+                  <div class="product">
+                    <p class="product-p" name="topic">${opportunity.topic}</p>
+                    <h2 class="product-h1" name="title">${opportunity.title}</h2>
+                    <p class="product-pl" name="location">${opportunity.location}</p>
+                    <p class="product-desc" name="shortDescription">${opportunity.shortDescription}</p>
+                    <p class="product-p2" name="stipend">stipend: ${opportunity.stipend} </p>
+                    <p class="product-p2" name="duration">duration: ${opportunity.duration} </p>
+                    <div class="product-buttons">
+                      <button class="product-button-add" type="button">Apply Now</button>
+                      <button class="product-button-like" type="button"><span>♥</span></button>
+                    </div>
+                  </div>
+                `;
+                container.appendChild(div);
+            });
+
+            // Reattach event listeners to the new elements
+            attachEventListeners();
+        }
+
+        function setupPagination(opportunities) {
+            const paginationControls = document.getElementById('paginationControls');
+            paginationControls.innerHTML = ''; // Clear existing pagination controls
+
+            const totalPages = Math.ceil(Object.keys(opportunities).length / itemsPerPage);
+
+            for (let i = 1; i <= totalPages; i++) {
+                const button = document.createElement('button');
+                button.textContent = i;
+                button.addEventListener('click', function() {
+                    currentPage = i;
+                    loadOpportunities(opportunities, currentPage);
+                });
+                paginationControls.appendChild(button);
+            }
+        }
+
+        function attachEventListeners() {
+            const containers = document.querySelectorAll('.container');
+            const popupContainer = document.querySelector('.popup-container');
+
+            containers.forEach(container => {
+                container.addEventListener('click', function(e) {
+                    e.stopPropagation(); // Prevent the click from propagating to the window
+                    const opportunityId = this.getAttribute('Opportunity-ID');
+                    const opportunity = window.opportunityData[opportunityId];
+                    console.log('opportunityId', opportunityId);
+
+                    let popup = document.createElement('div');
+                    popup.classList.add('product-selected');
+                    popup.innerHTML = `
+                        <p class="product-p" name="topic">${opportunity.topic}</p>
+                        <h2 class="product-h1" name="title">${opportunity.title}</h2>
+                        <p class="product-pl" name="location">${opportunity.location}</p>
+                        <p class="product-pl" name="institution">${opportunity.institution}</p>
+                        <p class="product-desc" name="longDescription">${opportunity.longDescription}</p>
+                        <p class="product-p2" name="stipend">reference: ${opportunity.postBy} </p>
+                        <p class="product-p2" name="stipend">stipend: ${opportunity.stipend} </p>
+                        <p class="product-p2" name="duration">duration: ${opportunity.duration} </p>
+                        <div class="product-buttons">
+                            <button class="product-button-add" type="button">Apply Now</button>
+                            <button class="product-button-like" type="button"><span>♥</span></button>
+                        </div>
+                    `;
+                    popupContainer.innerHTML = ''; // Clear any existing content
+                    popupContainer.appendChild(popup);
+                    popupContainer.style.display = 'flex'; // Show the popup container
+
+                    const popupHeight = popup.offsetHeight + 100; // Add 100px to the natural height
+                    popup.style.height = `${popupHeight}px`;
+                });
+            });
+
+            window.addEventListener('click', function() {
+                popupContainer.style.display = 'none'; // Hide the popup container
+                popupContainer.innerHTML = ''; // Clear the popup content
+            });
+
+            popupContainer.addEventListener('click', function(e) {
+                e.stopPropagation(); // Prevent the click from propagating to the window
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Push the initial state to the history stack if it's empty
+            if (!history.state) {
+                const initialUrl = `${window.location.origin}${window.location.pathname}`;
+                history.replaceState({ path: initialUrl }, '', initialUrl);
+            }
+
+            attachEventListeners();
+
+            const searchParams = new URLSearchParams(window.location.search);
+            const searchValue = searchParams.get('s');
+            if (searchValue) {
+                document.getElementById('searchInput').value = searchValue;
+                searchOpportunities();
+            } else {
+                loadOpportunities(window.opportunityData, currentPage);
+                setupPagination(window.opportunityData);
+            }
+        });
+
+        window.addEventListener('popstate', function(event) {
+            const searchParams = new URLSearchParams(window.location.search);
+            const searchValue = searchParams.get('s');
+            if (searchValue) {
+                document.getElementById('searchInput').value = searchValue;
+                searchOpportunities(false);
+            } else {
+                document.getElementById('searchInput').value = '';
+                loadOpportunities(window.opportunityData, currentPage);
+                setupPagination(window.opportunityData);
+            }
+        });
+    </script>
 </body>
 </html>

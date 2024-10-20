@@ -8,7 +8,7 @@ async function addOpportunity(opportunityItem) {
 
         const docRef = await addDoc(feedbackCollectionRef, {
             topic: opportunityItem.topic,
-            shortDescription: opportunityItem.shortDecription,
+            shortDescription: opportunityItem.shortDescription,
             longDescription: opportunityItem.longDescription,
             title: opportunityItem.title,
             postBy: opportunityItem.provider,

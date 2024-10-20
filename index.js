@@ -338,7 +338,28 @@ app.get('/profile', async (req, res) => {
 
 
 app.get('/temp', async (req, res) => {
-    res.render('oppcard');
+    const opportunityData = await readOpportunities();
+    res.render('oppcard', { 
+        logoName: 'ResearchFinder', 
+        profileName: 'User', 
+        jobTitle: 'Student',
+        notifications: [ 
+            {
+                message: "helo",
+                timestamp: {
+                    seconds: 1633497600
+                }
+            },
+            {
+                message: "helo1",
+                timestamp: {
+                    seconds: 1633497600
+                }
+            }
+        ],
+        firebaseConfig: JSON.stringify(firebaseConfig),
+        opportunityData: JSON.stringify(opportunityData)
+    });
 });
 
 
