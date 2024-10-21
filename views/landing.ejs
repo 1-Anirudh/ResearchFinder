@@ -123,15 +123,15 @@
 
   /* Add dark-theme styles */
   .dark-theme {
-    --sidebar-background: #11101d;
+    --sidebar-background: #008a82;
     --homesection-background: #302885;
-    --logo-detailscolor: #919191;
+    --logo-detailscolor: #ffffff;
     --hover-background: #1d1b31;
     --navlinks-i: #fff; 
     --linkname-color: #fff;
     --submenu-back: #1d1b31;
     --submenu-a: #fff;
-    --profile-details: #1d1b31;
+    --profile-details: #00a39a;
   }
 
   
@@ -141,6 +141,8 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Poppins', sans-serif;
+  outline: none;
+  border: none;
 }
 .sidebar{
   position: fixed;
@@ -198,7 +200,7 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
-  background: var(--hover-background);
+  background: #005e59;
 }
 .sidebar.light-mode .nav-links li:hover{
   background: var(--hover-background);
@@ -307,7 +309,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: var(--profile-details);
+  background: #005e59;
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -418,7 +420,7 @@
 
 .home-section{
   position: relative;
-	background-color: var(--light);
+	background-color: #cde3e2;
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -433,7 +435,7 @@
 
 
 .home-section .home-content .bx-menu,
-.home-section .home-content .text .search-bar input{
+.home-section .home-content .text input{
   color: #11101d;
   font-size: 35px;
 }
@@ -441,7 +443,7 @@
   margin: 0 15px;
   cursor: pointer;
 }
-.home-section .home-content .text .search-bar{
+.home-section .home-content .text {
   font-size: 26px;
   font-weight: 600;
 }
@@ -452,13 +454,13 @@
     top: 0;
     z-index: 100;
     width: 100%;
-    background: #CDA9AC;
+    background: #ffffff;
     padding-bottom: 22px;
-    height: 110px;
+    height: 180px;
 }
 
 
-.search-bar-container {
+/* .search-bar-container {
   display: flex;
   align-items: center;
   background: #cfd8efa3;
@@ -466,8 +468,8 @@
   padding: 5px;
   width: 400px;
   margin-left: 20%;
-}
-
+} */
+/* 
 .search-bar {
   width: 100%;
   height: 100%;
@@ -477,8 +479,8 @@
   font-size: 20px;
   color: #11101d;
   padding: 5px;
-}
-
+} */
+/* 
 .search-button {
   background-color: #007bff;
   border: none;
@@ -490,7 +492,7 @@
 
 .search-button i {
   font-size: 1rem;
-}
+} */
 
 .notification-message {
   font-size: 13px;
@@ -508,8 +510,8 @@
       position: relative;
       margin-top: 110px;
       padding: 10px;
-      background: var(--light);
-      padding-top: 27px;
+      background: #cde3e2;
+      padding-top: 90px;
       padding-bottom: 33px;
     }
 
@@ -527,12 +529,12 @@
     .container:hover {
       transform: translateY(-5px);
       transition: all 0.4s ease-in-out;
-      cursor: pointer;
+      cursor: cell;
     }
 
     .product-p {
       font-size: 0.6em;
-      color: var(--rose);
+      color: #20b2aa;
       letter-spacing: 1px;
       margin-top: 9.6px;
       margin-bottom: 9.6px;
@@ -540,7 +542,7 @@
 
     .product-pl {
       font-size: 1em;
-      color: var(--tan);
+      color: #20b2aa;
       letter-spacing: 1px;
     }
 
@@ -617,7 +619,7 @@
 
     .product-button-add, .product-button-like {
       /* background: darken(var(--light), 10%); */
-      background-color: #CDA9AC;
+      background-color: #20b2aa;
       padding: 10px;
       display: inline-block;
       outline: 0;
@@ -631,7 +633,7 @@
     }
 
     .product-button-add:hover, .product-button-like:hover {
-      background: var(--rose);
+      background: #31e0d7;
       transition: all .4s ease-in-out;
     }
 
@@ -650,7 +652,7 @@
     .pagination {    
       display: flex;
     justify-content: center;
-    background-color: var(--light);
+    background-color: #cde3e2;
     padding: 10px;
     }
 
@@ -704,6 +706,180 @@
 .pagination ul li:last-child:hover{
   color: #fff;
   background: #20B2AA;
+}
+
+
+.search-wrapper {
+    width: 89%;
+    margin: 0 auto;
+    position: fixed;
+    left: 25%;
+    padding-left: 28px;
+}
+
+#search-container {
+  margin: 1em 0;
+}
+#search-container input {
+  background-color: transparent;
+  width: 40%;
+  border-bottom: 2px solid #110f29;
+  padding: 1em 0.3em;
+}
+#search-container input:focus {
+  border-bottom-color: #20b2aa;
+}
+#search-container button {
+  padding: 1em 2em;
+  margin-left: 1em;
+  background-color: #20b2aa;
+  color: #ffffff;
+  border-radius: 5px;
+  margin-top: 0.5em;
+  cursor: pointer;
+}
+
+#search-container button:hover {
+  background-color: #31e0d7;
+}
+
+.filter-button {
+  border: 2px solid #18b3aa;
+  padding: 1em 2.2em;
+  border-radius: 3em;
+  background-color: transparent;
+  color: #20b2aa;
+  cursor: pointer;
+}
+
+.clear-button {
+  border: 2px solid #18b3aa;
+  padding: 1em 2.2em;
+  border-radius: 3em;
+  background-color: transparent;
+  color: #20b2aa;
+  cursor: no-drop;
+}
+
+.clear-button.active {
+  background-color: #20b2aa;
+  color: #ffffff;
+}
+
+.clear-button.active:hover {
+  background-color: #31e0d7;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.filter-button.active {
+  background-color: #20b2aa;
+  color: #ffffff;
+}
+
+.filter-button:hover {
+  background-color: #20b2aa;
+  color: #ffffff;
+}
+
+.filter-button-container {
+  position: relative;
+  display: inline-block;
+}
+
+.filter-button-container .filter-dropdown {
+    display: none;
+    position: absolute;
+    background-color: #ffffff;
+    border: 1px solid #20b2aa;
+    border-radius: 5px;
+    padding: 12px;
+    top: 3em;
+    z-index: 100;
+    width: 100%;
+    min-width: max-content;
+}
+
+.filter-button-container:hover .filter-dropdown {
+  display: block;
+}
+
+.filter-dropdown {
+  display: none;
+}
+
+.filter-dropdown .option{
+    display: flex;
+    height: 27px;
+    cursor: pointer;
+    padding: 0px 8px;
+    border-radius: 8px;
+    align-items: center;
+    background: #fff;
+}
+.filter-dropdown .option:hover{
+    background: #F2F2F2;
+}
+.option i{
+    font-size: 25px;
+    margin-right: 12px;
+}
+.option .option-text{
+    font-size: 12px;
+    color: #006660;
+}
+
+
+.active {
+  background-color: #6759ff;
+  color: #ffffff;
+}
+#products {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-column-gap: 1.5em;
+  padding: 2em 0;
+}
+.card {
+  background-color: #ffffff;
+  max-width: 18em;
+  margin-top: 1em;
+  padding: 1em;
+  border-radius: 5px;
+  box-shadow: 1em 2em 2.5em rgba(1, 2, 68, 0.08);
+}
+.image-container {
+  text-align: center;
+}
+img {
+  max-width: 100%;
+  object-fit: contain;
+  height: 15em;
+}
+.container {
+  padding-top: 1em;
+  color: #110f29;
+}
+.container h5 {
+  font-weight: 500;
+}
+.hide {
+  display: none;
+}
+@media screen and (max-width: 720px) {
+  img {
+    max-width: 100%;
+    object-fit: contain;
+    height: 10em;
+  }
+  .card {
+    max-width: 10em;
+    margin-top: 1em;
+  }
+  #products {
+    grid-template-columns: auto auto;
+    grid-column-gap: 1em;
+  }
 }
 
 
@@ -773,19 +949,6 @@
           <li><a class="link_name" href="#">FeedBack</a></li>
         </ul>
       </li>
-
-
-      <% if (role === 'admin') { %>  
-            <li>
-              <a href="/add-opportunity">
-                <i class='bx bx-add-to-queue' ></i>
-                <span class="link_name">Post Opportunity</span>
-              </a>
-              <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Post</a></li>
-              </ul>
-            </li>
-       <% } %> 
       
       <!-- <li>
         <a href="/tempcheck">
@@ -864,10 +1027,122 @@
             <label for="dark-light"></label>  
         </div>
 
-        <div class="search-bar-container">
-        <input type="text" class="search-bar" placeholder="Search..." id="searchInput" onkeydown="handleSearchEnter(event)">
-        <button type="submit" class="search-button" onclick="searchOpportunities()"><i class='bx bx-search'></i></button>
+        <!-- <div class="search-bar-container">
+          <input type="text" class="search-bar" placeholder="Search..." id="search-input" onkeydown="handleSearchEnter(event)">
+          <button type="submit" class="search-button" onclick="searchOpportunities()"><i class='bx bx-search'></i></button>
+        </div> -->
+
+        <div class="search-wrapper">
+          <div id="search-container">
+            <input
+              type="search"
+              class="search-bar"
+              id="search-input"
+              placeholder="Search product name here.."
+              onkeydown="handleSearchEnter(event)"
+            />
+            <button id="search" onclick="searchOpportunities()">Search</button>
+          </div>
+
+          <div id="buttons">
+            <div class="filter-button-container" id="work-mode">
+                <button class="filter-button" onclick="filterProduct('all')" id="work-mode-button">
+                  work-mode
+                </button>
+                <div class="filter-dropdown">
+                  <li class="option" onclick="addMode('on-site')">
+                    <span class="option-text">on-site</span>
+                  </li>
+                  <li class="option" onclick="addMode('remote')">
+                    <span class="option-text">remote</span>
+                  </li>
+                  <li class="option" onclick="addMode('hybrid')">
+                    <span class="option-text">hybrid</span>
+                  </li>
+                  <li class="option" onclick="addMode('any')">
+                    <span class="option-text">any</span>
+                  </li>
+                </div>
+            </div>
+            <div class="filter-button-container" id="work-type">
+                <button class="filter-button" onclick="filterProduct('Topwear')" id="work-type-button">
+                  work-type
+                </button>
+                <div class="filter-dropdown">
+                  <li class="option" onclick="addType('full-time')">
+                    <span class="option-text">full-time</span>
+                  </li>
+                  <li class="option" onclick="addType('part-time')">
+                    <span class="option-text">part-time</span>
+                  </li>
+                  <li class="option" onclick="addType('internship')">
+                    <span class="option-text">internship</span>
+                  </li>
+                  <li class="option" onclick="addType('any')">
+                    <span class="option-text">any</span>
+                  </li>
+                </div>
+            </div>
+            <div class="filter-button-container" id="duration">
+              <button class="filter-button" onclick="filterProduct('Bottomwear')"  id="duration-button">
+                duration
+              </button>
+              <div class="filter-dropdown">
+                <li class="option" onclick="addDuration('1-3 months')">
+                  <span class="option-text">1-3 months</span>
+                </li>
+                <li class="option" onclick="addDuration('3-6 months')">
+                  <span class="option-text">3-6 months</span>
+                </li>
+                <li class="option" onclick="addDuration('6-12 months')">
+                  <span class="option-text">6-12 months</span>
+                </li>
+                <li class="option"  onclick="addDuration('12+ months')">
+                  <span class="option-text">12+ months</span>
+                </li>
+                <li class="option"  onclick="addDuration('any')">
+                  <span class="option-text">any</span>
+                </li>
+              </div>
+            </div>
+            <div class="filter-button-container" id="stipend">
+              <button class="filter-button" onclick="filterProduct('Watch')" id="stipend-button">
+                stipend
+              </button>
+              
+              <div class="filter-dropdown">
+                <li class="option"  onclick="addStipend('$0-1,000')">
+                  <span class="option-text">$0-1,000</span>
+                </li>
+                <li class="option"  onclick="addStipend('$1,000-2,000')">
+                  <span class="option-text">$1,000-2,000</span>
+                </li>
+                <li class="option"  onclick="addStipend('$2,000-3,000')">
+                  <span class="option-text">$2,000-3,000</span>
+                </li>
+                <li class="option"  onclick="addStipend('$3,000+')">
+                  <span class="option-text">$3,000+</span>
+                </li>
+                <li class="option" onclick="addStipend('any')">
+                  <span class="option-text">any</span>
+                </li>
+              </div>
+            </div>
+
+            <div class="filter-button-container" id="clear">
+              <button class="clear-button" onclick="clearFilters()" id="clear-button-id">
+                Clear Filters
+              </button>
+            </div>
+            </div>
+          </div>
+
+
         </div>
+
+
+
+
     </div>
 
     <div class="containers" id="opportunitiesContainer"></div>
@@ -891,9 +1166,187 @@
   <script>
     window.firebaseConfig = JSON.parse('<%- firebaseConfig %>');
     window.opportunityData = JSON.parse('<%- opportunityData %>');
+    window.filteredOpportunities = window.opportunityData;
+    window.filteredOpportunities_1 = window.opportunityData;
+    window.filteredOpportunities_2 = window.opportunityData;
+    window.filteredOpportunities_3 = window.opportunityData;
+    window.filteredOpportunities_4 = window.opportunityData;
 
     const itemsPerPage = 12;
     let currentPage = 1;
+
+    function filterProduct(category) {
+      console.log(category);
+    }
+
+
+    function addMode(mode) {
+      const button = document.getElementById("work-mode-button");
+      button.innerHTML = mode;
+      button.classList.add('active');
+      const clearButton = document.getElementById("clear-button-id");
+      clearButton.classList.add('active');
+
+
+      const filteredOpportunities_1 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+        const opportunity = window.filteredOpportunities[key];
+        if (mode === 'any') {
+          acc[key] = opportunity;
+        } else if (opportunity.mode === mode) {
+          acc[key] = opportunity;
+        }
+        return acc;
+      }, {});
+      window.filteredOpportunities_1 = filteredOpportunities_1;
+
+      console.log('loading filtered opportunities');
+
+      filterAllOpportunities();
+    }
+
+    function addType(type) {
+      const button = document.getElementById("work-type-button");
+      button.innerHTML = type;
+      button.classList.add('active');
+      const clearButton = document.getElementById("clear-button-id");
+      clearButton.classList.add('active');
+
+      
+      const filteredOpportunities_2 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+        const opportunity = window.filteredOpportunities[key];
+        if (type === 'any') {
+          acc[key] = opportunity;
+        } else if (opportunity.type === type) {
+          acc[key] = opportunity;
+        }
+        return acc;
+      }, {});
+      window.filteredOpportunities_2 = filteredOpportunities_2;
+
+      console.log('loading filtered opportunities');
+
+      filterAllOpportunities();
+    }
+
+    function addDuration(duration) {
+      const button = document.getElementById("duration-button");
+      button.innerHTML = duration;
+      button.classList.add('active');
+      const clearButton = document.getElementById("clear-button-id");
+      clearButton.classList.add('active');
+
+      var minVal = 0;
+      var maxVal = 1000000;
+
+      if (duration === '1-3 months') {
+        var minVal = 1;
+        var maxVal = 3;
+      } else if (duration === '3-6 months') {
+        var minVal = 3;
+        var maxVal = 6;
+      } else if (duration === '6-12 months') {
+        var minVal = 6;
+        var maxVal = 12;
+      } else if (duration === '12+ months') {
+        var minVal = 12;
+        var maxVal = 1000000;
+      }
+
+      const filteredOpportunities_3 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+        const opportunity = window.filteredOpportunities[key];
+        if (duration === 'any') {
+          acc[key] = opportunity;
+          console.log(opportunity.duration);
+        } else if (opportunity.duration >= minVal && opportunity.duration <= maxVal) {
+          acc[key] = opportunity;
+        }
+        return acc;
+      }, {});
+      window.filteredOpportunities_3 = filteredOpportunities_3;
+
+      console.log('loading filtered opportunities');
+
+      filterAllOpportunities();
+    }
+
+    function addStipend(stipend) {
+      const button = document.getElementById("stipend-button");
+      button.innerHTML = stipend;
+      button.classList.add('active');
+      const clearButton = document.getElementById("clear-button-id");
+      clearButton.classList.add('active');
+
+      var minVal = 0;
+      var maxVal = 1000000;
+      if (stipend === '$0-1,000') {
+        var minVal = 0;
+        var maxVal = 1000;
+      } else if (stipend === '$1,000-2,000') {
+        var minVal = 1000;
+        var maxVal = 2000;
+      } else if (stipend === '$2,000-3,000') {
+        var minVal = 2000;
+        var maxVal = 3000;
+      } else if (stipend === '$3,000+') {
+        var minVal = 3000;
+        var maxVal = 1000000;
+      }
+
+      const filteredOpportunities_4 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+        const opportunity = window.filteredOpportunities[key];
+        if (stipend === 'any') {
+          acc[key] = opportunity;
+        } else if (opportunity.stipend >= minVal && opportunity.stipend <= maxVal) {
+          acc[key] = opportunity;
+        }
+        return acc;
+      }, {});
+      window.filteredOpportunities_4 = filteredOpportunities_4;
+
+      console.log('loading filtered opportunities');
+
+      filterAllOpportunities();
+    }
+
+    function clearFilters() {
+      const buttons = document.querySelectorAll('.filter-button');
+      buttons.forEach(button => {
+        button.classList.remove('active');
+        const lastIndex = button.id.lastIndexOf('-');
+        button.innerHTML = button.id.substring(0, lastIndex);
+      });
+      const clearButton = document.getElementById("clear-button-id");
+      clearButton.classList.remove('active');
+
+      window.filteredOpportunities_1 = window.filteredOpportunities;
+      window.filteredOpportunities_2 = window.filteredOpportunities;
+      window.filteredOpportunities_3 = window.filteredOpportunities;
+      window.filteredOpportunities_4 = window.filteredOpportunities;
+
+      createPagination(currentPage, window.filteredOpportunities);
+      loadOpportunities(window.filteredOpportunities, currentPage);
+    }
+
+
+    function filterAllOpportunities() {
+      console.log('filtering all opportunities');
+      const keys_1 = Object.keys(window.filteredOpportunities_1);
+      const keys_2 = Object.keys(window.filteredOpportunities_2);
+      const keys_3 = Object.keys(window.filteredOpportunities_3);
+      const keys_4 = Object.keys(window.filteredOpportunities_4);
+      const allKeys = [...keys_1, ...keys_2, ...keys_3, ...keys_4];
+
+      const keys = allKeys.filter(key => keys_1.includes(key) && keys_2.includes(key) && keys_3.includes(key) && keys_4.includes(key));
+      const newFilteredOpportunities = keys.reduce((acc, key) => {
+        acc[key] = window.filteredOpportunities[key];
+        return acc;
+      }, {});
+
+      createPagination(currentPage, newFilteredOpportunities);
+      loadOpportunities(newFilteredOpportunities, currentPage);
+    }
+
+
 
     function createPagination(page, opportunites) {
             const paginationControls = document.querySelector(".pagination ul");
@@ -1010,10 +1463,12 @@
             <h2 class="product-h1" name="title">${opportunity.title}</h2>
             <p class="product-pl" name="location">${opportunity.location}</p>
             <p class="product-desc" name="shortDescription">${opportunity.shortDescription}</p>
-            <p class="product-p2" name="stipend">stipend: ${opportunity.stipend} </p>
-            <p class="product-p2" name="duration">duration: ${opportunity.duration} </p>
+            <p class="product-p2" name="stipend">stipend:  $${opportunity.stipend} /month</p>
+            <p class="product-p2" name="duration">duration: ${opportunity.duration} months </p>
+            <p class="product-p2" name="mode">work-mode: ${opportunity.mode} </p>
+            <p class="product-p2" name="type">work-type: ${opportunity.type} </p>
             <div class="product-buttons">
-              <button class="product-button-add" type="button">Apply Now</button>
+              <button class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
               <button class="product-button-like" type="button"><span>♥</span></button>
             </div>
           </div>
@@ -1031,7 +1486,7 @@
     }
 
     async function searchOpportunities(bysearch = true) {
-      const searchInput = document.getElementById('searchInput');
+      const searchInput = document.getElementById('search-input');
       const searchValue = searchInput.value.toLowerCase();
       console.log('searchValue ', searchValue);
       if (!searchValue) {
@@ -1054,11 +1509,13 @@
             opportunity.shortDescription.toLowerCase().includes(searchValue) ||
             opportunity.tags.includes(searchValue)) {
 
-              acc[key] = opportunity;
+            acc[key] = opportunity;
         }
         return acc;
       }, {});
+      
       window.filteredOpportunities = filteredOpportunities;
+      clearFilters();
 
       console.log('loading filtered opportunities');
 
@@ -1106,10 +1563,10 @@
         const searchParams = new URLSearchParams(window.location.search);
         const searchValue = searchParams.get('s');
         if (searchValue) {
-            document.getElementById('searchInput').value = searchValue;
+            document.getElementById('search-input').value = searchValue;
             searchOpportunities(false);
         } else {
-            document.getElementById('searchInput').value = '';
+            document.getElementById('search-input').value = '';
             createPagination(currentPage, window.opportunityData);
             loadOpportunities(window.opportunityData, currentPage);
         }
@@ -1129,7 +1586,7 @@
         const searchParams = new URLSearchParams(window.location.search);
         const searchValue = searchParams.get('s');
         if (searchValue) {
-            document.getElementById('searchInput').value = searchValue;
+            document.getElementById('search-input').value = searchValue;
             searchOpportunities();
         } else {
           createPagination(currentPage, window.opportunityData);
@@ -1143,7 +1600,12 @@
             const popupContainer = document.querySelector('.popup-container');
 
             containers.forEach(container => {
-                container.addEventListener('click', function(e) {
+                    container.addEventListener('click', function(e) {
+                    
+                    if (e.target.classList.contains('product-button-add') || e.target.classList.contains('product-button-like')) {
+                        return; // Exit the event listener if a button is clicked
+                    }
+
                     e.stopPropagation(); // Prevent the click from propagating to the window
                     const opportunityId = this.getAttribute('Opportunity-ID');
                     const opportunity = window.opportunityData[opportunityId];
@@ -1157,10 +1619,12 @@
                         <p class="product-pl" name="institution">${opportunity.institution}</p>
                         <p class="product-desc" name="longDescription">${opportunity.longDescription}</p>
                         <p class="product-p2" name="stipend">reference: ${opportunity.postBy} </p>
-                        <p class="product-p2" name="stipend">stipend: ${opportunity.stipend} </p>
-                        <p class="product-p2" name="duration">duration: ${opportunity.duration} </p>
+                        <p class="product-p2" name="stipend">stipend: $${opportunity.stipend} /month </p>
+                        <p class="product-p2" name="duration">duration: ${opportunity.duration} months</p>
+                        <p class="product-p2" name="mode">work-mode: ${opportunity.mode} </p>
+                        <p class="product-p2" name="type">work-type: ${opportunity.type} </p>
                         <div class="product-buttons">
-                            <button class="product-button-add" type="button">Apply Now</button>
+                            <button class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
                             <button class="product-button-like" type="button"><span>♥</span></button>
                         </div>
                     `;
@@ -1182,8 +1646,6 @@
             popupContainer.addEventListener('click', function(e) {
                 e.stopPropagation(); // Prevent the click from propagating to the window
             });
-
-
 
         }
 

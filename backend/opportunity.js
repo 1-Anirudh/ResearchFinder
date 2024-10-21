@@ -18,6 +18,8 @@ async function addOpportunity(opportunityItem) {
             link: opportunityItem.link,
             tags: opportunityItem.tags,
             location: opportunityItem.location,
+            type: opportunityItem.type,
+            mode: opportunityItem.mode,
             timestamp: serverTimestamp() // Use serverTimestamp() to get the current server time
         });
         console.log("Opportunity written with ID: ", docRef.id);

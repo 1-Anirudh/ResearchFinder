@@ -351,7 +351,7 @@ app.get('/profile', async (req, res) => {
 
 
 app.get('/add-opportunity', ensureLoggedIn, async (req, res) => {
-    res.render('oppcard');
+    res.render('opportunity');
 })
 
 
