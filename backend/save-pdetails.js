@@ -43,8 +43,7 @@ async function saveUserPersonalDetails(uid, userDetails) {
             area: userDetails.area,
             education: userDetails.education,
             country: userDetails.country,
-            region: userDetails.region,
-            role: userDetails.role
+            region: userDetails.region
         });
 
         console.log('User details updated successfully');

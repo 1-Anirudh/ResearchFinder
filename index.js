@@ -8,7 +8,7 @@ const { submitFeedback } = require('./backend/feedback');
 const { getUserNotifications } = require('./backend/notification');
 
 const { saveUserDetails } = require('./backend/save-details');
-const { saveUserPersonalDetails, editUserPersonalDetails } = require('./backend/save-pdetails');
+const { saveUserRole, saveUserPersonalDetails, editUserPersonalDetails } = require('./backend/save-pdetails');
 
 
 const { chatToDB } = require('./backend/notification');
@@ -128,8 +128,8 @@ app.post('/register', async (req, res) => {
     req.session.email = email;
     try {
         const userCredential = await registerUser(email, password);
-        await saveUserRole(SessionUtils.getUserId(req.session), { role: role});
         SessionUtils.handleLoginSuccess(req, userCredential);
+        await saveUserRole(SessionUtils.getUserId(req.session), { role: role });
         res.redirect('/add-pdetails');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Registration failed: ${error.message}`);
@@ -144,7 +144,6 @@ app.post('/login', async (req, res) => {
     console.log("password", password);
     try {
         const userCredential = await signInUser(email, password);
-        console.log(userCredential);
         SessionUtils.handleLoginSuccess(req, userCredential);
         SessionUtils.userDetails(req);
         res.redirect('/');
@@ -185,6 +184,7 @@ app.get('/home', ensureLoggedIn, async (req, res) => {
     const opportunityData = await readOpportunities();
     const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
     const userDetails = await SessionUtils.userDetails(req);
+    console.log('user Details', userDetails);
     console.log('logged in as: ', userDetails.role);
     res.render('landing', { 
         role: userDetails.role,
@@ -240,7 +240,6 @@ app.post('/save-pdetails', async (req, res) => {
     }
     try {
         await saveUserPersonalDetails(SessionUtils.getUserId(req.session), userDetails);
-        req.session.userDetails = userDetails;
         SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Error saving personal details: ${error.message}`);
