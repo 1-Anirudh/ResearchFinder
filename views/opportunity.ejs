@@ -25,7 +25,7 @@ body {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: rgb(130, 106, 251);
+  background: #9efffa;
 }
 .container {
   position: relative;
@@ -119,10 +119,10 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: rgb(130, 106, 251);
+  background: #20b2aa;
 }
 .form button:hover {
-  background: rgb(88, 56, 250);
+  background: #31e0d7;
 }
 /*Responsive*/
 @media screen and (max-width: 500px) {
@@ -155,9 +155,35 @@ body {
           </div>
           <div class="input-box">
             <label>Duration</label>
-            <input type="text" placeholder="Duration in months" name="duration" required />
+            <input type="number" placeholder="Duration in months" name="duration" required />
           </div>
         </div>
+
+
+        <div class="column">
+            <div class="input-box">
+              <label>Work-mode</label>
+              <div class="select-box">
+                <select name="mode" required>
+                  <option hidden>Work Mode</option>
+                  <option>hybrid</option>
+                  <option>remote</option>
+                  <option>on-site</option>
+                </select>
+            </div>
+            <div class="input-box">
+              <label>Work-type</label>
+                <div class="select-box">
+                  <select name="type" required>
+                    <option hidden>Work Type</option>
+                    <option>internship</option>
+                    <option>part-time</option>
+                    <option>full-time</option>
+                  </select>
+            </div>
+          </div>
+
+        
 
         <!-- <div class="gender-box">
           <h3>Gender</h3>

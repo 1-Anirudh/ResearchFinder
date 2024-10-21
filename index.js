@@ -356,7 +356,7 @@ app.get('/add-opportunity', ensureLoggedIn, async (req, res) => {
 
 
 app.post('/post-opportunity', ensureLoggedIn, async (req, res) => {
-    const {topic, title, shortDescription, longDescription, stipend, institution, location, duration, link, tags} = req.body;
+    const {topic, title, shortDescription, longDescription, stipend, institution, location, duration, link, tags, mode, type} = req.body;
     provider = req.session.email;
     tagsList = tags.split(',');
     newOpportunity = {
@@ -370,6 +370,8 @@ app.post('/post-opportunity', ensureLoggedIn, async (req, res) => {
         location: location,
         duration: duration,
         link: link,
+        mode: mode,
+        type: type,
         tags: tagsList
     }
 
