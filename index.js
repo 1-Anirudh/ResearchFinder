@@ -57,6 +57,10 @@ class SessionUtils {
         return session.userId;
     }
 
+    static getEmail(session){
+        return session.email;
+    }
+
     static handleLoginSuccess(req, userCredential) {
         req.session.isLoggedIn = true;
         req.session.userId = userCredential.user.uid; // Store the user's UID in the session
@@ -119,11 +123,13 @@ app.get('/', (req, res) => {
 });
 
 app.post('/register', async (req, res) => {
-    const { email, password } = req.body;
+    const { email, password, role } = req.body;
+    req.session.role = role;
+    req.session.email = email;
     try {
         const userCredential = await registerUser(email, password);
+        await saveUserRole(SessionUtils.getUserId(req.session), { role: role});
         SessionUtils.handleLoginSuccess(req, userCredential);
-        SessionUtils.userDetails(req);
         res.redirect('/add-pdetails');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Registration failed: ${error.message}`);
@@ -133,10 +139,12 @@ app.post('/register', async (req, res) => {
 // Handle login form submission
 app.post('/login', async (req, res) => {
     const { email, password } = req.body;
+    req.session.email = email;
     console.log("email", email);
     console.log("password", password);
     try {
         const userCredential = await signInUser(email, password);
+        console.log(userCredential);
         SessionUtils.handleLoginSuccess(req, userCredential);
         SessionUtils.userDetails(req);
         res.redirect('/');
@@ -173,10 +181,13 @@ app.get('/tempcheck', async (req, res) => {
 
 app.get('/home', ensureLoggedIn, async (req, res) => {
     console.log("userID" , SessionUtils.getUserId(req.session));
+    console.log("email:", SessionUtils.getEmail(req.session));
     const opportunityData = await readOpportunities();
     const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
     const userDetails = await SessionUtils.userDetails(req);
+    console.log('logged in as: ', userDetails.role);
     res.render('landing', { 
+        role: userDetails.role,
         logoName: 'ResearchFinder', 
         profileName: userDetails.firstName || 'User', 
         jobTitle: 'Student',
@@ -189,6 +200,8 @@ app.get('/home', ensureLoggedIn, async (req, res) => {
 app.get('/feedback', (req, res) => {
     res.render('feedback');
 });
+
+
 
 app.post('/feedback', async (req, res) => {
     const { score, feedback } = req.body;
@@ -227,6 +240,7 @@ app.post('/save-pdetails', async (req, res) => {
     }
     try {
         await saveUserPersonalDetails(SessionUtils.getUserId(req.session), userDetails);
+        req.session.userDetails = userDetails;
         SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!', '/add-details');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Error saving personal details: ${error.message}`);
@@ -336,6 +350,35 @@ app.get('/profile', async (req, res) => {
     }
 });
 
+
+app.get('/add-opportunity', ensureLoggedIn, async (req, res) => {
+    res.render('oppcard');
+})
+
+
+app.post('/post-opportunity', ensureLoggedIn, async (req, res) => {
+    const {topic, title, shortDescription, longDescription, stipend, institution, location, duration, link, tags} = req.body;
+    provider = req.session.email;
+    tagsList = tags.split(',');
+    newOpportunity = {
+        topic: topic,
+        provider: provider,
+        title: title,
+        shortDescription: shortDescription,
+        longDescription: longDescription,
+        stipend: stipend,
+        institution: institution,
+        location: location,
+        duration: duration,
+        link: link,
+        tags: tagsList
+    }
+
+    console.log(newOpportunity);
+
+    addOpportunity(newOpportunity);
+    res.redirect('/home')
+});
 
 app.get('/temp', async (req, res) => {
     const opportunityData = await readOpportunities();

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Opportunities</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+
+</head>
+
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        font-family: 'Jost', sans-serif;
+        background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
+    }
+    .form-control:focus {
+        box-shadow: none;
+        border-color: #BA68C8;
+    }
+    button {
+        width: 60%;
+        height: 40px;
+        margin: 10px auto;
+        justify-content: center;
+        display: block;
+        color: #fff;
+        background: #573b8a;
+        font-size: 1em;
+        font-weight: bold;
+        margin-top: 30px;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        transition: .2s ease-in;
+        cursor: pointer;
+    }
+    button:hover {
+        background: #6d44b8;
+    }
+    .profile-button:focus {
+        background: #682773;
+        box-shadow: none;
+    }
+    .profile-button:active {
+        background: #682773;
+        box-shadow: none;
+    }
+    .back:hover {
+        color: #682773;
+        cursor: pointer;
+    }
+    .labels {
+        font-size: 11px;
+    }
+</style>
+
+<body>
+    <div class="container rounded bg-white mt-5 mb-5">
+        <!-- <div class="row"> -->
+            <div class="col-md-5 border-right">
+                <div class="p-3 py-5">
+                    <form action="/post-opportunity" method="POST">
+                        <div class="row mt-2">
+
+                            <div class="col-md-12">
+                                <label for="topic">Research Topic:</label><br>
+                                <input type="text" id="topic" name="topic" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="provider">Provider Email:</label><br>
+                                <input type="email" id="provider" name="provider" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="title">Title:</label><br>
+                                <input type="text" id="title" name="title" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="short-description">Short Description (70 words):</label><br>
+                                <textarea id="short-description" name="shortDescription" rows="4" maxlength="500" required></textarea><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="long-description">Long Description (200 words):</label><br>
+                                <textarea id="long-description" name="longDescription" rows="6" maxlength="1200" required></textarea><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="stipend">Stipend:</label><br>
+                                <input type="text" id="stipend" name="stipend" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="institution">Institution (College/Company):</label><br>
+                                <input type="text" id="institution" name="institution" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="location">Location:</label><br>
+                                <input type="text" id="location" name="location" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="duration">Duration (e.g., "12 months"):</label><br>
+                                <input type="text" id="duration" name="duration" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="link">Link:</label><br>
+                                <input type="url" id="link" name="link" required><br><br>
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="tags">Tags (comma-separated):</label><br>
+                                <input type="text" id="tags" name="tags" placeholder="e.g. AI, Drug Discovery, Machine Learning, Healthcare" required><br><br>
+                            </div>
+                            <div class="mt-5 text-center">
+                                <button type="submit">Post Opportunity</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

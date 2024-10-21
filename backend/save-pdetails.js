@@ -1,6 +1,28 @@
 const { db } = require('./firebaseConfig');
 const { collection, doc, updateDoc } = require('firebase/firestore');
 
+
+// Function to save user details
+async function saveUserRole(uid, userDetails) {
+    try {
+        console.log('Updating user details:', userDetails);
+        console.log('User ID:', uid);
+        const trimmedUid = uid.substring(0, 20);
+        const userDocRef = doc(collection(db, 'users'), trimmedUid);
+        console.log('User doc ref:', userDocRef);
+
+        await updateDoc(userDocRef, {
+            role: userDetails.role
+        });
+
+        console.log('User details updated successfully');
+    } catch (error) {
+        console.error('Error updating user details:', error);
+        throw error;
+    }
+}
+
+
 // Function to save user details
 async function saveUserPersonalDetails(uid, userDetails) {
     try {
@@ -21,7 +43,8 @@ async function saveUserPersonalDetails(uid, userDetails) {
             area: userDetails.area,
             education: userDetails.education,
             country: userDetails.country,
-            region: userDetails.region
+            region: userDetails.region,
+            role: userDetails.role
         });
 
         console.log('User details updated successfully');
@@ -62,4 +85,4 @@ async function editUserPersonalDetails(uid, userDetails) {
     }
 }
 
-module.exports = { saveUserPersonalDetails, editUserPersonalDetails };
+module.exports = { saveUserRole, saveUserPersonalDetails, editUserPersonalDetails };

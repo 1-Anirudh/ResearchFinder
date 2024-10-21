@@ -773,6 +773,19 @@
           <li><a class="link_name" href="#">FeedBack</a></li>
         </ul>
       </li>
+
+
+      <% if (role === 'admin') { %>  
+            <li>
+              <a href="/add-opportunity">
+                <i class='bx bx-add-to-queue' ></i>
+                <span class="link_name">Post Opportunity</span>
+              </a>
+              <ul class="sub-menu blank">
+                <li><a class="link_name" href="#">Post</a></li>
+              </ul>
+            </li>
+       <% } %> 
       
       <!-- <li>
         <a href="/tempcheck">
@@ -1169,6 +1182,8 @@
             popupContainer.addEventListener('click', function(e) {
                 e.stopPropagation(); // Prevent the click from propagating to the window
             });
+
+
 
         }
 
