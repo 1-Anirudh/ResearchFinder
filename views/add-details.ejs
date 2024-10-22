@@ -1,123 +1,371 @@
 <!DOCTYPE html>
+<!-- Coding by CodingLab | www.codinglabweb.com-->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/images/logo.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dynamic Todo List Application</title>
 
-    <title>Add interests</title>
-    <!-- Include Bootstrap CSS -->
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <style>
-        .remove-btn {
-            margin-left: 10px;
-            cursor: pointer;
-            color: red;
-        }
-        .badge-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-        }
-        .badge {
-            display: flex;
-            align-items: center;
-            padding: 0.5em 1em;
-            font-size: 1em;
-        }
-        .badge .remove-btn {
-            margin-left: 5px;
-            cursor: pointer;
-            color: white;
-        }
-    </style>
-</head>
-<body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Add Your Details</h1>
-        <form action="/save-details" method="post">
-            <div id="interests-container" class="form-group">
-                <label for="interests">Interests:</label>
-                <div class="input-group mb-3">
-                    <input type="text" id="interest-input" class="form-control">
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-primary" onclick="addInterest()">Add</button>
-                    </div>
-                </div>
-                <div id="interests-badge-container" class="badge-container"></div>
-            </div>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css" />
 
-            <div id="skills-container" class="form-group">
-                <label for="skills">Skills:</label>
-                <div class="input-group mb-3">
-                    <input type="text" id="skill-input" class="form-control">
-                    <div class="input-group-append">
-                        <button type="button" class="btn btn-primary" onclick="addSkill()">Add</button>
-                    </div>
-                </div>
-                <div id="skills-badge-container" class="badge-container"></div>
-            </div>
+    <!-- Unicons CSS -->
+    <link
+      rel="stylesheet"
+      href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"
+    />
+  </head>
+  <style>
+    /* Google Fonts - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
 
-            <input type="submit" class="btn btn-success" value="Save">
-        </form>
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background-color: #e3f2fd;
+}
+
+/* For Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f2f2f2;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 8px;
+  background: #ccc;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+.container {
+  position: relative;
+  max-width: 480px;
+  width: 100%;
+  border-radius: 8px;
+  padding: 25px;
+  margin: 85px auto 0;
+  background-color: #fff;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+}
+.container .input-field {
+  position: relative;
+  height: 64px;
+  width: 100%;
+}
+.input-field textarea {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  font-size: 18px;
+  font-weight: 400;
+  border-radius: 8px;
+  padding: 18px 45px 18px 15px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+.input-field textarea:focus {
+  border-color: #4070f4;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+.input-field .note-icon {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 24px;
+  color: #707070;
+}
+.input-field textarea:focus ~ .note-icon {
+  color: #4070f4;
+}
+
+.containers {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: flex-start;
+  margin-top: 50px;
+}
+
+.container .todoLists {
+  max-height: 380px;
+  overflow-y: auto;
+  padding-right: 10px;
+}
+.todoLists .list {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  background-color: #f2f2f2;
+  padding: 20px 15px;
+  border-radius: 8px;
+  margin-top: 10px;
+  position: relative;
+  cursor: pointer;
+}
+.todoLists .list input {
+  height: 16px;
+  min-width: 16px;
+  accent-color: #4070f4;
+  pointer-events: none;
+}
+.todoLists .list .task {
+  margin: 0 30px 0 15px;
+  word-break: break-all;
+}
+
+.todoLists .list i {
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #707070;
+  padding: 5px;
+  opacity: 0.6;
+  display: none;
+}
+.todoLists .list:hover i {
+  display: inline-flex;
+}
+.todoLists .list i:hover {
+  opacity: 1;
+}
+.container .pending-tasks {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 25px;
+}
+.pending-tasks span {
+  color: #333;
+}
+.pending-tasks .clear-button {
+  padding: 6px 12px;
+  outline: none;
+  border: none;
+  background: #4070f4;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.clear-button:hover {
+  background-color: #0e4bf1;
+}
+
+.post-button {
+  position: absolute;
+  bottom: 25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 12px 24px;
+  outline: none;
+  border: none;
+  background: #4070f4;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.post-button:disabled {
+  background: #4063c3;
+  cursor: not-allowed;
+}
+
+.post-button:hover {
+  background-color: #0e4bf1;
+}
+
+@media screen and (max-width: 350px) {
+  .container {
+    padding: 25px 10px;
+  }
+}
+
+  </style>
+  <body>
+    <!-- Interests Container -->
+     <div class="containers">
+    <div class="container">
+      <h2>Interests</h2>
+      <div class="input-field">
+        <textarea placeholder="Enter your new interest"></textarea>
+        <i class="uil uil-notes note-icon"></i>
+      </div>
+  
+      <ul class="todoLists interests-list"></ul>
+  
+      <div class="pending-tasks">
+        <span>You have <span class="pending-num interests-num">0</span> interests.</span>
+        <button class="clear-button interests-clear">Clear Interests</button>
+      </div>
+    </div>
+  
+    <!-- Skills Container -->
+    <div class="container">
+      <h2>Skills</h2>
+      <div class="input-field">
+        <textarea placeholder="Enter your new skill"></textarea>
+        <i class="uil uil-notes note-icon"></i>
+      </div>
+  
+      <ul class="todoLists skills-list"></ul>
+  
+      <div class="pending-tasks">
+        <span>You have <span class="pending-num skills-num">0</span> skills.</span>
+        <button class="clear-button skills-clear">Clear Skills</button>
+      </div>
     </div>
 
+  </div>
+  
+    <!-- Common Form to submit both interests and skills -->
+    <form id="interests-skills-form" action="/save-details" method="POST">
+      <!-- Hidden inputs to store interests and skills -->
+      <input type="hidden" name="interests" id="interests-input" value="">
+      <input type="hidden" name="skills" id="skills-input" value="">
+      <button type="submit" class="post-button" disabled>Save Interests & Skills</button> <!-- Common submit button -->
+    </form>
+  
+    <!-- JavaScript -->
     <script>
-        function addInterest() {
-            const input = document.getElementById('interest-input');
-            const value = input.value.trim();
-            if (value) {
-                const container = document.getElementById('interests-badge-container');
-                const badge = document.createElement('span');
-                badge.className = 'badge badge-primary';
-                badge.innerHTML = `${value} <span class="remove-btn" onclick="removeBadge(this)">&times;</span>`;
-                container.appendChild(badge);
-
-                // Add hidden input to form
-                const hiddenInput = document.createElement('input');
-                hiddenInput.type = 'hidden';
-                hiddenInput.name = 'interests[]';
-                hiddenInput.value = value;
-                container.appendChild(hiddenInput);
-
-                input.value = '';
-            }
+      const interestsInputField = document.querySelectorAll(".container")[0].querySelector(".input-field textarea"),
+        skillsInputField = document.querySelectorAll(".container")[1].querySelector(".input-field textarea"),
+        interestsList = document.querySelector(".interests-list"),
+        skillsList = document.querySelector(".skills-list"),
+        interestsPendingNum = document.querySelector(".interests-num"),
+        skillsPendingNum = document.querySelector(".skills-num"),
+        interestsClearButton = document.querySelector(".interests-clear"),
+        skillsClearButton = document.querySelector(".skills-clear"),
+        interestsInput = document.getElementById("interests-input"),
+        skillsInput = document.getElementById("skills-input"),
+        postButton = document.querySelector(".post-button"),
+        interestsForm = document.getElementById("interests-skills-form");
+  
+      let interestsArray = [], skillsArray = [];
+  
+      // Function to update task count andf enable/disable button
+      function updateAllTasks() {
+        interestsPendingNum.textContent = interestsArray.length === 0 ? "no" : interestsArray.length;
+        skillsPendingNum.textContent = skillsArray.length === 0 ? "no" : skillsArray.length;
+  
+        if (interestsArray.length > 0) {
+          interestsList.style.marginTop = "20px";
+          interestsClearButton.style.pointerEvents = "auto";
+        } else {
+          interestsList.style.marginTop = "0px";
+          interestsClearButton.style.pointerEvents = "none";
         }
 
-        function addSkill() {
-            const input = document.getElementById('skill-input');
-            const value = input.value.trim();
-            if (value) {
-                const container = document.getElementById('skills-badge-container');
-                const badge = document.createElement('span');
-                badge.className = 'badge badge-primary';
-                badge.innerHTML = `${value} <span class="remove-btn" onclick="removeBadge(this)">&times;</span>`;
-                container.appendChild(badge);
+        if (skillsArray.length > 0) {
+          skillsList.style.marginTop = "20px";
+          skillsClearButton.style.pointerEvents = "auto";
+        } else {
+          skillsList.style.marginTop = "0px";
+          skillsClearButton.style.pointerEvents = "none";
+        } 
 
-                // Add hidden input to form
-                const hiddenInput = document.createElement('input');
-                hiddenInput.type = 'hidden';
-                hiddenInput.name = 'skills[]';
-                hiddenInput.value = value;
-                container.appendChild(hiddenInput);
-
-                input.value = '';
-            }
+        if (interestsArray.length > 0 && skillsArray.length > 0) {
+          postButton.disabled = false; // Enable button if either array has items
+        } else {
+          postButton.disabled = true; // Disable if both arrays are empty
         }
-
-        function removeBadge(element) {
-            const badge = element.parentElement;
-            const container = badge.parentElement;
-            const hiddenInput = Array.from(container.querySelectorAll('input')).find(input => input.value === badge.textContent.trim());
-            if (hiddenInput) {
-                hiddenInput.remove();
-            }
-            badge.remove();
+      }
+  
+      // Add interest on Enter key
+      interestsInputField.addEventListener("keyup", (e) => {
+        let inputVal = interestsInputField.value.trim();
+  
+        if (e.key === "Enter" && inputVal.length > 0) {
+          let liTag = `<li class="list pending" onclick="handleStatus(this)">
+            <span class="task">${inputVal}</span>
+            <i class="uil uil-trash" onclick="deleteInterest(this)"></i>
+          </li>`;
+  
+          interestsList.insertAdjacentHTML("beforeend", liTag);
+          interestsArray.push(inputVal);
+          interestsInputField.value = "";
+          updateAllTasks();
         }
+      });
+  
+      // Add skill on Enter key
+      skillsInputField.addEventListener("keyup", (e) => {
+        let inputVal = skillsInputField.value.trim();
+  
+        if (e.key === "Enter" && inputVal.length > 0) {
+          let liTag = `<li class="list pending" onclick="handleStatus(this)">
+            <span class="task">${inputVal}</span>
+            <i class="uil uil-trash" onclick="deleteSkill(this)"></i>
+          </li>`;
+  
+          skillsList.insertAdjacentHTML("beforeend", liTag);
+          skillsArray.push(inputVal);
+          skillsInputField.value = "";
+          updateAllTasks();
+        }
+      });
+  
+      // Delete interest
+      function deleteInterest(e) {
+        let taskText = e.parentElement.querySelector(".task").textContent;
+        interestsArray = interestsArray.filter(interest => interest !== taskText);
+        e.parentElement.remove();
+        updateAllTasks();
+      }
+  
+      // Delete skill
+      function deleteSkill(e) {
+        let taskText = e.parentElement.querySelector(".task").textContent;
+        skillsArray = skillsArray.filter(skill => skill !== taskText);
+        e.parentElement.remove();
+        updateAllTasks();
+      }
+  
+      // Clear all interests
+      interestsClearButton.addEventListener("click", () => {
+        interestsList.innerHTML = "";
+        interestsArray = [];
+        updateAllTasks();
+      });
+  
+      // Clear all skills
+      skillsClearButton.addEventListener("click", () => {
+        skillsList.innerHTML = "";
+        skillsArray = [];
+        updateAllTasks();
+      });
+  
+      // Before submitting, add both interests and skills to hidden inputs
+      interestsForm.addEventListener("submit", (e) => {
+        if (interestsArray.length > 0 || skillsArray.length > 0) {
+          interestsInput.value = JSON.stringify(interestsArray);
+          skillsInput.value = JSON.stringify(skillsArray);
+        } else {
+          alert("No interests or skills to post!");
+          e.preventDefault();
+        }
+      });
     </script>
-    <!-- Include Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+  </body>
+  
 </html>

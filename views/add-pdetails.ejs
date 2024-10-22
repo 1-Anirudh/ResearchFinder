@@ -1,138 +1,216 @@
 <!DOCTYPE html>
+<!---Coding By CodingLab | www.codinglabweb.com--->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/images/logo.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <!--<title>Registration Form in HTML CSS</title>-->
+    <!---Custom CSS File--->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <title>Profile Details</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: 'Jost', sans-serif;
-            background: linear-gradient(to bottom, #0f0c29, #302b63, #24243e);
-        }
-        .form-control:focus {
-            box-shadow: none;
-            border-color: #BA68C8;
-        }
-        button {
-            width: 60%;
-            height: 40px;
-            margin: 10px auto;
-            justify-content: center;
-            display: block;
-            color: #fff;
-            background: #573b8a;
-            font-size: 1em;
-            font-weight: bold;
-            margin-top: 30px;
-            outline: none;
-            border: none;
-            border-radius: 5px;
-            transition: .2s ease-in;
-            cursor: pointer;
-        }
-        button:hover {
-            background: #6d44b8;
-        }
-        .profile-button:focus {
-            background: #682773;
-            box-shadow: none;
-        }
-        .profile-button:active {
-            background: #682773;
-            box-shadow: none;
-        }
-        .back:hover {
-            color: #682773;
-            cursor: pointer;
-        }
-        .labels {
-            font-size: 11px;
-        }
-        .add-experience:hover {
-            background: #BA68C8;
-            color: #fff;
-            cursor: pointer;
-            border: solid 1px #BA68C8;
-        }
-    </style>
-</head>
-<body>
-    <div class="container rounded bg-white mt-5 mb-5">
-        <div class="row">
-            <div class="col-md-5 border-right">
-                <div class="p-3 py-5">
-                    <div class="d-flex justify-content-between align-items-center mb-3">
-                        <h4 class="text-right">Profile Settings</h4>
-                    </div>
-                    <div class="row mt-2">
-                    
-                    <form action="/save-pdetails" method="post">
-                        <div class="col-md-6">
-                            <label class="labels">Name</label>
-                            <input type="text" class="form-control" placeholder="first name" name="firstName" required>
-                        </div>
-                        <div class="col-md-6">
-                            <label class="labels">Surname</label>
-                            <input type="text" class="form-control" placeholder="surname" name="surName" required>
-                        </div>
+  <style>
+    /* Import Google font - Poppins */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: #9efffa;
+}
+.container {
+  position: relative;
+  max-width: 700px;
+  width: 100%;
+  background: #fff;
+  padding: 25px;
+  border-radius: 8px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+.container header {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: 500;
+  text-align: center;
+}
+.container .form {
+  margin-top: 30px;
+}
+.form .input-box {
+  width: 100%;
+  margin-top: 20px;
+}
+.input-box label {
+  color: #333;
+}
+.form :where(.input-box input, .select-box) {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  outline: none;
+  font-size: 1rem;
+  color: #707070;
+  margin-top: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0 15px;
+}
+.input-box input:focus {
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+.form .column {
+  display: flex;
+  column-gap: 15px;
+}
+.form .gender-box {
+  margin-top: 20px;
+}
+.gender-box h3 {
+  color: #333;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-bottom: 8px;
+}
+.form :where(.gender-option, .gender) {
+  display: flex;
+  align-items: center;
+  column-gap: 50px;
+  flex-wrap: wrap;
+}
+.form .gender {
+  column-gap: 5px;
+}
+.gender input {
+  accent-color: rgb(130, 106, 251);
+}
+.form :where(.gender input, .gender label) {
+  cursor: pointer;
+}
+.gender label {
+  color: #707070;
+}
+.address :where(input, .select-box) {
+  margin-top: 15px;
+}
+.select-box select {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: #707070;
+  font-size: 1rem;
+}
+.form button {
+  height: 55px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 400;
+  margin-top: 30px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background: #20b2aa;
+}
+.form button:hover {
+  background: #31e0d7;
+}
+/*Responsive*/
+@media screen and (max-width: 500px) {
+  .form .column {
+    flex-wrap: wrap;
+  }
+  .form :where(.gender-option, .gender) {
+    row-gap: 15px;
+  }
+}
+  </style>
 
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-12">
-                                <label class="labels">Mobile Number</label>
-                                <input type="text" class="form-control" placeholder="enter phone number" name="phone" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label class="labels">Address Line 1</label>
-                                <input type="text" class="form-control" placeholder="enter address line 1" name="address1" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label class="labels">Address Line 2</label>
-                                <input type="text" class="form-control" placeholder="enter address line 2" name="address2">
-                            </div>
-                            <div class="col-md-12">
-                                <label class="labels">Postcode</label>
-                                <input type="text" class="form-control" placeholder="enter postcode" name="postcode" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label class="labels">State</label>
-                                <input type="text" class="form-control" placeholder="enter state" name="state" required>
-                            </div>
-                            <div class="col-md-12">
-                                <label class="labels">Area</label>
-                                <input type="text" class="form-control" placeholder="enter area" name="area">
-                            </div>
-                            <div class="col-md-12">
-                                <label class="labels">Education</label>
-                                <input type="text" class="form-control" placeholder="education" name="education" required>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <label class="labels">Country</label>
-                                <input type="text" class="form-control" placeholder="country" name="country" required>
-                            </div>
-                            <div class="col-md-6">
-                                <label class="labels">State/Region</label>
-                                <input type="text" class="form-control" placeholder="state/region" name="region">
-                            </div>
-                        </div>
-                        <div class="mt-5 text-center">
-                            <button type="submit">Save Profile</button>
-                        </div>
-                    </form>
-                </div>
-            </div>
+  <body>
+    <section class="container">
+      <header>Registration Form</header>
+      <form action="/save-pdetails" method="post" class="form">
+        <div class="input-box">
+          <label>Full Name</label>
+          <div class="column">
+            <input type="text" placeholder="Enter first name" name="firstName" required />
+            <input type="text" placeholder="Enter surname" name="surName" required />
+          </div>
         </div>
-    </div>
-</body>
+
+        <!-- <div class="input-box">
+          <label>Email Address</label>
+          <input type="text" placeholder="Enter email address" required />
+        </div> -->
+
+        <!-- <div class="column"> -->
+          <div class="input-box">
+            <label>Phone Number</label>
+            <input type="number" placeholder="Enter phone number" name="phone" required />
+          </div>
+          <!-- <div class="input-box">
+            <label>Birth Date</label>
+            <input type="date" placeholder="Enter birth date" required />
+          </div> -->
+        <!-- </div> -->
+        <!-- <div class="gender-box">
+          <h3>Gender</h3>
+          <div class="gender-option">
+            <div class="gender">
+              <input type="radio" id="check-male" name="gender" checked />
+              <label for="check-male">male</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-female" name="gender" />
+              <label for="check-female">Female</label>
+            </div>
+            <div class="gender">
+              <input type="radio" id="check-other" name="gender" />
+              <label for="check-other">prefer not to say</label>
+            </div>
+          </div>
+        </div> -->
+        <div class="input-box address">
+          <label>Address</label>
+          <input type="text" placeholder="Enter street address" name="address1" required />
+          <input type="text" placeholder="Enter street address line 2" name="address2" required />
+          <!-- <div class="column">
+            <div class="select-box">
+              <select>
+                <option hidden>Country</option>
+                <option>America</option>
+                <option>Japan</option>
+                <option>India</option>
+                <option>Nepal</option>
+              </select>
+            </div>
+            <input type="text" placeholder="Enter your city" required />
+          </div> -->
+          <div class="column">
+            <input type="text" placeholder="Enter your Country" name="country" required />
+            <input type="text" placeholder="Enter state" name="state" required />
+          </div>
+          <div class="column">
+            <input type="text" placeholder="Enter your Region" name="region" required />
+            <input type="number" placeholder="Enter postal code" name="postcode" required />
+          </div>
+        </div>
+
+        <div class="input-box">
+          <label>Education</label>
+          <input type="text" placeholder="eg: bachelors, masters etc.." name="education" required />
+        </div>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+  </body>
 </html>

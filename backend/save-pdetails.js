@@ -40,7 +40,6 @@ async function saveUserPersonalDetails(uid, userDetails) {
             address2: userDetails.address2,
             postcode: userDetails.postcode,
             state: userDetails.state,
-            area: userDetails.area,
             education: userDetails.education,
             country: userDetails.country,
             region: userDetails.region
@@ -62,6 +61,7 @@ async function editUserPersonalDetails(uid, userDetails) {
         console.log('User doc ref:', userDocRef);
 
         await updateDoc(userDocRef, {
+            role: userDetails.role,
             firstName: userDetails.firstName,
             surName: userDetails.surName,
             phone: userDetails.phone,
@@ -69,7 +69,6 @@ async function editUserPersonalDetails(uid, userDetails) {
             address2: userDetails.address2,
             postcode: userDetails.postcode,
             state: userDetails.state,
-            area: userDetails.area,
             education: userDetails.education,
             country: userDetails.country,
             region: userDetails.region,

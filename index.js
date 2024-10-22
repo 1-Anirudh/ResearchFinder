@@ -190,7 +190,7 @@ app.get('/home', ensureLoggedIn, async (req, res) => {
         role: userDetails.role,
         logoName: 'ResearchFinder', 
         profileName: userDetails.firstName || 'User', 
-        jobTitle: 'Student',
+        jobTitle: userDetails.role,
         notifications: notifications,
         firebaseConfig: JSON.stringify(firebaseConfig),
         opportunityData: JSON.stringify(opportunityData)
@@ -221,7 +221,7 @@ app.get('/add-pdetails', ensureLoggedIn, (req, res) => {
 });
 
 app.post('/save-pdetails', async (req, res) => {
-    const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region} = req.body;
+    const { firstName, surName, phone, address1,  address2, postcode, state, education, country, region} = req.body;
     const userDetails = {
         firstName: firstName,
         surName: surName,
@@ -230,7 +230,6 @@ app.post('/save-pdetails', async (req, res) => {
         address2: address2,
         postcode: postcode,
         state: state,
-        area: area,
         education: education,
         country: country,
         region: region
@@ -248,10 +247,11 @@ app.post('/save-pdetails', async (req, res) => {
 
 app.post('/edit-pdetails', async (req, res) => {
     const pUserDetails = await SessionUtils.userDetails(req);
-    const { firstName, surName, phone, address1,  address2, postcode, state, area, education, country, region, interests, skills} = req.body;
+    const { firstName, surName, phone, address1,  address2, postcode, state, education, country, region, interests, skills} = req.body;
     interestsList = interests ? interests.split(',') : pUserDetails.interests;
     skillsList = skills ? skills.split(',') : pUserDetails.skills;
     const userDetails = {
+        role: pUserDetails.role || 'client',
         firstName: firstName || pUserDetails.firstName,
         surName: surName || pUserDetails.surName,
         phone: phone || pUserDetails.phone,
@@ -259,7 +259,6 @@ app.post('/edit-pdetails', async (req, res) => {
         address2: address2 || pUserDetails.address2,
         postcode: postcode || pUserDetails.postcode,
         state: state || pUserDetails.state,
-        area: area || pUserDetails.area,
         education: education || pUserDetails.education,
         country: country || pUserDetails.country,
         region: region || pUserDetails.region,
@@ -286,6 +285,7 @@ app.post('/edit-interests', async (req, res) => {
     interestsList = interests.split(',');
     skillsList = skills.split(',');
     const userDetails = {
+        role: pUserDetails.role,
         interests: interestsList || pUserDetails.interests,
         skills: skillsList || pUserDetails.skills
     }
@@ -306,15 +306,19 @@ app.get('/add-details', ensureLoggedIn, (req, res) => {
     res.render('add-details');
 });
 
+
 // Handle saving details
 app.post('/save-details', async (req, res) => {
     const { interests, skills } = req.body;
-    req.session.name = "name";
+    interestsList = JSON.parse(interests);
+    skillsList = JSON.parse(skills);
+    console.log("interests", interestsList);
+    console.log("skills", skillsList);
     if (!SessionUtils.getUserId(req.session)) {
         return res.send('Error: User not logged in.');
     }
     try {
-        await saveUserDetails(SessionUtils.getUserId(req.session), interests, skills);
+        await saveUserDetails(SessionUtils.getUserId(req.session), interestsList, skillsList);
         SessionUtils.handleRedirectWithMessage(res, 'Details saved successfully!');
     } catch (error) {
         SessionUtils.handleRedirectWithMessage(res, `Error saving details: ${error.message}`);
@@ -336,7 +340,6 @@ app.get('/profile', async (req, res) => {
             addressLine2: uDetails.address2,
             postcode: uDetails.postcode,
             state: uDetails.state,
-            area: uDetails.area,
             email: uDetails.email,
             education: uDetails.education,
             country: uDetails.country,
