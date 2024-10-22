@@ -41,7 +41,10 @@ app.use(session({
   secret: 'your_secret_key',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false } // Set to true if using HTTPS
+  cookie: { 
+    secure: false,
+    maxAge: 60 * 60 * 1000
+  } // Set to true if using HTTPS
 }));
 
 const ensureLoggedIn = (req, res, next) => {
