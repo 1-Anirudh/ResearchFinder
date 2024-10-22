@@ -200,10 +200,11 @@
   transition: all 0.4s ease;
 }
 .sidebar .nav-links li:hover{
+  z-index: 2000;
   background: #005e59;
 }
 .sidebar.light-mode .nav-links li:hover{
-  background: var(--hover-background);
+  background: #005e59;
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -247,7 +248,8 @@
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: var(--submenu-back);
+  background: #005e59;
+  z-index: 20000;
   display: none;
 }
 .sidebar .nav-links li.showMenu .sub-menu{
@@ -452,7 +454,7 @@
     margin-bottom: 10px;
     position: fixed;
     top: 0;
-    z-index: 100;
+    z-index: 10;
     width: 100%;
     background: #ffffff;
     padding-bottom: 22px;

@@ -14,7 +14,8 @@ async function getConversations() {
             const user = {
                 user: data.firstName,
                 userID: data.uid,
-                username: `${data.firstName} ${data.surName}`
+                username: `${data.firstName} ${data.surName}`,
+                email: data.email
             }
             usersList.push(user);
         });
