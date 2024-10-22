@@ -101,8 +101,7 @@ class SessionUtils {
     static async userDetails(req) {
         try {
             if (!req.session.userDetails) {
-                req.session.userDetails = {id : 'smaple'};
-                // req.session.userDetails = await getUserDetails(SessionUtils.getUserId(req.session));
+                req.session.userDetails = await getUserDetails(SessionUtils.getUserId(req.session));
             }
 
             return req.session.userDetails;
@@ -115,7 +114,7 @@ class SessionUtils {
 
     static async editUserDetails(req, uDetails) {
         try {
-            req.session.userDetails = {id : 'smaple'};
+            req.session.userDetails = uDetails;
         }
         catch (error) {
             console.error('Error getting user details:', error);
@@ -488,8 +487,8 @@ configureApp()
             const conversations = ret[0];
             const chatData = ret[1];
             const localIPaddress = await readServerIP();
-            // console.log(localIPaddress);
             // console.log(chatData);
+            // console.log(localIPaddress);
             // console.log(readDatabase);
             res.render('chat', {
                 serverIPaddress: localIPaddress,
