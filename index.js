@@ -146,8 +146,6 @@ configureApp()
         });
 
         app.get('/', (req, res) => {
-            console.log("session");
-
             if (req.session.isLoggedIn) {
                 res.redirect('/home');
             } else {
@@ -212,18 +210,13 @@ configureApp()
 
 
         app.get('/home', ensureLoggedIn, async (req, res) => {
-            console.log("userID" , SessionUtils.getUserId(req.session));
-            console.log("email:", SessionUtils.getEmail(req.session));
             const opportunityData = await readOpportunities();
             const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
             const userDetails = await SessionUtils.userDetails(req);
 
-            console.log('user interests', userDetails.interests[0]);
             const recommendations = await getRecommendations(opportunityData, userDetails.interests);
-            console.log("recommendations", recommendations);
 
             const recOpportunityData = addRecommendations(opportunityData, recommendations);
-            // console.log("opportunityData", recOpportunityData);
             
             res.render('landing', { 
                 role: userDetails.role,
@@ -287,8 +280,8 @@ configureApp()
         app.post('/edit-pdetails', async (req, res) => {
             const pUserDetails = await SessionUtils.userDetails(req);
             const { firstName, surName, phone, address1,  address2, postcode, state, education, country, region, interests, skills} = req.body;
-            interestsList = JSON.parse(interests) ? JSON.parse(interests) : pUserDetails.interests;
-            skillsList = JSON.parse(skills) ? JSON.parse(skills) : pUserDetails.skills;
+            interestsList = interests ? JSON.parse(interests) : pUserDetails.interests;
+            skillsList = skills ? JSON.parse(skills) : pUserDetails.skills;
             const userDetails = {
                 role: pUserDetails.role || 'client',
                 firstName: firstName || pUserDetails.firstName,
