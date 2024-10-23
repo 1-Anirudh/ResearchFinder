@@ -217,6 +217,8 @@ configureApp()
             const opportunityData = await readOpportunities();
             const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
             const userDetails = await SessionUtils.userDetails(req);
+
+            console.log('user interests', userDetails.interests[0]);
             const recommendations = await getRecommendations(opportunityData, userDetails.interests);
             console.log("recommendations", recommendations);
 
@@ -285,8 +287,8 @@ configureApp()
         app.post('/edit-pdetails', async (req, res) => {
             const pUserDetails = await SessionUtils.userDetails(req);
             const { firstName, surName, phone, address1,  address2, postcode, state, education, country, region, interests, skills} = req.body;
-            interestsList = interests ? interests.split(',') : pUserDetails.interests;
-            skillsList = skills ? skills.split(',') : pUserDetails.skills;
+            interestsList = JSON.parse(interests) ? JSON.parse(interests) : pUserDetails.interests;
+            skillsList = JSON.parse(skills) ? JSON.parse(skills) : pUserDetails.skills;
             const userDetails = {
                 role: pUserDetails.role || 'client',
                 firstName: firstName || pUserDetails.firstName,
@@ -319,8 +321,8 @@ configureApp()
             const { interests, skills} = req.body;
             console.log("interests", interests);
             console.log("skills", skills);
-            interestsList = interests.split(',');
-            skillsList = skills.split(',');
+            interestsList = interests;
+            skillsList = skills;
             const userDetails = {
                 role: pUserDetails.role,
                 interests: interestsList || pUserDetails.interests,
@@ -366,6 +368,8 @@ configureApp()
         app.get('/profile', async (req, res) => {
             try {
                 const uDetails = await SessionUtils.userDetails(req);
+                console.log("================================");
+                console.log(uDetails.interests);
                 res.render('profile', {
                     profileImage: '/images/default.avif',
                     userName: uDetails.firstName + ' ' + uDetails.surName,
@@ -381,8 +385,8 @@ configureApp()
                     education: uDetails.education,
                     country: uDetails.country,
                     stateRegion: uDetails.region,
-                    interests: uDetails.interests,
-                    skills: uDetails.skills
+                    interests: JSON.stringify(uDetails.interests),
+                    skills: JSON.stringify(uDetails.skills)
                 });
             } catch (error) {
                 SessionUtils.handleRedirectWithMessage(res, `Error getting user details: ${error.message}`);

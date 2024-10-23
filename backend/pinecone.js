@@ -25,6 +25,7 @@ const indexName = 'researchfinders';
 const model = 'multilingual-e5-large';
 
 async function getRecommendations(opportunitieData, interests) {
+    if (interests.length === 0) return opportunitieData;
 
     const opportunities = Object.keys(opportunitieData).map(key => ({
         id: key,

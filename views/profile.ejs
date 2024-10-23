@@ -440,10 +440,13 @@ textarea::-webkit-scrollbar {
         postButton = document.querySelector(".post-button"),
         interestsForm = document.getElementById("interests-skills-form");
   
-      let interestsArray = '<%= interests %>' === "" ? [] : '<%= interests %>'.split(",");
-      let skillsArray = '<%= skills %>' === "" ? [] : '<%= skills %>'.split(",");
-
+      let interestsArray = JSON.parse('<%- interests %>');
+      let skillsArray = JSON.parse('<%- skills %>');
+    
+      console.log('<%= interests %>');
       console.log(interestsArray);
+
+      console.log(skillsArray);
 
       addInterestsSkills();
 
