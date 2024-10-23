@@ -6,6 +6,8 @@ const { urlencoded } = require('body-parser');
 const { getUserDetails } = require('./backend/get-details');
 const { submitFeedback } = require('./backend/feedback');
 const { getUserNotifications } = require('./backend/notification');
+const { getRecommendations } = require('./backend/pinecone');
+const { addRecommendations } = require('./backend/utils');
 
 const { saveUserDetails } = require('./backend/save-details');
 const { saveUserRole, saveUserPersonalDetails, editUserPersonalDetails } = require('./backend/save-pdetails');
@@ -215,16 +217,20 @@ configureApp()
             const opportunityData = await readOpportunities();
             const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
             const userDetails = await SessionUtils.userDetails(req);
-            console.log('user Details', userDetails);
-            console.log('logged in as: ', userDetails.role);
+            const recommendations = await getRecommendations(opportunityData, userDetails.interests);
+            console.log("recommendations", recommendations);
+
+            const recOpportunityData = addRecommendations(opportunityData, recommendations);
+            // console.log("opportunityData", recOpportunityData);
+            
             res.render('landing', { 
                 role: userDetails.role,
                 logoName: 'ResearchFinder', 
-                profileName: userDetails.firstName || 'User', 
+                profileName: userDetails.firstName || 'User',
                 jobTitle: userDetails.role,
                 notifications: notifications,
                 firebaseConfig: JSON.stringify(firebaseConfig),
-                opportunityData: JSON.stringify(opportunityData)
+                opportunityData: JSON.stringify(recOpportunityData)
             });
         });
 
