@@ -1492,6 +1492,7 @@ function createPagination(page, opportunites) {
 
 
 function loadOpportunities(opportunities, page) {
+  console.log('opportunities ', opportunities);
   let containers = document.querySelector('.containers');
   containers.innerHTML = '';
 
@@ -1568,7 +1569,6 @@ async function searchOpportunitiesINP(searchValue, bysearch) {
         opportunity.institution.toLowerCase().includes(searchValue) ||
         opportunity.shortDescription.toLowerCase().includes(searchValue) ||
         opportunity.tags.includes(searchValue)) {
-
         acc[key] = opportunity;
     }
     return acc;
@@ -1628,6 +1628,12 @@ window.addEventListener('popstate', function(event) {
         searchOpportunities(false);
     } else {
         document.getElementById('search-input').value = '';
+        window.filteredOpportunities = window.opportunityData;
+        window.filteredOpportunities_1 = window.opportunityData;
+        window.filteredOpportunities_2 = window.opportunityData;
+        window.filteredOpportunities_3 = window.opportunityData;
+        window.filteredOpportunities_4 = window.opportunityData;
+
         createPagination(currentPage, window.opportunityData);
         loadOpportunities(window.opportunityData, currentPage);
     }

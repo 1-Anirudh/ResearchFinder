@@ -184,6 +184,7 @@ if (SpeechRecognition) {
                     } else if (command.includes('user guide for filtering')) {
                         readText(userGuideFiltering, 1, 1.5);
                     } else if (command.includes('clear filters')) {
+                        applyFilters = false;
                         console.log("Clearing filters");
                         filter = "";
                         clearFiltersByCommand();
@@ -240,8 +241,9 @@ if (SpeechRecognition) {
                     readText(userGuide, 1, 1.5);
                 } else if (command.includes('read opportunities')) {
                     readOpportunities();
-                } else if (command.includes('stop reading')) {
-                    window.speechSynthesis.cancel();
+                } else if (command.includes('clear filters')) {
+                    console.log("Clearing filters");
+                    clearFiltersByCommand();
                 }
                 else {
                     console.log("Command not recognized");
@@ -335,10 +337,11 @@ function readOpportunities() {
     console.log("Reading opportunities");
     readText("Reading opportunities", 1.5, 2);
     let opportunities = document.querySelectorAll('.container');
-    let i = 0;
+    let i = 1;
     opportunities.forEach(opportunity => {
         readText(`Reading opportunity ${i}`, 1.5, 2);
         readText(opportunity.innerText, 1.5, 2);
+        i++;
     });
 }
 
