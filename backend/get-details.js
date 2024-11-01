@@ -9,7 +9,7 @@ async function getUserDetails(uid) {
         const usersSnapshot = doc(usersCollectionRef, cid); // Get the documents in the collection
         const usersSnapshotData = await getDoc(usersSnapshot);
 
-        console.log('reading role', usersSnapshotData.data());
+        // console.log('reading role', usersSnapshotData.data());
         return usersSnapshotData.data();
         
     } catch (error) {

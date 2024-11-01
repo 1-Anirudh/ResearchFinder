@@ -30,21 +30,21 @@
 }
 
 .notification_wrap .notification_icon{
-	position: fixed;
-	font-size: 22px;
-	margin: 0 auto;
-	text-align: center;
-	color: #605dff;
-  top: 13px;
-  right: 138px;
-  z-index: 20000;
-  display: block;
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  cursor: pointer;
-  transition: all 200ms linear;
-  box-shadow: 0 0 25px rgba(255,235,167,.45);
+	  position: fixed;
+    font-size: 22px;
+    margin: 0 auto;
+    text-align: center;
+    color: #605dff;
+    top: 16px;
+    right: 116px;
+    z-index: 20000;
+    display: block;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    transition: all 200ms linear;
+    box-shadow: 0 0 25px rgba(255, 235, 167, .45);
 }
 
 .notification_wrap .notification_icon .fa-bell{
@@ -65,6 +65,7 @@
   padding: 15px;
   position: fixed;
   display: none;
+  z-index: 1;
 }
 .notification_wrap .dropdown .notify_item{
 	display: flex;
@@ -876,6 +877,25 @@ img {
 .hide {
   display: none;
 }
+
+#startVoiceNav {
+    position: fixed;
+    font-size: 27px;
+    margin: 0 auto;
+    text-align: center;
+    /* color: #605dff; */
+    top: 15px;
+    right: 17px;
+    z-index: 20000;
+    display: block;
+    border-radius: 50%;
+    width: 43px;
+    height: 43px;
+    cursor: pointer;
+    transition: all 200ms linear;
+    box-shadow: 0 0 25px rgba(255, 235, 167, .45);
+}
+
 @media screen and (max-width: 720px) {
   img {
     max-width: 100%;
@@ -1047,6 +1067,8 @@ img {
 
             <input class="dark-light" type="checkbox" id="dark-light" name="dark-light"/>
             <label for="dark-light"></label>  
+
+            <i class='bx bxs-user-voice' id="startVoiceNav"></i>
         </div>
 
         <!-- <div class="search-bar-container">
@@ -1060,7 +1082,7 @@ img {
               type="search"
               class="search-bar"
               id="search-input"
-              placeholder="Search product name here.."
+              placeholder="Search opportunities here.."
               onkeydown="handleSearchEnter(event)"
             />
             <button id="search" onclick="searchOpportunities()">Search</button>
@@ -1068,7 +1090,7 @@ img {
 
           <div id="buttons">
             <div class="filter-button-container" id="work-mode">
-                <button class="filter-button" onclick="filterProduct('all')" id="work-mode-button">
+                <button class="filter-button" id="work-mode-button">
                   work-mode
                 </button>
                 <div class="filter-dropdown">
@@ -1087,7 +1109,7 @@ img {
                 </div>
             </div>
             <div class="filter-button-container" id="work-type">
-                <button class="filter-button" onclick="filterProduct('Topwear')" id="work-type-button">
+                <button class="filter-button" id="work-type-button">
                   work-type
                 </button>
                 <div class="filter-dropdown">
@@ -1106,7 +1128,7 @@ img {
                 </div>
             </div>
             <div class="filter-button-container" id="duration">
-              <button class="filter-button" onclick="filterProduct('Bottomwear')"  id="duration-button">
+              <button class="filter-button" id="duration-button">
                 duration
               </button>
               <div class="filter-dropdown">
@@ -1128,7 +1150,7 @@ img {
               </div>
             </div>
             <div class="filter-button-container" id="stipend">
-              <button class="filter-button" onclick="filterProduct('Watch')" id="stipend-button">
+              <button class="filter-button" id="stipend-button">
                 stipend
               </button>
               
@@ -1203,10 +1225,6 @@ console.log(window.opportunityData);
 
 const itemsPerPage = 12;
 let currentPage = 1;
-
-function filterProduct(category) {
-  console.log(category);
-}
 
 
 function addMode(mode) {
@@ -1530,7 +1548,11 @@ async function searchOpportunities(bysearch = true) {
   if (!searchValue) {
     return;
   }
-  
+
+  searchOpportunitiesINP(searchValue, bysearch);
+}
+
+async function searchOpportunitiesINP(searchValue, bysearch) {
   if (bysearch) {
     const newUrl = `${window.location.origin}${window.location.pathname}?s=${encodeURIComponent(searchValue)}`;
     history.pushState({ path: newUrl }, '', newUrl);
@@ -1569,6 +1591,7 @@ for (var i = 0; i < arrow.length; i++) {
     arrowParent.classList.toggle("showMenu");
   });
 }
+
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".bx-menu");
 sidebarBtn.addEventListener("click", ()=>{
@@ -1700,5 +1723,7 @@ function attachEventListeners() {
 
     // console.log(window.interests);
     </script>
+
+    <script type="module" src="VoiceNavigation.mjs"></script>
  </body>
 </html>

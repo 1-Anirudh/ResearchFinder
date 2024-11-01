@@ -5,11 +5,11 @@ const { collection, doc, updateDoc } = require('firebase/firestore');
 // Function to save user details
 async function saveUserRole(uid, userDetails) {
     try {
-        console.log('Updating user details:', userDetails);
+        // console.log('Updating user details:', userDetails);
         console.log('User ID:', uid);
         const trimmedUid = uid.substring(0, 20);
         const userDocRef = doc(collection(db, 'users'), trimmedUid);
-        console.log('User doc ref:', userDocRef);
+        // console.log('User doc ref:', userDocRef);
 
         await updateDoc(userDocRef, {
             role: userDetails.role
@@ -26,11 +26,11 @@ async function saveUserRole(uid, userDetails) {
 // Function to save user details
 async function saveUserPersonalDetails(uid, userDetails) {
     try {
-        console.log('Updating user details:', userDetails);
+        // console.log('Updating user details:', userDetails);
         console.log('User ID:', uid);
         const trimmedUid = uid.substring(0, 20);
         const userDocRef = doc(collection(db, 'users'), trimmedUid);
-        console.log('User doc ref:', userDocRef);
+        // console.log('User doc ref:', userDocRef);
 
         await updateDoc(userDocRef, {
             firstName: userDetails.firstName,
@@ -54,11 +54,11 @@ async function saveUserPersonalDetails(uid, userDetails) {
 
 async function editUserPersonalDetails(uid, userDetails) {
     try {
-        console.log('Updating user details:', userDetails);
+        // console.log('Updating user details:', userDetails);
         console.log('User ID:', uid);
         const trimmedUid = uid.substring(0, 20);
         const userDocRef = doc(collection(db, 'users'), trimmedUid);
-        console.log('User doc ref:', userDocRef);
+        // console.log('User doc ref:', userDocRef);
 
         await updateDoc(userDocRef, {
             role: userDetails.role,

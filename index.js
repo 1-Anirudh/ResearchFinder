@@ -344,8 +344,6 @@ configureApp()
             const { interests, skills } = req.body;
             interestsList = JSON.parse(interests);
             skillsList = JSON.parse(skills);
-            console.log("interests", interestsList);
-            console.log("skills", skillsList);
             if (!SessionUtils.getUserId(req.session)) {
                 return res.send('Error: User not logged in.');
             }
@@ -361,8 +359,6 @@ configureApp()
         app.get('/profile', async (req, res) => {
             try {
                 const uDetails = await SessionUtils.userDetails(req);
-                console.log("================================");
-                console.log(uDetails.interests);
                 res.render('profile', {
                     profileImage: '/images/default.avif',
                     userName: uDetails.firstName + ' ' + uDetails.surName,
@@ -411,8 +407,6 @@ configureApp()
                 type: type,
                 tags: tagsList
             }
-
-            console.log(newOpportunity);
 
             addOpportunity(newOpportunity);
             res.redirect('/home')
@@ -472,7 +466,6 @@ configureApp()
 
             try {
                 // Assuming SessionUtils.getUserId is working correctly to get the session user ID
-                console.log(SessionUtils.getUserId(req.session));
                 await chatToDB(SessionUtils.getUserId(req.session), target, message);
                 
                 console.log('Message sent successfully to the database');

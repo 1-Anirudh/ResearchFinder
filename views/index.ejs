@@ -3,6 +3,7 @@
 <head>
     <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="/images/logo.png">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
     <title> Reasearch Finder </title>
 
     <style>
@@ -76,6 +77,10 @@
             background: #6d44b8;
         }
 
+        .readContentButton {
+            display: hidden;
+        }
+
         .dropd {
             width: 40%;
             height: 30px;
@@ -118,41 +123,79 @@
         #chk:checked ~ .signup label {
             transform: scale(.6);
         }
+
+        #startVoiceNav {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 2em;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            margin: -1px;
+            padding: 0;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            border: 0;
+        }
+
     </style>
 </head>
 <body>
-    <div class="main">      
-        <input type="checkbox" id="chk" aria-hidden="true">
+    <div class="main" id="readContent">      
+        <input type="checkbox" id="chk">
 
         <div class="signup">
             <form action="/register" method="post">
                 <label for="chk" aria-hidden="true">Sign up</label>
+                <span id="emailLabel" class="sr-only">Enter your Email</span>
                 <input type="email" name="email" placeholder="Email" required="">
                 
                 <!-- Add id to password field -->
+                <span id="passwordLabel" class="sr-only">Enter Password</span>
                 <input type="password" name="password" id="password" placeholder="Password" required minlength="6">
                 
+                <span id="confirmPasswordLabel" class="sr-only">Confirm Password</span>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" required minlength="6" oninput="checkPasswords()">
 
                 <select name="role" class="dropd" required>
                     <option value="" disabled selected class="content">Select your role</option>
                     <option value="admin" >Researcher</option>
-                    <option value="client">Student</option>
+                    <option value="client" >Student</option>
                 </select>
 
-                <button type="submit">Sign up</button>
+                <span id="signUpLabel" class="sr-only">Sign up for an account</span>
+                <button type="submit" aria-hidden="true">Sign up</button>
             </form>
         </div>
 
         <div class="login">
             <form action="/login" method="post">
                 <label for="chk" aria-hidden="true">Login</label>
+
+                <span id="emailLabel" class="sr-only">Enter your Login Email</span>
                 <input type="email" name="email" placeholder="Email" required="">
+
+                <span id="passwordLabel" class="sr-only">Enter your Password</span>
                 <input type="password" name="password" placeholder="Password" required="">
-                <button>Login</button>
+
+                <span id="loginLabel" class="sr-only">Login Button</span>
+                <button aria-hidden="true">Login</button>
             </form>
         </div>
+
     </div>
+
+    <i class='bx bxs-user-voice' id="startVoiceNav"></i>
+
+
+    
+    <script type="module" src="VoiceNavigation.mjs"></script>
 
     <script>
         function checkPasswords() {
@@ -166,7 +209,6 @@
                 confirmPassword.setCustomValidity("");  // Clear validation message if passwords match
             }
         }
-    </script>
-    
+    </script>    
 </body>
 </html>

@@ -10,10 +10,10 @@ const chatRoom = `chat/conversations/${window.userId}`;
 const conversationRef = ref(database, chatRoom); // Assuming conversations are organized by user IDs
 
 get(conversationRef).then((snapshot) => {
-    console.log('snapshot');
+    // console.log('snapshot');
     if (snapshot.exists()) {
         const messagesData = snapshot.val();
-        console.log('messagesData', messagesData); // Access the messages data
+        // console.log('messagesData', messagesData); // Access the messages data
     
         for (const key in messagesData) {
             if (messagesData.hasOwnProperty(key)) {
@@ -80,7 +80,7 @@ onValue(conversationRef, (snapshot) => {
                 const oId = sent ? messageData.receiver : messageData.sender;
 
                 window.chatData[oId].messages.push(newMessage);
-                console.log('messageData', messageData); // Access the message data
+                // console.log('messageData', messageData); // Access the message data
             }
         }
     }

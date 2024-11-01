@@ -5,7 +5,7 @@ window.filteredOpportunities_2 = window.opportunityData;
 window.filteredOpportunities_3 = window.opportunityData;
 window.filteredOpportunities_4 = window.opportunityData;
 
-console.log(window.opportunityData);
+// console.log(window.opportunityData);
 
 // window.recommendations = getRecommendations(window.opportunityData, interests);
 
@@ -94,7 +94,7 @@ function addDuration(duration) {
     const opportunity = window.filteredOpportunities[key];
     if (duration === 'any') {
       acc[key] = opportunity;
-      console.log(opportunity.duration);
+    //   console.log(opportunity.duration);
     } else if (opportunity.duration >= minVal && opportunity.duration <= maxVal) {
       acc[key] = opportunity;
     }
@@ -345,8 +345,8 @@ async function searchOpportunities(bysearch = true) {
     history.pushState({ path: newUrl }, '', newUrl);
   }
 
-  console.log(history);
-  console.log("******************************************");
+//   console.log(history);
+//   console.log("******************************************");
   const filteredOpportunities = Object.keys(window.opportunityData).reduce((acc, key) => {
     const opportunity = window.opportunityData[key];
     if (opportunity.title.toLowerCase().includes(searchValue) || 
