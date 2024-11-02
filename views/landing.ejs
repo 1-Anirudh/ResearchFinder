@@ -36,7 +36,7 @@
     text-align: center;
     color: #605dff;
     top: 16px;
-    right: 116px;
+    right: 70px;
     z-index: 20000;
     display: block;
     border-radius: 50%;
@@ -44,7 +44,7 @@
     height: 30px;
     cursor: pointer;
     transition: all 200ms linear;
-    box-shadow: 0 0 25px rgba(255, 235, 167, .45);
+    /* box-shadow: 0 0 25px rgba(255, 235, 167, .45); */
 }
 
 .notification_wrap .notification_icon .fa-bell{
@@ -110,30 +110,65 @@
 	display: block;
 }
 
-  .light-theme {
-    --sidebar-background: #b4afef;
-    --homesection-background: #d2abf9; ;
-    --logo-detailscolor: #fff;
-    --hover-background: #908db0;
-    --navlinks-i: #000000; 
-    --linkname-color: #000000;
-    --submenu-back: #908db0;
-    --submenu-a: #000000;
-    --profile-details: #847fb6;
-  }
-
-  /* Add dark-theme styles */
-  .dark-theme {
+  /* .light-theme {
     --sidebar-background: #008a82;
-    --homesection-background: #302885;
-    --logo-detailscolor: #ffffff;
-    --hover-background: #1d1b31;
+    --logo-detailscolor: #fff;
     --navlinks-i: #fff; 
     --linkname-color: #fff;
-    --submenu-back: #1d1b31;
     --submenu-a: #fff;
-    --profile-details: #00a39a;
-  }
+    --theme-main: #ffffff;
+    --profile-details: #005e59;
+    --theme-color: #20b2aa;
+    --border-color: #18b3aa;
+    --background-hover: #31e0d7;
+    --home-background: #cde3e2;
+    --option-text: #006660;
+    --container-background: #f5f5f5;
+    --product-text: #4e4e4e;
+    --product-shadow: 0px 0px 20px 13px #847fb6;
+    --container-shadow: 7px 9px 16px 0px #847fb6;
+  } */
+
+  .light-theme {
+    --sidebar-background: #005f99;
+    --logo-detailscolor: #ffffff;
+    --navlinks-i: #ffffff; 
+    --linkname-color: #ffffff;
+    --submenu-a: #ffffff;
+    --theme-main: #ffffff;
+    --profile-details: #004080;
+    --theme-color: #4a90e2;
+    --border-color: #4a90e2;
+    --background-hover: #5bb3e6;
+    --home-background: #e3eff8;
+    --option-text: #004080;
+    --container-background: #f5f9fc;
+    --product-text: #4e4e4e;
+    --product-shadow: 0px 0px 20px 13px #a0b3d6;
+    --container-shadow: 7px 9px 16px 0px #a0b3d6;
+    --home-header-bg: #cfebff;
+}
+
+.dark-theme {
+    --sidebar-background: #181825;          /* Dark navy, slightly desaturated for a softer look */
+    --logo-detailscolor: #599bdc;           /* Muted blue to give a softer contrast */
+    --navlinks-i: #d1d5db;                  /* Light gray for easier readability */
+    --linkname-color: #c9ced7;              /* Light gray for link text */
+    --submenu-a: #d0d7e5;                   /* Softer gray for submenu items */
+    --theme-main: #0f0f14;                  /* Deep dark blue */
+    --profile-details: #1d2437;             /* Darker blue for profile background */
+    --theme-color: #5aa7e5;                 /* Brighter blue for primary accents */
+    --border-color: #445a7a;                /* Muted blue-gray for borders */
+    --background-hover: #3a9be6;            /* Lighter shade of blue for hover states */
+    --home-background: #191925;             /* Slightly lighter than main background */
+    --option-text: #5ba9f2;                 /* Vibrant blue for selectable options */
+    --container-background: #232336;        /* Dark gray with a hint of blue */
+    --product-text: #f1f1f1;                /* Near-white for readability */
+    --product-shadow: 0px 0px 15px 8px #020212; /* Softer shadow for products */
+    --container-shadow: 5px 7px 14px 0px #020212; /* Slightly softened shadow */
+    --home-header-bg: #13131e;              /* Dark gray-blue for header background */
+}
+
 
   
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
@@ -202,10 +237,10 @@
 }
 .sidebar .nav-links li:hover{
   z-index: 2000;
-  background: #005e59;
+  background: var(--profile-details);
 }
 .sidebar.light-mode .nav-links li:hover{
-  background: #005e59;
+  background: var(--profile-details);
 }
 .sidebar .nav-links li .iocn-link{
   display: flex;
@@ -249,7 +284,7 @@
 .sidebar .nav-links li .sub-menu{
   padding: 6px 6px 14px 80px;
   margin-top: -10px;
-  background: #005e59;
+  background: var(--profile-details);
   z-index: 20000;
   display: none;
 }
@@ -312,7 +347,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #005e59;
+  background: var(--profile-details);
   padding: 12px 0;
   transition: all 0.5s ease;
 }
@@ -340,7 +375,7 @@
 }
 .sidebar .profile-details .profile_name,
 .sidebar .profile-details .job{
-  color: #fff;
+  color: var(--linkname-color);
   font-size: 18px;
   font-weight: 500;
   white-space: nowrap;
@@ -362,7 +397,7 @@
 .dark-light:not(:checked) + label{
   position: fixed;
   top: 13px;
-  right: 70px;
+  right: 6px;
   z-index: 20000;
   display: block;
   border-radius: 50%;
@@ -423,7 +458,7 @@
 
 .home-section{
   position: relative;
-	background-color: #cde3e2;
+	background-color: var(--home-background);
   background-size: cover;
   background-position: center;
   height: 100vh;
@@ -445,6 +480,7 @@
 .home-section .home-content .bx-menu{
   margin: 0 15px;
   cursor: pointer;
+  color: var(--theme-color);
 }
 .home-section .home-content .text {
   font-size: 26px;
@@ -452,46 +488,16 @@
 }
 
 .home-section .home-content {
-    margin-bottom: 10px;
+  margin-bottom: 10px;
     position: fixed;
     top: 0;
     z-index: 10;
     width: 100%;
-    background: #ffffff;
+    background: var(--home-header-bg);
     padding-bottom: 22px;
     height: 180px;
 }
 
-
-/* .search-bar-container {
-  display: flex;
-  align-items: center;
-  background: #cfd8efa3;
-  border-radius: 4px;
-  padding: 5px;
-  width: 400px;
-  margin-left: 20%;
-} */
-/* 
-.search-bar {
-  width: 100%;
-  height: 100%;
-  background: #e4e9f78f;
-  border: none;
-  outline: none;
-  font-size: 20px;
-  color: #11101d;
-  padding: 5px;
-} */
-/* 
-.search-button {
-  background-color: #007bff;
-  border: none;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 4px;
-  cursor: pointer;
-}
 
 .search-button i {
   font-size: 1rem;
@@ -513,7 +519,7 @@
       position: relative;
       margin-top: 110px;
       padding: 10px;
-      background: #cde3e2;
+      background: var(--home-background);
       padding-top: 90px;
       padding-bottom: 33px;
     }
@@ -524,8 +530,8 @@
       overflow: hidden;
       width: 290px;
       height: 350px;
-      background: var(--white);
-      box-shadow: 7px 9px 16px 0px #847fb6;
+      background: var(--container-background);
+      box-shadow: var(--container-shadow);
       border-radius: 10px;
     }
 
@@ -545,7 +551,7 @@
 
     .product-p {
       font-size: 0.6em;
-      color: #20b2aa;
+      color: var(--theme-color);
       letter-spacing: 1px;
       margin-top: 9.6px;
       margin-bottom: 9.6px;
@@ -553,20 +559,20 @@
 
     .product-pl {
       font-size: 1em;
-      color: #20b2aa;
+      color: var(--theme-color);
       letter-spacing: 1px;
     }
 
     .product-p2 {
       font-size: 0.7em;
-      color: var(--dark);
+      color: var(--product-text);
       letter-spacing: 1px;
     }
 
 
     .product-h1 {
       font-size: 1.2em;
-      color: var(--dark);
+      color: var(--product-text);
       margin-top: -5px;
       margin-bottom: 12.86px;
     }
@@ -592,7 +598,7 @@
       letter-spacing: 0;
       margin-top: 11.2px;
       margin-bottom: 17px;
-      color: var(--dark);
+      color: var(--product-text);
       font-size: .7em;
       line-height: 1.6em;
       margin-right: 10px;
@@ -618,8 +624,8 @@
       }
 
       .product-selected {
-          background: var(--white);
-          box-shadow: 0px 0px 20px 13px #847fb6;
+          background: var(--container-background);
+          box-shadow: var(--product-shadow);
           border-radius: 10px;
           padding: 20px;
           width: 500px;
@@ -630,7 +636,7 @@
 
     .product-button-add, .product-button-like {
       /* background: darken(var(--light), 10%); */
-      background-color: #20b2aa;
+      background-color: var(--theme-color);
       padding: 10px;
       display: inline-block;
       outline: 0;
@@ -639,12 +645,12 @@
       border-radius: 2px;
       text-transform: uppercase;
       letter-spacing: 1px;
-      color: var(--white);
+      color: var(--container-background);
       cursor: pointer;
     }
 
     .product-button-add:hover, .product-button-like:hover {
-      background: #31e0d7;
+      background: var(--background-hover);
       transition: all .4s ease-in-out;
     }
 
@@ -663,7 +669,7 @@
     .pagination {    
       display: flex;
     justify-content: center;
-    background-color: #cde3e2;
+    background-color: var(--home-background);
     padding: 10px;
     }
 
@@ -672,14 +678,14 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    background: #fff;
+    background: var(--theme-main);
     padding: 8px;
     border-radius: 50px;
     box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
     position: relative;
 }
 .pagination ul li{
-  color: #20B2AA;
+  color: var(--theme-color);
   list-style: none;
   line-height: 45px;
   text-align: center;
@@ -715,17 +721,19 @@
 .pagination ul li.numb:hover,
 .pagination ul li:first-child:hover,
 .pagination ul li:last-child:hover{
-  color: #fff;
-  background: #20B2AA;
+  color: var(--theme-main);
+  background: var(--theme-color);
 }
 
 
 .search-wrapper {
-    width: 89%;
+    width: 63%;
     margin: 0 auto;
     position: fixed;
-    left: 25%;
-    padding-left: 28px;
+    left: 27%;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: -10px;
 }
 
 #search-container {
@@ -733,64 +741,65 @@
 }
 #search-container input {
   background-color: transparent;
-  width: 40%;
+  width: 60%;
   border-bottom: 2px solid #110f29;
   padding: 1em 0.3em;
+  color: var(--product-text);
 }
 #search-container input:focus {
-  border-bottom-color: #20b2aa;
+  border-bottom-color: var(--theme-color);
 }
 #search-container button {
   padding: 1em 2em;
   margin-left: 1em;
-  background-color: #20b2aa;
-  color: #ffffff;
+  background-color: var(--theme-color);
+  color: var(--theme-main);
   border-radius: 5px;
   margin-top: 0.5em;
   cursor: pointer;
 }
 
 #search-container button:hover {
-  background-color: #31e0d7;
+  background-color: var(--background-hover);
 }
 
 .filter-button {
-  border: 2px solid #18b3aa;
+  border: 2px solid var(--border-color);
   padding: 1em 2.2em;
   border-radius: 3em;
   background-color: transparent;
-  color: #20b2aa;
+  color: var(--theme-color);
   cursor: pointer;
 }
 
 .clear-button {
-  border: 2px solid #18b3aa;
+  border: 2px solid var(--border-color);
   padding: 1em 2.2em;
   border-radius: 3em;
   background-color: transparent;
-  color: #20b2aa;
+  color: var(--theme-color);
   cursor: no-drop;
 }
 
 .clear-button.active {
-  background-color: #20b2aa;
-  color: #ffffff;
+  background-color: var(--theme-color);
+  color: var(--theme-main);
 }
 
 .clear-button.active:hover {
-  background-color: #31e0d7;
-  color: #ffffff;
+  background-color: var(--background-hover);
+  color: var(--theme-main);
   cursor: pointer;
 }
 
 .filter-button.active {
-  background-color: #20b2aa;
-  color: #ffffff;
+  background-color: var(--theme-color);
+  color: var(--theme-main);
 }
 
 .filter-button:hover {
-  background-color: #20b2aa;
-  color: #ffffff;
+  background-color: var(--theme-color);
+  color: var(--theme-main);
 }
 
 .filter-button-container {
@@ -801,8 +810,8 @@
 .filter-button-container .filter-dropdown {
     display: none;
     position: absolute;
-    background-color: #ffffff;
-    border: 1px solid #20b2aa;
+    background-color: var(--theme-main);
+    /* border: 1px solid var(--theme-color); */
     border-radius: 5px;
     padding: 12px;
     top: 3em;
@@ -826,7 +835,7 @@
     padding: 0px 8px;
     border-radius: 8px;
     align-items: center;
-    background: #fff;
+    background: var(--theme-main);
 }
 .filter-dropdown .option:hover{
     background: #F2F2F2;
@@ -837,13 +846,13 @@
 }
 .option .option-text{
     font-size: 12px;
-    color: #006660;
+    color: var(--option-text);
 }
 
 
 .active {
   background-color: #6759ff;
-  color: #ffffff;
+  color: var(--theme-main);
 }
 #products {
   display: grid;
@@ -852,7 +861,7 @@
   padding: 2em 0;
 }
 .card {
-  background-color: #ffffff;
+  background-color: var(--theme-main);
   max-width: 18em;
   margin-top: 1em;
   padding: 1em;
@@ -883,17 +892,17 @@ img {
     font-size: 27px;
     margin: 0 auto;
     text-align: center;
-    /* color: #605dff; */
+    color: #605dff;
     top: 15px;
-    right: 17px;
+    right: 40px;
     z-index: 20000;
     display: block;
     border-radius: 50%;
-    width: 43px;
-    height: 43px;
+    width: 30px;
+    height: 30px;
     cursor: pointer;
     transition: all 200ms linear;
-    box-shadow: 0 0 25px rgba(255, 235, 167, .45);
+    /* box-shadow: 0 0 25px rgba(255, 235, 167, .45); */
 }
 
 @media screen and (max-width: 720px) {
@@ -944,7 +953,7 @@ img {
     <ul class="nav-links">
 
 
-      <li>
+      <!-- <li>
         <a href="#">
           <i class='bx bx-grid-alt' ></i>
           <span class="link_name">Dashboard</span>
@@ -952,7 +961,7 @@ img {
         <ul class="sub-menu blank">
           <li><a class="link_name" href="#">Category</a></li>
         </ul>
-      </li>
+      </li> -->
 
       <!-- <li>
         <div class="iocn-link">
@@ -964,11 +973,33 @@ img {
         </div>
         <ul class="sub-menu">
           <li><a class="link_name" href="#">Posts</a></li>
-          <li><a href="#">Web Design</a></li>
+          <li><a href="#">Web Design</a></li>f
           <li><a href="#">Login Form</a></li>
           <li><a href="#">Card Design</a></li>
         </ul>
       </li> -->
+
+      <% if (role === 'admin') { %>  
+        <li>
+          <a href="/add-opportunity">
+            <i class='bx bx-add-to-queue' ></i>
+            <span class="link_name">Post Opportunity</span>
+          </a>
+          <ul class="sub-menu blank">
+            <li><a class="link_name" href="#">Post</a></li>
+          </ul>
+        </li>
+  <% } %> 
+
+  <li>
+    <a href="/chat">
+      <i class='bx bx-conversation'></i>
+      <span class="link_name">Chat</span>
+    </a>
+    <ul class="sub-menu blank">
+      <li><a class="link_name" href="#">Chat</a></li>
+    </ul>
+  </li>
 
       <li>
         <a href="/feedback">
@@ -979,18 +1010,6 @@ img {
           <li><a class="link_name" href="#">FeedBack</a></li>
         </ul>
       </li>
-
-      <% if (role === 'admin') { %>  
-            <li>
-              <a href="/add-opportunity">
-                <i class='bx bx-add-to-queue' ></i>
-                <span class="link_name">Post Opportunity</span>
-              </a>
-              <ul class="sub-menu blank">
-                <li><a class="link_name" href="#">Post</a></li>
-              </ul>
-            </li>
-      <% } %> 
       
       <!-- <li>
         <a href="/tempcheck">
@@ -1001,16 +1020,6 @@ img {
           <li><a class="link_name" href="#">tempcheck</a></li>
         </ul> -->
       <!-- </li> -->
-
-      <li>
-        <a href="/chat">
-          <i class='bx bx-conversation'></i>
-          <span class="link_name">Chat</span>
-        </a>
-        <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Chat</a></li>
-        </ul>
-      </li>
 
       <li>
         <a href="/profile">
@@ -1210,6 +1219,7 @@ img {
   <script>
     window.firebaseConfig = JSON.parse('<%- firebaseConfig %>');
     window.opportunityData = JSON.parse('<%- opportunityData %>');  
+    window.role = '<%= role %>';
     
     // import { getRecommendations } from '../../backend/pinecone.js';
 window.filteredOpportunities = window.opportunityData;
@@ -1613,10 +1623,45 @@ themeToggle.addEventListener("change", () => {
     body.classList.remove('dark-theme');
     body.classList.add('light-theme');
     localStorage.setItem('theme', 'light-theme');
+
+    const selectedTheme = 'light-theme';
+
+    fetch('/set-theme', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ theme: selectedTheme })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (!data.success) {
+        console.error('Error setting theme on server');
+      }
+    })
+    .catch(error => console.error('Error setting theme:', error));
+
   } else {
     body.classList.remove('light-theme');
     body.classList.add('dark-theme');
     localStorage.setItem('theme', 'dark-theme');
+
+    const selectedTheme = 'dark-theme';
+
+    fetch('/set-theme', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ theme: selectedTheme })
+    })
+    .then(response => response.json())
+    .then(data => {
+      if (!data.success) {
+        console.error('Error setting theme on server');
+      }
+    })
+    .catch(error => console.error('Error setting theme:', error));
   }
 });
 

@@ -1,8 +1,5 @@
 
 const userId = '<%= userId %>';
-const serverIpAddress = '<%= serverIPaddress %>';
-// const socket = new WebSocket(`wss://${serverIpAddress}:8080?userId=${userId}`);
-// const socket = new WebSocket(`wss://${window.location.host}?userId=${userId}`);
 var targetId = '';
 var Message = {time: '', text: '', senderID: userId, targetID: ''};
 var userDATA = '';
@@ -168,7 +165,6 @@ function formatDate(date) {
 async function videocall() {   
   const roomId = userId < targetUID ? userId + targetUID : targetUID + userId;
   window.open(`https://meet.ffmuc.net/${roomId}`, '_blank');
-  // window.open(`https://${serverIpAddress}:5000/video-call?roomId=${roomId}`, '_blank');
 }
 
 async function handleKeyPress(event) {

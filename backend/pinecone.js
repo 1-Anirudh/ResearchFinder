@@ -1,6 +1,4 @@
 const { Pinecone } = require('@pinecone-database/pinecone');
-// const opportunities =  require('../sample-opp.js');
-
 const PINECONE_API_KEY="pcsk_7R2S84_LH18HbNXttwUxG9JoBYXytycFCgzxFyPh9uvrZZGBPMcU3NxAys16CNzZMmqnBg"
 
 
@@ -9,18 +7,6 @@ const pc = new Pinecone({
 });
 
 const indexName = 'researchfinders';
-
-// await pc.createIndex({
-//   name: indexName,
-//   dimension: 1024, // Replace with your model dimensions
-//   metric: 'cosine', // Replace with your model metric
-//   spec: { 
-//     serverless: { 
-//       cloud: 'aws', 
-//       region: 'us-east-1' 
-//     }
-//   } 
-// });
 
 const model = 'multilingual-e5-large';
 

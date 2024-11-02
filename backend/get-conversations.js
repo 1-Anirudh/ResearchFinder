@@ -28,7 +28,7 @@ async function getConversations() {
             const UID = data.uid;
             const chatData = {
                 title : `${data.firstName} ${data.surName}`,
-                subtitle : "joined on 2021-10-10",
+                subtitle : `last login on ${data.lastLogin}`,
                 profilePics : [],
                 messages: []
             }

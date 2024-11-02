@@ -155,6 +155,7 @@ html {
   display: flex;
   align-items: center;
   padding: 0 20px;
+  background: var(--body-bg-color);
 }
 
 .wrapper {
@@ -351,6 +352,8 @@ html {
   flex-direction: column;
   overflow: auto;
 }
+
+
 .chat-area-header {
   display: flex;
   position: sticky;
@@ -372,8 +375,35 @@ html {
   font-size: 18px;
   font-weight: 600;
 }
+/* .chat-area-main {
+  flex-grow: 1;
+  background-image: url('/images/CB.jpg');
+  opacity: 0.1;
+} */
+
+
 .chat-area-main {
   flex-grow: 1;
+  position: relative;
+  /* Ensure children are above the pseudo-element */
+  z-index: 1;
+}
+
+.chat-area-main::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('/images/CB.jpg');
+  flex-grow: 1;
+  background-repeat: repeat; /* Tiling the image */
+  background-size: auto; /* Default size, adjust if needed */
+  background-size: cover; /* Or 'contain' or any preferred value */
+  background-position: center;
+  opacity: 0.25; /* Adjust this to change the opacity */
+  z-index: -1; /* Keep it behind the content */
 }
 
 .chat-msg-img {
@@ -396,7 +426,7 @@ html {
   bottom: 0;
   font-size: 12px;
   font-weight: 600;
-  color: var(--msg-date);
+  color: var(--button-color);
   white-space: nowrap;
 }
 
@@ -443,6 +473,7 @@ html {
 .owner .chat-msg-date {
   left: auto;
   right: calc(100% + 12px);
+  color: var(--theme-color);
 }
 
 .chat-msg-text img {
@@ -484,7 +515,7 @@ html {
 .chat-area-footer input {
   border: none;
   color: var(--body-color);
-  background-color: var(--input-bg);
+  background-color: var(--button-bg-color);
   padding: 12px;
   border-radius: 6px;
   font-size: 15px;
@@ -750,6 +781,10 @@ html {
     display: none;
   }
 }
+
+#startVoiceNav {
+  display: hidden;
+}
 </style>
 
   <script>
@@ -763,6 +798,7 @@ html {
 <body translate="no">
   <div class="app">
  <div class="header">
+  <i class='bx bxs-user-voice' id="startVoiceNav"></i>
   <!-- <div class="logo">
     <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff" /></svg>
   </div> -->
@@ -963,6 +999,13 @@ html {
         }
     }
 
+    function formatTimestampToTime(timestamp) {
+        const date = new Date(timestamp);
+        const hours = date.getHours().toString().padStart(2, '0');
+        const minutes = date.getMinutes().toString().padStart(2, '0');
+        return `${hours}:${minutes}`;
+    }
+
     async function submitForm() {
         const receiverID = window.targetId;
 
@@ -988,7 +1031,7 @@ html {
         chatMessage.innerHTML = `
             <div class="chat-msg-profile">
                 <img class="chat-msg-img" src="${profilePic}" alt="" />
-                <div class="chat-msg-date">Message ${newMessage.time}</div>
+                <div class="chat-msg-date">${formatTimestampToTime(newMessage.time)}</div>
             </div>
             <div class="chat-msg-content">
                 <div class="chat-msg-text">${newMessage.text}</div>
@@ -1070,7 +1113,7 @@ html {
             chatMessage.innerHTML = `
                 <div class="chat-msg-profile">
                     <img class="chat-msg-img" src="${profilePic}" alt="" />
-                    <div class="chat-msg-date">Message ${msg.time}</div>
+                    <div class="chat-msg-date">${formatTimestampToTime(msg.time)}</div>
                 </div>
                 <div class="chat-msg-content">
                     <div class="chat-msg-text">${msg.text}</div>
@@ -1108,7 +1151,6 @@ html {
         });
     });
 
-
     const toggleButton = document.querySelector('.dark-light');
     const colors = document.querySelectorAll('.color');
 
@@ -1121,16 +1163,29 @@ html {
       });
     });
 
+    document.addEventListener("DOMContentLoaded", () => {
+    fetch('/get-theme')
+      .then(response => response.json())
+      .then(data => {
+        const theme = data.theme;
+        if (theme === 'dark-theme') {
+          document.bosy.classList.toggle('dark-mode');
+        } 
+      })
+      .catch(error => console.error('Error fetching theme:', error));
+  });
+
     toggleButton.addEventListener('click', () => {
       document.body.classList.toggle('dark-mode');
     });
+
+
 //# sourceURL=pen.js
 
 </script>
 
 <script type="module" src="new.mjs" ></script>
-<script type="module" src="ScreenReader.js"></script>
-<script type="module" src="VoiceNavigation.js"></script>
+<script type="module" src="VoiceNavigation.mjs"></script>
 
 </body>
 

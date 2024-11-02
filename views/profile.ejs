@@ -19,26 +19,70 @@
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
 }
+
+.light-theme {
+    --sidebar-background: #005f99;
+    --logo-detailscolor: #ffffff;
+    --navlinks-i: #ffffff; 
+    --linkname-color: #ffffff;
+    --submenu-a: #ffffff;
+    --theme-main: #ffffff;
+    --profile-details: #004080;
+    --theme-color: #4a90e2;
+    --border-color: #4a90e2;
+    --background-hover: #5bb3e6;
+    --home-background: #e3eff8;
+    --option-text: #004080;
+    --container-background: #f5f9fc;
+    --product-text: #4e4e4e;
+    --product-shadow: 0px 0px 20px 13px #a0b3d6;
+    --container-shadow: 7px 9px 16px 0px #a0b3d6;
+    --home-header-bg: #cfebff;
+    --text-area-input: #f5f9fc;
+}
+
+.dark-theme {
+    --sidebar-background: #181825;          /* Dark navy, slightly desaturated for a softer look */
+    --logo-detailscolor: #599bdc;           /* Muted blue to give a softer contrast */
+    --navlinks-i: #d1d5db;                  /* Light gray for easier readability */
+    --linkname-color: #c9ced7;              /* Light gray for link text */
+    --submenu-a: #d0d7e5;                   /* Softer gray for submenu items */
+    --theme-main: #0f0f14;                  /* Deep dark blue */
+    --profile-details: #1d2437;             /* Darker blue for profile background */
+    --theme-color: #5aa7e5;                 /* Brighter blue for primary accents */
+    --border-color: #445a7a;                /* Muted blue-gray for borders */
+    --background-hover: #3a9be6;            /* Lighter shade of blue for hover states */
+    --home-background: #191925;             /* Slightly lighter than main background */
+    --option-text: #5ba9f2;                 /* Vibrant blue for selectable options */
+    --container-background: #232336;        /* Dark gray with a hint of blue */
+    --product-text: #f1f1f1;                /* Near-white for readability */
+    --product-shadow: 0px 0px 15px 8px #020212; /* Softer shadow for products */
+    --container-shadow: 5px 7px 14px 0px #020212; /* Slightly softened shadow */
+    --home-header-bg: #13131e;              /* Dark gray-blue for header background */
+    --text-area-input: #1d1d2b;             /* Darker gray-blue for text input */
+}
+
+
 body {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 20px;
-  background: #9efffa;
+  background: var(--home-background);
 }
 .container {
   position: relative;
   max-width: 700px;
   width: 100%;
-  background: #fff;
+  background: var(--container-background);
   padding: 25px;
   border-radius: 8px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
 }
 .container header {
   font-size: 1.5rem;
-  color: #333;
+  color: var(--product-text);
   font-weight: 500;
   text-align: center;
 }
@@ -50,7 +94,7 @@ body {
   margin-top: 20px;
 }
 .input-box label {
-  color: #333;
+  color: var(--product-text);
 }
 .form :where(.input-box input, .select-box) {
   position: relative;
@@ -58,11 +102,13 @@ body {
   width: 100%;
   outline: none;
   font-size: 1rem;
-  color: #707070;
+  color: var(--product-text);
   margin-top: 8px;
   border: 1px solid #ddd;
   border-radius: 6px;
   padding: 0 15px;
+  background: var(--text-area-input);
+  border-color: var(--border-color);
 }
 .input-box input:focus {
   box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
@@ -75,7 +121,7 @@ body {
   margin-top: 20px;
 }
 .gender-box h3 {
-  color: #333;
+  color: var(--product-text);
   font-size: 1rem;
   font-weight: 400;
   margin-bottom: 8px;
@@ -119,14 +165,11 @@ body {
   border: none;
   cursor: pointer;
   transition: all 0.2s ease;
-  background: #20b2aa;
+  background: var(--theme-color);
 }
 .form button:hover {
-  background: #31e0d7;
+  background: var(--background-hover);
 }
-
-
-
 
 
 .in-containers {
@@ -162,7 +205,7 @@ body {
     border-radius: 8px;
     padding: 25px;
     margin: -90px auto 0;
-    background-color: #fff;
+    background-color: var(--container-background);
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
 }
 .interests-container .input-field {
@@ -170,6 +213,14 @@ body {
   height: 64px;
   width: 100%;
 }
+
+.interests-container h2 {
+  font-size: 1.5rem;
+  color: var(--product-text);
+  font-weight: 500;
+  text-align: center;
+}
+
 .input-field textarea {
   height: 100%;
   width: 100%;
@@ -180,9 +231,11 @@ body {
   padding: 18px 45px 18px 15px;
   border: 1px solid #ccc;
   resize: none;
+  background: var(--text-area-input);
+  border-color: var(--border-color);
 }
 .input-field textarea:focus {
-  border-color: #20b2aa;
+  border-color: var(--theme-color);
 }
 textarea::-webkit-scrollbar {
   display: none;
@@ -197,7 +250,7 @@ textarea::-webkit-scrollbar {
   color: #707070;
 }
 .input-field textarea:focus ~ .note-icon {
-  color: #20b2aa;
+  color: var(--theme-color);
 }
 
 .interests-container .todoLists {
@@ -209,7 +262,7 @@ textarea::-webkit-scrollbar {
   display: flex;
   align-items: center;
   list-style: none;
-  background-color: #f2f2f2;
+  background-color: var(--border-color);
   padding: 20px 15px;
   border-radius: 8px;
   margin-top: 10px;
@@ -219,7 +272,7 @@ textarea::-webkit-scrollbar {
 .todoLists .list input {
   height: 16px;
   min-width: 16px;
-  accent-color: #20b2aa;
+  accent-color: var(--theme-color);
   pointer-events: none;
 }
 .todoLists .list .task {
@@ -251,13 +304,13 @@ textarea::-webkit-scrollbar {
   margin-top: 25px;
 }
 .pending-tasks span {
-  color: #333;
+  color: var(--product-text);
 }
 .pending-tasks .clear-button {
   padding: 6px 12px;
   outline: none;
   border: none;
-  background: #20b2aa;
+  background: var(--theme-color);
   color: #fff;
   font-size: 14px;
   border-radius: 4px;
@@ -266,7 +319,7 @@ textarea::-webkit-scrollbar {
   white-space: nowrap;
 }
 .clear-button:hover {
-  background-color: #31e0d7;
+  background-color: var(--background-hover);
 }
 
 .post-button {
@@ -277,19 +330,19 @@ textarea::-webkit-scrollbar {
   padding: 12px 24px;
   outline: none;
   border: none;
-  background: #20b2aa;
+  background: var(--theme-color);
   color: #fff;
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
 }
 .post-button:disabled {
-  background: #20b2aa;
+  background: var(--theme-color);
   cursor: not-allowed;
 }
 
 .post-button:hover {
-  background-color: #31e0d7;
+  background-color: var(--background-hover);
 }
 
 
@@ -302,9 +355,15 @@ textarea::-webkit-scrollbar {
     row-gap: 15px;
   }
 }
+
+#startVoiceNav {
+  display: hidden;
+}
   </style>
 
   <body>
+    <i class='bx bxs-user-voice' id="startVoiceNav"></i>
+
     <section class="container">
       <header>Profile Details</header>
       <form action="/edit-pdetails" method="post" class="form">
@@ -427,6 +486,23 @@ textarea::-webkit-scrollbar {
     </form>
 
     <script>
+
+      const body = document.body;
+
+      document.addEventListener("DOMContentLoaded", () => {
+        fetch('/get-theme')
+          .then(response => response.json())
+          .then(data => {
+            const theme = data.theme;
+            if (theme === 'dark-theme') {
+              body.classList.add('dark-theme');
+            } else {
+              body.classList.add('light-theme');
+            }
+          })
+          .catch(error => console.error('Error fetching theme:', error));
+      });
+
       const interestsInputField = document.querySelectorAll(".interests-container")[0].querySelector(".input-field textarea"),
         skillsInputField = document.querySelectorAll(".interests-container")[1].querySelector(".input-field textarea"),
         interestsList = document.querySelector(".interests-list"),
@@ -575,5 +651,6 @@ textarea::-webkit-scrollbar {
         }
       });
     </script>
+    <script type="module" src="VoiceNavigation.mjs"></script>
   </body>
 </html>

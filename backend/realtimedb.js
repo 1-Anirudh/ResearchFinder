@@ -1,6 +1,6 @@
 const { initializeApp } = require('firebase/app');
 const { getDatabase, ref, onValue, set, push, get, child, remove } = require('firebase/database');
-const firebaseConfig = require('./frontend/public/firebase-config.json'); // Your service account credentials
+const firebaseConfig = require('../frontend/public/firebase-config.json'); // Your service account credentials
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig, 'realtime-db-write');
@@ -15,13 +15,6 @@ function listenForMessages() {
   onValue(conversationRef, (snapshot) => {
     const messages = snapshot.val();
     console.log(messages); // Access the messages data
-
-    // for (const key in messages) {
-    //   if (messages.hasOwnProperty(key)) {
-    //     const messageData = messages[key];
-    //     console.log(messageData.timestamp); // Access the message data
-    //   }
-    // }
   });
 }
 
@@ -72,9 +65,6 @@ async function readConversationDataOnce(userID) {
   });
 }
 
-// realTimeMessaging('user1', 'user2', 'Hello', Date.now());
-// readConversationDataOnce('user1');
-// readConversationDataOnce('user2');
 
 listenForMessages();
 

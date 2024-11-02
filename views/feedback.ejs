@@ -16,6 +16,51 @@
   --accent-color-2: hsl(210, 66.7%, 98.8%);
 }
 
+
+.light-theme {
+    --sidebar-background: #005f99;
+    --logo-detailscolor: #ffffff;
+    --navlinks-i: #ffffff; 
+    --linkname-color: #ffffff;
+    --submenu-a: #ffffff;
+    --theme-main: #ffffff;
+    --profile-details: #004080;
+    --theme-color: #4a90e2;
+    --border-color: #4a90e2;
+    --background-hover: #5bb3e6;
+    --home-background: #e3eff8;
+    --option-text: #004080;
+    --container-background: #f5f9fc;
+    --product-text: #4e4e4e;
+    --product-shadow: 0px 0px 20px 13px #a0b3d6;
+    --container-shadow: 7px 9px 16px 0px #a0b3d6;
+    --home-header-bg: #cfebff;
+    --text-area-input: #f5f9fc;
+}
+
+.dark-theme {
+    --sidebar-background: #181825;          /* Dark navy, slightly desaturated for a softer look */
+    --logo-detailscolor: #599bdc;           /* Muted blue to give a softer contrast */
+    --navlinks-i: #d1d5db;                  /* Light gray for easier readability */
+    --linkname-color: #c9ced7;              /* Light gray for link text */
+    --submenu-a: #d0d7e5;                   /* Softer gray for submenu items */
+    --theme-main: #0f0f14;                  /* Deep dark blue */
+    --profile-details: #1d2437;             /* Darker blue for profile background */
+    --theme-color: #5aa7e5;                 /* Brighter blue for primary accents */
+    --border-color: #445a7a;                /* Muted blue-gray for borders */
+    --background-hover: #3a9be6;            /* Lighter shade of blue for hover states */
+    --home-background: #191925;             /* Slightly lighter than main background */
+    --option-text: #5ba9f2;                 /* Vibrant blue for selectable options */
+    --container-background: #232336;        /* Dark gray with a hint of blue */
+    --product-text: #f1f1f1;                /* Near-white for readability */
+    --product-shadow: 0px 0px 15px 8px #020212; /* Softer shadow for products */
+    --container-shadow: 5px 7px 14px 0px #020212; /* Slightly softened shadow */
+    --home-header-bg: #13131e;              /* Dark gray-blue for header background */
+    --text-area-input: #1d1d2b;             /* Darker gray-blue for text input */
+}
+
+
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
@@ -34,21 +79,28 @@ body {
   font-family: sans-serif;
 }
 
+html {
+  background-color: var(--home-background);
+}
+
 .content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  box-shadow: var(--container-shadow);
+  background-color: var(--container-background);
 }
 
 header {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  background-color: var(--bg-color);
+  background-color: var(--container-background);
 }
+
 header h1 {
   margin: 2em 1em;
   font-size: 250%;
+  color: var(--product-text);
 }
 header img {
   height: auto;
@@ -63,7 +115,7 @@ header img {
   font-size: 100%;
   font-weight: 600;
   line-height: 1.3;
-  color: var(--secondary-color);
+  color: var(--product-text);
 }
 [mv-app].mv-highlight-unsaved .mv-unsaved-changes {
   box-shadow: none !important;
@@ -232,11 +284,16 @@ pre {
   border: 0;
 }
 
+#startVoiceNav {
+  display: hidden;
+}
+
 /*# sourceMappingURL=stles.css.map */
 
     </style>
 </head>
 <body>
+  <i class='bx bxs-user-voice' id="startVoiceNav"></i>
     <div class="content">
         <header>
             <h1>Feel free to drop us your feedback.</h1>
@@ -284,4 +341,25 @@ pre {
         </main>
     </div>
 </body>
+
+<script>
+const body = document.querySelector('body');
+
+document.addEventListener("DOMContentLoaded", () => {
+  fetch('/get-theme')
+    .then(response => response.json())
+    .then(data => {
+      const theme = data.theme;
+      if (theme === 'dark-theme') {
+        body.classList.add('dark-theme');
+      } else {
+        body.classList.add('light-theme');
+      }
+      document.documentElement.style.setProperty('--home-background', getComputedStyle(body).getPropertyValue('--home-background'));
+    })
+    .catch(error => console.error('Error fetching theme:', error));
+});
+
+</script>
+<script type="module" src="VoiceNavigation.mjs"></script>
 </html>

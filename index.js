@@ -9,17 +9,16 @@ const { getUserNotifications } = require('./backend/notification');
 const { getRecommendations } = require('./backend/pinecone');
 const { addRecommendations } = require('./backend/utils');
 
-const { saveUserDetails } = require('./backend/save-details');
+const { saveUserDetails, updateLastLogin } = require('./backend/save-details');
 const { saveUserRole, saveUserPersonalDetails, editUserPersonalDetails } = require('./backend/save-pdetails');
 
 
 const { chatToDB } = require('./backend/notification');
 const { getConversations } = require('./backend/get-conversations');
-const { readServerIP } = require('./backend/serverIP');
-const { realTimeMessaging, readDatabase } = require('./realtimedb');
+const { realTimeMessaging, readDatabase } = require('./backend/realtimedb');
 const { database } = require('firebase-admin');
 const { on } = require('events');
-const { getDatabase, ref, onValue, set, push, get, child, remove } = require('firebase/database');
+const { getDatabase, ref, onValue, set, push, get, child, remove, update } = require('firebase/database');
 const { default: firebase } = require('firebase/compat/app');
 
 const firebaseConfig = require('./frontend/public/firebase-config.json');
@@ -83,6 +82,7 @@ class SessionUtils {
         req.session.isLoggedIn = true;
         req.session.userId = userCredential.user.uid; // Store the user's UID in the session
         console.log("userCredential.user.uid", userCredential.user.uid);
+        updateLastLogin(userCredential.user.uid);
     }
 
     static handleRedirectWithMessage(res, message, redirectUrl = '/') {
@@ -183,32 +183,6 @@ configureApp()
             }
         });
 
-        app.get('/tempcheck', async (req, res) => {
-            const opportunityData = await readOpportunities();
-            res.render('not', { 
-                logoName: 'ResearchFinder', 
-                profileName: 'User', 
-                jobTitle: 'Student',
-                notifications: [ 
-                    {
-                        message: "helo",
-                        timestamp: {
-                            seconds: 1633497600
-                        }
-                    },
-                    {
-                        message: "helo1",
-                        timestamp: {
-                            seconds: 1633497600
-                        }
-                    }
-                ],
-                firebaseConfig: JSON.stringify(firebaseConfig),
-                opportunityData: JSON.stringify(opportunityData)
-            });
-        });
-
-
         app.get('/home', ensureLoggedIn, async (req, res) => {
             const opportunityData = await readOpportunities();
             const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
@@ -247,6 +221,24 @@ configureApp()
             }
         });
 
+
+        app.get('/get-voice-nav-status', (req, res) => {
+            res.json({ voiceNavEnabled: req.session.voiceNavEnabled || false });
+        });
+
+        app.post('/set-voice-nav-status', (req, res) => {
+            req.session.voiceNavEnabled = req.body.voiceNavEnabled;
+            res.json({ success: true });
+        });
+
+        app.get('/get-theme', (req, res) => {
+            res.json({ theme: req.session.theme || 'light' });
+        });
+
+        app.post('/set-theme', (req, res) => {
+            req.session.theme = req.body.theme;
+            res.json({ success: true });
+        });
 
         app.get('/add-pdetails', ensureLoggedIn, (req, res) => {
             res.render('add-pdetails');
@@ -360,6 +352,7 @@ configureApp()
             try {
                 const uDetails = await SessionUtils.userDetails(req);
                 res.render('profile', {
+                    theme: req.session.theme || 'dark-theme',
                     profileImage: '/images/default.avif',
                     userName: uDetails.firstName + ' ' + uDetails.surName,
                     userEmail: uDetails.email,
@@ -412,32 +405,6 @@ configureApp()
             res.redirect('/home')
         });
 
-        app.get('/temp', async (req, res) => {
-            const opportunityData = await readOpportunities();
-            res.render('oppcard', { 
-                logoName: 'ResearchFinder', 
-                profileName: 'User', 
-                jobTitle: 'Student',
-                notifications: [ 
-                    {
-                        message: "helo",
-                        timestamp: {
-                            seconds: 1633497600
-                        }
-                    },
-                    {
-                        message: "helo1",
-                        timestamp: {
-                            seconds: 1633497600
-                        }
-                    }
-                ],
-                firebaseConfig: JSON.stringify(firebaseConfig),
-                opportunityData: JSON.stringify(opportunityData)
-            });
-        });
-
-
         app.post('/realtime-chat', async (req, res) => {
             const { senderID, receiverID, message, timestamp } = req.body;
             console.log("senderID", senderID);
@@ -482,12 +449,10 @@ configureApp()
             const ret = await getConversations();
             const conversations = ret[0];
             const chatData = ret[1];
-            const localIPaddress = await readServerIP();
             // console.log(chatData);
             // console.log(localIPaddress);
             // console.log(readDatabase);
             res.render('chat', {
-                serverIPaddress: localIPaddress,
                 conversations: JSON.stringify(conversations),
                 chatData: JSON.stringify(chatData),
                 userId: userId,
