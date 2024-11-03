@@ -9,6 +9,8 @@ const { getUserNotifications } = require('./backend/notification');
 const { getRecommendations } = require('./backend/pinecone');
 const { addRecommendations } = require('./backend/utils');
 
+const { sendReleNotification } = require('./backend/notification');
+
 const { saveUserDetails, updateLastLogin } = require('./backend/save-details');
 const { saveUserRole, saveUserPersonalDetails, editUserPersonalDetails } = require('./backend/save-pdetails');
 
@@ -27,6 +29,7 @@ const { addOpportunity, readOpportunities} = require('./backend/opportunity');
 
 const RedisStore = require("connect-redis").default;
 const { createClient } =  require('redis');
+const { send } = require('process');
 
 const client = createClient({
     legacyMode: false,
@@ -408,6 +411,7 @@ configureApp()
             }
 
             addOpportunity(newOpportunity);
+            sendReleNotification(newOpportunity.topic);
             res.redirect('/home')
         });
 
