@@ -78,10 +78,10 @@ onValue(conversationRef, (snapshot) => {
         chatMessage.innerHTML = `
             <div class="chat-msg-profile">
                 <img class="chat-msg-img" src="${profilePic}" alt="" />
-                <div class="chat-msg-date">Message ${messageData.timestamp}</div>
+                <div class="chat-msg-date" data-translate="true" >Message ${messageData.timestamp}</div>
             </div>
             <div class="chat-msg-content">
-                <div class="chat-msg-text">${messageData.content}</div>
+                <div class="chat-msg-text" data-translate="true" >${messageData.content}</div>
             </div>
         `;
         chatArea.appendChild(chatMessage);
@@ -198,10 +198,10 @@ async function submitForm() {
       chatMessage.innerHTML = `
           <div class="chat-msg-profile">
               <img class="chat-msg-img" src="${profilePic}" alt="" />
-              <div class="chat-msg-date">Message ${Message.time}</div>
+              <div class="chat-msg-date" data-translate="true" >Message ${Message.time}</div>
           </div>
           <div class="chat-msg-content">
-              <div class="chat-msg-text">${Message.text}</div>
+              <div class="chat-msg-text" data-translate="true" >${Message.text}</div>
           </div>
       `;
       chatArea.appendChild(chatMessage);
@@ -306,11 +306,11 @@ function changeChat(userId) {
         }
         chatMessage.innerHTML = `
             <div class="chat-msg-profile">
-                <img class="chat-msg-img" src="${profilePic}" alt="" />
-                <div class="chat-msg-date">Message ${msg.time}</div>
+                <img class="chat-msg-img" data-translate="true" src="${profilePic}" alt="" />
+                <div class="chat-msg-date" data-translate="true" >Message ${msg.time}</div>
             </div>
             <div class="chat-msg-content">
-                <div class="chat-msg-text">${msg.text}</div>
+                <div class="chat-msg-text" data-translate="true" >${msg.text}</div>
             </div>
         `;
         chatArea.appendChild(chatMessage);

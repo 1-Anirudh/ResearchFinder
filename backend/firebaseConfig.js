@@ -60,4 +60,5 @@ async function signInUser(email, password) {
   }
 }
 
-module.exports = { registerUser, signInUser, db, database };
+
+module.exports = { registerUser, signInUser, db, database };    // Export the function

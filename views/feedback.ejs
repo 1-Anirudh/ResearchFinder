@@ -296,7 +296,7 @@ pre {
   <i class='bx bxs-user-voice' id="startVoiceNav"></i>
     <div class="content">
         <header>
-            <h1>Feel free to drop us your feedback.</h1>
+            <h1  data-translate="true" >Feel free to drop us your feedback.</h1>
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/1457119/feedback-form-template.svg" 
                 alt="A woman is sitting on the floor and working on a laptop (vector illustration)" />
         </header>
@@ -306,7 +306,7 @@ pre {
               mv-mode="read">
             <form mv-multiple="feedback" action="/feedback" method="post">
                 <label>
-                    <h2>How satisfied are you overall with the support of your Delivery Partner?</h2>
+                    <h2  data-translate="true" >How satisfied are you overall with the support of your Delivery Partner?</h2>
                     <div class="tickmarks">
                         <span mv-multiple="tickmark"
                               mv-value="0 .. 10"
@@ -319,8 +319,8 @@ pre {
                             type="range" max="10"
                             style="--score: [score * 10]%" />
                     <div class="legend">
-                        <span mv-action="set(score, 0)">Not at all likely</span>
-                        <span mv-action="set(score, 10)">Extremely likely</span>
+                        <span  data-translate="true" mv-action="set(score, 0)">Not at all likely</span>
+                        <span data-translate="true"  mv-action="set(score, 10)">Extremely likely</span>
                     </div>
                 </label>
                 
@@ -329,10 +329,11 @@ pre {
                             name="feedback"
                             id="feedback"
                             cols="30" rows="10"
+                            data-translate="true" 
                             placeholder="Please tell us your reasons for giving this score here..."></textarea>
                 
                 <div class="mv-bar">
-                    <button type="submit" class="mv-save">
+                    <button  data-translate="true" type="submit" class="mv-save">
                         Send Feedback
                     </button>
                 </div>
@@ -362,4 +363,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 </script>
 <script type="module" src="VoiceNavigation.mjs"></script>
+<script type="module" src="translation.js"></script>
+<script src="languages.js" ></script>
+
 </html>

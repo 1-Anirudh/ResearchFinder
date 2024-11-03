@@ -203,11 +203,34 @@ configureApp()
             });
         });
 
+        app.get('/temp', ensureLoggedIn, async (req, res) => {
+            const opportunityData = await readOpportunities();
+            const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
+            const userDetails = await SessionUtils.userDetails(req);
+
+            const recommendations = await getRecommendations(opportunityData, userDetails.interests);
+
+            const recOpportunityData = addRecommendations(opportunityData, recommendations);
+            
+            res.render('temp', { 
+                role: userDetails.role,
+                logoName: 'ResearchFinder', 
+                profileName: userDetails.firstName || 'User',
+                jobTitle: userDetails.role,
+                notifications: notifications,
+                firebaseConfig: JSON.stringify(firebaseConfig),
+                opportunityData: JSON.stringify(recOpportunityData)
+            });
+        });
+
+        // Define a route to render the EJS file
+        app.get('/oppcard', (req, res) => {
+            res.render('oppcard');
+        });
+
         app.get('/feedback', (req, res) => {
             res.render('feedback');
         });
-
-
 
         app.post('/feedback', async (req, res) => {
             const { score, feedback } = req.body;
@@ -220,7 +243,6 @@ configureApp()
                 SessionUtils.handleRedirectWithMessage(res, `Error submitting feedback: ${error.message}`);
             }
         });
-
 
         app.get('/get-voice-nav-status', (req, res) => {
             res.json({ voiceNavEnabled: req.session.voiceNavEnabled || false });
@@ -237,6 +259,15 @@ configureApp()
 
         app.post('/set-theme', (req, res) => {
             req.session.theme = req.body.theme;
+            res.json({ success: true });
+        });
+
+        app.get('/get-user-language', (req, res) => {
+            res.json({ userLanguage: req.session.userLanguage || 'en' });
+        });
+
+        app.post('/set-user-language', (req, res) => {
+            req.session.userLanguage = req.body.userLanguage;
             res.json({ success: true });
         });
 

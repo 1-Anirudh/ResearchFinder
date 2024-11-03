@@ -15,8 +15,13 @@ app.use(express.static(path.join(__dirname, '/frontend/public')));
 
 // Define a route to render the EJS file
 app.get('/', (req, res) => {
-    res.render('demo_com');
+    res.render('oppcard');
 });
+
+app.get('/temp', (req, res) => {
+    res.render('temp');
+});
+
 
 // Start the server
 app.listen(port, () => {

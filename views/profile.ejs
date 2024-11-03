@@ -233,6 +233,7 @@ body {
   resize: none;
   background: var(--text-area-input);
   border-color: var(--border-color);
+  color: var(--product-text);
 }
 .input-field textarea:focus {
   border-color: var(--theme-color);
@@ -365,13 +366,13 @@ textarea::-webkit-scrollbar {
     <i class='bx bxs-user-voice' id="startVoiceNav"></i>
 
     <section class="container">
-      <header>Profile Details</header>
+      <header data-translate="true" >Profile Details</header>
       <form action="/edit-pdetails" method="post" class="form">
         <div class="input-box">
-          <label>Full Name</label>
+          <label data-translate="true" >Full Name</label>
           <div class="column">
-            <input type="text" placeholder="Enter first name" name="firstName" value="<%= firstName %>" />
-            <input type="text" placeholder="Enter surname" name="surName" value="<%= surname %>" />
+            <input data-translate="true"  type="text" placeholder="Enter first name" name="firstName" value="<%= firstName %>" />
+            <input data-translate="true"  type="text" placeholder="Enter surname" name="surName" value="<%= surname %>" />
           </div>
         </div>
 
@@ -382,8 +383,8 @@ textarea::-webkit-scrollbar {
 
         <!-- <div class="column"> -->
           <div class="input-box">
-            <label>Phone Number</label>
-            <input type="number" placeholder="Enter phone number" name="phone" value="<%= mobileNumber %>" />
+            <label data-translate="true" >Phone Number</label>
+            <input  data-translate="true" type="number" placeholder="Enter phone number" name="phone" value="<%= mobileNumber %>" />
           </div>
           <!-- <div class="input-box">
             <label>Birth Date</label>
@@ -408,9 +409,9 @@ textarea::-webkit-scrollbar {
           </div>
         </div> -->
         <div class="input-box address">
-          <label>Address</label>
-          <input type="text" placeholder="Enter street address" name="address1" value="<%= addressLine1 %>" />
-          <input type="text" placeholder="Enter street address line 2" name="address2" value="<%= addressLine2 %>" />
+          <label data-translate="true" >Address</label>
+          <input  data-translate="true" type="text" placeholder="Enter street address" name="address1" value="<%= addressLine1 %>" />
+          <input  data-translate="true" type="text" placeholder="Enter street address line 2" name="address2" value="<%= addressLine2 %>" />
           <!-- <div class="column">
             <div class="select-box">
               <select>
@@ -424,20 +425,20 @@ textarea::-webkit-scrollbar {
             <input type="text" placeholder="Enter your city" required />
           </div> -->
           <div class="column">
-            <input type="text" placeholder="Enter your Country" name="country" value="<%= country %>" />
-            <input type="text" placeholder="Enter state" name="state" value="<%= state %>" />
+            <input data-translate="true"  type="text" placeholder="Enter your Country" name="country" value="<%= country %>" />
+            <input data-translate="true"  type="text" placeholder="Enter state" name="state" value="<%= state %>" />
           </div>
           <div class="column">
-            <input type="text" placeholder="Enter your Region" name="region" value="<%= stateRegion %>" />
-            <input type="number" placeholder="Enter postal code" name="postcode" value="<%= postcode %>" />
+            <input  data-translate="true" type="text" placeholder="Enter your Region" name="region" value="<%= stateRegion %>" />
+            <input  data-translate="true" type="number" placeholder="Enter postal code" name="postcode" value="<%= postcode %>" />
           </div>
         </div>
 
         <div class="input-box">
-          <label>Education</label>
-          <input type="text" placeholder="eg: bachelors, masters etc.." name="education" value="<%= education %>" />
+          <label data-translate="true" >Education</label>
+          <input  data-translate="true" type="text" placeholder="eg: bachelors, masters etc.." name="education" value="<%= education %>" />
         </div>
-        <button type="submit">Submit</button>
+        <button  data-translate="true" type="submit">Submit</button>
       </form>
 
 
@@ -447,42 +448,42 @@ textarea::-webkit-scrollbar {
 
     <div class="in-containers">
       <div class="interests-container">
-        <h2>Interests</h2>
+        <h2 data-translate="true" >Interests</h2>
         <div class="input-field">
-          <textarea placeholder="Enter your new interest"></textarea>
+          <textarea  data-translate="true" placeholder="Enter your new interest"></textarea>
           <i class="uil uil-notes note-icon"></i>
         </div>
     
         <ul class="todoLists interests-list"></ul>
     
         <div class="pending-tasks">
-          <span>You have <span class="pending-num interests-num">0</span> interests.</span>
-          <button class="clear-button interests-clear">Clear Interests</button>
+          <span data-translate="true" >You have <span class="pending-num interests-num">0</span> interests.</span>
+          <button data-translate="true" class="clear-button interests-clear">Clear Interests</button>
         </div>
       </div>
 
           <!-- Skills Container -->
       <div class="interests-container">
-        <h2>Skills</h2>
+        <h2 data-translate="true" >Skills</h2>
         <div class="input-field">
-          <textarea placeholder="Enter your new skill"></textarea>
+          <textarea  data-translate="true" placeholder="Enter your new skill"></textarea>
           <i class="uil uil-notes note-icon"></i>
         </div>
     
         <ul class="todoLists skills-list"></ul>
     
         <div class="pending-tasks">
-          <span>You have <span class="pending-num skills-num">0</span> skills.</span>
-          <button class="clear-button skills-clear">Clear Skills</button>
+          <span data-translate="true" >You have <span class="pending-num skills-num">0</span> skills.</span>
+          <button  data-translate="true" class="clear-button skills-clear">Clear Skills</button>
         </div>
       </div>
     </div>
 
     <form id="interests-skills-form" action="/edit-pdetails" method="POST">
       <!-- Hidden inputs to store interests and skills -->
-      <input type="hidden" name="interests" id="interests-input" value="">
-      <input type="hidden" name="skills" id="skills-input" value="">
-      <button type="submit" class="post-button" disabled>Save Interests & Skills</button> <!-- Common submit button -->
+      <input data-translate="true"  type="hidden" name="interests" id="interests-input" value="">
+      <input  data-translate="true" type="hidden" name="skills" id="skills-input" value="">
+      <button  data-translate="true" type="submit" class="post-button" disabled>Save Interests & Skills</button> <!-- Common submit button -->
     </form>
 
     <script>
@@ -529,7 +530,7 @@ textarea::-webkit-scrollbar {
       function addInterestsSkills() {
         interestsArray.forEach(interest => {
           let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${interest}</span>
+            <span data-translate="true" class="task">${interest}</span>
             <i class="uil uil-trash" onclick="deleteInterest(this)"></i>
           </li>`;
   
@@ -538,7 +539,7 @@ textarea::-webkit-scrollbar {
   
         skillsArray.forEach(skill => {
           let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${skill}</span>
+            <span data-translate="true" class="task">${skill}</span>
             <i class="uil uil-trash" onclick="deleteSkill(this)"></i>
           </li>`;
   
@@ -582,7 +583,7 @@ textarea::-webkit-scrollbar {
   
         if (e.key === "Enter" && inputVal.length > 0) {
           let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${inputVal}</span>
+            <span data-translate="true" class="task">${inputVal}</span>
             <i class="uil uil-trash" onclick="deleteInterest(this)"></i>
           </li>`;
   
@@ -599,7 +600,7 @@ textarea::-webkit-scrollbar {
   
         if (e.key === "Enter" && inputVal.length > 0) {
           let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${inputVal}</span>
+            <span data-translate="true" class="task">${inputVal}</span>
             <i class="uil uil-trash" onclick="deleteSkill(this)"></i>
           </li>`;
   
@@ -652,5 +653,8 @@ textarea::-webkit-scrollbar {
       });
     </script>
     <script type="module" src="VoiceNavigation.mjs"></script>
+    <script type="module" src="translation.js"></script>
+    <script src="languages.js" ></script>
+
   </body>
 </html>

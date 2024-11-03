@@ -1,18 +1,45 @@
 <!DOCTYPE html>
-<!---Coding By CodingLab | www.codinglabweb.com--->
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--<title>Registration Form in HTML CSS</title>-->
-    <!---Custom CSS File--->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
     <link rel="stylesheet" href="style.css" />
-  </head>
+    <title>Language Translater</title>
 
-  <style>
-    /* Import Google font - Poppins */
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+    <style>
+      :root {
+  --primary-color: #356aff;
+  --bg-color: #f5f5f5;
+  --light-bg-color: #fff;
+  --text-color: #111116;
+  --light-text-color: #cdccd1;
+  --primary-text-color: #fff;
+}
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  border-radius: 30px;
+  background: #f1f1f1;
+}
+::-webkit-scrollbar-thumb {
+  border-radius: 30px;
+  background: var(--primary-color);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--bg-color);
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -24,553 +51,532 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 20px;
-  background: #9efffa;
+  color: var(--text-color);
+  background-color: var(--bg-color);
+}
+body.dark {
+  --bg-color: #111116;
+  --light-bg-color: #1c1b20;
+  --text-color: #fff;
+  --light-text-color: #58575c;
 }
 .container {
   position: relative;
-  max-width: 700px;
-  width: 100%;
-  background: #fff;
-  padding: 25px;
-  border-radius: 8px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-}
-.container header {
-  font-size: 1.5rem;
-  color: #333;
-  font-weight: 500;
-  text-align: center;
-}
-.container .form {
-  margin-top: 30px;
-}
-.form .input-box {
-  width: 100%;
-  margin-top: 20px;
-}
-.input-box label {
-  color: #333;
-}
-.form :where(.input-box input, .select-box) {
-  position: relative;
-  height: 50px;
-  width: 100%;
-  outline: none;
-  font-size: 1rem;
-  color: #707070;
-  margin-top: 8px;
-  border: 1px solid #ddd;
-  border-radius: 6px;
-  padding: 0 15px;
-}
-.input-box input:focus {
-  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
-}
-.form .column {
+  width: 1200px;
+  padding: 0 20px;
   display: flex;
-  column-gap: 15px;
+  gap: 10px;
 }
-.form .gender-box {
-  margin-top: 20px;
+.container .card {
+  flex: 1;
+  padding: 30px;
+  border-radius: 20px;
+  background-color: var(--light-bg-color);
 }
-.gender-box h3 {
-  color: #333;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-bottom: 8px;
-}
-.form :where(.gender-option, .gender) {
+.container .card .from,
+.container .card .to {
   display: flex;
   align-items: center;
-  column-gap: 50px;
-  flex-wrap: wrap;
-}
-.form .gender {
-  column-gap: 5px;
-}
-.gender input {
-  accent-color: rgb(130, 106, 251);
-}
-.form :where(.gender input, .gender label) {
-  cursor: pointer;
-}
-.gender label {
-  color: #707070;
-}
-.address :where(input, .select-box) {
-  margin-top: 15px;
-}
-.select-box select {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  border: none;
-  color: #707070;
-  font-size: 1rem;
-}
-.form button {
-  height: 55px;
-  width: 100%;
-  color: #fff;
-  font-size: 1rem;
-  font-weight: 400;
-  margin-top: 30px;
-  border: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  background: #20b2aa;
-}
-.form button:hover {
-  background: #31e0d7;
-}
-
-
-
-
-
-.in-containers {
-  display: flex;
-  justify-content: space-between;
   gap: 20px;
-  margin-top: 20px;
-  padding: 10px;
 }
-
-/* width */
-::-webkit-scrollbar {
-  width: 6px;
+.container .card .from {
+  margin-right: 20px;
 }
-/* Track */
-::-webkit-scrollbar-track {
-  background: #f2f2f2;
+.container .card .to {
+  margin-left: 20px;
 }
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 8px;
-  background: #ccc;
-}
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
-}
-
-.interests-container {
-  position: relative;
-    max-width: 480px;
-    width: 100%;
-    border-radius: 8px;
-    padding: 25px;
-    margin: -90px auto 0;
-    background-color: #fff;
-    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
-}
-.interests-container .input-field {
-  position: relative;
-  height: 64px;
-  width: 100%;
-}
-.input-field textarea {
-  height: 100%;
-  width: 100%;
-  outline: none;
-  font-size: 18px;
-  font-weight: 400;
-  border-radius: 8px;
-  padding: 18px 45px 18px 15px;
-  border: 1px solid #ccc;
-  resize: none;
-}
-.input-field textarea:focus {
-  border-color: #20b2aa;
-}
-textarea::-webkit-scrollbar {
-  display: none;
-}
-.input-field .note-icon {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  pointer-events: none;
-  font-size: 24px;
-  color: #707070;
-}
-.input-field textarea:focus ~ .note-icon {
-  color: #20b2aa;
-}
-
-.interests-container .todoLists {
-  max-height: 380px;
-  overflow-y: auto;
-  padding-right: 10px;
-}
-.todoLists .list {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  background-color: #f2f2f2;
-  padding: 20px 15px;
-  border-radius: 8px;
-  margin-top: 10px;
-  position: relative;
-  cursor: pointer;
-}
-.todoLists .list input {
-  height: 16px;
-  min-width: 16px;
-  accent-color: #20b2aa;
-  pointer-events: none;
-}
-.todoLists .list .task {
-  margin: 0 30px 0 15px;
-  word-break: break-all;
-}
-
-.todoLists .list i {
-  position: absolute;
-  top: 50%;
-  right: 15px;
-  transform: translateY(-50%);
-  font-size: 20px;
-  color: #707070;
-  padding: 5px;
-  opacity: 0.6;
-  display: none;
-}
-.todoLists .list:hover i {
-  display: inline-flex;
-}
-.todoLists .list i:hover {
-  opacity: 1;
-}
-.interests-container .pending-tasks {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-top: 25px;
-}
-.pending-tasks span {
-  color: #333;
-}
-.pending-tasks .clear-button {
-  padding: 6px 12px;
-  outline: none;
-  border: none;
-  background: #20b2aa;
-  color: #fff;
-  font-size: 14px;
-  border-radius: 4px;
-  cursor: pointer;
-  pointer-events: none;
+.container .card .heading {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--light-text-color);
   white-space: nowrap;
 }
-.clear-button:hover {
-  background-color: #31e0d7;
+.dropdown-container {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.dropdown-container .dropdown-toggle {
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  border-radius: 30px;
+  background-color: var(--bg-color);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+.dropdown-container .dropdown-toggle span {
+  flex: 1;
+  margin-left: 10px;
+}
+.dropdown-container .dropdown-toggle ion-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+.dropdown-container.active .dropdown-toggle {
+  border-radius: 20px 20px 0 0;
+}
+.dropdown-container.active .dropdown-toggle ion-icon:last-child {
+  transform: rotate(180deg);
+}
+.dropdown-container .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  display: none;
+  padding: 20px;
+  z-index: 1;
+  list-style: none;
+  flex-direction: column;
+  background-color: var(--bg-color);
+  transition: all 1s;
+  border-radius: 0 0 20px 20px;
+}
+.dropdown-container .dropdown-menu::-webkit-scrollbar {
+  display: none;
+}
+.dropdown-container.active .dropdown-menu {
+  display: flex;
 }
 
-.post-button {
-  position: absolute;
-  bottom: -35px;
-  left: 76%;
-  transform: translateX(-50%);
-  padding: 12px 24px;
+.dropdown-container .dropdown-menu li {
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--light-bg-color);
+  transition: all 0.3s ease;
+}
+.dropdown-container .dropdown-menu li:hover {
+  background-color: var(--light-bg-color);
+}
+.dropdown-container .dropdown-menu li.active {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+.container .text-area {
+  position: relative;
+}
+.container textarea {
+  width: 100%;
+  padding: 20px;
+  margin: 10px 0;
+  background-color: transparent;
+  resize: none;
   outline: none;
   border: none;
-  background: #20b2aa;
-  color: #fff;
-  font-size: 16px;
-  border-radius: 4px;
+  color: var(--text-color);
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+.container .text-area .chars {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+  font-size: 0.8rem;
+  color: var(--light-text-color);
+}
+.container .center {
+  position: relative;
+}
+.swap-position {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 5px solid var(--bg-color);
+  transition: all 0.3s ease;
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+.swap-position ion-icon {
+  font-size: 25px;
+}
+.swap-position:hover {
+  transform: translateX(-50%) scale(1.1);
+}
+.card-bottom {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  border-top: 2px solid var(--bg-color);
+}
+.card-bottom p {
+  margin-bottom: 20px;
+}
+.card-bottom label {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  cursor: pointer;
+  border-radius: 30px;
+  background-color: var(--bg-color);
+}
+.card-bottom label:hover {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+.card-bottom span {
+  font-size: 12px;
+  pointer-events: none;
+}
+.card-bottom ion-icon {
+  font-size: 20px;
+}
+
+.card-bottom button {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 0 20px;
+  border-radius: 30px;
+  border: none;
+  outline: none;
+  color: var(--text-color);
+  cursor: pointer;
+  background-color: var(--bg-color);
+}
+.card-bottom button:hover {
+  color: var(--primary-text-color);
+  background-color: var(--primary-color);
+}
+
+.mode {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+}
+.toggle {
+  position: relative;
   cursor: pointer;
 }
-.post-button:disabled {
-  background: #20b2aa;
-  cursor: not-allowed;
+.toggle-track {
+  width: 24px;
+  height: 50px;
+  border-radius: 30px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  padding: 3px 0;
+  justify-content: space-between;
+  border: 1px solid var(--light-text-color);
+  background-color: var(--light-bg-color);
+  transition: all 0.2s ease;
+}
+.toggle-checkbox {
+  display: none;
+}
+.toggle-thumb {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: var(--primary-color);
+  transition: all 0.5s;
+}
+.toggle input:checked ~ .toggle-thumb {
+  transform: translateY(25px);
+}
+.toggle img {
+  width: 20px;
+  height: 20px;
 }
 
-.post-button:hover {
-  background-color: #31e0d7;
-}
-
-
-/*Responsive*/
-@media screen and (max-width: 500px) {
-  .form .column {
-    flex-wrap: wrap;
+/* media quiries */
+@media (max-width: 800px) {
+  .container {
+    width: 100%;
+    margin-top: 20px;
+    flex-direction: column;
   }
-  .form :where(.gender-option, .gender) {
-    row-gap: 15px;
+  .container .card {
+    width: 100%;
+  }
+  .container .card .from {
+    margin-right: 0;
+  }
+  .container .card .to {
+    margin-left: 0;
+  }
+  .container .card .from,
+  .container .card .to {
+    flex-direction: column;
+  }
+
+  .swap-position {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .swap-position:hover {
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+  .swap-position ion-icon {
+    transform: rotate(90deg);
   }
 }
-  </style>
+    </style>
 
+  </head>
   <body>
-    <section class="container">
-      <header>Profile Details</header>
-      <form action="/edit-pdetails" method="post" class="form">
-        <div class="input-box">
-          <label>Full Name</label>
-          <div class="column">
-            <input type="text" placeholder="Enter first name" name="firstName" value="<%= firstName %>" />
-            <input type="text" placeholder="Enter surname" name="surName" value="<%= surname %>" />
+    <div class="mode">
+      <label class="toggle" for="dark-mode-btn">
+        <div class="toggle-track">
+          <input type="checkbox" class="toggle-checkbox" id="dark-mode-btn" />
+          <span class="toggle-thumb"></span>
+          <img src="images/sun.png" alt="" />
+          <img src="images/moon.png" alt="" />
+        </div>
+      </label>
+    </div>
+    <div class="container">
+      <div class="card input-wrapper">
+        <div class="from">
+          <span class="heading">From :</span>
+          <div class="dropdown-container" id="input-language">
+            <div class="dropdown-toggle">
+              <ion-icon name="globe-outline"></ion-icon>
+              <span class="selected" data-value="auto">Auto Detect</span>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="dropdown-menu">
+              <li class="option active">DropDown Menu Item 1</li>
+              <li class="option">DropDown Menu Item 2</li>
+            </ul>
           </div>
         </div>
-
-        <!-- <div class="input-box">
-          <label>Email Address</label>
-          <input type="text" placeholder="Enter email address" required />
-        </div> -->
-
-        <!-- <div class="column"> -->
-          <div class="input-box">
-            <label>Phone Number</label>
-            <input type="number" placeholder="Enter phone number" name="phone" value="<%= mobileNumber %>" />
-          </div>
-          <!-- <div class="input-box">
-            <label>Birth Date</label>
-            <input type="date" placeholder="Enter birth date" required />
-          </div> -->
-        <!-- </div> -->
-        <!-- <div class="gender-box">
-          <h3>Gender</h3>
-          <div class="gender-option">
-            <div class="gender">
-              <input type="radio" id="check-male" name="gender" checked />
-              <label for="check-male">male</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-female" name="gender" />
-              <label for="check-female">Female</label>
-            </div>
-            <div class="gender">
-              <input type="radio" id="check-other" name="gender" />
-              <label for="check-other">prefer not to say</label>
-            </div>
-          </div>
-        </div> -->
-        <div class="input-box address">
-          <label>Address</label>
-          <input type="text" placeholder="Enter street address" name="address1" value="<%= addressLine1 %>" />
-          <input type="text" placeholder="Enter street address line 2" name="address2" value="<%= addressLine2 %>" />
-          <!-- <div class="column">
-            <div class="select-box">
-              <select>
-                <option hidden>Country</option>
-                <option>America</option>
-                <option>Japan</option>
-                <option>India</option>
-                <option>Nepal</option>
-              </select>
-            </div>
-            <input type="text" placeholder="Enter your city" required />
-          </div> -->
-          <div class="column">
-            <input type="text" placeholder="Enter your Country" name="country" value="<%= country %>" />
-            <input type="text" placeholder="Enter state" name="state" value="<%= state %>" />
-          </div>
-          <div class="column">
-            <input type="text" placeholder="Enter your Region" name="region" value="<%= stateRegion %>" />
-            <input type="number" placeholder="Enter postal code" name="postcode" value="<%= postcode %>" />
-          </div>
+        <div class="text-area">
+          <textarea
+            id="input-text"
+            cols="30"
+            rows="10"
+            placeholder="Enter your text here"
+          ></textarea>
+          <div class="chars"><span id="input-chars">0</span> / 5000</div>
         </div>
-
-        <div class="input-box">
-          <label>Education</label>
-          <input type="text" placeholder="eg: bachelors, masters etc.." name="education" value="<%= education %>" />
-        </div>
-        <button type="submit">Submit</button>
-      </form>
-
-
-
-
-    </section>
-
-    <div class="in-containers">
-      <div class="interests-container">
-        <h2>Interests</h2>
-        <div class="input-field">
-          <textarea placeholder="Enter your new interest"></textarea>
-          <i class="uil uil-notes note-icon"></i>
-        </div>
-    
-        <ul class="todoLists interests-list"></ul>
-    
-        <div class="pending-tasks">
-          <span>You have <span class="pending-num interests-num">0</span> interests.</span>
-          <button class="clear-button interests-clear">Clear Interests</button>
+        <div class="card-bottom">
+          <p>Or choose your document!</p>
+          <label for="upload-document">
+            <span id="upload-title">Choose File</span>
+            <ion-icon name="cloud-upload-outline"></ion-icon>
+            <input type="file" id="upload-document" hidden />
+          </label>
         </div>
       </div>
 
-          <!-- Skills Container -->
-      <div class="interests-container">
-        <h2>Skills</h2>
-        <div class="input-field">
-          <textarea placeholder="Enter your new skill"></textarea>
-          <i class="uil uil-notes note-icon"></i>
+      <div class="center">
+        <div class="swap-position">
+          <ion-icon name="swap-horizontal-outline"></ion-icon>
         </div>
-    
-        <ul class="todoLists skills-list"></ul>
-    
-        <div class="pending-tasks">
-          <span>You have <span class="pending-num skills-num">0</span> skills.</span>
-          <button class="clear-button skills-clear">Clear Skills</button>
+      </div>
+
+      <div class="card output-wrapper">
+        <div class="to">
+          <span class="heading">To :</span>
+          <div class="dropdown-container" id="output-language">
+            <div class="dropdown-toggle">
+              <ion-icon name="globe-outline"></ion-icon>
+              <span class="selected" data-value="en">Englsih</span>
+              <ion-icon name="chevron-down-outline"></ion-icon>
+            </div>
+            <ul class="dropdown-menu">
+              <li class="option active">DropDown Menu Item 1</li>
+              <li class="option">DropDown Menu Item 2</li>
+            </ul>
+          </div>
+        </div>
+        <textarea
+          id="output-text"
+          cols="30"
+          rows="10"
+          placeholder="Translated text will appear here"
+          disabled
+        ></textarea>
+        <div class="card-bottom">
+          <p>Download as a document!</p>
+          <button id="download-btn">
+            <span>Download</span>
+            <ion-icon name="cloud-download-outline"></ion-icon>
+          </button>
         </div>
       </div>
     </div>
 
-    <form id="interests-skills-form" action="/edit-pdetails" method="POST">
-      <!-- Hidden inputs to store interests and skills -->
-      <input type="hidden" name="interests" id="interests-input" value="">
-      <input type="hidden" name="skills" id="skills-input" value="">
-      <button type="submit" class="post-button" disabled>Save Interests & Skills</button> <!-- Common submit button -->
-    </form>
+    <script src="languages.js"></script>
 
     <script>
-      const interestsInputField = document.querySelectorAll(".interests-container")[0].querySelector(".input-field textarea"),
-        skillsInputField = document.querySelectorAll(".interests-container")[1].querySelector(".input-field textarea"),
-        interestsList = document.querySelector(".interests-list"),
-        skillsList = document.querySelector(".skills-list"),
-        interestsPendingNum = document.querySelector(".interests-num"),
-        skillsPendingNum = document.querySelector(".skills-num"),
-        interestsClearButton = document.querySelector(".interests-clear"),
-        skillsClearButton = document.querySelector(".skills-clear"),
-        interestsInput = document.getElementById("interests-input"),
-        skillsInput = document.getElementById("skills-input"),
-        postButton = document.querySelector(".post-button"),
-        interestsForm = document.getElementById("interests-skills-form");
-  
-      let interestsArray = '<%= interests %>' === "" ? [] : '<%= interests %>'.split(",");
-      let skillsArray = '<%= skills %>' === "" ? [] : '<%= skills %>'.split(",");
+      const dropdowns = document.querySelectorAll(".dropdown-container"),
+  inputLanguageDropdown = document.querySelector("#input-language"),
+  outputLanguageDropdown = document.querySelector("#output-language");
 
-      console.log(interestsArray);
+function populateDropdown(dropdown, options) {
+  dropdown.querySelector("ul").innerHTML = "";
+  options.forEach((option) => {
+    const li = document.createElement("li");
+    const title = option.name + " (" + option.native + ")";
+    li.innerHTML = title;
+    li.dataset.value = option.code;
+    li.classList.add("option");
+    dropdown.querySelector("ul").appendChild(li);
+  });
+}
 
-      addInterestsSkills();
+populateDropdown(inputLanguageDropdown, languages);
+populateDropdown(outputLanguageDropdown, languages);
 
-      function addInterestsSkills() {
-        interestsArray.forEach(interest => {
-          let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${interest}</span>
-            <i class="uil uil-trash" onclick="deleteInterest(this)"></i>
-          </li>`;
-  
-          interestsList.insertAdjacentHTML("beforeend", liTag);
-        });
-  
-        skillsArray.forEach(skill => {
-          let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${skill}</span>
-            <i class="uil uil-trash" onclick="deleteSkill(this)"></i>
-          </li>`;
-  
-          skillsList.insertAdjacentHTML("beforeend", liTag);
-        });
-  
-        updateAllTasks();
-      }
-  
-      // Function to update task count andf enable/disable button
-      function updateAllTasks() {
-        interestsPendingNum.textContent = interestsArray.length === 0 ? "no" : interestsArray.length;
-        skillsPendingNum.textContent = skillsArray.length === 0 ? "no" : skillsArray.length;
-  
-        if (interestsArray.length > 0) {
-          interestsList.style.marginTop = "20px";
-          interestsClearButton.style.pointerEvents = "auto";
-        } else {
-          interestsList.style.marginTop = "0px";
-          interestsClearButton.style.pointerEvents = "none";
-        }
+dropdowns.forEach((dropdown) => {
+  dropdown.addEventListener("click", (e) => {
+    dropdown.classList.toggle("active");
+  });
 
-        if (skillsArray.length > 0) {
-          skillsList.style.marginTop = "20px";
-          skillsClearButton.style.pointerEvents = "auto";
-        } else {
-          skillsList.style.marginTop = "0px";
-          skillsClearButton.style.pointerEvents = "none";
-        } 
+  dropdown.querySelectorAll(".option").forEach((item) => {
+    item.addEventListener("click", (e) => {
+      //remove active class from current dropdowns
+      dropdown.querySelectorAll(".option").forEach((item) => {
+        item.classList.remove("active");
+      });
+      item.classList.add("active");
+      const selected = dropdown.querySelector(".selected");
+      selected.innerHTML = item.innerHTML;
+      selected.dataset.value = item.dataset.value;
+      translate();
+    });
+  });
+});
+document.addEventListener("click", (e) => {
+  dropdowns.forEach((dropdown) => {
+    if (!dropdown.contains(e.target)) {
+      dropdown.classList.remove("active");
+    }
+  });
+});
 
-        if (interestsArray.length > 0 && skillsArray.length > 0) {
-          postButton.disabled = false; // Enable button if either array has items
-        } else {
-          postButton.disabled = true; // Disable if both arrays are empty
-        }
-      }
-  
-      // Add interest on Enter key
-      interestsInputField.addEventListener("keyup", (e) => {
-        let inputVal = interestsInputField.value.trim();
-  
-        if (e.key === "Enter" && inputVal.length > 0) {
-          let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${inputVal}</span>
-            <i class="uil uil-trash" onclick="deleteInterest(this)"></i>
-          </li>`;
-  
-          interestsList.insertAdjacentHTML("beforeend", liTag);
-          interestsArray.push(inputVal);
-          interestsInputField.value = "";
-          updateAllTasks();
-        }
-      });
-  
-      // Add skill on Enter key
-      skillsInputField.addEventListener("keyup", (e) => {
-        let inputVal = skillsInputField.value.trim();
-  
-        if (e.key === "Enter" && inputVal.length > 0) {
-          let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${inputVal}</span>
-            <i class="uil uil-trash" onclick="deleteSkill(this)"></i>
-          </li>`;
-  
-          skillsList.insertAdjacentHTML("beforeend", liTag);
-          skillsArray.push(inputVal);
-          skillsInputField.value = "";
-          updateAllTasks();
-        }
-      });
-  
-      // Delete interest
-      function deleteInterest(e) {
-        let taskText = e.parentElement.querySelector(".task").textContent;
-        interestsArray = interestsArray.filter(interest => interest !== taskText);
-        e.parentElement.remove();
-        updateAllTasks();
-      }
-  
-      // Delete skill
-      function deleteSkill(e) {
-        let taskText = e.parentElement.querySelector(".task").textContent;
-        skillsArray = skillsArray.filter(skill => skill !== taskText);
-        e.parentElement.remove();
-        updateAllTasks();
-      }
-  
-      // Clear all interests
-      interestsClearButton.addEventListener("click", () => {
-        interestsList.innerHTML = "";
-        interestsArray = [];
-        updateAllTasks();
-      });
-  
-      // Clear all skills
-      skillsClearButton.addEventListener("click", () => {
-        skillsList.innerHTML = "";
-        skillsArray = [];
-        updateAllTasks();
-      });
-  
-      // Before submitting, add both interests and skills to hidden inputs
-      interestsForm.addEventListener("submit", (e) => {
-        if (interestsArray.length > 0 || skillsArray.length > 0) {
-          interestsInput.value = JSON.stringify(interestsArray);
-          skillsInput.value = JSON.stringify(skillsArray);
-        } else {
-          alert("No interests or skills to post!");
-          e.preventDefault();
-        }
-      });
+const swapBtn = document.querySelector(".swap-position"),
+  inputLanguage = inputLanguageDropdown.querySelector(".selected"),
+  outputLanguage = outputLanguageDropdown.querySelector(".selected"),
+  inputTextElem = document.querySelector("#input-text"),
+  outputTextElem = document.querySelector("#output-text");
+
+swapBtn.addEventListener("click", (e) => {
+  const temp = inputLanguage.innerHTML;
+  inputLanguage.innerHTML = outputLanguage.innerHTML;
+  outputLanguage.innerHTML = temp;
+
+  const tempValue = inputLanguage.dataset.value;
+  inputLanguage.dataset.value = outputLanguage.dataset.value;
+  outputLanguage.dataset.value = tempValue;
+
+  //swap text
+  const tempInputText = inputTextElem.value;
+  inputTextElem.value = outputTextElem.value;
+  outputTextElem.value = tempInputText;
+
+  translate();
+});
+
+function translate() {
+  const inputText = inputTextElem.value;
+  const inputLanguage =  inputLanguageDropdown.querySelector(".selected").dataset.value;
+  const outputLanguage = outputLanguageDropdown.querySelector(".selected").dataset.value;
+
+    let outtext = "";
+    console.log('inputLanguage', inputLanguage);
+    console.log('outputLanguage', outputLanguage);
+  const url = `https://translate.googleapis.com/translate_a/single?client=gtx&sl=${inputLanguage}&tl=${outputLanguage}&dt=t&q=${encodeURI(
+    inputText
+  )}`;
+  fetch(url)
+    .then((response) => response.json())
+    .then((json) => {
+      console.log(json);
+      outtext = json[0].map((item) => item[0]).join("");
+      console.log(outtext);
+      outputTextElem.value = outtext;
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+}
+
+
+inputTextElem.addEventListener("input", (e) => {
+  //limit input to 5000 characters
+  if (inputTextElem.value.length > 5000) {
+    inputTextElem.value = inputTextElem.value.slice(0, 5000);
+  }
+  translate();
+});
+
+const uploadDocument = document.querySelector("#upload-document"),
+  uploadTitle = document.querySelector("#upload-title");
+
+uploadDocument.addEventListener("change", (e) => {
+  const file = e.target.files[0];
+  if (
+    file.type === "application/pdf" ||
+    file.type === "text/plain" ||
+    file.type === "application/msword" ||
+    file.type ===
+      "application/vnd.openxmlformats-officedocument.wordprocessingml.document"
+  ) {
+    uploadTitle.innerHTML = file.name;
+    const reader = new FileReader();
+    reader.readAsText(file);
+    reader.onload = (e) => {
+      inputTextElem.value = e.target.result;
+      translate();
+    };
+  } else {
+    alert("Please upload a valid file");
+  }
+});
+
+const downloadBtn = document.querySelector("#download-btn");
+
+downloadBtn.addEventListener("click", (e) => {
+  const outputText = outputTextElem.value;
+  const outputLanguage =
+    outputLanguageDropdown.querySelector(".selected").dataset.value;
+  if (outputText) {
+    const blob = new Blob([outputText], { type: "text/plain" });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.download = `translated-to-${outputLanguage}.txt`;
+    a.href = url;
+    a.click();
+  }
+});
+
+const darkModeCheckbox = document.getElementById("dark-mode-btn");
+
+darkModeCheckbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark");
+});
+
+const inputChars = document.querySelector("#input-chars");
+
+inputTextElem.addEventListener("input", (e) => {
+  inputChars.innerHTML = inputTextElem.value.length;
+});
     </script>
   </body>
 </html>

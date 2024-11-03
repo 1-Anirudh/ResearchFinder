@@ -1116,7 +1116,7 @@ html {
                     <div class="chat-msg-date">${formatTimestampToTime(msg.time)}</div>
                 </div>
                 <div class="chat-msg-content">
-                    <div class="chat-msg-text">${msg.text}</div>
+                    <div class="chat-msg-text"  data-translate="true" >${msg.text}</div>
                 </div>
             `;
             chatArea.appendChild(chatMessage);
@@ -1186,6 +1186,8 @@ html {
 
 <script type="module" src="new.mjs" ></script>
 <script type="module" src="VoiceNavigation.mjs"></script>
+<script type="module" src="translation.js"></script>
+<script src="languages.js" ></script>
 
 </body>
 

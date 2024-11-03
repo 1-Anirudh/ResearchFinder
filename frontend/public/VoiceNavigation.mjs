@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
     fetch('/get-voice-nav-status')
     .then(response => response.json())
     .then(data => {
+        console.log('Voice navigation status:', data);
         const enabled = data.voiceNavEnabled;
         if (enabled) {
             document.getElementById('startVoiceNav').click();
@@ -339,7 +340,24 @@ if (SpeechRecognition) {
                     } else if (command.includes('go to post opportunity')) {
                         window.location.href = '/add-opportunity';
                     } else if (command.includes('stop voice navigation')) {
-                        stopVoiceNavigation();
+                        console.log("Stopping voice navigation");
+                        recognition.stop();
+                        readText("Voice navigation stopped.", 1.5, 2);
+
+                        fetch('/set-voice-nav-status', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({ voiceNavEnabled: false })
+                        })
+                        .then(response => response.json())
+                        .then(data => {
+                            console.log("Voice navigation status updated:", data);
+                        })
+                        .catch(error => {
+                            console.error("Error updating voice navigation status:", error);
+                        });
                     } else if (command.includes('apply for opportunity')) {
                         applyForOpportunity(command);
                     } else if (command.includes('list sidebar options')) {
@@ -478,26 +496,4 @@ function readSidebarOptions() {
         const sidebarOptions = `Available sidebar options are: 'go to profile', 'open conversations', 'open feedback'`;
         readText(sidebarOptions, 1, 1.5);
     }
-}
-
-
-function stopVoiceNavigation() {
-    console.log("Stopping voice navigation");
-    recognition.stop();
-    readText("Voice navigation stopped.", 1.5, 2);
-
-    fetch('/set-voice-nav-status', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ voiceNavEnabled: false })
-    })
-    .then(response => response.json())
-    .then(data => {
-        console.log("Voice navigation status updated:", data);
-    })
-    .catch(error => {
-        console.error("Error updating voice navigation status:", error);
-    });
 }

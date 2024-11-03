@@ -180,49 +180,49 @@ body {
   </style>
   <body>
     <section class="container">
-      <header>Add Opportunity</header>
+      <header  data-translate="true" >Add Opportunity</header>
       <form action="/post-opportunity" method="post" class="form">
         <div class="input-box">
-          <label>Title:</label>
-          <input type="text" placeholder="Enter Title" name="title" required />
+          <label data-translate="true" >Title:</label>
+          <input  data-translate="true" type="text" placeholder="Enter Title" name="title" required />
         </div>
 
         <div class="input-box">
-          <label>Research Topic</label>
-          <input type="text" placeholder="Enter Topic" name="topic" required />
+          <label data-translate="true" >Research Topic</label>
+          <input  data-translate="true" type="text" placeholder="Enter Topic" name="topic" required />
         </div>
 
         <div class="column">
           <div class="input-box">
-            <label>Stipend</label>
-            <input type="number" placeholder="Stipend per month" name="stipend" required />
+            <label data-translate="true" >Stipend</label>
+            <input  data-translate="true" type="number" placeholder="Stipend per month" name="stipend" required />
           </div>
           <div class="input-box">
-            <label>Duration</label>
-            <input type="number" placeholder="Duration in months" name="duration" required />
+            <label data-translate="true" >Duration</label>
+            <input  data-translate="true" type="number" placeholder="Duration in months" name="duration" required />
           </div>
         </div>
 
 
         <div class="column">
             <div class="input-box">
-              <label>Work-mode</label>
-              <div class="select-box">
+              <label data-translate="true" >Work-mode</label>
+              <div  data-translate="true" class="select-box">
                 <select name="mode" required>
-                  <option hidden>Work Mode</option>
-                  <option>hybrid</option>
-                  <option>remote</option>
-                  <option>on-site</option>
+                  <option  data-translate="true" hidden>Work Mode</option>
+                  <option data-translate="true" >hybrid</option>
+                  <option data-translate="true" >remote</option>
+                  <option data-translate="true" >on-site</option>
                 </select>
             </div>
             <div class="input-box">
-              <label>Work-type</label>
+              <label data-translate="true" >Work-type</label>
                 <div class="select-box">
                   <select name="type" required>
-                    <option hidden>Work Type</option>
-                    <option>internship</option>
-                    <option>part-time</option>
-                    <option>full-time</option>
+                    <option hidden data-translate="true" >Work Type</option>
+                    <option data-translate="true" >internship</option>
+                    <option data-translate="true" >part-time</option>
+                    <option data-translate="true" >full-time</option>
                   </select>
             </div>
           </div>
@@ -248,9 +248,9 @@ body {
         </div> -->
 
         <div class="input-box address">
-          <label>Description</label>
-          <input type="text" placeholder="Short Description" name="shortDescription" required />
-          <input type="text" placeholder="Long Description" name="longDescription" required />
+          <label data-translate="true" >Description</label>
+          <input  data-translate="true" type="text" placeholder="Short Description" name="shortDescription" required />
+          <input  data-translate="true" type="text" placeholder="Long Description" name="longDescription" required />
           <!-- <div class="column">
             <div class="select-box">
               <select>
@@ -271,26 +271,26 @@ body {
 
         <div class="column">
           <div class="input-box">
-            <label>Institution</label>
-            <input type="text" placeholder="Company / College" name="institution" required />
+            <label data-translate="true" >Institution</label>
+            <input  data-translate="true" type="text" placeholder="Company / College" name="institution" required />
           </div>
           <div class="input-box">
-            <label>Location</label>
-            <input type="text" placeholder="Location" name="location" required />
+            <label data-translate="true" >Location</label>
+            <input data-translate="true"  type="text" placeholder="Location" name="location" required />
           </div>
         </div>
 
         <div class="input-box">
-          <label>Reference Link</label>
-          <input type="text" placeholder="" name="link" required />
+          <label data-translate="true" >Reference Link</label>
+          <input data-translate="true"  type="text" placeholder="" name="link" required />
         </div>
 
         <div class="input-box">
-          <label>Tags</label>
-          <input type="text" placeholder="Tags (comma separated)" name="tags" required />
+          <label data-translate="true" >Tags</label>
+          <input  data-translate="true" type="text" placeholder="Tags (comma separated)" name="tags" required />
         </div>
 
-        <button>Post Opportunity</button>
+        <button data-translate="true" >Post Opportunity</button>
       </form>
     </section>
 
@@ -311,6 +311,8 @@ body {
             .catch(error => console.error('Error fetching theme:', error));
         });
     </script>
+    <script type="module" src="translation.js"></script>
+    <script src="languages.js" ></script>
 
   </body>
 </html>

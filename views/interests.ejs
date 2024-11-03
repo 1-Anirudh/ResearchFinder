@@ -174,17 +174,17 @@ textarea::-webkit-scrollbar {
   <body>
     <div class="container">
       <div class="input-field">
-        <textarea placeholder="Enter your new todo"></textarea>
+        <textarea  data-translate="true"  placeholder="Enter your new todo"></textarea>
         <i class="uil uil-notes note-icon"></i>
       </div>
 
       <ul class="todoLists"></ul>
 
       <div class="pending-tasks">
-        <span
-          >You have <span class="pending-num"> no </span> tasks pending.</span
+        <span  data-translate="true" 
+          >You have <span class="pending-num" data-translate="true" > no </span> tasks pending.</span
         >
-        <button class="clear-button">Clear All</button>
+        <button  data-translate="true"  class="clear-button">Clear All</button>
       </div>
     </div>
 
@@ -221,7 +221,7 @@ inputField.addEventListener("keyup", (e) => {
   if (e.key === "Enter" && inputVal.length > 0) {
     let liTag = ` <li class="list pending" onclick="handleStatus(this)">
           <input type="checkbox" />
-          <span class="task">${inputVal}</span>
+          <span  data-translate="true" class="task">${inputVal}</span>
           <i class="uil uil-trash" onclick="deleteTask(this)"></i>
         </li>`;
 
@@ -252,5 +252,8 @@ clearButton.addEventListener("click", () => {
 });
 
     </script>
+    <script type="module" src="translation.js"></script>
+    <script src="languages.js" ></script>
+
   </body>
 </html>

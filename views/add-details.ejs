@@ -206,33 +206,33 @@ textarea::-webkit-scrollbar {
     <!-- Interests Container -->
      <div class="containers">
     <div class="container">
-      <h2>Interests</h2>
+      <h2  data-translate="true" >Interests</h2>
       <div class="input-field">
-        <textarea placeholder="Enter your new interest"></textarea>
+        <textarea  data-translate="true"  placeholder="Enter your new interest"></textarea>
         <i class="uil uil-notes note-icon"></i>
       </div>
   
       <ul class="todoLists interests-list"></ul>
   
       <div class="pending-tasks">
-        <span>You have <span class="pending-num interests-num">0</span> interests.</span>
-        <button class="clear-button interests-clear">Clear Interests</button>
+        <span  data-translate="true" >You have <span class="pending-num interests-num"  data-translate="true" >0</span> interests.</span>
+        <button   data-translate="true" class="clear-button interests-clear">Clear Interests</button>
       </div>
     </div>
   
     <!-- Skills Container -->
     <div class="container">
-      <h2>Skills</h2>
+      <h2  data-translate="true" >Skills</h2>
       <div class="input-field">
-        <textarea placeholder="Enter your new skill"></textarea>
+        <textarea  data-translate="true"  placeholder="Enter your new skill"></textarea>
         <i class="uil uil-notes note-icon"></i>
       </div>
   
       <ul class="todoLists skills-list"></ul>
   
       <div class="pending-tasks">
-        <span>You have <span class="pending-num skills-num">0</span> skills.</span>
-        <button class="clear-button skills-clear">Clear Skills</button>
+        <span  data-translate="true" >You have <span class="pending-num skills-num"  data-translate="true" >0</span> skills.</span>
+        <button  data-translate="true"  class="clear-button skills-clear">Clear Skills</button>
       </div>
     </div>
 
@@ -243,7 +243,7 @@ textarea::-webkit-scrollbar {
       <!-- Hidden inputs to store interests and skills -->
       <input type="hidden" name="interests" id="interests-input" value="">
       <input type="hidden" name="skills" id="skills-input" value="">
-      <button type="submit" class="post-button" disabled>Save Interests & Skills</button> <!-- Common submit button -->
+      <button type="submit" class="post-button"  data-translate="true"  disabled>Save Interests & Skills</button> <!-- Common submit button -->
     </form>
   
     <!-- JavaScript -->
@@ -297,7 +297,7 @@ textarea::-webkit-scrollbar {
   
         if (e.key === "Enter" && inputVal.length > 0) {
           let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${inputVal}</span>
+            <span  data-translate="true"  class="task">${inputVal}</span>
             <i class="uil uil-trash" onclick="deleteInterest(this)"></i>
           </li>`;
   
@@ -314,7 +314,7 @@ textarea::-webkit-scrollbar {
   
         if (e.key === "Enter" && inputVal.length > 0) {
           let liTag = `<li class="list pending" onclick="handleStatus(this)">
-            <span class="task">${inputVal}</span>
+            <span class="task"  data-translate="true" >${inputVal}</span>
             <i class="uil uil-trash" onclick="deleteSkill(this)"></i>
           </li>`;
   
@@ -366,6 +366,8 @@ textarea::-webkit-scrollbar {
         }
       });
     </script>
+      <script type="module" src="translation.js"></script>
+      <script src="languages.js" ></script>
   </body>
   
 </html>

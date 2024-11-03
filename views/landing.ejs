@@ -981,7 +981,7 @@ img {
 
       <% if (role === 'admin') { %>  
         <li>
-          <a href="/add-opportunity">
+          <a href="/add-opportunity" id="addOpportunityPage">
             <i class='bx bx-add-to-queue' ></i>
             <span class="link_name">Post Opportunity</span>
           </a>
@@ -992,7 +992,7 @@ img {
   <% } %> 
 
   <li>
-    <a href="/chat">
+    <a href="/chat" id="chatPage">
       <i class='bx bx-conversation'></i>
       <span class="link_name">Chat</span>
     </a>
@@ -1002,7 +1002,7 @@ img {
   </li>
 
       <li>
-        <a href="/feedback">
+        <a href="/feedback" id="feedbackPage">
           <i class='bx bx-message-alt-detail' ></i>
           <span class="link_name">FeedBack</span>
         </a>
@@ -1022,7 +1022,7 @@ img {
       <!-- </li> -->
 
       <li>
-        <a href="/profile">
+        <a href="/profile" id="profilePage">
           <i class='bx bx-user-circle' ></i>
           <span class="link_name">Profile</span>
         </a>
@@ -1772,9 +1772,9 @@ function attachEventListeners() {
         attachEventListeners();
     });
 
-    // console.log(window.interests);
     </script>
 
     <script type="module" src="VoiceNavigation.mjs"></script>
+    <script type="module" src="analytics.mjs"></script>
  </body>
 </html>
