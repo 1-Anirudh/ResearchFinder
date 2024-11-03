@@ -30,6 +30,36 @@ export function makeTranslate() {
     .catch(error => console.error('Error getting user language:', error));
 }
 
+export async function translateElements(container) {
+    try {
+        console.log('translateElements popup');
+        
+        // Fetch user language
+        const response = await fetch('/get-user-language');
+        const data = await response.json();
+        const targetLang = data.userLanguage;
+        console.log('User language:', targetLang);
+
+        // Select all elements with the attribute data-translate="true"
+        const elements = container.querySelectorAll('[data-translate="true"]');
+        
+        // Iterate over each element and translate its inner text
+        for (const element of elements) {
+            const text = element.innerText;
+            
+            // Fetch the translation (assuming fetchTranslation is an async function)
+            const translatedText = await fetchTranslation(text, targetLang, 'en');
+            
+            if (translatedText) {
+                element.innerText = translatedText;
+            }
+        }
+    } catch (error) {
+        console.error('Error getting user language or translating text:', error);
+    }
+}
+
+
 
 
 function populateDropdown(dropdown, options) {

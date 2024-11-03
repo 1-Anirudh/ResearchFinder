@@ -851,7 +851,7 @@
 
 
 .active {
-  background-color: #6759ff;
+  background-color: var(--home-header-bg);
   color: var(--theme-main);
 }
 #products {
@@ -929,11 +929,102 @@ img {
     display: none;
   }
 }
+
+.to {
+    width: 14%;
+    margin: 0 auto;
+    position: fixed;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-top: -7px;
+    right: 105px;
+    z-index: 1;
+}
+
+.dropdown-container {
+  position: relative;
+  margin-bottom: 10px;
+  width: 100%;
+}
+.dropdown-container .dropdown-toggle {
+    display: flex;
+    align-items: center;
+    padding: 10px 9px;
+    border-radius: 30px;
+    background-color: var(--container-background);
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: -30px;
+    color: var(--product-text);
+    z-index: 100;
+}
+.dropdown-container .dropdown-toggle span {
+  flex: 1;
+  margin-left: 10px;
+}
+.dropdown-container .dropdown-toggle ion-icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+.dropdown-container.active .dropdown-toggle {
+  border-radius: 20px 20px 0 0;
+}
+.dropdown-container.active .dropdown-toggle ion-icon:last-child {
+  transform: rotate(180deg);
+}
+.dropdown-container .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 300px;
+  overflow: auto;
+  display: none;
+  padding: 20px;
+  z-index: 1;
+  list-style: none;
+  flex-direction: column;
+  background-color: var(--container-background);
+  transition: all 1s;
+  border-radius: 0 0 20px 20px;
+}
+.dropdown-container .dropdown-menu::-webkit-scrollbar {
+  display: none;
+}
+.dropdown-container.active .dropdown-menu {
+  display: flex;
+}
+
+.dropdown-container .dropdown-menu li {
+  padding: 10px 20px;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-bottom: 5px;
+  border-bottom: 1px solid var(--home-background);
+  transition: all 0.3s ease;
+  color: var(--product-text);
+}
+.dropdown-container .dropdown-menu li:hover {
+  background-color: var(--home-background);
+}
+.dropdown-container .dropdown-menu li.active {
+  color: var(--product-text);
+  background-color: var(--home-background);
+}
+
     </style>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <script src="https://kit.fontawesome.com/b99e675b6e.js"></script>
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
 	<script>
 		$(document).ready(function(){
 			$(".notification_icon .fa-bell").click(function(){
@@ -948,7 +1039,7 @@ img {
     <div class="logo-details">
       <!-- <img src="logo.png" alt="" class="logo-image"> -->
       <i class='bx bx-grid-alt' ></i>
-      <span class="logo_name">Research Finder</span>
+      <span  data-translate="true" class="logo_name">Research Finder</span>
     </div>
     <ul class="nav-links">
 
@@ -983,10 +1074,10 @@ img {
         <li>
           <a href="/add-opportunity" id="addOpportunityPage">
             <i class='bx bx-add-to-queue' ></i>
-            <span class="link_name">Post Opportunity</span>
+            <span data-translate="true"  class="link_name">Post Opportunity</span>
           </a>
           <ul class="sub-menu blank">
-            <li><a class="link_name" href="#">Post</a></li>
+            <li><a  data-translate="true" class="link_name" href="#">Post</a></li>
           </ul>
         </li>
   <% } %> 
@@ -994,20 +1085,20 @@ img {
   <li>
     <a href="/chat" id="chatPage">
       <i class='bx bx-conversation'></i>
-      <span class="link_name">Chat</span>
+      <span  data-translate="true" class="link_name">Chat</span>
     </a>
     <ul class="sub-menu blank">
-      <li><a class="link_name" href="#">Chat</a></li>
+      <li><a  data-translate="true" class="link_name" href="#">Chat</a></li>
     </ul>
   </li>
 
       <li>
         <a href="/feedback" id="feedbackPage">
           <i class='bx bx-message-alt-detail' ></i>
-          <span class="link_name">FeedBack</span>
+          <span  data-translate="true" class="link_name">FeedBack</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">FeedBack</a></li>
+          <li><a  data-translate="true" class="link_name" href="#">FeedBack</a></li>
         </ul>
       </li>
       
@@ -1024,10 +1115,10 @@ img {
       <li>
         <a href="/profile" id="profilePage">
           <i class='bx bx-user-circle' ></i>
-          <span class="link_name">Profile</span>
+          <span  data-translate="true" class="link_name">Profile</span>
         </a>
         <ul class="sub-menu blank">
-          <li><a class="link_name" href="#">Profile</a></li>
+          <li><a data-translate="true"  class="link_name" href="#">Profile</a></li>
         </ul>
       </li>
 
@@ -1038,8 +1129,8 @@ img {
             <!--<img src="image/profile.jpg" alt="profileImg">-->
           </div>
           <div class="name-job">
-            <div class="profile_name"><%= profileName %></div>
-            <div class="job"><%= jobTitle %></div>
+            <div  data-translate="true" class="profile_name"><%= profileName %></div>
+            <div  data-translate="true" class="job"><%= jobTitle %></div>
           </div><a href="/logout">
             <i class='bx bx-log-out'></i>
             <span class="link_name"> </span>
@@ -1065,7 +1156,7 @@ img {
                     <% notifications.forEach(notification => { %>
                         <div class="notify_item">
                             <div class="notify_info">
-                                <p class="notification-message"><%= notification.message %></p>
+                                <p data-translate="true"  class="notification-message"><%= notification.message %></p>
                                 <span class="notify_time"><%= new Date(notification.timestamp.seconds * 1000).toLocaleTimeString() %></span>
                             </div>
                         </div>
@@ -1080,10 +1171,20 @@ img {
             <i class='bx bxs-user-voice' id="startVoiceNav"></i>
         </div>
 
-        <!-- <div class="search-bar-container">
-          <input type="text" class="search-bar" placeholder="Search..." id="search-input" onkeydown="handleSearchEnter(event)">
-          <button type="submit" class="search-button" onclick="searchOpportunities()"><i class='bx bx-search'></i></button>
-        </div> -->
+        <div class="to">
+            <div class="dropdown-container" id="output-language">
+              <div class="dropdown-toggle">
+                <ion-icon name="globe-outline"></ion-icon>
+                <span class="selected" data-value="en">Englsih</span>
+                <ion-icon name="chevron-down-outline"></ion-icon>
+              </div>
+              <ul class="dropdown-menu">
+                <li class="option active">DropDown Menu Item 1</li>
+                <li class="option">DropDown Menu Item 2</li>
+              </ul>
+            </div>
+          </div>
+
 
         <div class="search-wrapper">
           <div id="search-container">
@@ -1093,97 +1194,98 @@ img {
               id="search-input"
               placeholder="Search opportunities here.."
               onkeydown="handleSearchEnter(event)"
+              data-translate="true"
             />
-            <button id="search" onclick="searchOpportunities()">Search</button>
+            <button data-translate="true" id="search" onclick="searchOpportunities()">Search</button>
           </div>
 
           <div id="buttons">
             <div class="filter-button-container" id="work-mode">
-                <button class="filter-button" id="work-mode-button">
+                <button data-translate="true"  class="filter-button" id="work-mode-button">
                   work-mode
                 </button>
                 <div class="filter-dropdown">
                   <li class="option" onclick="addMode('on-site')">
-                    <span class="option-text">on-site</span>
+                    <span  data-translate="true" class="option-text">on-site</span>
                   </li>
                   <li class="option" onclick="addMode('remote')">
-                    <span class="option-text">remote</span>
+                    <span data-translate="true"  class="option-text">remote</span>
                   </li>
                   <li class="option" onclick="addMode('hybrid')">
-                    <span class="option-text">hybrid</span>
+                    <span  data-translate="true" class="option-text">hybrid</span>
                   </li>
                   <li class="option" onclick="addMode('any')">
-                    <span class="option-text">any</span>
+                    <span  data-translate="true" class="option-text">any</span>
                   </li>
                 </div>
             </div>
             <div class="filter-button-container" id="work-type">
-                <button class="filter-button" id="work-type-button">
+                <button  data-translate="true" class="filter-button" id="work-type-button">
                   work-type
                 </button>
                 <div class="filter-dropdown">
                   <li class="option" onclick="addType('full-time')">
-                    <span class="option-text">full-time</span>
+                    <span data-translate="true"  class="option-text">full-time</span>
                   </li>
                   <li class="option" onclick="addType('part-time')">
-                    <span class="option-text">part-time</span>
+                    <span  data-translate="true" class="option-text">part-time</span>
                   </li>
                   <li class="option" onclick="addType('internship')">
-                    <span class="option-text">internship</span>
+                    <span  data-translate="true" class="option-text">internship</span>
                   </li>
                   <li class="option" onclick="addType('any')">
-                    <span class="option-text">any</span>
+                    <span  data-translate="true" class="option-text">any</span>
                   </li>
                 </div>
             </div>
             <div class="filter-button-container" id="duration">
-              <button class="filter-button" id="duration-button">
+              <button  data-translate="true" class="filter-button" id="duration-button">
                 duration
               </button>
               <div class="filter-dropdown">
                 <li class="option" onclick="addDuration('1-3 months')">
-                  <span class="option-text">1-3 months</span>
+                  <span  data-translate="true" class="option-text">1-3 months</span>
                 </li>
                 <li class="option" onclick="addDuration('3-6 months')">
-                  <span class="option-text">3-6 months</span>
+                  <span  data-translate="true" class="option-text">3-6 months</span>
                 </li>
                 <li class="option" onclick="addDuration('6-12 months')">
-                  <span class="option-text">6-12 months</span>
+                  <span  data-translate="true" class="option-text">6-12 months</span>
                 </li>
                 <li class="option"  onclick="addDuration('12+ months')">
-                  <span class="option-text">12+ months</span>
+                  <span  data-translate="true" class="option-text">12+ months</span>
                 </li>
                 <li class="option"  onclick="addDuration('any')">
-                  <span class="option-text">any</span>
+                  <span  data-translate="true" class="option-text">any</span>
                 </li>
               </div>
             </div>
             <div class="filter-button-container" id="stipend">
-              <button class="filter-button" id="stipend-button">
+              <button  data-translate="true" class="filter-button" id="stipend-button">
                 stipend
               </button>
               
               <div class="filter-dropdown">
                 <li class="option"  onclick="addStipend('$0-1,000')">
-                  <span class="option-text">$0-1,000</span>
+                  <span  data-translate="true" class="option-text">$0-1,000</span>
                 </li>
                 <li class="option"  onclick="addStipend('$1,000-2,000')">
-                  <span class="option-text">$1,000-2,000</span>
+                  <span  data-translate="true" class="option-text">$1,000-2,000</span>
                 </li>
                 <li class="option"  onclick="addStipend('$2,000-3,000')">
-                  <span class="option-text">$2,000-3,000</span>
+                  <span data-translate="true"  class="option-text">$2,000-3,000</span>
                 </li>
                 <li class="option"  onclick="addStipend('$3,000+')">
-                  <span class="option-text">$3,000+</span>
+                  <span data-translate="true"  class="option-text">$3,000+</span>
                 </li>
                 <li class="option" onclick="addStipend('any')">
-                  <span class="option-text">any</span>
+                  <span data-translate="true"  class="option-text">any</span>
                 </li>
               </div>
             </div>
 
             <div class="filter-button-container" id="clear">
-              <button class="clear-button" onclick="clearFilters()" id="clear-button-id">
+              <button  data-translate="true" class="clear-button" onclick="clearFilters()" id="clear-button-id">
                 Clear Filters
               </button>
             </div>
@@ -1216,7 +1318,11 @@ img {
 
   <!-- <script src="opportunites.mjs" type="module"></script> -->
 
-  <script>
+  
+  <script src="languages.js" ></script> 
+  <script type="module" src="translation.mjs"></script>
+  <script type="module">
+    import { makeTranslate, translateElements } from './translation.mjs';
     window.firebaseConfig = JSON.parse('<%- firebaseConfig %>');
     window.opportunityData = JSON.parse('<%- opportunityData %>');  
     window.role = '<%= role %>';
@@ -1517,17 +1623,17 @@ function loadOpportunities(opportunities, page) {
     container.setAttribute("Opportunity-ID", key);
     container.innerHTML = `
       <div class="product">
-        <p class="product-p" name="topic">${opportunity.topic}</p>
-        <h2 class="product-h1" name="title">${opportunity.title}</h2>
-        <p class="product-pl" name="location">${opportunity.location}</p>
-        <p class="product-desc" name="shortDescription">${opportunity.shortDescription}</p>
-        <p class="product-p2" name="stipend">stipend:  $${opportunity.stipend} /month</p>
-        <p class="product-p2" name="duration">duration: ${opportunity.duration} months </p>
-        <p class="product-p2" name="mode">work-mode: ${opportunity.mode} </p>
-        <p class="product-p2" name="type">work-type: ${opportunity.type} </p>
+        <p class="product-p" data-translate="true"  name="topic">${opportunity.topic}</p>
+        <h2 class="product-h1" data-translate="true"  name="title">${opportunity.title}</h2>
+        <p class="product-pl" data-translate="true"  name="location">${opportunity.location}</p>
+        <p class="product-desc" data-translate="true" name="shortDescription">${opportunity.shortDescription}</p>
+        <p class="product-p2" data-translate="true"  name="stipend">stipend:  $${opportunity.stipend} /month</p>
+        <p class="product-p2" data-translate="true"  name="duration">duration: ${opportunity.duration} months </p>
+        <p class="product-p2" data-translate="true"  name="mode">work-mode: ${opportunity.mode} </p>
+        <p class="product-p2" data-translate="true"  name="type">work-type: ${opportunity.type} </p>
         <div class="product-buttons">
-          <button class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
-          <button class="product-button-like" type="button"><span>♥</span></button>
+          <button data-translate="true"  class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
+          <button data-translate="true"  class="product-button-like" type="button"><span>♥</span></button>
         </div>
       </div>
     `;
@@ -1544,7 +1650,10 @@ function loadOpportunities(opportunities, page) {
   });
 
   attachEventListeners();
+
+  makeTranslate();
 }
+
 
 async function handleSearchEnter() {
   if (event.key === 'Enter') {
@@ -1707,12 +1816,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function attachEventListeners() {
+async function attachEventListeners() {
   const containers = document.querySelectorAll('.container');
         const popupContainer = document.querySelector('.popup-container');
 
         containers.forEach(container => {
-                container.addEventListener('click', function(e) {
+                container.addEventListener('click', async function(e) {
                 
                 if (e.target.classList.contains('product-button-add') || e.target.classList.contains('product-button-like')) {
                     return; // Exit the event listener if a button is clicked
@@ -1725,19 +1834,19 @@ function attachEventListeners() {
                 let popup = document.createElement('div');
                 popup.classList.add('product-selected');
                 popup.innerHTML = `
-                    <p class="product-p" name="topic">${opportunity.topic}</p>
-                    <h2 class="product-h1" name="title">${opportunity.title}</h2>
-                    <p class="product-pl" name="location">${opportunity.location}</p>
-                    <p class="product-pl" name="institution">${opportunity.institution}</p>
-                    <p class="product-desc" name="longDescription">${opportunity.longDescription}</p>
-                    <p class="product-p2" name="stipend">reference: ${opportunity.postBy} </p>
-                    <p class="product-p2" name="stipend">stipend: $${opportunity.stipend} /month </p>
-                    <p class="product-p2" name="duration">duration: ${opportunity.duration} months</p>
-                    <p class="product-p2" name="mode">work-mode: ${opportunity.mode} </p>
-                    <p class="product-p2" name="type">work-type: ${opportunity.type} </p>
+                    <p class="product-p" data-translate="true"  name="topic">${opportunity.topic}</p>
+                    <h2 class="product-h1" data-translate="true"  name="title">${opportunity.title}</h2>
+                    <p class="product-pl"  data-translate="true" name="location">${opportunity.location}</p>
+                    <p class="product-pl"  data-translate="true" name="institution">${opportunity.institution}</p>
+                    <p class="product-desc" data-translate="true"  name="longDescription">${opportunity.longDescription}</p>
+                    <p class="product-p2"  data-translate="true" name="stipend">reference: ${opportunity.postBy} </p>
+                    <p class="product-p2" data-translate="true"  name="stipend">stipend: $${opportunity.stipend} /month </p>
+                    <p class="product-p2"  data-translate="true" name="duration">duration: ${opportunity.duration} months</p>
+                    <p class="product-p2"  data-translate="true" name="mode">work-mode: ${opportunity.mode} </p>
+                    <p class="product-p2"  data-translate="true" name="type">work-type: ${opportunity.type} </p>
                     <div class="product-buttons">
-                        <button class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
-                        <button class="product-button-like" type="button"><span>♥</span></button>
+                        <button  data-translate="true" class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
+                        <button  data-translate="true" class="product-button-like" type="button"><span>♥</span></button>
                     </div>
                 `;
                 popupContainer.innerHTML = ''; // Clear any existing content
@@ -1754,6 +1863,8 @@ function attachEventListeners() {
                 
                 const popupHeight = popup.offsetHeight + 100; // Add 100px to the natural height
                 popup.style.height = `${popupHeight}px`;
+
+                await translateElements(popupContainer);
             });
         });
 
@@ -1773,8 +1884,8 @@ function attachEventListeners() {
     });
 
     </script>
-
     <script type="module" src="VoiceNavigation.mjs"></script>
     <script type="module" src="analytics.mjs"></script>
+
  </body>
 </html>

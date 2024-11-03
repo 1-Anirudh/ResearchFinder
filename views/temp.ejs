@@ -1320,9 +1320,9 @@ img {
 
   
   <script src="languages.js" ></script> 
-  <script type="module" src="translation.js"></script>
+  <script type="module" src="translation.mjs"></script>
   <script type="module">
-    import { makeTranslate} from './translation.js';
+    import { makeTranslate, translateElements } from './translation.mjs';
     window.firebaseConfig = JSON.parse('<%- firebaseConfig %>');
     window.opportunityData = JSON.parse('<%- opportunityData %>');  
     window.role = '<%= role %>';
@@ -1816,12 +1816,12 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-function attachEventListeners() {
+async function attachEventListeners() {
   const containers = document.querySelectorAll('.container');
         const popupContainer = document.querySelector('.popup-container');
 
         containers.forEach(container => {
-                container.addEventListener('click', function(e) {
+                container.addEventListener('click', async function(e) {
                 
                 if (e.target.classList.contains('product-button-add') || e.target.classList.contains('product-button-like')) {
                     return; // Exit the event listener if a button is clicked
@@ -1863,6 +1863,8 @@ function attachEventListeners() {
                 
                 const popupHeight = popup.offsetHeight + 100; // Add 100px to the natural height
                 popup.style.height = `${popupHeight}px`;
+
+                await translateElements(popupContainer);
             });
         });
 

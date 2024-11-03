@@ -203,31 +203,6 @@ configureApp()
             });
         });
 
-        app.get('/temp', ensureLoggedIn, async (req, res) => {
-            const opportunityData = await readOpportunities();
-            const notifications = await getUserNotifications(SessionUtils.getUserId(req.session));
-            const userDetails = await SessionUtils.userDetails(req);
-
-            const recommendations = await getRecommendations(opportunityData, userDetails.interests);
-
-            const recOpportunityData = addRecommendations(opportunityData, recommendations);
-            
-            res.render('temp', { 
-                role: userDetails.role,
-                logoName: 'ResearchFinder', 
-                profileName: userDetails.firstName || 'User',
-                jobTitle: userDetails.role,
-                notifications: notifications,
-                firebaseConfig: JSON.stringify(firebaseConfig),
-                opportunityData: JSON.stringify(recOpportunityData)
-            });
-        });
-
-        // Define a route to render the EJS file
-        app.get('/oppcard', (req, res) => {
-            res.render('oppcard');
-        });
-
         app.get('/feedback', (req, res) => {
             res.render('feedback');
         });
