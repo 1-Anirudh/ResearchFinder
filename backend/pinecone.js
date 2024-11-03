@@ -46,7 +46,7 @@ async function getRecommendations(opportunitieData, interests) {
     // console.log('interests', interests);
 
     // console.log(stats)
-
+    
     const query = interests;
     
     const embedding = await pc.inference.embed(
