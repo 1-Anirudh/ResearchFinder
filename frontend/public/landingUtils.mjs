@@ -489,7 +489,7 @@ const containers = document.querySelectorAll('.container');
                 <p class="product-p2"  data-translate="true" name="mode">work-mode: ${opportunity.mode} </p>
                 <p class="product-p2"  data-translate="true" name="type">work-type: ${opportunity.type} </p>
                 <div class="product-buttons">
-                    <button  data-translate="true" data-link="${opportunity.link}" class="product-button-add" type="button">Apply Now</button>
+                    <button  data-translate="true" class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
                     <button  data-translate="true" class="product-button-like" type="button"><span>♥</span></button>
                 </div>
             `;

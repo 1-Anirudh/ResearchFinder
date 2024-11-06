@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     opportunityButtons.forEach(button => {
         button.addEventListener('click', () => {
+            console.log("open");
             const opportunityLink = button.getAttribute('data-link'); // Assuming each button has its own link in a data attribute
             window.open(opportunityLink, '_blank');
         });
