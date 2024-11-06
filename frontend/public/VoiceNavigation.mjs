@@ -1,7 +1,21 @@
+import { addMode, addType, addDuration, addStipend, clearFilters, searchOpportunitiesINP } from "./landingUtils.mjs";
+
 const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
 let recognition = null;
 let isSpeaking = false;
 let isInterrupted = false;
+let voiceNavEnabled = false;
+
+document.addEventListener('DOMContentLoaded', () => {
+    const opportunityButtons = document.querySelectorAll('.product-button-add');
+
+    opportunityButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const opportunityLink = button.getAttribute('data-link'); // Assuming each button has its own link in a data attribute
+            window.open(opportunityLink, '_blank');
+        });
+    });
+});
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/get-voice-nav-status')
@@ -9,8 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
         console.log('Voice navigation status:', data);
         const enabled = data.voiceNavEnabled;
-        if (enabled) {
+        if (enabled && !isSpeaking) {
             document.getElementById('startVoiceNav').click();
+            voiceNavEnabled = true;
         }
     })
     .catch(error => {
@@ -27,15 +42,17 @@ function readText(text, rate = 1, pitch = 1) {
     speech.addEventListener('start', () => {
         console.log("Speech started");
         isSpeaking = true;
-        if (recognition) recognition.stop();
+        if (recognition) {
+            recognition.stop();
+        }
     });
 
     speech.addEventListener('end', () => {
         console.log("Speech ended");
         isSpeaking = false;
         setTimeout(() => {
-            if (recognition) recognition.start();
-        }, 500);
+            if (recognition && voiceNavEnabled) recognition.start();
+        }, 100);
     });
 
     window.speechSynthesis.speak(speech);
@@ -95,6 +112,7 @@ if (SpeechRecognition) {
             recognition.start();
             console.log("Voice Navigation is enabled.");
             readText("Voice Navigation is enabled.", 1.5, 2);
+            voiceNavEnabled = true;
         }
 
         fetch('/set-voice-nav-status', {
@@ -166,10 +184,10 @@ if (SpeechRecognition) {
                         searching = false;
                     } else {
                         // Search for the command
+                        searching = false;
                         console.log("Searching for:", command);
                         const searchInput = command;
                         searchUsingCommand(searchInput);
-                        searching = false;
                     }
                 } else if (applyFilters === true) {
                     if (command.includes('clear filters')) {
@@ -340,6 +358,7 @@ if (SpeechRecognition) {
                     } else if (command.includes('go to post opportunity')) {
                         window.location.href = '/add-opportunity';
                     } else if (command.includes('stop voice navigation')) {
+                        voiceNavEnabled = false;
                         console.log("Stopping voice navigation");
                         recognition.stop();
                         readText("Voice navigation stopped.", 1.5, 2);
@@ -358,6 +377,8 @@ if (SpeechRecognition) {
                         .catch(error => {
                             console.error("Error updating voice navigation status:", error);
                         });
+
+
                     } else if (command.includes('apply for opportunity')) {
                         applyForOpportunity(command);
                     } else if (command.includes('list sidebar options')) {

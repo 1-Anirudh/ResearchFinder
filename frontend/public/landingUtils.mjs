@@ -6,164 +6,164 @@ const itemsPerPage = 12;
 let currentPage = 1;
 
 
-function addMode(mode) {
-const button = document.getElementById("work-mode-button");
-button.innerHTML = mode;
-button.classList.add('active');
-const clearButton = document.getElementById("clear-button-id");
-clearButton.classList.add('active');
+export function addMode(mode) {
+    const button = document.getElementById("work-mode-button");
+    button.innerHTML = mode;
+    button.classList.add('active');
+    const clearButton = document.getElementById("clear-button-id");
+    clearButton.classList.add('active');
 
 
-const filteredOpportunities_1 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
-const opportunity = window.filteredOpportunities[key];
-if (mode === 'any') {
-  acc[key] = opportunity;
-} else if (opportunity.mode === mode) {
-  acc[key] = opportunity;
-}
-return acc;
-}, {});
-window.filteredOpportunities_1 = filteredOpportunities_1;
+    const filteredOpportunities_1 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+    const opportunity = window.filteredOpportunities[key];
+    if (mode === 'any') {
+    acc[key] = opportunity;
+    } else if (opportunity.mode === mode) {
+    acc[key] = opportunity;
+    }
+    return acc;
+    }, {});
+    window.filteredOpportunities_1 = filteredOpportunities_1;
 
 
-filterAllOpportunities();
-}
-
-function addType(type) {
-const button = document.getElementById("work-type-button");
-button.innerHTML = type;
-button.classList.add('active');
-const clearButton = document.getElementById("clear-button-id");
-clearButton.classList.add('active');
-
-
-const filteredOpportunities_2 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
-const opportunity = window.filteredOpportunities[key];
-if (type === 'any') {
-  acc[key] = opportunity;
-} else if (opportunity.type === type) {
-  acc[key] = opportunity;
-}
-return acc;
-}, {});
-window.filteredOpportunities_2 = filteredOpportunities_2;
-
-
-filterAllOpportunities();
+    filterAllOpportunities();
 }
 
-function addDuration(duration) {
-const button = document.getElementById("duration-button");
-button.innerHTML = duration;
-button.classList.add('active');
-const clearButton = document.getElementById("clear-button-id");
-clearButton.classList.add('active');
+export function addType(type) {
+    const button = document.getElementById("work-type-button");
+    button.innerHTML = type;
+    button.classList.add('active');
+    const clearButton = document.getElementById("clear-button-id");
+    clearButton.classList.add('active');
 
-var minVal = 0;
-var maxVal = 1000000;
 
-if (duration === '1-3 months') {
-var minVal = 1;
-var maxVal = 3;
-} else if (duration === '3-6 months') {
-var minVal = 3;
-var maxVal = 6;
-} else if (duration === '6-12 months') {
-var minVal = 6;
-var maxVal = 12;
-} else if (duration === '12+ months') {
-var minVal = 12;
-var maxVal = 1000000;
+    const filteredOpportunities_2 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+    const opportunity = window.filteredOpportunities[key];
+    if (type === 'any') {
+    acc[key] = opportunity;
+    } else if (opportunity.type === type) {
+    acc[key] = opportunity;
+    }
+    return acc;
+    }, {});
+    window.filteredOpportunities_2 = filteredOpportunities_2;
+
+
+    filterAllOpportunities();
 }
 
-const filteredOpportunities_3 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
-const opportunity = window.filteredOpportunities[key];
-if (duration === 'any') {
-  acc[key] = opportunity;
-} else if (opportunity.duration >= minVal && opportunity.duration <= maxVal) {
-  acc[key] = opportunity;
-}
-return acc;
-}, {});
-window.filteredOpportunities_3 = filteredOpportunities_3;
+export function addDuration(duration) {
+    const button = document.getElementById("duration-button");
+    button.innerHTML = duration;
+    button.classList.add('active');
+    const clearButton = document.getElementById("clear-button-id");
+    clearButton.classList.add('active');
+
+    var minVal = 0;
+    var maxVal = 1000000;
+
+    if (duration === '1-3 months') {
+    var minVal = 1;
+    var maxVal = 3;
+    } else if (duration === '3-6 months') {
+    var minVal = 3;
+    var maxVal = 6;
+    } else if (duration === '6-12 months') {
+    var minVal = 6;
+    var maxVal = 12;
+    } else if (duration === '12+ months') {
+    var minVal = 12;
+    var maxVal = 1000000;
+    }
+
+    const filteredOpportunities_3 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+    const opportunity = window.filteredOpportunities[key];
+    if (duration === 'any') {
+    acc[key] = opportunity;
+    } else if (opportunity.duration >= minVal && opportunity.duration <= maxVal) {
+    acc[key] = opportunity;
+    }
+    return acc;
+    }, {});
+    window.filteredOpportunities_3 = filteredOpportunities_3;
 
 
-filterAllOpportunities();
-}
-
-function addStipend(stipend) {
-const button = document.getElementById("stipend-button");
-button.innerHTML = stipend;
-button.classList.add('active');
-const clearButton = document.getElementById("clear-button-id");
-clearButton.classList.add('active');
-
-var minVal = 0;
-var maxVal = 1000000;
-if (stipend === '$0-1,000') {
-var minVal = 0;
-var maxVal = 1000;
-} else if (stipend === '$1,000-2,000') {
-var minVal = 1000;
-var maxVal = 2000;
-} else if (stipend === '$2,000-3,000') {
-var minVal = 2000;
-var maxVal = 3000;
-} else if (stipend === '$3,000+') {
-var minVal = 3000;
-var maxVal = 1000000;
-}
-
-const filteredOpportunities_4 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
-const opportunity = window.filteredOpportunities[key];
-if (stipend === 'any') {
-  acc[key] = opportunity;
-} else if (opportunity.stipend >= minVal && opportunity.stipend <= maxVal) {
-  acc[key] = opportunity;
-}
-return acc;
-}, {});
-window.filteredOpportunities_4 = filteredOpportunities_4;
-
-
-filterAllOpportunities();
+    filterAllOpportunities();
 }
 
-function clearFilters() {
-const buttons = document.querySelectorAll('.filter-button');
-buttons.forEach(button => {
-button.classList.remove('active');
-const lastIndex = button.id.lastIndexOf('-');
-button.innerHTML = button.id.substring(0, lastIndex);
-});
-const clearButton = document.getElementById("clear-button-id");
-clearButton.classList.remove('active');
+export function addStipend(stipend) {
+    const button = document.getElementById("stipend-button");
+    button.innerHTML = stipend;
+    button.classList.add('active');
+    const clearButton = document.getElementById("clear-button-id");
+    clearButton.classList.add('active');
 
-window.filteredOpportunities_1 = window.filteredOpportunities;
-window.filteredOpportunities_2 = window.filteredOpportunities;
-window.filteredOpportunities_3 = window.filteredOpportunities;
-window.filteredOpportunities_4 = window.filteredOpportunities;
+    var minVal = 0;
+    var maxVal = 1000000;
+    if (stipend === '$0-1,000') {
+    var minVal = 0;
+    var maxVal = 1000;
+    } else if (stipend === '$1,000-2,000') {
+    var minVal = 1000;
+    var maxVal = 2000;
+    } else if (stipend === '$2,000-3,000') {
+    var minVal = 2000;
+    var maxVal = 3000;
+    } else if (stipend === '$3,000+') {
+    var minVal = 3000;
+    var maxVal = 1000000;
+    }
 
-createPagination(currentPage, window.filteredOpportunities);
-loadOpportunities(window.filteredOpportunities, currentPage);
+    const filteredOpportunities_4 = Object.keys(window.filteredOpportunities).reduce((acc, key) => {
+    const opportunity = window.filteredOpportunities[key];
+    if (stipend === 'any') {
+    acc[key] = opportunity;
+    } else if (opportunity.stipend >= minVal && opportunity.stipend <= maxVal) {
+    acc[key] = opportunity;
+    }
+    return acc;
+    }, {});
+    window.filteredOpportunities_4 = filteredOpportunities_4;
+
+
+    filterAllOpportunities();
+}
+
+export function clearFilters() {
+    const buttons = document.querySelectorAll('.filter-button');
+    buttons.forEach(button => {
+    button.classList.remove('active');
+    const lastIndex = button.id.lastIndexOf('-');
+    button.innerHTML = button.id.substring(0, lastIndex);
+    });
+    const clearButton = document.getElementById("clear-button-id");
+    clearButton.classList.remove('active');
+
+    window.filteredOpportunities_1 = window.filteredOpportunities;
+    window.filteredOpportunities_2 = window.filteredOpportunities;
+    window.filteredOpportunities_3 = window.filteredOpportunities;
+    window.filteredOpportunities_4 = window.filteredOpportunities;
+
+    createPagination(currentPage, window.filteredOpportunities);
+    loadOpportunities(window.filteredOpportunities, currentPage);
 }
 
 
 function filterAllOpportunities() {
-const keys_1 = Object.keys(window.filteredOpportunities_1);
-const keys_2 = Object.keys(window.filteredOpportunities_2);
-const keys_3 = Object.keys(window.filteredOpportunities_3);
-const keys_4 = Object.keys(window.filteredOpportunities_4);
-const allKeys = [...keys_1, ...keys_2, ...keys_3, ...keys_4];
+    const keys_1 = Object.keys(window.filteredOpportunities_1);
+    const keys_2 = Object.keys(window.filteredOpportunities_2);
+    const keys_3 = Object.keys(window.filteredOpportunities_3);
+    const keys_4 = Object.keys(window.filteredOpportunities_4);
+    const allKeys = [...keys_1, ...keys_2, ...keys_3, ...keys_4];
 
-const keys = allKeys.filter(key => keys_1.includes(key) && keys_2.includes(key) && keys_3.includes(key) && keys_4.includes(key));
-const newFilteredOpportunities = keys.reduce((acc, key) => {
-acc[key] = window.filteredOpportunities[key];
-return acc;
-}, {});
+    const keys = allKeys.filter(key => keys_1.includes(key) && keys_2.includes(key) && keys_3.includes(key) && keys_4.includes(key));
+    const newFilteredOpportunities = keys.reduce((acc, key) => {
+    acc[key] = window.filteredOpportunities[key];
+    return acc;
+    }, {});
 
-createPagination(currentPage, newFilteredOpportunities);
-loadOpportunities(newFilteredOpportunities, currentPage);
+    createPagination(currentPage, newFilteredOpportunities);
+    loadOpportunities(newFilteredOpportunities, currentPage);
 }
 
 
@@ -265,50 +265,51 @@ function createPagination(page, opportunites) {
 
 
 function loadOpportunities(opportunities, page) {
-let containers = document.querySelector('.containers');
-containers.innerHTML = '';
+    let containers = document.querySelector('.containers');
+    containers.innerHTML = '';
 
-const start = (page - 1) * itemsPerPage;
-const end = start + itemsPerPage;
-const keys = Object.keys(opportunities).slice(start, end);
-// const keys = Object.keys(opportunities);
-keys.forEach(key => {
-const opportunity = opportunities[key];
-let container = document.createElement('div');
-container.classList.add('container');
-container.setAttribute("Opportunity-ID", key);
-container.innerHTML = `
-  <div class="product">
-    <p class="product-p" data-translate="true"  name="topic">${opportunity.topic}</p>
-    <h2 class="product-h1" data-translate="true"  name="title">${opportunity.title}</h2>
-    <p class="product-pl" data-translate="true"  name="location">${opportunity.location}</p>
-    <p class="product-desc" data-translate="true" name="shortDescription">${opportunity.shortDescription}</p>
-    <p class="product-p2" data-translate="true"  name="stipend">stipend:  $${opportunity.stipend} /month</p>
-    <p class="product-p2" data-translate="true"  name="duration">duration: ${opportunity.duration} months </p>
-    <p class="product-p2" data-translate="true"  name="mode">work-mode: ${opportunity.mode} </p>
-    <p class="product-p2" data-translate="true"  name="type">work-type: ${opportunity.type} </p>
-    <div class="product-buttons">
-      <button data-translate="true"  class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
-      <button data-translate="true"  class="product-button-like" type="button"><span>♥</span></button>
+    const start = (page - 1) * itemsPerPage;
+    const end = start + itemsPerPage;
+    const keys = Object.keys(opportunities).slice(start, end);
+    // const keys = Object.keys(opportunities);
+    keys.forEach(key => {
+    const opportunity = opportunities[key];
+    let container = document.createElement('div');
+    container.classList.add('container');
+    container.setAttribute("Opportunity-ID", key);
+    container.innerHTML = `
+    <div class="product">
+        <p class="product-p" data-translate="true"  name="topic">${opportunity.topic}</p>
+        <h2 class="product-h1" data-translate="true"  name="title">${opportunity.title}</h2>
+        <p class="product-pl" data-translate="true"  name="location">${opportunity.location}</p>
+        <p class="product-desc" data-translate="true" name="shortDescription">${opportunity.shortDescription}</p>
+        <p class="product-p2" data-translate="true"  name="stipend">stipend:  $${opportunity.stipend} /month</p>
+        <p class="product-p2" data-translate="true"  name="duration">duration: ${opportunity.duration} months </p>
+        <p class="product-p2" data-translate="true"  name="mode">work-mode: ${opportunity.mode} </p>
+        <p class="product-p2" data-translate="true"  name="type">work-type: ${opportunity.type} </p>
+        <div class="product-buttons">
+        <button data-translate="true" data-link="${opportunity.link}" class="product-button-add" type="button">Apply Now</button>
+        <button data-translate="true"  class="product-button-like" type="button"><span>♥</span></button>
+        </div>
     </div>
-  </div>
-`;
+    `;
 
-if (opportunity.recommend) {
-    const img = document.createElement('img');
-    img.src = 'images/recommended.png';
-    img.className = 'ribbon';
-    img.alt = '';
-    container.appendChild(img);
+    if (opportunity.recommend) {
+        const img = document.createElement('img');
+        img.src = 'images/recommended.png';
+        img.className = 'ribbon';
+        img.alt = '';
+        container.appendChild(img);
+    }
+
+    containers.appendChild(container);
+    });
+
+    attachEventListeners();
+
+    makeTranslate();
 }
 
-containers.appendChild(container);
-});
-
-attachEventListeners();
-
-makeTranslate();
-}
 async function searchOpportunities(bysearch = true) {
     const searchInput = document.getElementById('search-input');
     const searchValue = searchInput.value.toLowerCase();
@@ -320,7 +321,7 @@ async function searchOpportunities(bysearch = true) {
     searchOpportunitiesINP(searchValue, bysearch);
 }
 
-async function searchOpportunitiesINP(searchValue, bysearch) {
+export async function searchOpportunitiesINP(searchValue, bysearch) {
     if (bysearch) {
     const newUrl = `${window.location.origin}${window.location.pathname}?s=${encodeURIComponent(searchValue)}`;
     history.pushState({ path: newUrl }, '', newUrl);
@@ -350,16 +351,16 @@ loadOpportunities(filteredOpportunities, currentPage);
 
 let arrow = document.querySelectorAll(".arrow");
 for (var i = 0; i < arrow.length; i++) {
-arrow[i].addEventListener("click", (e)=>{
-let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
-arrowParent.classList.toggle("showMenu");
-});
+    arrow[i].addEventListener("click", (e)=>{
+        let arrowParent = e.target.parentElement.parentElement;//selecting main parent of arrow
+        arrowParent.classList.toggle("showMenu");
+    });
 }
 
 let sidebar = document.querySelector(".sidebar");
 let sidebarBtn = document.querySelector(".bx-menu");
 sidebarBtn.addEventListener("click", ()=>{
-sidebar.classList.toggle("close");
+    sidebar.classList.toggle("close");
 });
 
 
@@ -488,7 +489,7 @@ const containers = document.querySelectorAll('.container');
                 <p class="product-p2"  data-translate="true" name="mode">work-mode: ${opportunity.mode} </p>
                 <p class="product-p2"  data-translate="true" name="type">work-type: ${opportunity.type} </p>
                 <div class="product-buttons">
-                    <button  data-translate="true" class="product-button-add" type="button" onclick="window.open('${opportunity.link}', '_blank')">Apply Now</button>
+                    <button  data-translate="true" data-link="${opportunity.link}" class="product-button-add" type="button">Apply Now</button>
                     <button  data-translate="true" class="product-button-like" type="button"><span>♥</span></button>
                 </div>
             `;
