@@ -166,14 +166,14 @@
                 <span id="confirmPasswordLabel" class="sr-only">Confirm Password</span>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" aria-label="confirm password" required minlength="6" oninput="checkPasswords()">
 
-                <select name="role" class="dropd" required>
+                <select aria-label="role" name="role" class="dropd" required>
                     <option value="" disabled selected class="content">Select your role</option>
                     <option value="admin" >Researcher</option>
                     <option value="client" >Student</option>
                 </select>
 
                 <span id="signUpLabel" class="sr-only">Sign up for an account</span>
-                <button type="submit" aria-hidden="true">Sign up</button>
+                <button type="submit" tabindex="-1" aria-hidden="true">Sign up</button>
             </form>
         </div>
 
@@ -188,7 +188,7 @@
                 <input type="password" name="password" placeholder="Password" aria-label="password" required="">
 
                 <span id="loginLabel" class="sr-only">Login Button</span>
-                <button aria-hidden="true">Login</button>
+                <button tabindex="-1" aria-hidden="true">Login</button>
             </form>
         </div>
 
