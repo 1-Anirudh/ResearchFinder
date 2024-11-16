@@ -288,6 +288,19 @@ pre {
   display: hidden;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
 /*# sourceMappingURL=stles.css.map */
 
     </style>
@@ -314,6 +327,7 @@ pre {
                               class="[if($this = score, highlight)]"
                               mv-action="set(score, $this)"></span>
                     </div> 
+                    <label for="score" class="sr-only" ></label>
                     <input property="score"
                             name="score"
                             type="range" max="10"
@@ -325,6 +339,7 @@ pre {
                 </label>
                 
 
+                <label for="feedback" class="sr-only"> feedback </label>
                 <textarea property="comment"
                             name="feedback"
                             id="feedback"
