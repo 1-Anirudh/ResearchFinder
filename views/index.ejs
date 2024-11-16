@@ -157,8 +157,8 @@
                 <label for="chk-signup" aria-hidden="true">Sign up</label>
                 <span id="emailLabelSignUP" class="sr-only">Enter your Email</span>
                 
-                <label class="sr-only" for="email">Email</label>
-                <input type="email" name="email" placeholder="Email" aria-label="Email ID" required="">
+                <label class="sr-only" for="emailsignup">Email</label>
+                <input type="email" id="emailsignup" name="email" placeholder="Email" aria-label="Email ID" required="">
                 
                 <!-- Add id to password field -->
                 <span id="passwordLabelSignUp" class="sr-only">Enter Password</span>
@@ -169,7 +169,8 @@
                 <label class="sr-only" for="confirmPassword">Confirm Password</label>
                 <input type="password" name="confirmPassword" id="confirmPassword" placeholder="Confirm Password" aria-label="confirm password" required minlength="6" oninput="checkPasswords()">
 
-                <select aria-label="role" name="role" class="dropd" required>
+                <label class="sr-only" for="selectrole"> select role</label>
+                <select aria-label="role" name="role" class="dropd" id="selectrole" required>
                     <option value="" disabled selected class="content">Select your role</option>
                     <option value="admin" >Researcher</option>
                     <option value="client" >Student</option>
@@ -185,12 +186,12 @@
                 <label for="chk-login" aria-hidden="true">Login</label>
 
                 <span id="emailLabelLogin" class="sr-only">Enter your Login Email</span>
-                <label class="sr-only" for="email">Email</label>
-                <input type="email" name="email" placeholder="Email" aria-label="Email ID" required="">
+                <label class="sr-only" for="emaillogin">Email</label>
+                <input type="email" id="emaillogin" name="email" placeholder="Email" aria-label="Email ID" required="">
 
                 <span id="passwordLabelLogin" class="sr-only">Enter your Password</span>
-                <label class="sr-only" for="password">Password</label>
-                <input type="password" name="password" placeholder="Password" aria-label="password" required="">
+                <label class="sr-only" for="passwordlogin">Password</label>
+                <input type="password" id="passwordlogin" name="password" placeholder="Password" aria-label="password" required="">
 
                 <span id="loginLabel" class="sr-only">Login Button</span>
                 <button tabindex="-1" aria-hidden="true">Login</button>
@@ -199,7 +200,7 @@
 
     </div>
 
-    <i class='bx bxs-user-voice' id="startVoiceNav"></i>
+    <em class='bx bxs-user-voice' id="startVoiceNav"></em>
 
 
     
