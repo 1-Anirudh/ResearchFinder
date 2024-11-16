@@ -1131,7 +1131,7 @@ img {
           <div class="name-job">
             <div  data-translate="true" class="profile_name"><%= profileName %></div>
             <div  data-translate="true" class="job"><%= jobTitle %></div>
-          </div><a href="/logout">
+          </div><a href="/logout" aria-label="log out">
             <i class='bx bx-log-out'></i>
             <span class="link_name"> </span>
         </a>
@@ -1165,8 +1165,8 @@ img {
             </div>
     
 
-            <input class="dark-light" type="checkbox" id="dark-light" name="dark-light"/>
-            <label for="dark-light"></label>  
+            <input class="dark-light" type="checkbox" id="dark-light" name="dark-light" aria-label="theme switch"/>
+            <!-- <label for="dark-light"></label>   -->
 
             <i class='bx bxs-user-voice' id="startVoiceNav"></i>
         </div>
@@ -1188,12 +1188,14 @@ img {
 
         <div class="search-wrapper">
           <div id="search-container">
+            <!-- <label for="search-input"></label> -->
             <input
               type="search"
               class="search-bar"
               id="search-input"
               placeholder="Search opportunities here.."
               data-translate="true"
+              aria-label="search bar"
             />
             <button data-translate="true" id="search">Search</button>
           </div>

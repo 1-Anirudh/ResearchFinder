@@ -5,7 +5,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!--<title>Registration Form in HTML CSS</title>-->
+    <title>Add profile details</title>
     <!---Custom CSS File--->
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -112,7 +112,7 @@ body {
 .form button {
   height: 55px;
   width: 100%;
-  color: #fff;
+  color: #222222;
   font-size: 1rem;
   font-weight: 400;
   margin-top: 30px;
@@ -142,8 +142,8 @@ body {
         <div class="input-box">
           <label data-translate="true" >Full Name</label>
           <div class="column">
-            <input  data-translate="true" type="text" placeholder="Enter first name" name="firstName" required />
-            <input  data-translate="true" type="text" placeholder="Enter surname" name="surName" required />
+            <input aria-label="first name" data-translate="true" type="text" placeholder="Enter first name" name="firstName" required />
+            <input aria-label="sur name" data-translate="true" type="text" placeholder="Enter surname" name="surName" required />
           </div>
         </div>
 
@@ -155,7 +155,7 @@ body {
         <!-- <div class="column"> -->
           <div class="input-box">
             <label  data-translate="true" >Phone Number</label>
-            <input data-translate="true"  type="number" placeholder="Enter phone number" name="phone" required />
+            <input aria-label="phone number" data-translate="true"  type="number" placeholder="Enter phone number" name="phone" required />
           </div>
           <!-- <div class="input-box">
             <label>Birth Date</label>
@@ -181,8 +181,8 @@ body {
         </div> -->
         <div class="input-box address">
           <label  data-translate="true" >Address</label>
-          <input  data-translate="true" type="text" placeholder="Enter street address" name="address1" required />
-          <input  data-translate="true" type="text" placeholder="Enter street address line 2" name="address2" required />
+          <input aria-label="address line 1" data-translate="true" type="text" placeholder="Enter street address" name="address1" required />
+          <input aria-label="address line 2" data-translate="true" type="text" placeholder="Enter street address line 2" name="address2" required />
           <!-- <div class="column">
             <div class="select-box">
               <select>
@@ -196,18 +196,18 @@ body {
             <input type="text" placeholder="Enter your city" required />
           </div> -->
           <div class="column">
-            <input  data-translate="true" type="text" placeholder="Enter your Country" name="country" required />
-            <input  data-translate="true" type="text" placeholder="Enter state" name="state" required />
+            <input aria-label="country" data-translate="true" type="text" placeholder="Enter your Country" name="country" required />
+            <input aria-label="state" data-translate="true" type="text" placeholder="Enter state" name="state" required />
           </div>
           <div class="column">
-            <input  data-translate="true"  type="text" placeholder="Enter your Region" name="region" required />
-            <input data-translate="true"  type="number" placeholder="Enter postal code" name="postcode" required />
+            <input aria-label="region" data-translate="true"  type="text" placeholder="Enter your Region" name="region" required />
+            <input aria-label="postcode" data-translate="true"  type="number" placeholder="Enter postal code" name="postcode" required />
           </div>
         </div>
 
         <div class="input-box">
           <label  data-translate="true" >Education</label>
-          <input type="text" placeholder="eg: bachelors, masters etc.." name="education" required />
+          <input aria-label="education" type="text" placeholder="eg: bachelors, masters etc.." name="education" required />
         </div>
         <button  data-translate="true"  type="submit">Submit</button>
       </form>

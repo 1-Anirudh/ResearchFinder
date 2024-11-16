@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--<title>Registration Form in HTML CSS</title>-->
     <!---Custom CSS File--->
+    <title>Post opportunity</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -156,7 +158,7 @@ body {
 .form button {
   height: 55px;
   width: 100%;
-  color: #fff;
+  color: #272727;
   font-size: 1rem;
   font-weight: 400;
   margin-top: 30px;
@@ -184,22 +186,22 @@ body {
       <form action="/post-opportunity" method="post" class="form">
         <div class="input-box">
           <label data-translate="true" >Title:</label>
-          <input  data-translate="true" type="text" placeholder="Enter Title" name="title" required />
+          <input aria-label="title" data-translate="true" type="text" placeholder="Enter Title" name="title" required />
         </div>
 
         <div class="input-box">
           <label data-translate="true" >Research Topic</label>
-          <input  data-translate="true" type="text" placeholder="Enter Topic" name="topic" required />
+          <input aria-label="topic name" data-translate="true" type="text" placeholder="Enter Topic" name="topic" required />
         </div>
 
         <div class="column">
           <div class="input-box">
             <label data-translate="true" >Stipend</label>
-            <input  data-translate="true" type="number" placeholder="Stipend per month" name="stipend" required />
+            <input aria-label="stipend" data-translate="true" type="number" placeholder="Stipend per month" name="stipend" required />
           </div>
           <div class="input-box">
             <label data-translate="true" >Duration</label>
-            <input  data-translate="true" type="number" placeholder="Duration in months" name="duration" required />
+            <input aria-label="duration" data-translate="true" type="number" placeholder="Duration in months" name="duration" required />
           </div>
         </div>
 
@@ -249,8 +251,8 @@ body {
 
         <div class="input-box address">
           <label data-translate="true" >Description</label>
-          <input  data-translate="true" type="text" placeholder="Short Description" name="shortDescription" required />
-          <input  data-translate="true" type="text" placeholder="Long Description" name="longDescription" required />
+          <input aria-label="short description" data-translate="true" type="text" placeholder="Short Description" name="shortDescription" required />
+          <input aria-label="long description" data-translate="true" type="text" placeholder="Long Description" name="longDescription" required />
           <!-- <div class="column">
             <div class="select-box">
               <select>
@@ -272,22 +274,22 @@ body {
         <div class="column">
           <div class="input-box">
             <label data-translate="true" >Institution</label>
-            <input  data-translate="true" type="text" placeholder="Company / College" name="institution" required />
+            <input aria-label="college" data-translate="true" type="text" placeholder="Company / College" name="institution" required />
           </div>
           <div class="input-box">
             <label data-translate="true" >Location</label>
-            <input data-translate="true"  type="text" placeholder="Location" name="location" required />
+            <input aria-label="location" data-translate="true"  type="text" placeholder="Location" name="location" required />
           </div>
         </div>
 
         <div class="input-box">
           <label data-translate="true" >Reference Link</label>
-          <input data-translate="true"  type="text" placeholder="" name="link" required />
+          <input aria-label="link" data-translate="true"  type="text" placeholder="" name="link" required />
         </div>
 
         <div class="input-box">
           <label data-translate="true" >Tags</label>
-          <input  data-translate="true" type="text" placeholder="Tags (comma separated)" name="tags" required />
+          <input aria-label="tags" data-translate="true" type="text" placeholder="Tags (comma separated)" name="tags" required />
         </div>
 
         <button data-translate="true" >Post Opportunity</button>

@@ -24,7 +24,7 @@
   --msg-message: #969eaa;
   --chat-text-bg: #f1f2f6;
   --theme-color: #0086ff;
-  --msg-date: #c0c7d2;
+  --msg-date: #454545;
   --button-bg-color: #f0f7ff;
   --button-color: var(--theme-color);
   --detail-font-color: #919ca2;
@@ -79,7 +79,7 @@
   --msg-hover-bg: rgba(47, 50, 56, 0.54);
   --chat-text-bg: #383b40;
   --chat-text-color: #b5b7ba;
-  --msg-date: #626466;
+  --msg-date: #3f3f3f;
   --msg-message: var(--msg-date);
   --overlay-bg: linear-gradient(
    to bottom,
@@ -840,7 +840,7 @@ html {
    </div>
    <div class="chat-area-footer">
     <!-- Your SVG icons -->
-    <input type="text" id="chatInput" placeholder="Type something here..." onkeydown="handleKeyPress(event)"/>
+    <input type="text" aria-label="message input bar" id="chatInput" placeholder="Type something here..." onkeydown="handleKeyPress(event)"/>
     <svg viewBox="0 0 513 513" fill="currentColor" xmlns="http://www.w3.org/2000/svg" role="button" style="cursor: pointer;" onclick="submitForm()">
         <path d="M256.025.05C117.67-2.678 3.184 107.038.025 245.383a240.703 240.703 0 0085.333 182.613v73.387c0 5.891 4.776 10.667 10.667 10.667a10.67 10.67 0 005.653-1.621l59.456-37.141a264.142 264.142 0 0094.891 17.429c138.355 2.728 252.841-106.988 256-245.333C508.866 107.038 394.38-2.678 256.025.05z"/>
         <path d="M330.518 131.099l-213.825 130.08c-7.387 4.494-5.74 15.711 2.656 17.97l72.009 19.374a9.88 9.88 0 007.703-1.094l32.882-20.003-10.113 37.136a9.88 9.88 0 001.083 7.704l38.561 63.826c4.488 7.427 15.726 5.936 18.003-2.425l65.764-241.49c2.337-8.582-7.092-15.72-14.723-11.078zM266.44 356.177l-24.415-40.411 15.544-57.074c2.336-8.581-7.093-15.719-14.723-11.078l-50.536 30.744-45.592-12.266L319.616 160.91 266.44 356.177z" fill="#fff"/>

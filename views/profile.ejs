@@ -7,6 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <!--<title>Registration Form in HTML CSS</title>-->
     <!---Custom CSS File--->
+    <title>Research Finder</title>
+
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -158,7 +160,7 @@ body {
 .form button {
   height: 55px;
   width: 100%;
-  color: #fff;
+  color: #151515;
   font-size: 1rem;
   font-weight: 400;
   margin-top: 30px;
@@ -312,7 +314,7 @@ textarea::-webkit-scrollbar {
   outline: none;
   border: none;
   background: var(--theme-color);
-  color: #fff;
+  color: #000000;
   font-size: 14px;
   border-radius: 4px;
   cursor: pointer;
@@ -332,7 +334,7 @@ textarea::-webkit-scrollbar {
   outline: none;
   border: none;
   background: var(--theme-color);
-  color: #fff;
+  color: #000000;
   font-size: 16px;
   border-radius: 4px;
   cursor: pointer;
@@ -371,8 +373,8 @@ textarea::-webkit-scrollbar {
         <div class="input-box">
           <label data-translate="true" >Full Name</label>
           <div class="column">
-            <input data-translate="true"  type="text" placeholder="Enter first name" name="firstName" value="<%= firstName %>" />
-            <input data-translate="true"  type="text" placeholder="Enter surname" name="surName" value="<%= surname %>" />
+            <input aria-label="first name" data-translate="true"  type="text" placeholder="Enter first name" name="firstName" value="<%= firstName %>" />
+            <input aria-label="last name" data-translate="true"  type="text" placeholder="Enter surname" name="surName" value="<%= surname %>" />
           </div>
         </div>
 
@@ -384,7 +386,7 @@ textarea::-webkit-scrollbar {
         <!-- <div class="column"> -->
           <div class="input-box">
             <label data-translate="true" >Phone Number</label>
-            <input  data-translate="true" type="number" placeholder="Enter phone number" name="phone" value="<%= mobileNumber %>" />
+            <input aria-label="phone number" data-translate="true" type="number" placeholder="Enter phone number" name="phone" value="<%= mobileNumber %>" />
           </div>
           <!-- <div class="input-box">
             <label>Birth Date</label>
@@ -410,8 +412,8 @@ textarea::-webkit-scrollbar {
         </div> -->
         <div class="input-box address">
           <label data-translate="true" >Address</label>
-          <input  data-translate="true" type="text" placeholder="Enter street address" name="address1" value="<%= addressLine1 %>" />
-          <input  data-translate="true" type="text" placeholder="Enter street address line 2" name="address2" value="<%= addressLine2 %>" />
+          <input aria-label="address line 1" data-translate="true" type="text" placeholder="Enter street address" name="address1" value="<%= addressLine1 %>" />
+          <input aria-label="address line 2" data-translate="true" type="text" placeholder="Enter street address line 2" name="address2" value="<%= addressLine2 %>" />
           <!-- <div class="column">
             <div class="select-box">
               <select>
@@ -425,18 +427,18 @@ textarea::-webkit-scrollbar {
             <input type="text" placeholder="Enter your city" required />
           </div> -->
           <div class="column">
-            <input data-translate="true"  type="text" placeholder="Enter your Country" name="country" value="<%= country %>" />
-            <input data-translate="true"  type="text" placeholder="Enter state" name="state" value="<%= state %>" />
+            <input aria-label="country" data-translate="true"  type="text" placeholder="Enter your Country" name="country" value="<%= country %>" />
+            <input aria-label="state" data-translate="true"  type="text" placeholder="Enter state" name="state" value="<%= state %>" />
           </div>
           <div class="column">
-            <input  data-translate="true" type="text" placeholder="Enter your Region" name="region" value="<%= stateRegion %>" />
-            <input  data-translate="true" type="number" placeholder="Enter postal code" name="postcode" value="<%= postcode %>" />
+            <input aria-label="region" data-translate="true" type="text" placeholder="Enter your Region" name="region" value="<%= stateRegion %>" />
+            <input aria-label="postal code" data-translate="true" type="number" placeholder="Enter postal code" name="postcode" value="<%= postcode %>" />
           </div>
         </div>
 
         <div class="input-box">
           <label data-translate="true" >Education</label>
-          <input  data-translate="true" type="text" placeholder="eg: bachelors, masters etc.." name="education" value="<%= education %>" />
+          <input aria-label="education" data-translate="true" type="text" placeholder="eg: bachelors, masters etc.." name="education" value="<%= education %>" />
         </div>
         <button  data-translate="true" type="submit">Submit</button>
       </form>
@@ -450,7 +452,7 @@ textarea::-webkit-scrollbar {
       <div class="interests-container">
         <h2 data-translate="true" >Interests</h2>
         <div class="input-field">
-          <textarea  data-translate="true" placeholder="Enter your new interest"></textarea>
+          <textarea aria-label="enter your interests" data-translate="true" placeholder="Enter your new interest"></textarea>
           <i class="uil uil-notes note-icon"></i>
         </div>
     
@@ -466,7 +468,7 @@ textarea::-webkit-scrollbar {
       <div class="interests-container">
         <h2 data-translate="true" >Skills</h2>
         <div class="input-field">
-          <textarea  data-translate="true" placeholder="Enter your new skill"></textarea>
+          <textarea aria-label="ENter your skill" data-translate="true" placeholder="Enter your new skill"></textarea>
           <i class="uil uil-notes note-icon"></i>
         </div>
     
