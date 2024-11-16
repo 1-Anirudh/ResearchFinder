@@ -1,0 +1,7751 @@
+<div id="tools-list-body" class="tools-list"><aside class="box" id="accessibilitychecker.org"><header class="box-h "> <a href="https://accessibilitychecker.org" target="_blank" rel="nofollow noopener noreferrer"><h3>AccessibilityChecker.org</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by AccessibilityChecker.org</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>A free website accessibility automated scan for WCAG 2.1 compliance issues. Just insert your URL and get instant results. </p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="accessibilitychecker.org"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://www.accessibilitychecker.org/accessibility-statement/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="ael-accessibility-checker"><header class="box-h "> <a href="https://aeldata.com/accessibility-checker/" target="_blank" rel="nofollow noopener noreferrer"><h3>AEL Accessibility Checker</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by AEL</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>AEL Accessibility Checker (AAC) can quickly evaluate your web page against automated Accessibility violations.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="ael-accessibility-checker"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Entire website / software / product
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Safari, 
+		
+		  Edge, 
+		
+		  Firefox
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Creating an accessibility score
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-devtools-linter"><header class="box-h "> <a href="https://www.deque.com/axe/devtools/linter/" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe DevTools Linter</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>axe DevTools Linter allows you to check your code for accessibility issues in your IDE and CI/CD. axe DevTools Linter is easy to configure and use, and it can check React (.js, .jsx, and .tsx), Vue (.vue), Angular (.component.html), HTML (.html and .htm), and Markdown (.md and .markdown) files so you can avoid common accessibility defects.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Source code
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI, 
+		  
+		
+		  
+		  
+		  
+		  	Programming tool plugin / IDE
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-devtools-linter"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="aaardvark"><header class="box-h "> <a href="https://aaardvarkaccessibility.com/" target="_blank" rel="nofollow noopener noreferrer"><h3>AAArdvark</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by N Squared Digital, LLC</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>AAArdvark streamlines web accessibility testing and audits with features like automated issue scanning, visual view of accessibility issues, efficient logging of issues found in manual testing, remediation management, and comprehensive reporting and tracking. Everything digital professionals need for achieving accessibility compliance in one tool.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	CMS plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	One-time purchase, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="aaardvark"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://aaardvarkaccessibility.com/accessibility-statement/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="color-contrast"><header class="box-h "> <a href="https://apps.apple.com/us/app/color-contrast/id1095478187" target="_blank" rel="nofollow noopener noreferrer"><h3>Color Contrast</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Accessible Resources Ltd</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Color contrast is a complete mobile accessibility checking tool that allows users to verify that the color contrast of their mobile webpage or image meets WCAG 2.x AA guidelines.<br><br>In addition, users can audit their mobile website against WCAG 2.x AA and share recommendations .</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Mobile application
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Mobile application
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="color-contrast"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-devtools-for-web-apis"><header class="box-h "> <a href="https://docs.deque.com/devtools-for-web/4/en/about-axe-devtools-apis" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe DevTools for Web APIs</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Deque offers API bindings for web development and scripting languages including NodeJS, JavaScript, Java, Ruby, C#, and Python. These APIs allow you to scan your websites for accessibility defects as part of your existing automated testing runs or continuous integration (CI) builds.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-devtools-for-web-apis"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="accessibility-cloud-lite"><header class="box-h "> <a href="https://www.accessibilitycloud.com/lite/" target="_blank" rel="nofollow noopener noreferrer"><h3>Accessibility Cloud Lite</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Accessibility Cloud</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Aug 2024</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Lite is Accessibility Cloud’s bookmarklet. You can use it to test any web page, whether it’s behind a login or not. It runs locally on your computer.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Bookmarklet
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="accessibility-cloud-lite"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="ibm-equal-access-accessibility-checker-(chrome,-firefox,-edge-extension)"><header class="box-h "> <a href="https://www.ibm.com/able/toolkit/tools/#develop" target="_blank" rel="nofollow noopener noreferrer"><h3>IBM Equal Access Accessibility Checker (Chrome, Firefox, Edge extension)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by IBM Accessibility</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>An open source browser extension for web developers and auditors that utilizes IBM's rule engine, which detects accessibility issues for web applications. Provides an integrated checking experience, helping users quickly identify the source of accessibility issues and try fixes. Also provides a keyboard checker mode and identifies issues for review</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="ibm-equal-access-accessibility-checker-(chrome,-firefox,-edge-extension)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge, 
+		
+		  Firefox
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/equal-access/" target="_blank">ACT Rules implemented</a>:
+			22 Rules 
+			<small>/ 3 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="achecks"><header class="box-h "> <a href="https://www.achecks.org" target="_blank" rel="nofollow noopener noreferrer"><h3>ACHECKS</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Cantan Group</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>ACHECKS monitors WCAG 2 AA compliance for your domains through intuitive dashboards of AChecker and Lighthouse results generating reports across your websites. PDF checking is provided through Tingtun. ACHECKS scrapes your domain and calls web-services to generate page-by-page and aggregate results.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	CMS plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="achecks"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-devtools-mobile-(appium-plugin)"><header class="box-h "> <a href="https://docs.deque.com/devtools-mobile/2024.2.14/en/appium" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe DevTools Mobile (Appium Plugin)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Add accessibility testing into Appium tests within a continuous integration pipeline or local test environment. Find issues based on Web Content Accessibility Guidelines (WCAG) for iOS and Android apps. Get remediation advice and a visual view of accessibility issues from a team dashboard.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Mobile application
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Server-side integration, 
+		  
+		
+		  
+		  
+		  
+		  	Command-line / CI, 
+		  
+		
+		  
+		  
+		  
+		  	Programming tool plugin / IDE
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-devtools-mobile-(appium-plugin)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="qualibooth"><header class="box-h "> <a href="https://qualibooth.com/" target="_blank" rel="nofollow noopener noreferrer"><h3>QualiBooth</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by QualiBooth</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>QualiBooth simplifies web accessibility compliance with real-time scanning, monitoring, and detailed reporting. The platform offers an accessibility checker, real-time dashboards, and a development assistant, aiding organizations in achieving ADA, WCAG, and European Accessibility Act compliance. </p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"></div>
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Server-side integration
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="qualibooth"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="contrast-ratio"><header class="box-h "> <a href="https://contrast-ratio.org" target="_blank" rel="nofollow noopener noreferrer"><h3>Contrast-Ratio</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Moritz Gießmann</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>WCAG 2.1 color contrast checker. Check foreground and background color and see if they pass WCAG.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="contrast-ratio"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="accessibility-cloud"><header class="box-h "> <a href="https://www.accessibilitycloud.com/" target="_blank" rel="nofollow noopener noreferrer"><h3>Accessibility Cloud</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Accessibility Cloud</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Feb 2024</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Test &amp; monitor your websites and documents against WCAG, EN 301 549, BITV, RGAA, Section 508 and ADA. Accessibility Cloud offers automatic and manual accessibility testing features for web, tests documents automatically, monitors sites, and generates accessibility statements. Sign up for free to scan your site and get started.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Mobile application, 
+			
+			  Document
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	One-time purchase
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      Danish, 
+		
+      German, 
+		
+      English, 
+		
+      French, 
+		
+      Norwegian Bokmål, 
+		
+      Dutch, 
+		
+      Swedish
+		</p>
+	</div>
+
+<details id="accessibility-cloud"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://www.accessibilitycloud.com/accessibility-statement-2/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="luma"><header class="box-h "> <a href="https://www.includia.com/luma" target="_blank" rel="nofollow noopener noreferrer"><h3>Luma</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Includia</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Luma Video Accessibility Analysis Tool identifies sequences with flashing lights, spatial patterns, and other potential seizure triggers, especially for individuals with photosensitive epilepsy. Through color data extraction and frame-by-frame analysis, Luma ensures compliance with international video accessibility guidelines, including WCAG 2.3.1 </p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Other
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English, 
+		
+      
+		</p>
+	</div>
+
+<details id="luma"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Simulated user experience
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Sample of pages/screens
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Safari, 
+		
+		  Edge, 
+		
+		  Firefox, 
+		
+		  Opera, 
+		
+		  Other
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://luma.includia.com/record/d790b841-8d9a-400f-92dd-14dc1729c800" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="ibm-equal-access-accessibility-checker-(npm)"><header class="box-h "> <a href="https://www.npmjs.com/package/accessibility-checker" target="_blank" rel="nofollow noopener noreferrer"><h3>IBM Equal Access accessibility-checker (NPM)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by IBM Accessibility</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>NodeJS Module that performs integrated accessibility testing within a continuous integration pipeline or local test environment. It works with parsing engines such as Selenium, Puppeteer, and Zombie. Works with a variety of test frameworks such as Cucumber, Mocha, or Jasmine.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="ibm-equal-access-accessibility-checker-(npm)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge, 
+		
+		  Firefox, 
+		
+		  Other
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/equal-access/" target="_blank">ACT Rules implemented</a>:
+			22 Rules 
+			<small>/ 3 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-devtools-for-web-cli"><header class="box-h "> <a href="https://docs.deque.com/devtools-html/4.0.0/en/cli-home" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe DevTools for Web CLI</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>axe DevTools for Web CLI is a command-line application for scanning web pages for accessibility issues and for generating reports. With axe DevTools for Web CLI, organizations can automate accessibility testing without having to integrate axe into integration or end-to-end tests.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-devtools-for-web-cli"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="squidler.io"><header class="box-h "> <a href="https://squidler.io/" target="_blank" rel="nofollow noopener noreferrer"><h3>Squidler.io</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Squidler AB</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p></p><p>Squidler does fully autonomous website testing. All you have to do is provide your URL.</p><p>Our virtual user opens a browser and navigates and interacts with your website much like any visitor. As it browses your website it checks for accessibility issues as well as functional bugs, spelling and grammar mistakes and more.</p><p></p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="squidler.io"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Simulated user experience
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Entire website / software / product
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-core---nodejs-apis"><header class="box-h "> <a href="https://github.com/dequelabs/axe-core-npm" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe-core - NodeJS APIs</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Provides seven packages for automated accessibility testing powered by axe-core, including a command-line interface to axe-core and integrations with popular testing frameworks: Playwright, Puppeteer, React, WebDriverIO, and WebDriverJS.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-core---nodejs-apis"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-devtools-mobile-(mobile-analyzer-for-ios)"><header class="box-h "> <a href="https://docs.deque.com/devtools-mobile-analyzer/ios-setup" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe DevTools Mobile (Mobile Analyzer for iOS)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Scan iOS apps for mobile accessibility. No SDKs or source code access needed. Find issues based on Web Content Accessibility Guidelines (WCAG) for apps built with any technology–native iOS, React Native, Flutter, or other cross-platform technologies. Get remediation advice and a visual view of accessibility issues from a team dashboard.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Mobile application
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Programming tool plugin / IDE
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-devtools-mobile-(mobile-analyzer-for-ios)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-monitor"><header class="box-h "> <a href="https://www.deque.com/axe/monitor/" target="_blank" rel="nofollow noopener noreferrer"><h3>axe Monitor</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Axe Monitor (formerly WorldSpace Comply) is a robust, enterprise level monitoring and reporting platform that scans websites, finds accessibility problems and creates dashboards to highlight problem areas.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-monitor"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://www.deque.com/accessibility-statement/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="pope-tech"><header class="box-h "> <a href="https://pope.tech" target="_blank" rel="nofollow noopener noreferrer"><h3>Pope Tech</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Pope Tech</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Aug 2024</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Web Accessibility testing and reporting powered by the WAVE accessibility engine. </p><p>Pope Tech simplifies web accessibility and makes compliance easier with automation, flexible team management, dynamic reporting, and a friendly interface made for beginners and experts. </p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	CMS plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="pope-tech"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="silktide-accessibility-checker"><header class="box-h "> <a href="https://silktide.com/toolbar/" target="_blank" rel="nofollow noopener noreferrer"><h3>Silktide accessibility checker</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Silktide</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Aug 2024</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Silktide's free accessibility checker tests your web page for over 200 WCAG issues, giving you straightforward, step-by-step guidance. The browser plugin highlights accessibility issues on each page, includes information on how to fix them, and offers a range of accessibility tools to help you monitor WCAG and ADA compliance.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="silktide-accessibility-checker"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Simulated user experience
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Displaying information within web pages
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="total-validator"><header class="box-h "> <a href="https://www.totalvalidator.com" target="_blank" rel="nofollow noopener noreferrer"><h3>Total Validator</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Total Validator</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Jan 2024</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Checks websites are accessible, use valid HTML, ARIA and CSS, have no broken links, and are free from spelling mistakes. Test single pages through to multiple websites in one go; including offline, authenticated, and javascript generated pages.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Source code
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Desktop application, 
+		  
+		
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	One-time purchase, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="total-validator"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge, 
+		
+		  Firefox
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/total-validator-browser/" target="_blank">ACT Rules implemented</a>:
+			30 Rules 
+			<small>/ 9 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="audioeye-color-contrast-checker"><header class="box-h "> <a href="https://www.audioeye.com/color-contrast-checker/" target="_blank" rel="nofollow noopener noreferrer"><h3>AudioEye Color Contrast Checker</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by AudioEye</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>AudioEye's color contrast checker is a tool that measures the contrast between website elements such as background, foreground, text, images, or documents to ensure it meets WCAG accessibility standards. This free tool is one of the most comprehensive on the internet and is made accessible with a keyboard navigation and voice commands.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"></div>
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="audioeye-color-contrast-checker"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Simulated user experience
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Displaying information within web pages
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://www.audioeye.com/accessibility-statement/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="monsido"><header class="box-h "> <a href="https://monsido.com/" target="_blank" rel="nofollow noopener noreferrer"><h3>Monsido</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Monsido</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>The Monsido Platform includes a cohesive suite of tools for web accessibility, website quality assurance, brand and content compliance, user consent management, social and web content archiving, and more. </p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Document, 
+			
+			  Source code, 
+			
+			  Other
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	CMS plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      Danish, 
+		
+      English, 
+		
+      Dutch, 
+		
+      Norwegian
+		</p>
+	</div>
+
+<details id="monsido"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing, 
+		
+		  Simulated user experience
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge, 
+		
+		  Firefox
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="complyfirst-element-v"><header class="box-h "> <a href="https://odellus.com/odellus?COMPLYFirstElementVOverview" target="_blank" rel="nofollow noopener noreferrer"><h3>COMPLYFirst Element-V</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Odellus Corporation</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>COMPLYFirst Element-V is a windows desktop application for automated and manual web accessibility testing. COMPLYFirst Element-V includes a comprehensive set of tools and features that enable development and QA processes for accessibility. It includes unlimited scanning/verification of web pages and provides summary and detailed reports</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Document, 
+			
+			  Source code
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Programming tool plugin / IDE
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="complyfirst-element-v"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Other
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="contrasts-for-macos"><header class="box-h "> <a href="https://www.contrasts.app" target="_blank" rel="nofollow noopener noreferrer"><h3>Contrasts for macOS</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Contrasts</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Contrasts: A macOS color contrast checker with the convenience of Spotlight-like accessibility. Instantly accessible via shortcuts, it features auto text to color conversion and preview mode for effortless color contrast checks, making it the ultimate intuitive tool for designers and developers.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Mobile application, 
+			
+			  Document
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Desktop application
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	One-time purchase, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="contrasts-for-macos"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Manual testing, 
+		
+		  Simulated user experience
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Displaying information within web pages
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="ibm-equal-access-cypress-accessibility-checker-(npm)"><header class="box-h "> <a href="https://www.npmjs.com/package/cypress-accessibility-checker" target="_blank" rel="nofollow noopener noreferrer"><h3>IBM Equal Access cypress-accessibility-checker (NPM)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by IBM Accessibility</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Cypress Module that performs integrated accessibility testing in the Cypress test environment within a continuous integration pipelines or local test environments.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="ibm-equal-access-cypress-accessibility-checker-(npm)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge, 
+		
+		  Firefox, 
+		
+		  Other
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/equal-access/" target="_blank">ACT Rules implemented</a>:
+			22 Rules 
+			<small>/ 3 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="be-inclusive"><header class="box-h "> <a href="https://beinclusive.app/" target="_blank" rel="nofollow noopener noreferrer"><h3>Be Inclusive</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Walnut Creek Creative LLC</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Be Inclusive is a web app that helps you define, track, and share digital accessibility audits. We simplify the admin part of the process so manual auditing is easier to manage and share with teammates &amp; clients.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Mobile application
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English, 
+		
+      Spanish, 
+		
+      French, 
+		
+      Dutch
+		</p>
+	</div>
+
+<details id="be-inclusive"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://beinclusive.app/accessibility" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="eye-able-audit-&amp;-report"><header class="box-h "> <a href="https://eye-able.com/en/audit/" target="_blank" rel="nofollow noopener noreferrer"><h3>Eye-Able Audit &amp; Report</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Web Inclusion GmbH</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Eye-Able Audit is a browser extension that analyzes web pages for WCAG requirements. Problems and potential problems are visualized and explained, including how to fix them. Eye-Able Report scans the entire domain, including PDF documents, and displays the results in a dashboard. This allows users to quickly find issues and monitor them over time.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Document
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	Server-side integration
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English, 
+		
+      German
+		</p>
+	</div>
+
+<details id="eye-able-audit-&amp;-report"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge, 
+		
+		  Firefox, 
+		
+		  Opera, 
+		
+		  Other
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://eye-able.com/en/accessibility-declaration/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="achecker"><header class="box-h "> <a href="https://achecks.org/achecker/" target="_blank" rel="nofollow noopener noreferrer"><h3>AChecker</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Cantan Group</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Interactive, international, customizable, Web content accessibility checker. Allows users to create their own guidelines, and author their own accessibility checks. Based on the Open Accessibility Checks(OAC)</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="achecker"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-accessibility-linter-for-vs-code"><header class="box-h "> <a href="https://marketplace.visualstudio.com/items?itemName=deque-systems.vscode-axe-linter" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe Accessibility Linter for VS Code</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Helps you catch and fix accessibility issues immediately while you code in your favorite IDE, VS Code. The extension points you to full explanations and clear directions for remediation so you can fix accessibility issues early—when it's cheaper and easier.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Source code
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Programming tool plugin / IDE
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-accessibility-linter-for-vs-code"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-core-(ruby-sdks)"><header class="box-h "> <a href="https://github.com/dequelabs/axe-core-gems" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe-core (Ruby SDKs)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>6 packages/gems, which can be used for automated accessibility testing powered by axe core. Integrations include Capybara, Cucumber, RSpec, Selenium, and Watir.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-core-(ruby-sdks)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="siteimprove-accessibility-platform"><header class="box-h "> <a href="https://www.siteimprove.com/product/inclusivity/" target="_blank" rel="nofollow noopener noreferrer"><h3>Siteimprove Accessibility Platform</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Siteimprove </p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Siteimprove Accessibility Platform is an enterprise-grade tool for evaluating website accessibility. It identifies issues, offers remediation guidance, and tracks improvements. Customizable dashboards and reports ensure you always stay updated on the state of your websites.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Document
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	CMS plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="siteimprove-accessibility-platform"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Simulated user experience
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://www.siteimprove.com/vpat/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/alfa-assisted/" target="_blank">ACT Rules implemented</a>:
+			25 Rules 
+			<small>/ 27 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="qualweb"><header class="box-h "> <a href="https://qualweb.di.fc.ul.pt/" target="_blank" rel="nofollow noopener noreferrer"><h3>QualWeb</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Faculdade de Ciências da Universidade de Lisboa</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>QualWeb is an automated accessibility checker that assesses webpage conformance to ACT-Rules and WCAG 2.1 HTML and CSS techniques. QualWeb can be used as part of your application, through a command line interface or via its website. QualWeb is the engine of the Portuguese Accessibility Observatory.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Source code
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	Server-side integration, 
+		  
+		
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English, 
+		
+      European Portuguese, 
+		
+      Finnish, 
+		
+      Swedish, 
+		
+      Norwegian Bokmål
+		</p>
+	</div>
+
+<details id="qualweb"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://qualweb.di.fc.ul.pt/evaluator/about" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/qualweb/" target="_blank">ACT Rules implemented</a>:
+			28 Rules 
+			<small>/ 13 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-core---c#-apis)"><header class="box-h "> <a href="https://github.com/dequelabs/axe-core-nuget" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe-core - C# APIs)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>3 NuGet packages, which can be used for automated accessibility testing powered by axe core. Integrations include Playwright and Selenium.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-core---c#-apis)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="tingtun-pdf-accessibility-checker"><header class="box-h "> <a href="https://achecks.org/tingtun-pdf-accessibility-checker" target="_blank" rel="nofollow noopener noreferrer"><h3>Tingtun PDF Accessibility Checker</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Cantan Group</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Check the Accessibility of a PDF Document via Tingtun.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Document
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="tingtun-pdf-accessibility-checker"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Entire website / software / product
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-auditor"><header class="box-h "> <a href="https://www.deque.com/axe/auditor/" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe Auditor</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Axe Auditor is a comprehensive manual testing tool with test automation and manual testing methodology built in. With a comprehensive dashboard for full WCAG conformance reporting, it provides integration with the axe DevTools extension to provide high efficiency to QA teams. Supports testing for WCAG, EN 301-549, Trusted tester and ACAA standards.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Mobile application, 
+			
+			  Document, 
+			
+			  Other
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Server-side integration
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-auditor"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://www.deque.com/accessibility-statement/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="wave-web-accessibility-evaluation-tool"><header class="box-h "> <a href="https://wave.webaim.org/" target="_blank" rel="nofollow noopener noreferrer"><h3>WAVE Web Accessibility Evaluation Tool</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by WebAIM</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>WAVE is a suite of powerful web accessibility testing tools. WAVE conducts automated tests and facilitates human assessment. The WAVE online checker and WAVE browser extensions for Chrome, Firefox, and Edge browsers are freely available. A subscription and stand-alone WAVE API are also available.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Online tool, 
+		  
+		
+		  
+		  
+		  
+		  	Server-side integration, 
+		  
+		
+		  
+		  
+		  
+		  	Command-line / CI, 
+		  
+		
+		  
+		  
+		  
+		  	Programming tool plugin / IDE
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="wave-web-accessibility-evaluation-tool"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Edge, 
+		
+		  Firefox
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="eficode-accessibility-keeper"><header class="box-h "> <a href="https://accessibilitykeeper.com" target="_blank" rel="nofollow noopener noreferrer"><h3>Eficode Accessibility Keeper</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Eficode</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Eficode Accessibility Keeper is an easy-to-use and intuitive accessibility monitoring service that makes it quick and easy to monitor the accessibility status of an online service or a web application. The service reduces the manual monitoring and verification tasks required to ensure accessibility.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English, 
+		
+      Finnish
+		</p>
+	</div>
+
+<details id="eficode-accessibility-keeper"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Creating an accessibility score
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="wp-ada-compliance-check-plugin"><header class="box-h "> <a href="https://www.alumnionlineservices.com" target="_blank" rel="nofollow noopener noreferrer"><h3>WP ADA Compliance Check Plugin</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Alumnionline Web Services LLC</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>WP ADA Compliance Check includes 82 individual error checks, evaluates content for Web Accessibility issues anywhere on your website, integrates seamlessly into your workflow, and automatically corrects 28 error types, saving you time and money.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Document
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	CMS plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English, 
+		
+      
+		</p>
+	</div>
+
+<details id="wp-ada-compliance-check-plugin"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="includia-accessibility-checker"><header class="box-h "> <a href="https://includia.com/checker" target="_blank" rel="nofollow noopener noreferrer"><h3>Includia Accessibility Checker</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Includia</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Includia Accessibility Checker seamlessly integrates into your development workflow, empowering you to create inclusive web experiences. It meticulously analyzes web pages to pinpoint potential accessibility violations based on the latest WCAG standards.
+</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="includia-accessibility-checker"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-devtools-mobile-(sdks-for-android-and-ios)"><header class="box-h "> <a href="https://docs.deque.com/devtools-mobile/2024.2.14/en/intro" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe DevTools Mobile (SDKs for Android and iOS)</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Add accessibility testing into XCUI, Espresso and UIAutomator tests within a continuous integration pipeline or local test environment. Find issues based on Web Content Accessibility Guidelines (WCAG) for iOS and Android apps. Get remediation advice and a visual view of accessibility issues from a team dashboard.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Mobile application
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI, 
+		  
+		
+		  
+		  
+		  
+		  	Programming tool plugin / IDE
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-devtools-mobile-(sdks-for-android-and-ios)"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="accessible-web-ramp"><header class="box-h "> <a href="https://accessibleweb.com/ramp-tools/" target="_blank" rel="nofollow noopener noreferrer"><h3>Accessible Web RAMP</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Accessible Web</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Feb 2024</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>RAMP helps teams discover, understand, and remediate web accessibility issues. Our suite of tools includes a website monitoring platform, free browser extension for automated scanning, color contrast &amp; manual audits, and an online learning Academy. </p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website, 
+			
+			  Source code
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Online tool
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Limited free functionality, 
+		  
+		
+		  
+		  
+		  
+		  	Time-limited trial, 
+		  
+		
+		  
+		  
+		  
+		  	Subscription, 
+		  
+		
+		  
+		  
+		  
+		  	One-time purchase, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="accessible-web-ramp"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing, 
+		
+		  Manual testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-core---java-apis"><header class="box-h "> <a href="https://github.com/dequelabs/axe-core-maven-html" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe-core - Java APIs</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Tools for using axe for web accessibility testing with JUnit, Selenium, and Playwright.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-core---java-apis"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="axe-core"><header class="box-h "> <a href="https://www.deque.com/axe/axe-core/" target="_blank" rel="nofollow noopener noreferrer"><h3>Axe-core</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Deque Systems, Inc.</p>
+<p class="rightCol hiddenHeader hidden">Last updated: </p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Axe is an accessibility testing engine for websites and other HTML-based user interfaces. It's fast, secure, lightweight, and was built to seamlessly integrate with any existing test environment so you can automate accessibility testing alongside your regular functional testing.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.2</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+	  
+	  	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.0</div>
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Command-line / CI
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English
+		</p>
+	</div>
+
+<details id="axe-core"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Component, 
+	  
+	
+	  
+	  
+	  
+	  	Single page/screen, 
+	  
+	
+	  
+	  
+	  
+	  	Sample of pages/screens, 
+	  
+	
+	  
+	  
+	  
+	  	Entire website / software / product, 
+	  
+	
+	  
+	  
+	  
+	  	Restricted or password protected pages
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/actrules.png" alt="ACT Rules">
+	<p>
+    
+  		<a href="https://www.w3.org/WAI/standards-guidelines/act/implementations/axe-core" target="_blank">ACT Rules implemented</a>:
+			26 Rules 
+			<small>/ 4 Proposed Rules</small>
+		<small>(<a href="https://www.w3.org/WAI/standards-guidelines/act/rules/about/">About ACT</a>)</small>
+	</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside><aside class="box" id="sa11y"><header class="box-h "> <a href="https://sa11y.netlify.app" target="_blank" rel="nofollow noopener noreferrer"><h3>Sa11y</h3>
+<svg focusable="false" aria-hidden="true" class="icon-external-link "><use xlink:href="/WAI/assets/images/icons.svg#icon-external-link"></use></svg></a> 
+<div class="subheader">
+<p class="leftColHeader">by Toronto Metropolitan University</p>
+<p class="rightCol hiddenHeader hidden">Last updated: Dec 2023</p>
+</div>
+</header><div class="box-i">
+<div class="leftCol">
+	<h4>Description</h4>
+  <p>Sa11y is an accessibility quality assurance tool that visually highlights common accessibility and usability issues. Geared towards content authors, Sa11y straightforwardly identifies errors or warnings at the source with a simple tooltip on how to fix them.</p>
+	
+	<h4>Guidelines</h4>
+	
+	
+	  
+	  	
+	  
+	  	
+	  		<div class="tag"><abbr title="Web Content Accessibility Guidelines">WCAG</abbr> 2.1</div>
+	  	
+	  
+	  	
+	  
+	  	
+	  
+	
+</div>
+
+<div class="rightCol hidden">
+	<h4>Features</h4>
+	
+	  <div class="colRow">
+			<img src="/WAI/content-images/wai-evaluation-tools-list/product.png" alt="Product to evaluate">
+			<p>
+			  Website
+			</p>
+	  </div>
+	
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/tooltype.png" alt="Type of tool">
+		<p>
+		  
+		  
+		  
+		  	Browser plugin, 
+		  
+		
+		  
+		  
+		  
+		  	Bookmarklet, 
+		  
+		
+		  
+		  
+		  
+		  	CMS plugin
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/paidfree.png" alt="Paid or free">
+		<p>
+		  
+		  
+		  
+		  	Free, 
+		  
+		
+		  
+		  
+		  
+		  	Open source
+		  
+		</p>
+	</div>
+	<div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/language.png" alt="Language">
+		<p>
+      English, 
+		
+      French, 
+		
+      Polish, 
+		
+      Ukrainian, 
+		
+      Spanish, 
+		
+      Swedish, 
+		
+      German
+		</p>
+	</div>
+
+<details id="sa11y"><summary>
+                <p>Show more features</p>
+              </summary>
+  <div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/purpose.png" alt="Purpose">
+		<p>
+		  Automated testing
+		</p>
+  </div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/scope.png" alt="Scope">
+	<p>
+	  
+	  
+	  
+	  	Single page/screen
+	  
+	</p>
+</div>
+
+                <div class="colRow">
+		<img src="/WAI/content-images/wai-evaluation-tools-list/browsers.png" alt="Browser">
+		<p>
+		  Chrome, 
+		
+		  Safari, 
+		
+		  Edge, 
+		
+		  Firefox, 
+		
+		  Opera, 
+		
+		  Other
+		</p>
+	</div>
+
+                <div class="colRow">
+	
+		<img src="/WAI/content-images/wai-evaluation-tools-list/output.png" alt="Output">
+		<p>
+		  Generating reports of evaluation results, 
+		
+		  Displaying information within web pages, 
+		
+		  Creating an accessibility score, 
+		
+		  Providing step-by-step evaluation guidance
+		</p>
+	
+</div>
+
+                <div class="colRow">
+	<img src="/WAI/content-images/wai-evaluation-tools-list/accessibilitystatement.png" alt="Accessibility statement"><p><a href="https://sa11y.netlify.app/accessibility/" target="_blank" rel="nofollow noopener noreferrer">Accessibility statement</a> available</p>
+</div>
+
+              </div>
+</details>
+
+</div>
+
+</div></aside>
+</div>

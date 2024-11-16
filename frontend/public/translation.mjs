@@ -132,7 +132,7 @@ document.addEventListener("click", (e) => {
     }
 });
 
-        
+
 
 document.addEventListener('DOMContentLoaded', () => {
     fetch('/get-user-language')

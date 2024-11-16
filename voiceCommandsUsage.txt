@@ -1,0 +1,64 @@
+## NOTE ## Commands must be said clearly and make sure to give a moment between commands, and between content read by window and next command
+
+open sidebar
+close sidebar
+list sidebar options (reads available sidebar options)
+next page
+previous page
+reload
+go back
+go forward
+
+read opportunities 
+(Alt + S keys together to stop reading, if not stopped right away use multiple times.)
+
+apply for opportunity number i (i is a number in range of number of opportunities, for eg apply for opportunity number one, dont forget to say "number")
+
+open conversations (will open chat room)
+open feedback (will open feedback page)
+go to profile (will go to profile)
+
+
+go to home (will take back to home when in one of the above pages, profile, feedback, chat room)
+
+stop voice navigation (will stop voice navigation works in home page only and when search and apply filters is deactivated)
+
+search for opportunities (this will activate search, any preceeding voice command will be searched in opportunities make sure to give command after a moment)
+---- cybersecurity (for eg, you can use any keyword to seach)
+
+
+## The Following is how to use filtering through voice commands
+
+start filters (this will start filters any preceeding command will take us to type of filter we want to do, this has following options)
+
+---- filter by work mode (this has three options)
+    -- filter by hybrid
+    -- filter by on site
+    -- filter by remote 
+    -- user guide for work mode
+
+---- filter by work type (three options)
+    -- filter by internship
+    -- filter by part time
+    -- filter by full time
+    -- user guide for work type
+
+---- filter by stipend (four options)
+    -- filter by 1000
+    -- filter by 2000
+    -- filter by 3000
+    -- filter by 3000 plus (better dont use this in demo as it also has 'filter by 3000' part included it might give results from above as well)
+    -- user guide for stipend
+
+---- filter by duration (four options)
+    -- filter by one month
+    -- filter by three months
+    -- filter by six months
+    -- filter by twelve months
+    -- user guide for duration
+
+---- user guide for filtering (reads user guide)
+---- stop filtering (deactivates filtering)
+---- apply filters (applies current filters and stops it)
+
+## NOTE ## Commands must be said clearly and make sure to give a moment between commands, and between content read by window and next command
