@@ -33,10 +33,10 @@ const { send } = require('process');
 
 const client = createClient({
     legacyMode: false,
-    password: 'zUI8ywPybMDC1ev23ktz2bwwWJruUkMt',
+    password: 'UINYMj5lOi0LOczZOsnrqcmE2M86dBpE',
     socket: {
-        host: 'redis-14766.c264.ap-south-1-1.ec2.redns.redis-cloud.com',
-        port: 14766
+        host: 'redis-18485.c265.us-east-1-2.ec2.redns.redis-cloud.com',
+        port: 18485
     }
 });
 
