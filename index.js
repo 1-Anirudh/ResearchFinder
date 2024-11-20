@@ -57,13 +57,16 @@ async function configureApp() {
         app.use(urlencoded({ extended: true }));
 
         app.use(session({
-            store: new RedisStore({ client: client }),
+            store: new RedisStore({
+                client: client,
+                ttl: 3 * 60
+            }),
             secret: 'your_secret_key',
             resave: false,
             saveUninitialized: true,
             cookie: { 
                 secure: false,
-                maxAge: 60 * 60 * 1000
+                maxAge: 10 * 60 * 1000
             } // Set to true if using HTTPS
         }));
     } catch (error) {

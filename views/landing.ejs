@@ -65,7 +65,7 @@
   padding: 15px;
   position: fixed;
   display: none;
-  z-index: 1;
+  z-index: 100;
 }
 .notification_wrap .dropdown .notify_item{
 	display: flex;
@@ -1027,7 +1027,7 @@ img {
     ></script>
 	<script>
 		$(document).ready(function(){
-			$(".notification_icon .fa-bell").click(function(){
+			$(".notification_icon").click(function(){
 				$(".dropdown").toggleClass("active");
 			})
 		});
@@ -1149,7 +1149,7 @@ img {
         <div class="wrapper">
             <div class="notification_wrap">
                 <div class="notification_icon">
-                    <i class="fas fa-bell"></i>
+                    <i class="bx bxs-bell"></i>
                 </div>
                 <div class="dropdown">
 

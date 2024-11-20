@@ -461,6 +461,9 @@ if (searchValue) {
 
 
 async function attachEventListeners() {
+
+
+
 const containers = document.querySelectorAll('.container');
     const popupContainer = document.querySelector('.popup-container');
 
