@@ -27,24 +27,18 @@ const firebaseConfig = require('./frontend/public/firebase-config.json');
 
 const { addOpportunity, readOpportunities} = require('./backend/opportunity');
 
+const RedisStore = require("connect-redis").default;
+const { createClient } =  require('redis');
+const { send } = require('process');
 
-
-// const RedisStore = require("connect-redis").default;
-// const { createClient } =  require('redis');
-// const { send } = require('process');
-
-// const client = createClient({
-//     legacyMode: false,
-//     password: 'UINYMj5lOi0LOczZOsnrqcmE2M86dBpE',
-//     socket: {
-//         host: 'redis-18485.c265.us-east-1-2.ec2.redns.redis-cloud.com',
-//         port: 18485
-//     }
-// });
-
-const { dbs } = require('./backend/serviceAccount');
-const FirestoreStore = require('firestore-store')(session); // Custom Firestore session store library
-
+const client = createClient({
+    legacyMode: false,
+    password: 'UINYMj5lOi0LOczZOsnrqcmE2M86dBpE',
+    socket: {
+        host: 'redis-18485.c265.us-east-1-2.ec2.redns.redis-cloud.com',
+        port: 18485
+    }
+});
 
 const app = express();
 const port = process.argv[2] || 3000;
@@ -53,7 +47,7 @@ async function configureApp() {
     try {
         // Set up EJS as the template engine
         
-        // await client.connect();
+        await client.connect();
         app.set('view engine', 'ejs');
         app.set('views', path.join(__dirname, 'views'));
 
@@ -63,12 +57,8 @@ async function configureApp() {
         app.use(urlencoded({ extended: true }));
 
         app.use(session({
-            // store: new RedisStore({
-            //     client: client,
-            //     ttl: 3 * 60
-            // }),
-            store: new FirestoreStore({
-                database: dbs,
+            store: new RedisStore({
+                client: client,
                 ttl: 3 * 60
             }),
             secret: 'your_secret_key',
